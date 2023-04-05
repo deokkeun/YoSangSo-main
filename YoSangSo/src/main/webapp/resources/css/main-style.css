@@ -1,0 +1,198 @@
+/* input박스 X버튼 제거 */
+/* IE의 경우 */
+input::-ms-clear,
+input::-ms-reveal{
+    display:none;
+}
+/* 크롬의 경우 */
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button,
+input::-webkit-search-results-button,
+input::-webkit-search-results-decoration{
+    display:none;
+}
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+* {
+    box-sizing: border-box;
+    font-family: 'Pretendard-Regular';
+}
+body {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* 헤더 */
+header{
+    height: 100px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 1;
+}
+#header-box {
+    width: 1280px;
+    min-width: 750px;
+    display: flex;
+    align-items: center;
+    margin: auto;
+}
+
+/* 헤더박스 공간 분할 */
+#header-box > section:nth-child(1){
+    flex-basis: 10%;
+}
+#header-box > section:nth-child(2){
+    flex-basis: 30%;
+    min-width: 260px;
+}
+#header-box > section:nth-child(3){
+    flex-basis: 38%;
+    min-width: 160px;
+}
+#header-box > section:nth-child(4){
+    flex-basis: 23%;
+    min-width: 250px;
+}
+
+/* 메뉴, 검색, 마이페이지 */
+header ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
+#header-box-menu li{
+    margin: 0px 20px;
+}
+#header-box-mypage {
+    display: flex;
+    justify-content: flex-end;
+}
+#header-box-mypage li{
+    margin: 0px 15px;
+}
+header a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+}
+#search-area {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+#search-area fieldset {
+    width: 150px;
+    height: 35px;
+    background-color: #f6f6f6;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    border: none;
+    position: relative;
+    border: 1px solid transparent;
+}
+#query {
+    width: 115px;
+    height: 30px;
+    overflow-y: scroll;
+    font-size: 13px;
+    position: absolute;
+    top: 2px;
+    left: 5px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+#search-btn {
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    top: 10px;
+    right: 2px;
+    cursor: pointer;
+}
+
+
+
+/* 푸터 */
+footer {
+    height: 200px;
+    border-top: 1px solid rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* 푸터박스 공간 */
+#footer-box {
+    width: 1280px;
+}
+/* 푸터박스 위 내용 */
+#footer-box > section {
+    height: 150px;
+    display: flex;
+}
+/* 푸터박스 아래 내용 */
+#footer-box > article {
+    height: 50px;
+    border-top: 1px solid rgba(0, 0, 0, 0.5);
+    padding: 10px;
+}
+
+
+#footer-box > article a {
+    text-decoration: none;
+    color: black;
+    font-size: 12px;
+    font-weight: bold;
+}
+#footer-box > article span {
+    color: rgba(0, 0, 0, 0.5);
+}
+.footer-logo {
+    display: flex;
+    align-items: center;
+}
+.footer-logo img {
+    width: 140px;
+}
+.footer-nav {
+    display: flex;
+    width: 100%;
+}
+.footer-nav pre{
+    font-size: 12px;
+}
+.footer-nav > div:nth-child(1) {
+    flex-basis: 10%;
+    min-width: 140px;
+}
+.footer-nav > div:nth-child(2) {
+    flex-basis: 30%;
+}
+.footer-nav > div:nth-child(3) {
+    flex-basis: 30%;
+}
+.footer-nav > div:nth-child(4) {
+    flex-basis: 30%;
+}
+
+#footer-title {
+	font-size: 16px; 
+	font-weight: bold;
+}
+#footer-img {
+	height: 20px;
+}
