@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>product-sql.xml</comment>
+
+	<entry key="personList">
+SELECT PRODUCT_IMAGE, PRODUCT_NM
+FROM PRODUCT
+WHERE PART = ?
+	</entry>
+	<entry key=""></entry>
+	<entry key=""></entry>
+	<entry key=""></entry>
+	<entry key=""></entry>
+	<entry key=""></entry>
+
+
+</properties>

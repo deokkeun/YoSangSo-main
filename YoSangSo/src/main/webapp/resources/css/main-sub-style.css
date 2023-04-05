@@ -1,0 +1,56 @@
+/* 콘텐츠 */
+#content {
+    display: flex;
+    /* 콘텐츠 전체 크기(높이) 수정 부분 입니다 */
+    height: 1500px;
+}
+/* 컨텐츠 공간 */
+#content > section {
+    width: 1280px;
+    margin: 0 auto;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+/* 컨텐트 공간 내부 */
+.content-box {
+    display: flex;
+}
+/* 컨텐츠 공간 내부 왼쪽 영역 */
+.content-box-left {
+    flex-basis: 20%;
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.03);
+}
+/* 컨텐츠 공간 내부 오른쪽 영역 */
+.content-box-right {
+    flex-basis: 80%;
+}
+
+
+/* ----------------------------------------------------------------------------- */
+/* 컨텐츠 왼쪽 */
+/* 컨텐츠 왼쪽 박스내부 */
+.content-box-left-1 {
+    height: 100%;
+}
+/* 컨텐츠 왼쪽 박스내부 안에 박스 4개 */
+.content-box-left-1 > div {
+    margin: 100px 0;
+}
+/* 컨텐츠 왼쪽박스 title */
+.content-box-left-title {
+    width: 150px;
+    font-size: 16px;
+    font-weight: bold;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+    padding: 5px;
+}
+/* 컨텐츠 왼쪽 박스내부 title을 제외한 나머지 박스 */
+.content-box-left-1 > div div:not(:nth-child(1)) {
+    margin: 20px 10px;
+}
+/* 컨텐츠 왼쪽 박스 a태그 */
+.content-box-left-1 > div a {
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+}
