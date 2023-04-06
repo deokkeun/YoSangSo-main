@@ -17,7 +17,7 @@ import com.oreilly.servlet.MultipartRequest;
 import edu.kh.yosangso.board.model.service.ReviewService;
 import edu.kh.yosangso.board.model.vo.ReviewImage;
 import edu.kh.yosangso.common.MyRenamePolicy;
-
+// 프로덕트 다오, 리펀드 다오, 셀렉트리뷰 써블릿 주석 풀기
 @WebServlet("/board/reviewAdd")
 public class ReviewServlet extends HttpServlet{
 	
@@ -38,6 +38,11 @@ public class ReviewServlet extends HttpServlet{
 			String root = session.getServletContext().getRealPath("/"); // webapp 폴더까지 경로
 			String folderPath = "/resources/image/review/"; // 파일 저장 폴더 경로
 			String filePath = root + folderPath;
+			System.out.println();
+			System.out.println(filePath);
+			System.out.println();
+			
+			System.out.println(session.getServletContext());
 			
 			String encoding = "UTF-8"; // 파라미터중 파일을 제외한 파라미터(문자열)의 인코딩 지정
 			
@@ -72,7 +77,7 @@ public class ReviewServlet extends HttpServlet{
 					image.setImageReName( folderPath + rename); // 폴더 경로 + 변경명
 					System.out.println("5.03");
 					System.out.println(name);
-					image.setImageLevel(Integer.parseInt(name));
+					// image.setImageLevel(Integer.parseInt(name));
 					System.out.println("5-1");
 					imageList.add(image);
 					System.out.println("5-2");
@@ -82,16 +87,22 @@ public class ReviewServlet extends HttpServlet{
 				System.out.println("6");
 			} // while 끝
 			// 리뷰 내용 받아오기
-			String reviewContent = mpReq.getParameter("reivewAdd");
+			String reviewContent = mpReq.getParameter("reivewContentName");
 			// 리뷰 평점 받아오기
-			int reviewAddRate = Integer.parseInt(mpReq.getParameter("reviewAddRate"));
-			
-			session.setAttribute("msg", "리뷰 등록을 성공했습니다.");
+			int reviewAddRate = Integer.parseInt(mpReq.getParameter("reviewRate"));
 			
 			
-			result = service.reviewAdd(reviewContent, reviewAddRate,imageList);
 			
-			resp.getWriter().print(result);
+			
+			result = service.reviewAdd(reviewContent,reviewAddRate,imageList);
+			
+			if(result > 0 ) {
+				session.setAttribute("msg", "리뷰 등록을 성공했습니다.");
+			}else {
+				session.setAttribute("error", "리뷰 등록을 실패하였습니다.");
+			}
+			
+			resp.sendRedirect("reviewList");
 			
 			System.out.println("리뷰작성 서블릿 나감");
 		}catch(Exception e) {

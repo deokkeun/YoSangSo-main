@@ -56,7 +56,7 @@ public class RefundDAO {
 				int price = rs.getInt("PRICE");
 				int buyingRate = rs.getInt("BUYING_RATE");
 				
-				result.add(new Order(productName, orderNo, price, buyingRate));
+				// result.add(new Order(productName, orderNo, price, buyingRate));
 				
 			}
 			
@@ -129,7 +129,7 @@ public class RefundDAO {
 				String refundDate = rs.getString("REFUND_DATE");
 				String orderDate = rs.getString("ORDER_DATE");
 				
-				result.add(new Order(productName, memberNo, orderNo, price, buyingRate, refundDate, orderDate));
+			//	result.add(new Order(productName, memberNo, orderNo, price, buyingRate, refundDate, orderDate));
 			}
 			
 		}finally {
@@ -165,7 +165,7 @@ public class RefundDAO {
 				String refundDate = rs.getString("REFUND_DATE");
 				String orderDate = rs.getString("ORDER_DATE");
 				
-				result.add(new Order(productName, memberNo, orderNo, price, buyingRate, refundDate, orderDate));
+			//	result.add(new Order(productName, memberNo, orderNo, price, buyingRate, refundDate, orderDate));
 			}
 			
 		}finally {

@@ -103,11 +103,11 @@ public class ProductDAO {
 				String part = rs.getString("PART");
 				int productCount = rs.getInt("");
 				
-				productList.add(
-						new Product(productNo, productName, category, price, stock, productDate, sellRate,
-								explain, part, productCount)			
+				/*productList.add(
+						 new Product(productNo, productName, category, price, stock, productDate, sellRate,
+								 explain, part, productCount)			
 						
-						);
+						);*/
 				
 			} 
 			
