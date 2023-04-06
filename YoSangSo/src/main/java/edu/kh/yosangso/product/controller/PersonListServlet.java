@@ -29,9 +29,6 @@ public class PersonListServlet extends HttpServlet{
 			
 			new Gson().toJson(personList, resp.getWriter());
 			
-//			String path = "/WEB-INF/views/product/person.jsp";
-//			resp.sendRedirect(path);
-			
 		} catch(Exception e) {
 			e.printStackTrace();
 		}

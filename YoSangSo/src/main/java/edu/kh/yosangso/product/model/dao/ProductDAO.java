@@ -1,5 +1,4 @@
 package edu.kh.yosangso.product.model.dao;
-
 import static edu.kh.yosangso.common.JDBCTemplate.close;
 
 import java.io.FileInputStream;
@@ -12,6 +11,7 @@ import java.util.List;
 import java.util.Properties;
 
 import edu.kh.yosangso.cart.model.vo.ShoppingCart;
+import static edu.kh.yosangso.common.JDBCTemplate.*;
 import edu.kh.yosangso.product.model.vo.Product;
 
 public class ProductDAO {
@@ -169,10 +169,5 @@ public class ProductDAO {
 		
 		return result;
 	}
-
-	
-
-	
-	
 	
 }

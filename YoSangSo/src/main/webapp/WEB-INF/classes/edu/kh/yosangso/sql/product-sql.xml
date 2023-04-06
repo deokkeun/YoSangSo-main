@@ -3,6 +3,26 @@
 <properties>
 	<comment>product-sql.xml</comment>
 
+	<entry key="selectProduct">
+	SELECT PRODUCT_NO, PRODUCT_NM, CATEGORY , PRICE , STOCK , PRODUCT_DATE , SELL_RATE , EXPLAIN , PART
+	FROM PRODUCT
+	WHERE PRODUCT_NO = ? </entry>
+	
+	<entry key="DetailAddCart">
+	INSERT INTO CART (CART_NO , PRODUCT_NO, BUYING_RATE, MEMBER_NO)
+	VALUES (CART_SEQ.NEXTVAL, ?, ?, 2)
+	</entry>
+	
+	<entry key="DetailPurchase">
+	INSERT INTO CART (CART_NO , PRODUCT_NO, BUYING_RATE, MEMBER_NO)
+	VALUES (CART_SEQ.NEXTVAL, ?, ?, 2)
+	</entry>
+	
+	<entry key="personList">
+		SELECT PRODUCT_IMAGE, PRODUCT_NM
+		FROM PRODUCT
+		WHERE PART = ?
+	</entry>
 	<entry key=""></entry>
 	<entry key=""></entry>
 	<entry key=""></entry>

@@ -503,7 +503,7 @@ select * from product
 
                  <!-- 인체사진 플로팅바-->
                  <div class="floating">
-                    <a href="#"> 
+                    <a href="product/person"> 
                         <img id="people" src="resources/image/index/인체이미지누끼.png" >
                     </a>
                 </div>
