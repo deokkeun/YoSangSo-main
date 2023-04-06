@@ -1,3 +1,4 @@
+
 /* input박스 X버튼 제거 */
 /* IE의 경우 */
 input::-ms-clear,
@@ -45,6 +46,131 @@ header{
     display: flex;
     align-items: center;
     margin: auto;
+}
+
+@media all and (max-width: 800px){
+	.list-nav{
+	    display:none;
+	}
+	
+	.mypage-nav{
+		display : none;
+	}
+}
+
+@media all and (min-width: 800px){
+
+	.menu-btn{
+		display : none;
+	}
+	
+	.mypage-menu-btn{
+		display : none;
+	}
+	
+}
+
+.menu-btn{
+	position: relative;
+	
+}
+
+.menu-list{
+	display : none;
+	width: 100%;
+}
+
+.list-menu-div{
+	position :absolute;
+	display: none;	
+	margin-left: 10px;
+	margin-top : 2px;
+	flex-direction : column;
+	align-items: center;
+	justify-content: center;
+	border : 1px solid black;
+	border-radius: 3px;
+	width: 140px;
+	background-color: rgba(241, 240, 238, 1);
+}
+
+.menu-list li{
+	 display: none; 
+	 text-align: center;
+
+}
+
+.menu-list li > a{
+	 font-size: 17px;
+}
+
+.menu-btn:hover .menu-list{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.menu-btn:hover li{
+	display: block;
+	font-size:15px;
+	padding : 4px;
+}
+
+.menu-btn:hover .list-menu-div{
+	display: flex;
+}
+
+
+.mypage-menu-btn{
+	display : relative;
+}
+
+.mypage-menu-div{
+	position :absolute;
+	display: none;	
+	right: 20px;
+	margin-top : 2px;
+	flex-direction : column;
+	align-items: center;
+	justify-content: center;
+	border : 1px solid black;
+	border-radius: 3px;
+	width: 140px;
+	background-color: rgba(241, 240, 238, 1);
+}
+.mypage-menu-list li{
+	 display: none; 
+	 text-align: center;
+
+}
+
+.mypage-menu-list li > a{
+	 font-size: 17px;
+}
+.mypage-menu-btn:hover .mypage-menu-list{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.mypage-menu-btn:hover li{
+	display: block;
+	font-size:15px;
+	padding : 4px;
+}
+
+.mypage-menu-btn:hover .mypage-menu-div{
+	display: flex;
+}
+
+
+
+.menu-icon{
+	font-size:30px;
+	margin-left :20px;
+	cursor: pointer;
 }
 
 /* 헤더박스 공간 분할 */
@@ -196,3 +322,54 @@ footer {
 #footer-img {
 	height: 20px;
 }
+
+
+
+.content-container{
+    display: flex;
+    height: 100%;
+    width: 1280px;
+    justify-content: center;
+    margin : 0 auto;
+} 
+
+
+.content-container a{  
+    text-decoration: none;
+    color: black;
+}
+
+.content-container a:hover  {
+    text-decoration:underline;
+}
+
+
+
+/* 왼쪽사이드 */
+.leftSide {
+    flex-basis : 15%;
+    /* background-color:aqua; */
+}
+
+/* 가운데메인영역 */
+.center {
+    flex-basis : 70%;
+    display: flex;
+    flex-direction: column;
+    /* background-color:pink; */
+}
+
+/* 오른쪽사이드 */
+.rightSide {
+    flex-basis : 15%;
+    padding: 5px;
+    /* position: relative;
+    justify-content: center;
+    align-items: center;
+    justify-content: center; */
+    /* background-color:green; */
+ 
+}
+
+
+/* -------------------- 오른쪽 사이드 영역 --------------------  */

@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 
 <!-- 헤더 -->
 <header>
@@ -12,9 +12,23 @@
            </a>
        </section>
 
+
+       <div class="menu-btn">
+       	   <i class="fa-solid fa-bars menu-icon"></i>
+       	   <div class="list-menu-div">
+		       <ul class="menu-list">
+		            <li><a href="${contextPath}/product/allProduct">전제품</a></li>
+		            <li><a href="${contextPath}/product/newProduct">신상품</a></li>
+		            <li><a href="${contextPath}/product/bestProduct">베스트</a></li>
+		        </ul>
+       	   </div>
+       </div>
+            
+	
+       
        <!-- 메뉴 -->
        <section id="header-box-menu">
-           <nav>
+           <nav class="list-nav">
                <ul>
                    <li><a href="${contextPath}/product/allProduct">전제품</a></li>
                    <li><a href="${contextPath}/product/newProduct">신상품</a></li>
@@ -36,38 +50,40 @@
            </article>
        </section>
 
+   	   
+   	   <div class="mypage-menu-btn">
+			<i class="fa-solid fa-bars menu-icon"></i>
+			<div class="mypage-menu-div">
+				<ul  class="mypage-menu-list">
+                   <li>
+                       <a href="${contextPath}/cart/shoppingCart">장바구니</a>
+                   </li>
+                   <li>
+                       <a href="${contextPath}/member/myPageInfo">마이페이지</a>
+                   </li>
+                   <li>
+                       <a href="${contextPath}/member/login">로그인</a>
+                   </li>
+                   <li>
+                       <a href="${contextPath}/board/faq">FAQ</a>
+                   </li>
+               </ul>
+			</div>
+   	   </div>
+
        <!-- 마이페이지 -->
        <section id="header-box-mypage">
-           <nav>
+           <nav class="mypage-nav">
                <ul>
                    <li>
                        <a href="${contextPath}/cart/shoppingCart" class="fa-solid fa-cart-shopping"></a>
                    </li>
-                   <c:choose>
-                  	<c:when test="${empty loginMember}">
-                  		<li>
-	                       <a href="${contextPath}/member/signUp" class="fa-solid fa-user"></a> 
-	                    </li>              	
-                  	</c:when>
-                  	<c:otherwise>
-                  		<li>
-	                       <a href="${contextPath}/member/myPageInfo" class="fa-solid fa-user"></a>
-	                    </li>
-                  	</c:otherwise>
-                  </c:choose>
-                  
-                  <c:choose>
-                  	<c:when test="${empty loginMember}">
-                  		<li>
-	                       <a href="${contextPath}/member/login">로그인</a>    
-	                    </li>              	
-                  	</c:when>
-                  	<c:otherwise>
-                  		<li>
-	                       <a href="${contextPath}/member/logout">로그아웃</a>
-	                    </li>
-                  	</c:otherwise>
-                  </c:choose>
+                   <li>
+                       <a href="${contextPath}/member/myPageInfo" class="fa-solid fa-user"></a>
+                   </li>
+                   <li>
+                       <a href="${contextPath}/member/login">로그인</a>
+                   </li>
                    <li>
                        <a href="${contextPath}/board/faq">FAQ</a>
                    </li>

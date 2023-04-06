@@ -1,4 +1,3 @@
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"  pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
@@ -11,10 +10,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- 헤더/풋터 css -->
-    <link rel="stylesheet" href="resources/css/main-style.css">
-    <!-- 메인페이지 css  -->
-    <link rel="stylesheet" href="resources/css/index.css">
+    <link rel="stylesheet" href="${contextPath }/resources/css/index.css">
+    <link rel="stylesheet" href="${contextPath }/resources/css/main-style.css">
     <script src="https://kit.fontawesome.com/881d1deef7.js" crossorigin="anonymous"></script>
     
     <!-- 슬라이더 파일다운받은거 -->
@@ -45,7 +42,7 @@ select * from product
 
     <!-- 헤더, 컨텐츠 -->
     <main>
-    
+
     	<!-- 헤더 -->
     	<jsp:include page="/WEB-INF/views/common/header.jsp"/>
     
@@ -53,6 +50,7 @@ select * from product
         <!-- 내용 작성 공간입니다.(template2) -->
         <!-- content 전체 감싸는 영역 -->
         <section class="content-container">
+        
 
             <!-- 왼쪽사이드 -->
             <section class="leftSide">
@@ -512,7 +510,6 @@ select * from product
             
             </section>
 
-
         </section>
         <!-- content 전체 감싸는 영역 끝 -->
 
@@ -528,6 +525,7 @@ select * from product
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
    
     <!-- main.js 연결 -->
+    <script src="${contextPath}/resources/js/index.js"></script>
     <script src="${contextPath}/resources/js/main.js"></script>
 </body>
 </html>

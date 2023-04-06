@@ -3,11 +3,8 @@
 <properties>
 	<comment>product-sql.xml</comment>
 
-	<entry key="personList">
-SELECT PRODUCT_IMAGE, PRODUCT_NM
-FROM PRODUCT
-WHERE PART = ?
-	</entry>
+	<entry key=""></entry>
+	<entry key=""></entry>
 	<entry key=""></entry>
 	<entry key=""></entry>
 	<entry key=""></entry>

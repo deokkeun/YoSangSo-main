@@ -1,13 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+
+
 <properties>
+
 	<comment>board-sql.xml</comment>
 
-	<entry key=""></entry>
-	<entry key=""></entry>
-	<entry key=""></entry>
-	<entry key=""></entry>
-	<entry key=""></entry>
+
+	<!-- 게시물 등록 쿼리 -->
+	<!--  컬럼 순서  -->
+	<entry key="inquiryAdd">
+		INSERT INTO INQUIRY
+		VALUES(INQUIRY_SEQ.NEXTVAL, ?, DEFAULT, 1, ?)
+	</entry>
+
+	
+	
+	<!-- 게시물 삭제 쿼리 -->
+	<entry key="inquiryDelete">
+		DELETE FROM INQUIRY
+	</entry>
+	
+	
+	<!-- 게시물 목록 조회 쿼리 -->
+	<entry key="selectInquirySelect">
+		SELECT * FROM(
+		   SELECT ROWNUM RNUM , A.* FROM(
+		      SELECT INQUIRY_NO, INQUIRY_CONTENT, MEMBER_NO, INQUIRY.MEMBER_NM,
+		         TO_CHAR( INQUIRY_DATE, 'YYYY-MM-DD' ) AS INQUIRY_DATE 
+		      FROM INQUIRY
+		      JOIN MEMBER USING(MEMBER_NO)
+		      ORDER BY INQUIRY_NO DESC
+		   ) A
+		)
+		WHERE RNUM BETWEEN ? AND ?
+	</entry>
+	
+	
+	<!--  게시물 개수 조회 쿼리 -->
+	
+	<entry key="inquiryCount">
+		SELECT COUNT(*) FROM INQUIRY
+	</entry>
+	
+	
+	<!-- 게시물 수정 쿼리 -->
+	<entry key="inquiryUpdate">
+		UPDATE INQUIRY
+		SET INQUIRY_CONTENT = ?
+	</entry>
+	
+	
+	
+	
 	<entry key=""></entry>
 	<entry key=""></entry>
 
