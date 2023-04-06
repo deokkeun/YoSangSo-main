@@ -1,0 +1,336 @@
+
+/* ---------------------------------------------------------- */
+
+/* 콘텐츠 */
+#content {
+    display: flex;
+    /* 콘텐츠 전체 크기(높이) 수정 부분 입니다 */
+    height: 1500px;
+}
+/* 컨텐츠 공간 */
+#content > section {
+    width: 1280px;
+    margin: 0 auto;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+/* 컨텐트 공간 내부 */
+.content-box {
+    display: flex;
+}
+/* 컨텐츠 공간 내부 왼쪽 영역 */
+.content-box-left {
+    flex-basis: 20%;
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.03);
+}
+/* 컨텐츠 공간 내부 오른쪽 영역 */
+.content-box-right {
+    flex-basis: 80%;
+}
+
+
+/* ----------------------------------------------------------------------------- */
+/* 컨텐츠 왼쪽 */
+/*
+컨텐츠 왼쪽 박스내부
+.content-box-left-1 {
+    height: 100%;
+}
+컨텐츠 왼쪽 박스내부 안에 박스 4개
+.content-box-left-1 > div {
+    margin: 100px 0;
+}
+컨텐츠 왼쪽박스 title
+.content-box-left-title {
+    width: 150px;
+    font-size: var(--font-size-x-large);
+    font-weight: bold;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+    padding: 5px;
+}
+컨텐츠 왼쪽 박스내부 title을 제외한 나머지 박스
+.content-box-left-1 > div div:not(:nth-child(1)) {
+    margin: 20px 10px;
+}
+컨텐츠 왼쪽 박스 a태그
+.content-box-left-1 > div a {
+    text-decoration: none;
+    color: black;
+    font-size: var(--font-size-medium);
+}
+*/
+
+/* ---------------------------------------------------------- */
+/* 컨텐츠 오른쪽 내용 */
+
+
+
+
+.right{
+    flex-basis:90%;
+    height: 100%;
+    /* border: 2px solid black; */
+    width: 100%;
+    display: flex;
+}
+
+
+.right > div:nth-child(1), .right > div:nth-child(3){
+    flex-basis:3%;
+}
+
+
+
+.right > div:nth-child(2){
+    flex-basis: 94%;
+}
+
+/* 리뷰 작성 박스 */
+.review-content{
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+
+
+.review-content1{
+    display: flex;
+    flex-direction: column;
+    /* border: 3px solid pink; */
+    align-items: center;
+}
+
+
+
+.review-content1 > div:nth-child(1){
+    display: flex;
+    width: 100%;
+    /* border: 1px solid orange; */
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+}
+
+
+
+.review-content1 > div:nth-child(2){
+    flex-basis: 60%;
+    
+}
+
+.review-content1 > div:nth-child(3){
+    display: flex;
+    flex-basis: 10%;
+    width: 800px;
+    /* border-bottom: 2px solid rgba(0,0,0,0.2); */
+    justify-content: center;
+    align-items: center;
+}
+
+#con-box{
+    border: 1px solid black;
+    display: flex;
+    width: 800px;
+    height: 180px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+
+#review-img{
+    width: 178px;
+    height: 178px;
+    /* padding-top : 10px; */
+}
+
+#review-imgBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(0,0,0,0.1);
+    width: 210px;
+}
+
+#review-imgExpalin{
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid green; */
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    padding-left : 30px;
+}
+
+
+
+/* 리뷰 두 번째 박스 (리뷰 작성하는 구간) */
+
+
+.review-content2 {
+    flex-basis: 60%;
+    display: flex;
+    flex-direction: column;
+    /* border: 3px solid magenta; */
+}
+
+
+.review-content2-1{
+    flex-basis: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    /* border: 5px solid orange; */
+}
+
+
+
+
+.review-content2-1 > div:nth-child(1){
+    display: flex;
+    /* border: 5px solid blue; */
+    flex-basis:20%;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.review-content2-1 > div:nth-child(2){
+    width: 100%;
+    display: flex;
+    /* border: 5px solid blanchedalmond; */
+    flex-basis: 70%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+
+}
+
+.review-content2-1 > div:nth-child(3){
+    height: 100%;
+    width: 800px;
+    flex-basis:10%;
+    /* border-bottom: 2px solid rgba(0,0,0,0.2); */
+}
+
+
+
+
+
+.review-content2-2{
+    display: flex;
+    flex-basis: 30%;
+    /* border: 5px solid red; */
+    display: flex;
+    flex-direction: column;
+}
+
+.review-content2-2 > div:nth-child(1){
+    display: flex;
+    flex-basis : 20%;
+    /* border: 5px solid blue; */
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0;
+    
+}
+
+.review-content2-2 > div:nth-child(2){
+    /* border: 5px solid greenyellow; */
+    flex-basis: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+
+.review-content2-3{
+    display: flex;
+    flex-direction: column;
+    /* border : 5px solid green; */
+    flex-basis: 35%;
+    margin-top: 15px;
+}
+
+
+.review-file{
+    height: 100px;
+    display: flex;
+    padding-left: 200px;
+    padding-top: 30px;
+}
+
+.review-file > h1{
+    width: 70px;
+}
+
+
+
+
+
+.review-img{
+    padding-left: 200px;
+    flex-basis: 80%;
+    display: flex;
+    /* border : 1px solid red; */
+    align-items: center;
+}
+
+#reviewImage {
+    width: 100px;
+    height: 100px;
+    border: 2px solid rgba(0,0,0,0.2);
+}
+
+
+
+/* 리뷰 세 번째 박스 (취소, 확인 버튼 구간) */
+
+.review-content3{
+    display: flex;
+    height: 115px;
+    width: 100%;
+    /* border: 1px solid blue; */
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    display: flex;
+    /* border: 1px solid red; */
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.review-content3 button{
+    margin-right: 50px;
+}
+
+#reviewCancel{
+    width: 130px;
+    height: 50px;
+    border:1px solid #575C63;
+    border-radius: 10%;
+    background-color: white;
+    color: #2678F3;
+}
+
+#reviewUpdate{
+    width: 130px;
+    height: 50px;
+    border:1px solid #575C63;
+    border-radius: 10%;
+    background-color: #2678F3;
+    color: white;
+}
