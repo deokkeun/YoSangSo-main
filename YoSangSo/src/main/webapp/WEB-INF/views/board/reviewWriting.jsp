@@ -63,7 +63,7 @@
                                             <div><h1>이현경님, 상품은 어떠셨어요?</h1></div>
                                             <div>
                                                 <label for="">평점</label>
-                                                <input type="number" id="reviewAddRate">
+                                                <input type="number" id="reviewAddRate" name="reviewRate">
                                             </div>
                                             
                                             <div></div>
@@ -72,7 +72,7 @@
                                         <div class="review-content2-2">
                                             <div><h1>리뷰 작성</h1></div>
                                             <div>
-                                                <textarea name="" id="reivewTexarea" cols="100" rows="10" style="resize:none" placeholder="
+                                                <textarea name="reivewContentName" id="reivewTexarea" cols="100" rows="10" style="resize:none" placeholder="
                                                 다른 고객님에게 도움이 되도록 상품에 대한 솔직한 평가를 남겨주세요.
                                                 자세한 리뷰 내용은 다른 구매자분에게 큰 도움이 됩니다.">
                                                 </textarea>

@@ -4,10 +4,16 @@
 	<comment>board-sql.xml</comment>
 	
 	<entry key="reviewAdd">
-		INSERT INTO REVIEW VALUES(REVIEW_SEQ.NEXTVAL, ?, DEFAULT, ?, 1)
+		INSERT INTO REVIEW VALUES(27, ?, DEFAULT, ?, 1, 1)
 	</entry>
 	
-	<entry key=""></entry>
+	
+	
+	<entry key="reviewImageAdd">
+		INSERT INTO REVIEW_IMG VALUES(REVIEW_IMG_SEQ.NEXTVAL, ?, ?,1,5, ?)
+	</entry>
+	
+	
 	<entry key=""></entry>
 	<entry key=""></entry>
 	<entry key=""></entry>

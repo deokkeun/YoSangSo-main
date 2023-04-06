@@ -109,7 +109,7 @@ public class ProductDAO {
 						new Product(productNo, productName, category, price, stock, productDate, sellRate,
 								explain, part, img, imgurl)			
 						);
-			
+
 			} 
 			
 		} finally {
