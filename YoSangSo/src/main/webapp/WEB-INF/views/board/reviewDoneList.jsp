@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>
 
 
 <!DOCTYPE html>
@@ -12,10 +11,10 @@
     <link rel="stylesheet" href="${contextPath}/resources/css/main-style.css">
     <link rel="stylesheet" href="${contextPath}/resources/css/main-sub-style.css">
 
-    <link rel="stylesheet" href="${contextPath}/resources/css/review/ReviewListPage.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/review/ReviewDoneListPage.css">
 
     <script src="https://kit.fontawesome.com/881d1deef7.js" crossorigin="anonymous"></script>
-    <title>리뷰리스트</title>
+    <title>index</title>
 </head>
 <body>
     <!-- 헤더, 컨텐츠 -->
@@ -51,13 +50,13 @@
                                     <div class="rightReview">
         
                                         <div class="rigthReviewTop">
-                                            <div><a href="" class="inner-review-tab">작성 가능한 리뷰 (0)</a></div>
-                                            <div><a href="" class="inner-review-tab">작성한 리뷰 (0)</a></div>
+                                            <div><a href="reviewList" class="inner-review-tab">작성 가능한 리뷰 (0)</a></div>
+                                            <div><a href="reviewDoneList" class="inner-review-tab">작성한 리뷰 (0)</a></div>
                                         </div>
 
                                         <div class="rightReivewContent">
                                     <form>
-											<c:forEach var="list" items="${list}">
+                                    		<c:forEach var="list" items="${list }">
                                             <div class="rightProductImg"> 
 
                                                 <div>
@@ -82,8 +81,10 @@
                                     </form> 
 
                                         </div>
+        
                                     </div>
         
+
                                     <div class="reviewListBox">
                                         <button> < </button> 
                                         <span><a href="">1</a></span>
@@ -93,23 +94,18 @@
                                         <span><a href="">5</a></span>
                                         <button> > </button>
                                     </div>
-        
+                                    
                                 </div>
         
                                 <!-- 컨텐트 공백 -->
                                 <div></div>
                                 
                             </section>
-
                 </section>
 
             <!-- 컨텐츠 내용 끝 -->
             </section>
-
         </section>
-
-
-
     <!-- 헤더, 컨텐츠 끝 -->
     </main>
 

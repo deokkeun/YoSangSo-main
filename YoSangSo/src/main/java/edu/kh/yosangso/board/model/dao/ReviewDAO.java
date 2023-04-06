@@ -75,27 +75,23 @@ public class ReviewDAO {
 	public int reviewImageAdd(Connection conn, ReviewImage image) throws Exception{
 		
 		int result = 0;
-		
+		System.out.println("리뷰 IMG DAO 진입");
 		try {
 			String sql = prop.getProperty("reviewImageAdd");
 			
 			pstmt = conn.prepareStatement(sql);
 			
-			
-			
 			pstmt.setString(1, image.getImageReName());
 			pstmt.setString(2,  image.getImageOriginal());
-			pstmt.setInt(3, image.getImageLevel());
-			pstmt.setInt(4, image.getReviewdNo());
+			//pstmt.setInt(3, image.getImageLevel());
+			pstmt.setInt(3, image.getReviewNo());
 			
 			result = pstmt.executeUpdate();
-			
+			System.out.println("리뷰 IMG DAO 업데이트");
 		}finally {
 			close(pstmt);
 		}
-		
-		
+		System.out.println("리뷰 IMG DAO 나옴");
 		return result;
 	}
-
 }

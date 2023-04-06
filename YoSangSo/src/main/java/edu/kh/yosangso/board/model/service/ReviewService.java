@@ -34,16 +34,17 @@ public class ReviewService {
 		result = dao.reviewAdd(conn, reviewContent, reviewAddRate);
 		
 		if(result > 0 ) {
-			
+			System.out.println("리뷰 이미지 if문 진입");
 			for(ReviewImage image : imageList) {
-				result = dao.reviewImageAdd(conn,image);
 				if(result == 0) { // 이미지 삽입 실패
+					System.out.println("리뷰 이미지 if문 reulst == 0 진입");
 					break;
+				}else {
+					System.out.println("리뷰 이미지 else문 진입");
+					result = dao.reviewImageAdd(conn,image);
 				}
 			}
 		}
-		
-		
 		if(result > 0) {
 			commit(conn);
 		}else {

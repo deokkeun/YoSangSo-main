@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>board-sql.xml</comment>
+	
+	<entry key="getTotal">
+		SELECT COUNT(*) TOTAL FROM REVIEW WHERE MEMBER_NO=?
+	</entry>
+	<entry key="getList">
+		<![CDATA[ SELECT  * FROM  (SELECT  rownum rn, a.* FROM  (SELECT PRODUCT_NO, PRODUCT.PRODUCT_NM, ORDER_DATE  FROM "ORDER" o JOIN ORDER_DETAIL od USING(ORDER_NO) JOIN PRODUCT USING(PRODUCT_NO) WHERE MEMBER_NO = ? MINUS SELECT PRODUCT_NO, PRODUCT.PRODUCT_NM, ORDER_DATE  FROM "ORDER" JOIN ORDER_DETAIL od USING(ORDER_NO) JOIN PRODUCT USING(PRODUCT_NO) NATURAL JOIN REVIEW WHERE REFUND_FL='N' AND MEMBER_NO = ?) a ) WHERE  rn > ? AND  rn <= ? ]]>
+	</entry>
+	<entry key=""></entry>
+	<entry key=""></entry>
+	<entry key=""></entry>
+	<entry key=""></entry>
+	<entry key=""></entry>
+
+
+</properties>

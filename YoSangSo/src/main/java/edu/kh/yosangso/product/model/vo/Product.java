@@ -27,5 +27,33 @@ public class Product {
 	private int productCount;
 	
 	
+	public Product(int productNo, String productName, String category, int price, int stock, String productDate,
+			int sellRate, String explain, String productImage, String productImageUrl, String part) {
+		super();
+		this.productNo = productNo;
+		this.productName = productName;
+		this.category = category;
+		this.price = price;
+		this.stock = stock;
+		this.productDate = productDate;
+		this.sellRate = sellRate;
+		this.explain = explain;
+		this.productImage = productImage;
+		this.productImageUrl = productImageUrl;
+		this.part = part;
+	}
+
+
+	public Product(int productNo, String productName, String productDate) {
+		super();
+		this.productNo = productNo;
+		this.productName = productName;
+		this.productDate = productDate;
+	}
+	
+	
+	
+	
+	
 	
 }

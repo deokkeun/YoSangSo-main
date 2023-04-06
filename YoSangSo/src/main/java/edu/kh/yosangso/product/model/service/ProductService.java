@@ -22,11 +22,11 @@ public class ProductService {
 	public List<Product> selectProduct(int productNo) throws Exception{
 		Connection conn = getConnection();
 		
-		List<Product> list = dao.selectProduct(conn, productNo);
+		List<Product> productlist = dao.selectProduct(conn, productNo);
 		
 		close(conn);
 		
-		return list;
+		return productlist;
 	}
 
 	

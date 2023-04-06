@@ -12,7 +12,7 @@ public class ShoppingCartService {
 	
 	ShoppingCartDAO dao = new ShoppingCartDAO();
 
-	public List<ShoppingCart> shoppingCart(String userNum) throws Exception{
+	public List<ShoppingCart> shoppingCart(int userNum) throws Exception{
 		
 		Connection conn = getConnection();
 		

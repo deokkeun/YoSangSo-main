@@ -32,7 +32,7 @@ public class PayServlet extends HttpServlet{
 			int totalPrice = 0;
 			
 			for(Product product : payList) {
-				productTotalPrice += product.getPrice() * product.getProductCount();
+				//productTotalPrice += product.getPrice() * product.getProductCount();
 			}
 			
 			if(productTotalPrice > 10000) {
