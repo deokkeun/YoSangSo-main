@@ -1,0 +1,406 @@
+.content-container{
+    display: flex;
+    height: 100%;
+    width: 1280px;
+    justify-content: center;
+    margin : 0 auto;
+} 
+
+
+.content-container a{  
+    text-decoration: none;
+    color: black;
+}
+
+.content-container a:hover  {
+    text-decoration:underline;
+} 
+
+
+
+/* 왼쪽사이드 */
+.leftSide {
+    flex-basis : 15%;
+    /* background-color:aqua; */
+}
+
+/* 가운데메인영역 */
+.center {
+    flex-basis : 70%;
+    display: flex;
+    flex-direction: column;
+    /* background-color:pink; */
+}
+
+/* 오른쪽사이드 */
+.rightSide {
+    flex-basis : 15%;
+    padding: 5px;
+    /* background-color:green; */
+}
+
+
+
+
+
+/* -------------------- 오른쪽 사이드 영역 --------------------  */
+
+
+/* 인체사진 */
+#people {
+    width: 100px;
+    height:300px;
+    padding: 50px 0px 40px 0px;
+    /* position: absolute; */
+}
+
+
+
+/* 홈페이지 탑버튼 */
+#topBtn{
+	position: fixed;
+	right: 90px;
+    /* left : 25px; */
+	bottom: 25px;
+	display: none;
+	z-index: 9;
+}
+
+
+
+/* 인체사진 플로팅바 */
+.floating {
+    position: fixed; 
+    right: 50%; 
+    top: 180px; 
+    margin-right: -720px;
+    text-align:center;
+    width: 120px;
+}
+
+
+
+/* -------------------- 컨텐트 가운데 영역  ---------------- */
+
+
+
+
+/* quickMenu */
+.center > div:nth-child(1) {
+    display: flex;
+    flex-basis: 10%;
+}
+
+/* bestItem */
+.center > div:nth-child(2) {
+    display: flex;
+    flex-basis: 80%;
+    flex-direction: column;
+}
+
+/* numListBox */
+.center > div:nth-child(3) {
+    flex-basis: 10%;
+    display: flex; 
+}
+
+
+/******************* 퀵메뉴 부분 css ******************/
+
+
+
+.quickMenu {
+    margin : 70px 0px 0px 0px;
+    /* background-color:darkkhaki; */
+}
+
+.quickMenu > a {
+    width: 200px;
+    text-decoration: none;
+    border: solid 1px black;
+    align-items: center;
+    text-align: center;
+
+    /* font-weight: bold; */
+    color: black;
+  
+   
+}
+
+
+.quickMenu > a:hover {
+    width: 200px;
+    /* background-color :  rgb(181, 181, 181); */
+    transition-duration: 0.3s;
+    color: #2678F3;
+    text-decoration: none;
+}
+
+
+/* 퀵메뉴이름 */
+.mainFont {
+    align-items: center;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 16px;
+    /* border-bottom: 1px solid grey; */
+}
+
+
+
+
+/*********************제품 부분 css  ****************/
+
+
+
+.bestItem > .line:nth-child(1) {
+    display:flex;
+    flex-basis : 15%;
+    margin-top: 50px;
+    /* background-color: red; */
+}
+
+
+.bestItem > .line:nth-child(2) {
+    display:flex;
+    flex-basis : 15%;
+    margin-top: 40px;
+    /* background-color: orange; */
+}
+.bestItem > .line:nth-child(3) {
+    display:flex;
+    flex-basis : 15%;
+    margin-top: 40px;
+    /* background-color: yellow; */
+}
+.bestItem > .line:nth-child(4) {
+    display:flex;
+    flex-basis : 15%;
+    margin-top: 40px;
+    /* background-color: lightgreen; */
+}
+.bestItem > .line:nth-child(5) {
+    display:flex;
+    flex-basis : 15%;
+    margin-top: 40px;
+    /* background-color: skyblue; */
+}
+.bestItem > .line:nth-child(6) {
+    display:flex;
+    flex-basis : 15%;
+    margin-top: 40px;
+    /* background-color: purple; */
+}
+
+
+
+
+
+
+.BNitem {
+    display:flex;
+    flex-basis:25%;
+    height: 300px;
+    /* margin-left: 15px; */
+    /* padding: 15px;   */
+    flex-direction: column;
+    position: relative;
+}
+
+
+/* 제품  */
+.Bitem2, .Bitem3, .Bitem4 {
+    display:flex;
+    flex-basis:25%;
+    height: 285px;
+    margin-left: 20px;
+    /* padding-left: 15px;   */
+    flex-direction: column;
+    position: relative;
+}
+
+
+
+/* 제품 사진 영역 */
+.BNitemPic {
+    flex-basis: 70%;
+    border: 1px solid rgb(181, 181, 181);
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    height: 200px;
+    position: relative;
+    z-index : -1;
+    /* background-color:blue; */
+    /* width: 100%;
+    height: 100%; */
+}
+
+
+/* 제품 사진 */
+.BNitemPic img{
+    width: 100%; 
+    height: 100%;
+    object-fit: contain;
+}
+
+
+/* 제품 이름 글씨 효과 */
+.itemName a:hover, .BNitemName a:hover {
+    text-decoration: underline;
+}
+
+
+/* 제품 가격 글씨 */
+.BNitemPrice{
+    flex-basis: 10%;
+    font-size: 14px;
+    text-align: left;
+    color:brown;
+    padding: 5px;
+    position: relative;
+    
+    z-index : -1;
+    /* background-color: red; */
+} 
+
+
+/* 제품명 글씨 */
+.BNitemName{
+    flex-basis: 20%;
+    padding: 5px;
+    font-size: 12px;
+    position: relative;
+    /* z-index : -1; */
+
+    /* z-index 설정해제하면 글씨가 보이고 안하면 a태그 호버설정이 안되고
+    어케해야되나요ㅠㅠㅠ*/
+
+    /* text-decoration: underline; */
+    /* background-color: purple; */
+}
+
+
+
+
+/********************* 페이지네이션 부분 css  ****************/
+
+
+/* 숫자페이지 설정 */
+.numListBox{
+    display: flex;
+    /* border:1px solid black; */
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    margin : 100px 0px 100px 0px;
+}
+
+
+#numListBtnBox {
+    margin-right: 15px;
+}
+
+#numListBtnBox2{
+    margin-left: 15px;
+}
+
+
+/* 왼쪽 버튼설정 */
+#movePrev { 
+    padding: 6px 9px 6px 7px;
+    /* 상 우 하 좌 */
+    border: 1px solid rgb(181, 181, 181);
+    border-radius: 3px;
+    color: white;
+}
+
+/* 오른쪽버튼 설정 */
+#moveNext { 
+    padding: 6px 7px 6px 9px;
+    /* 상 우 하 좌 */
+    border: 1px solid rgb(181, 181, 181);
+    border-radius: 3px;
+    color: white;
+}
+
+
+#listBox > a{
+    margin: 0 10px;
+    color: black;
+    text-decoration: none;
+}
+
+
+
+/************************* 제품  호버값  ******************/
+.BNitem > a {
+    display: block;
+    width: auto;
+    text-decoration: none;
+    margin: 0px;
+}
+
+
+
+/* 사진 밖으로 나가면 안보임 */
+.BNitem > a  {
+    position: relative;
+    overflow: hidden;
+   
+    /* 요소의 영역 가리기 */
+}
+
+
+
+/* 자세히보기 오쏘뮬이윤하이하이 */
+.BNitem > a > .BNitemPic > figcaption {
+    position: absolute;
+    bottom: 250px;
+    left: 140px;
+    /* top: 50px; */
+    margin : auto;
+    z-index: 1;
+    color : #fff;
+    font-size: 12px;
+    text-align : center;
+    transition: all .5s;
+    
+}
+
+/* 요소의 가로 넓이 */
+.BNitem > a > .BNitemPic img {
+    width: 100%;
+    position: absolute;
+    z-index : -1;
+}
+
+/* 검은화면 속 글씨 내려오는 위치설정 */
+.BNitem > a:hover figcaption{ 
+    bottom: 50%;
+}
+
+
+/* 검은화면 설정 */
+.BNitem > a .BNitemPic::after {
+    content:'';
+    display:block;
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background:rgba(0,0,0, .5);
+    z-index: -1;
+    opacity: 0;
+    transition: all.30s;
+    margin: 0px 0px 0px 0px;
+
+}
+
+.BNitem > a:hover .BNitemPic::after {
+    opacity: 1;
+}   
+
+
