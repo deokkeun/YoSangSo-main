@@ -1,4 +1,3 @@
-package edu.kh.yosangso.product.model.dao;
 
 import static edu.kh.yosangso.common.JDBCTemplate.close;
 
@@ -101,14 +100,16 @@ public class ProductDAO {
 				int sellRate = rs.getInt("SELL_RATE");
 				String explain = rs.getString("EXPLAIN");
 				String part = rs.getString("PART");
+
 				int productCount = rs.getInt("");
+				String img = rs.getString("");
+				String imgurl = rs.getString("");
 				
-				/*productList.add(
-						 new Product(productNo, productName, category, price, stock, productDate, sellRate,
-								 explain, part, productCount)			
-						
-						);*/
-				
+				productList.add(
+						new Product(productNo, productName, category, price, stock, productDate, sellRate,
+								explain, part, img, imgurl)			
+						);
+
 			} 
 			
 		} finally {
