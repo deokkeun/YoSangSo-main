@@ -26,7 +26,7 @@ public class SelectReviewServlet extends HttpServlet{
 			
 			BoardService service = new BoardService();
 			
-			BoardList = service.selectBoard(pro);
+			//BoardList = service.selectBoard(pro);
 			
 		} catch(Exception e) {
 			e.printStackTrace();

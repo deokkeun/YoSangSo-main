@@ -98,10 +98,10 @@ select * from product
                         <!-- 베스트제품1 -->
                      
                         <div class="BNitem Bitem1">  
-                            <a href="#">  
+                            <a href="product/productDetail?ProductNo=1">  
                                 <div class="BNitemPic bestItem1Pic"> 
                                     <figcaption>"${rs.rows[0]['PRODUCT_NM']}"</figcaption> 
-                                    <img src="resources/image/product/${rs.rows[28]['PRODUCT_NM']}.jpg"  
+                                    <img src="resources/image/product/${rs.rows[0]['PRODUCT_NM']}.jpg"  
                                         alt="제품사진" id="bestItemPhot1"> 
                                 </div>
                             </a>

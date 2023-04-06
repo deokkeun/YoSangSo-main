@@ -35,7 +35,7 @@ public class ShoppingCartDAO {
 	}
 
 
-	public List<ShoppingCart> shoppingCart(Connection conn, String userNum) throws Exception{
+	public List<ShoppingCart> shoppingCart(Connection conn, int userNum) throws Exception{
 		
 		List<ShoppingCart> cartList = new ArrayList<>();
 		
@@ -45,7 +45,7 @@ public class ShoppingCartDAO {
 			
 			pstmt = conn.prepareStatement(sql); 
 			
-			pstmt.setString(1, userNum);
+			pstmt.setInt(1, userNum);
 			
 			rs = pstmt.executeQuery();
 			
