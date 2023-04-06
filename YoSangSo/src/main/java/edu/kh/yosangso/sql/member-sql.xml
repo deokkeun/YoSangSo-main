@@ -2,13 +2,52 @@
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties>
 	<comment>member-sql.xml</comment>
-
-	<entry key=""></entry>
-	<entry key=""></entry>
-	<entry key=""></entry>
-	<entry key=""></entry>
-	<entry key=""></entry>
-	<entry key=""></entry>
+	<!-- 로그인 정보 -->
+	<entry key="login">
+		SELECT MEMBER_NO, MEMBER_EMAIL, MEMBER_PW, MEMBER_NM, ADDRESS, PHONE, SECESSION
+		FROM MEMBER
+		WHERE MEMBER_EMAIL = ?
+		AND MEMBER_PW = ?
+	</entry>
+	<!-- 이메일 중복 검사 -->
+	<entry key="emailDupCheck">
+		SELECT COUNT(*)
+		FROM MEMBER
+		WHERE MEMBER_EMAIL = ?
+		AND SECESSION = 'N'
+	</entry>
+	<!-- 인증번호 수정 -->
+	<entry key="updateCertification">
+		UPDATE CERTIFICATION
+		SET C_NUMBER = ?,
+		ISSUE_DT = SYSDATE
+		WHERE EMAIL = ?
+	</entry>
+	<!-- 인증번호 생성 -->
+	<entry key="insertCertification">
+		INSERT INTO CERTIFICATION VALUES(?, ?, SYSDATE)
+	</entry>
+	<!-- 인증번호 확인 -->
+	<entry key="checkNumber">
+		SELECT 
+		   CASE WHEN (SELECT '1' FROM CERTIFICATION
+		            WHERE EMAIL = ?
+		            AND C_NUMBER = ?)  = 1
+		   
+	      	THEN NVL( (SELECT '1' FROM CERTIFICATION
+		            WHERE EMAIL = ?
+		            AND ISSUE_DT + (INTERVAL '5' MINUTE) >= SYSDATE) , '2') 
+			
+		      ELSE '3'	
+		   END			
+		FROM DUAL
+	</entry>
+	<!-- 회원가입 -->
+	<entry key="signUpBtn">
+		INSERT INTO 
+		MEMBER(MEMBER_NO, MEMBER_EMAIL, MEMBER_PW, SECESSION, ENROLLMENT_DATE) 
+		VALUES(YOSANGSO.MEMBER_SEQ.NEXTVAL, ?, ?, DEFAULT, SYSDATE)
+	</entry>
 	<entry key=""></entry>
 
 
