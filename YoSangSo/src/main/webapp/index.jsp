@@ -508,6 +508,21 @@ select * from product
                     </a>
                 </div>
             
+            <form action="cart/shoppingCart" method="get">
+				<input type="text" name="userNum">
+				<button>담기</button>
+			</form>
+            <form action="refund" method="get">
+				<input type="text" name="memberNo">
+				<button>환불페이지 부르기</button>
+			</form>
+			<form action="refundList" method="post">
+				<input type="text" name="refundMember">
+				<button>환불내역 부르기</button>
+			</form>
+			<form action="boardTest" method="get">
+				<button>보드테스트 부르기</button>
+			</form>
             </section>
 
         </section>
