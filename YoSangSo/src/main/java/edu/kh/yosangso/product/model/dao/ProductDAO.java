@@ -1,5 +1,4 @@
-
-import static edu.kh.yosangso.common.JDBCTemplate.close;
+package edu.kh.yosangso.product.model.dao;
 
 import java.io.FileInputStream;
 import java.sql.Connection;
@@ -11,6 +10,7 @@ import java.util.List;
 import java.util.Properties;
 
 import edu.kh.yosangso.cart.model.vo.ShoppingCart;
+import static edu.kh.yosangso.common.JDBCTemplate.*;
 import edu.kh.yosangso.product.model.vo.Product;
 
 public class ProductDAO {
@@ -105,11 +105,11 @@ public class ProductDAO {
 				String img = rs.getString("");
 				String imgurl = rs.getString("");
 				
-				productList.add(
-						new Product(productNo, productName, category, price, stock, productDate, sellRate,
-								explain, part, img, imgurl)			
-						);
-			
+//				productList.add(
+//						new Product(productNo, productName, category, price, stock, productDate, sellRate,
+//								explain, part, img, imgurl)			
+//						);
+//			
 			} 
 			
 		} finally {
@@ -168,17 +168,11 @@ public class ProductDAO {
 		
 		return result;
 	}
-
-	
-	
-	
-	
-	
-
-	
 	
 	
 	
 	
 	
 }
+
+

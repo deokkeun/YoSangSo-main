@@ -20,7 +20,7 @@ public class PayServlet extends HttpServlet{
 	 */
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+		System.out.println("결제페이지 서블릿 실행");
 		try {
 			OrderService service = new OrderService();
 			

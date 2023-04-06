@@ -121,6 +121,10 @@
         </div>
 
 
+	<!-- 장바구니 결제 테스트 입니다. -->
+       <form action="${contextPath}/order/pay" method="GET">
+			<button>결제 테스트 </button>
+       </form>
         
 
     <!-- 헤더, 컨텐츠 끝 -->
