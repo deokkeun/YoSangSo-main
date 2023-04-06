@@ -5,9 +5,11 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
+import edu.kh.yosangso.board.model.vo.Review;
 import edu.kh.yosangso.board.model.vo.ReviewImage;
 
 import static edu.kh.yosangso.common.JDBCTemplate.*;
@@ -96,6 +98,27 @@ public class ReviewDAO {
 		
 		
 		return result;
+	}
+
+
+
+
+	public List<Review> selectReview(Connection conn, int pro) {
+		
+		List<Review> reviewList = new ArrayList<>();
+		
+		try {
+			 
+			String sql = prop.getProperty("selectReview");
+			
+			
+			
+		} finally {
+			close(rs);
+			close(pstmt);
+
+		}
+		return null;
 	}
 
 }
