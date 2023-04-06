@@ -20,4 +20,4 @@ public class InquiryServlet extends HttpServlet{
 
 	
 	}
-}
+} 

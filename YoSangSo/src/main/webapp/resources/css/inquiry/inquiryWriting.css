@@ -1,0 +1,198 @@
+@import url(../common/header.css);
+@import url(../common/footer.css);
+@import url(../common/fonts.css);
+@import url(../common/global.css);
+@import url(../common/variables.css);
+/* ---------------------------------------------------------- */
+
+/* 콘텐츠 */
+#content {
+    display: flex;
+    /* 콘텐츠 전체 크기(높이) 수정 부분 입니다 */
+    height: 1500px;
+}
+/* 컨텐츠 공간 */
+#content > section {
+    width: 1280px;
+    margin: 0 auto;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+/* 컨텐트 공간 내부 */
+.content-box {
+    display: flex;
+}
+/* 컨텐츠 공간 내부 왼쪽 영역 */
+.content-box-left {
+    flex-basis: 20%;
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.03);
+}
+/* 컨텐츠 공간 내부 오른쪽 영역 */
+.content-box-right {
+    flex-basis: 80%;
+}
+
+
+/* ----------------------------------------------------------------------------- */
+/* 컨텐츠 왼쪽 */
+
+/*
+컨텐츠 왼쪽 박스내부
+.content-box-left-1 {
+    height: 100%;
+}
+컨텐츠 왼쪽 박스내부 안에 박스 4개
+.content-box-left-1 > div {
+    margin: 100px 0;
+}
+컨텐츠 왼쪽박스 title
+.content-box-left-title {
+    width: 150px;
+    font-size: var(--font-size-x-large);
+    font-weight: bold;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+    padding: 5px;
+}
+컨텐츠 왼쪽 박스내부 title을 제외한 나머지 박스
+.content-box-left-1 > div div:not(:nth-child(1)) {
+    margin: 20px 10px;
+}
+컨텐츠 왼쪽 박스 a태그
+.content-box-left-1 > div a {
+    text-decoration: none;
+    color: black;
+    font-size: var(--font-size-medium);
+}
+
+*/
+
+/* ---------------------------------------------------------- */
+/* 컨텐츠 오른쪽 내용 */
+
+
+
+
+.right{
+    width: 100%;
+    height: 100%;
+    /* border:1px solid black; */
+    flex-basis: 90%;
+    display: flex;
+}
+
+#left-space{
+    /* background-color: red; */
+    flex-basis: 5%;
+}
+
+#right-space{
+    /* background-color: red; */
+    flex-basis: 5%;
+}
+
+
+#middle-area{
+    display: flex;
+    flex-basis:90%;
+    flex-direction: column;
+}
+
+.topQuestion{
+    height: 200px;
+    width: 100%;
+    /* border:1px solid brown; */
+    display: flex;
+    flex-direction: column;
+}
+
+.topQuestion > div:nth-child(1){
+    display: flex;
+    /* border: 1px solid blue; */
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.topQuestion > div:nth-child(2){
+    display: flex;
+    width: 100%;
+    height: 100%;
+    /* border : 1px solid greenyellow; */
+    justify-content: center;
+    align-items: center;
+    color: rgba(0, 0, 0, 0.639)
+}
+
+
+textarea{
+    resize: none;
+}
+
+.textAreaBox{
+    /* border:1px solid blue; */
+    display: flex;
+    /* flex-basis: 70%; */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+}
+
+.textAreaBox > div:nth-child(1){
+    flex-basis:30%;
+    display: flex;
+    width: 100%;
+    /* border: 1px solid burlywood; */
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.textAreaBox > div:nth-child(2){
+    flex-basis:90%;
+    display: flex;
+    width: 100%;
+    /* border: 1px solid burlywood; */
+    justify-content: center;
+    align-items: center;
+}
+
+.questionBtnBox{
+    display: flex;
+    width: 100%;
+    /* border:1px solid purple; */
+    height: 300px;
+    justify-content: center;
+    align-items: center;
+}
+
+.cancelWritingBox{
+    /* border: 1px solid blue; */
+    margin-right: 50px;
+  
+}
+
+.confirmWritingBox{
+    /* border: 1px solid red; */
+    margin-left : 50px;
+}
+
+#cancelWritingQ{
+
+    width: 130px;
+    height: 50px;
+    border:1px solid #575C63;
+    border-radius: 10%;
+    background-color: white;
+    color: #2678F3;
+}
+#confirmWritingQ{
+    width: 130px;
+    height: 50px;
+    border:1px solid #575C63;
+    border-radius: 10%;
+    background-color: #2678F3;
+    color: white;
+
+}
