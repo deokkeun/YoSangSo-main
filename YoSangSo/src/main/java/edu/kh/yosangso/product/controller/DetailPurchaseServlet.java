@@ -1,0 +1,44 @@
+package edu.kh.yosangso.product.controller;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import edu.kh.yosangso.cart.model.vo.ShoppingCart;
+import edu.kh.yosangso.product.model.service.ProductService;
+
+@WebServlet("/product/purchase")
+public class DetailPurchaseServlet extends HttpServlet{
+
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
+		int pro = Integer.parseInt(req.getParameter("productNo"));
+		int count = Integer.parseInt(req.getParameter("count"));
+		
+		ShoppingCart cart = new ShoppingCart();
+		
+		cart.setProductNo(pro);
+		cart.setBuyingRate(count);
+		
+		try {
+			
+			ProductService service = new ProductService();
+			
+			int result = service.detailPurchase(cart);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		String path = "/WEB-INF/views/product/test.jsp";
+		
+		
+		req.getRequestDispatcher(path).forward(req, resp);
+		
+	}
+}
