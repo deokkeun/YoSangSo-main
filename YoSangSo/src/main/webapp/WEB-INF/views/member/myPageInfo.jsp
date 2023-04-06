@@ -19,8 +19,8 @@
         
         <!-- 헤더 -->
         <jsp:include page="/WEB-INF/views/common/header.jsp"/>
-        
-        
+       
+       
             <!-- 컨텐츠 -->
         <section id="content">
 
