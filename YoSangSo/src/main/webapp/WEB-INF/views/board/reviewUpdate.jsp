@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="${contextPath}/resources/css/main-style.css">
     <link rel="stylesheet" href="${contextPath}/resources/css/main-sub-style.css">
-    <link rel="stylesheet" href="${contextPath}/resources/css/review/ReviewPage.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/review/ReviewUpdate.css">
     <script src="https://kit.fontawesome.com/881d1deef7.js" crossorigin="anonymous"></script>
     <title>reviewWriting</title>
 </head>
@@ -36,12 +36,11 @@
                             <!-- 컨텐트 오른쪽 영역 -->
                             <section class="right">
                                 <div></div>
-                                <form action="reviewAdd" id="reviewImageContent" enctype="multipart/form-data" method="POST">
                                 <div class="review-content">
                                     <div class="review-content1">
         
                                         <div><h2>리뷰작성</h2></div>
-                                        
+        
                                         <div>
                                             <div id="con-box">
                                                 <div id="review-imgBox">
@@ -61,21 +60,19 @@
         
                                         <div class="review-content2-1">
                                             <div><h1>이현경님, 상품은 어떠셨어요?</h1></div>
-                                            <div>
-                                                <label for="">평점</label>
-                                                <input type="number" id="reviewAddRate">
-                                            </div>
-                                            
+                                            <div><span>평점</span></div>
                                             <div></div>
                                         </div>
         
                                         <div class="review-content2-2">
                                             <div><h1>리뷰 작성</h1></div>
                                             <div>
-                                                <textarea name="" id="reivewTexarea" cols="100" rows="10" style="resize:none" placeholder="
-                                                다른 고객님에게 도움이 되도록 상품에 대한 솔직한 평가를 남겨주세요.
-                                                자세한 리뷰 내용은 다른 구매자분에게 큰 도움이 됩니다.">
-                                                </textarea>
+                                                <form action="">
+                                                    <textarea name="" id="" cols="100" rows="10" style="resize:none" placeholder="
+                                                    다른 고객님에게 도움이 되도록 상품에 대한 솔직한 평가를 남겨주세요.
+                                                    자세한 리뷰 내용은 다른 구매자분에게 큰 도움이 됩니다.">
+                                                    </textarea>
+                                                </form>
                                             </div>
                                         </div> 
         
@@ -83,7 +80,9 @@
                                             
                                             <div class="review-file">
                                                 <h1>사진 첨부</h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                <input type="file" id="reviewImage" name="reviewImgFile">
+                                                <form action="">
+                                                    <input type="file">
+                                                 </form>
                                             </div>
                                             
                                             <div class="review-img">
@@ -95,10 +94,11 @@
                                     </div>
         
                                     <div class="review-content3">
-                                            <button type="submit" id="reviewCancel">취소하기</button>
-                                            <button type="submit" id="reviewUpdate">등록하기</button>
+                                        <form action="#">
+                                            <button type="button" id="reviewCancel">취소하기</button>
+                                            <button type="button" id="reviewUpdate">수정하기</button>
+                                        </form>
                                     </div>
-                                </form>
         
                                 </div>
                                 <div></div>
@@ -125,7 +125,5 @@
    
     <!-- main.js 연결 -->
     <script src="${contextPath}/resources/js/main.js"></script>
-    <!-- reviewWriting.js 연결 -->
-    <script src="${contextPath}/resources/js/review/reviewWriting.js"></script>
 </body>
 </html>

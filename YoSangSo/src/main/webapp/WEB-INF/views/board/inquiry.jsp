@@ -10,6 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="${contextPath}/resources/css/main-style.css">
     <link rel="stylesheet" href="${contextPath}/resources/css/main-sub-style.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/inquiry/inquiryWriting.css">
     <script src="https://kit.fontawesome.com/881d1deef7.js" crossorigin="anonymous"></script>
     <title>inquiry</title>
 </head>
@@ -32,25 +33,56 @@
                 <!-- 컨텐츠 내용 오른쪽 -->
                 <section  class="content-box-right">
 
+                    <section class="right">
+
+                            
+                        <div id="left-space"></div>
+
+                    <form action="">
+                        <div id="middle-area">
+                            <div class="topQuestion">
+                                <div>
+                                    <h1>1:1 문의</h1>
+                                </div>
+                                <div>
+                                구매하려는 상품에 대해 궁금한 점이 있으신 경우 문의해주세요.
+                                </div>
+                            </div>
+                            
+                            <div class="textAreaBox">
+                                <div>
+                                    <h1>1:1 문의 작성하기</h1>
+                                </div>
+
+                                <div>
+                                    <textarea name="" id="inquiryContent" cols="100" rows="20" placeholder="문의를 남겨주세요." value="inquiryContent"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="questionBtnBox">
+                                <div class="cancelWritingBox">
+                                   
+                                        <button id="cancelWritingQ">취소하기</button>
+                                   
+                                </div>
+
+                                <div class="confirmWritingBox">
+                                    
+                                        <button id="confirmWritingQ">작성하기</button>
+                                    
+                                </div>
+                            </div>
+
+                        </div>
+                    </form>
 
 
 
 
+                        <div id="right-space"></div>
 
-
-
-
-
-                    
-                    <div>inquiry</div>
-
-
-
-
-
-
-
-
+                    </section>
+                
 
                 </section>
 
@@ -73,5 +105,8 @@
    
     <!-- main.js 연결 -->
     <script src="${contextPath}/resources/js/main.js"></script>
+
+    <!-- inquiryAdd.js 연결 -->
+    <script src="${contextPath}/resources/js/board/inquiryAdd.js"></script>
 </body>
 </html>

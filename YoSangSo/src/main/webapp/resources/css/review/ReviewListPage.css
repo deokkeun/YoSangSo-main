@@ -1,0 +1,287 @@
+
+/* ---------------------------------------------------------- */
+
+/* 콘텐츠 */
+#content {
+    display: flex;
+    /* 콘텐츠 전체 크기(높이) 수정 부분 입니다 */
+    height: 1500px;
+}
+/* 컨텐츠 공간 */
+#content > section {
+    width: 1280px;
+    margin: 0 auto;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+/* 컨텐트 공간 내부 */
+.content-box {
+    display: flex;
+}
+/* 컨텐츠 공간 내부 왼쪽 영역 */
+.content-box-left {
+    flex-basis: 20%;
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.03);
+}
+/* 컨텐츠 공간 내부 오른쪽 영역 */
+.content-box-right {
+    flex-basis: 80%;
+}
+
+
+/* ----------------------------------------------------------------------------- */
+/* 컨텐츠 왼쪽 */
+/*
+컨텐츠 왼쪽 박스내부
+.content-box-left-1 {
+    height: 100%;
+}
+컨텐츠 왼쪽 박스내부 안에 박스 4개
+.content-box-left-1 > div {
+    margin: 100px 0;
+}
+컨텐츠 왼쪽박스 title
+.content-box-left-title {
+    width: 150px;
+    font-size: var(--font-size-x-large);
+    font-weight: bold;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+    padding: 5px;
+}
+컨텐츠 왼쪽 박스내부 title을 제외한 나머지 박스
+.content-box-left-1 > div div:not(:nth-child(1)) {
+    margin: 20px 10px;
+}
+컨텐츠 왼쪽 박스 a태그
+.content-box-left-1 > div a {
+    text-decoration: none;
+    color: black;
+    font-size: var(--font-size-medium);
+}
+*/
+/* ---------------------------------------------------------- */
+/* 컨텐츠 오른쪽 내용 */
+
+/* 오른쪽 영역 시작 */
+.right{
+    width: 100%;
+    height: 1200px;
+    /* border: 2px solid red; */
+    display: flex;
+}
+
+
+
+
+
+.right > div:nth-child(1) {
+    /* background-color: blue; */
+    flex-basis: 3%;
+}
+
+.right > div:nth-child(3){
+    /* background-color: red; */
+    flex-basis: 3%;
+}
+
+.right > div:nth-child(2){
+    display: flex;
+    flex-direction: column;
+    flex-basis: 94%;
+    align-items: center;
+}
+
+
+
+.myReview {
+    height: 150px;
+    width: 100%;
+    /* border: 2px solid blue; */
+    text-align: center;
+    padding-top: 63px;
+}
+
+.rightReview {
+    width: 100%;
+    height: 780px;
+    /* border: 1px solid red; */
+}
+
+
+.rigthReviewTop{
+    display: flex;
+}
+
+.rigthReviewTop > div{
+    flex-basis: 50%;
+    border: 1px solid rgba(120, 116, 116, 0.683);
+    height: 50px;
+    text-align: center;
+    padding-top: 13px;
+}
+
+.rigthReviewTop > div:nth-child(1){
+    background-color: #aca9a9
+}
+
+.rightReivewContent{
+    display: flex;
+    border-bottom: 2px solid rgba(0,0,0,0.1);
+    height: 730px;
+    flex-direction:column;
+}
+
+
+
+ 
+.rightProductImg{   /* 이미지 박스 */
+    flex-basis: 20%;
+    display: flex;
+
+}
+
+
+.rightProductImg > div:nth-child(1){
+    flex-basis: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border:1px solid black;
+
+    
+}
+.rightProductImg > div:nth-child(2){
+    flex-basis: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border:1px solid black;
+
+}
+
+.rightProductImg > div:nth-child(3){
+    flex-basis: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border:1px solid black;
+ 
+}
+
+
+.rightProductImg{   /* 이미지 박스 */
+    flex-basis: 20%;
+    display: flex;
+}
+
+
+.rightProductImg > div:nth-child(1){
+    flex-basis: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.rightProductImg > div:nth-child(2){
+    flex-basis: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ 
+}
+
+.rightProductImg > div:nth-child(3){
+    flex-basis: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.rightProductImg{   /* 이미지 박스 */
+    flex-basis: 20%;
+    display: flex;
+
+}
+
+
+.rightProductImg > div:nth-child(1){
+    flex-basis: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.rightProductImg > div:nth-child(2){
+    flex-basis: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ 
+}
+
+.rightProductImg > div:nth-child(3){
+    flex-basis: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+.rightReivewContent hr {
+    border: 1px solid rgba(0,0,0,0.1);
+}
+
+.rightReivewContent > div:nth-child(1), div:nth-child(2), div:nth-child(3){
+    justify-content: space-around;
+}
+
+.reviewListBox{
+    width: 20%;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border:solid 3px blue; */
+}
+
+.reviewListBox a {
+    text-decoration: none;
+    color: black;
+    margin: 0 10px;
+}
+
+
+
+#reviewImages {
+    width: 60%;
+}
+
+#reviewAdd{
+    width: 70px;
+    height: 30px;
+    /* border:1px solid #575C63; */
+    border-radius: 8px;
+    background-color: white;
+    color: #2678F3;
+    font-weight: bold;
+    margin-top: 40px;
+}
+
+#reviewUpdate{
+    display: none;
+    width: 70px;
+    height: 50px;
+    border:1px solid #575C63;
+    border-radius: 8px;
+    background-color: #2678F3;
+    color: white;
+}
