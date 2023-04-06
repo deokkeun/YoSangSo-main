@@ -1,0 +1,127 @@
+
+
+.header-main{
+    width: 1280px;
+    flex-basis: 20%;
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 14%;
+    margin-bottom: 50px;
+
+}
+
+#faq-title-head{
+    font-size: 50px;
+    font-weight: 600;
+    margin-bottom: 20px;
+
+}
+
+#faq-subtitle-head{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+
+
+.main-div{
+    flex-basis: 80%;
+    width: 1280px;
+    height: 1000px;
+    margin: auto;
+}
+
+.tap-list{
+    display: flex;
+    padding : 20px;
+    margin-left: 60px;
+}
+
+.tap-list > li{
+    list-style: none;
+}
+
+.tap-link {
+    color: grey;
+    text-decoration: none;
+    font-size: 22px;
+    margin:0 25px;
+    cursor: pointer;
+}
+
+.category-name{
+    display: flex;
+    border-top: 2px solid rgb(174, 174, 174);
+    border-bottom: 2px solid rgb(174, 174, 174);
+    width: 85%;
+    margin-left: 90px;
+}
+
+.category-name > div {
+    margin: 10px 20px;
+    color: black;
+    text-decoration: none;
+    font-size: 23px;
+    font-weight: 500;
+}
+
+.tap-link.current{
+
+    color: black;
+    font-weight: bold;
+}
+
+.main-faq-menu{
+    display: flex;
+}
+
+.faq-contents{
+    display: none;
+    margin-left: 6%;
+}
+  
+.faq-contents.current{
+    display: flex;
+}
+
+.accordion.accordion-flush{
+    width: 1130px;
+}
+
+.button-con{
+    display: flex;
+    width: 100%;
+}
+
+
+
+.button-con> div:first-child{
+    flex-basis: 10%;
+    font-size: 16px;
+    font-weight: bold;
+    color:rgb(255, 145, 35);
+
+    
+}
+
+.button-con> div:last-child{
+    flex-basis: 90%;
+}
+
+
+a{
+    color: black;
+    text-decoration: none;
+}
+
+
+p {
+    font-weight: bold;
+}
+
+button{
+    cursor: pointer;
+    
+}
+

@@ -7,6 +7,7 @@ import lombok.ToString;
 
 // Lombok 라이브러리
 
+
 @Getter // getter 자동 추가
 @Setter // setter 자동 추가
 @ToString // toString 자동 추가
@@ -14,14 +15,13 @@ import lombok.ToString;
 public class Member {
 	
 	private int memberNo;
-	private String memberEmail;
+	private String memberId;
 	private String memberPw;
-	private String memberName;
-	private String memberCert;
-	private String memberTel;
-	private String memberAddress;
-//	private String profileImage;
-//	private date enrollDate;
-	private String secessionFlag;
-
+	//private String memberPwDup;
+	//......
+	
+	
+	
+	
+	
 }

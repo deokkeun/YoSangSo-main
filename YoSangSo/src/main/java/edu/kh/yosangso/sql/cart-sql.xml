@@ -3,13 +3,15 @@
 <properties>
 	<comment>cart-sql.xml</comment>
 
-	<entry key=""></entry>
-	<entry key=""></entry>
-	<entry key=""></entry>
-	<entry key=""></entry>
-	<entry key=""></entry>
-	<entry key=""></entry>
-	<entry key=""></entry>
+	<entry key="cart">
+		SELECT CART_NO, PRODUCT_NO, PRODUCT_NM, PRICE, BUYING_RATE, MEMBER_NO FROM CART JOIN PRODUCT USING(PRODUCT_NO) WHERE MEMBER_NO= ?
+	</entry>
+	<entry key="deleteCart">
+		DELETE FROM CART WHERE MEMBER_NO = ?
+	</entry>
+	<entry key="updateCount">
+		UPDATE CART SET BUYING_RATE = ? WHERE MEMBER_NO = ? AND PRODUCT_NO= ?
+	</entry>
 
 
 </properties>

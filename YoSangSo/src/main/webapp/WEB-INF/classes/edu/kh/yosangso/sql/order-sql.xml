@@ -3,20 +3,8 @@
 <properties>
 	<comment>order-sql.xml</comment>
 
-	<entry key="payList">
-SELECT PRODUCT_IMAGE, PRODUCT_NM, PRICE, BUYING_RATE
-FROM MEMBER
-JOIN CART USING(MEMBER_NO)
-JOIN PRODUCT USING(PRODUCT_NO)
-	</entry>
-<!-- 	<entry key="payList">
-		회원번호로 장바구니에 담겨있는 제품 조회(이미지, 제품명, 가격, 수량)
-		SELECT PRODUCT_IMAGE, PRODUCT_NM, PRICE, PRODUCT_COUNT
-		FROM MEMBER
-		JOIN CART USING(MEMBER_NO)
-		JOIN PRODUCT USING(PRODUCT_NO)
-		WHERE MEMBER_NO = ?
-	</entry> -->
+	<entry key=""></entry>
+	<entry key=""></entry>
 	<entry key=""></entry>
 	<entry key=""></entry>
 	<entry key=""></entry>
