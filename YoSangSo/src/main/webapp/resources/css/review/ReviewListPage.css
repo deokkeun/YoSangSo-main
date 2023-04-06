@@ -93,12 +93,14 @@
 
 
 
+
+
 .myReview {
     height: 150px;
     width: 100%;
-    /* border: 2px solid blue; */
     text-align: center;
     padding-top: 63px;
+    font-size: 30px;
 }
 
 .rightReview {
@@ -110,6 +112,7 @@
 
 .rigthReviewTop{
     display: flex;
+    cursor: pointer;
 }
 
 .rigthReviewTop > div{
@@ -126,91 +129,32 @@
 
 .rightReivewContent{
     display: flex;
-    border-bottom: 2px solid rgba(0,0,0,0.1);
     height: 730px;
     flex-direction:column;
 }
 
-
+.inner-review-tab{
+	display :flex;
+	justify-content :center;
+	width: 100%;
+	height: 50px;
+	color: black;
+	cursor: pointer;
+	text-decoration: none;
+}
 
  
 .rightProductImg{   /* 이미지 박스 */
     flex-basis: 20%;
     display: flex;
-
+	height: 205px;
+	border-bottom: 1px solid grey;
 }
+
 
 
 .rightProductImg > div:nth-child(1){
-    flex-basis: 20%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border:1px solid black;
-
-    
-}
-.rightProductImg > div:nth-child(2){
-    flex-basis: 60%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border:1px solid black;
-
-}
-
-.rightProductImg > div:nth-child(3){
-    flex-basis: 20%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border:1px solid black;
- 
-}
-
-
-.rightProductImg{   /* 이미지 박스 */
-    flex-basis: 20%;
-    display: flex;
-}
-
-
-.rightProductImg > div:nth-child(1){
-    flex-basis: 20%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-}
-
-.rightProductImg > div:nth-child(2){
-    flex-basis: 60%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
- 
-}
-
-.rightProductImg > div:nth-child(3){
-    flex-basis: 20%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-
-
-.rightProductImg{   /* 이미지 박스 */
-    flex-basis: 20%;
-    display: flex;
-
-}
-
-
-.rightProductImg > div:nth-child(1){
-    flex-basis: 20%;
+    flex-basis: 30%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -219,10 +163,11 @@
 
 
 .rightProductImg > div:nth-child(2){
-    flex-basis: 60%;
+    flex-basis: 50%;
     display: flex;
-    justify-content: center;
-    align-items: center;
+	flex-direction: column;
+	justify-content: space-around;
+	
  
 }
 
@@ -236,17 +181,12 @@
 }
 
 
-.rightReivewContent hr {
-    border: 1px solid rgba(0,0,0,0.1);
-}
 
-.rightReivewContent > div:nth-child(1), div:nth-child(2), div:nth-child(3){
-    justify-content: space-around;
-}
+
+
 
 .reviewListBox{
     width: 20%;
-    height: 150px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -266,7 +206,7 @@
 }
 
 #reviewAdd{
-    width: 70px;
+    width: 100px;
     height: 30px;
     /* border:1px solid #575C63; */
     border-radius: 8px;

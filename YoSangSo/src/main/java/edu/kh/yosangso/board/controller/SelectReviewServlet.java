@@ -28,8 +28,9 @@ public class SelectReviewServlet extends HttpServlet{
 		try {
 			
 			ReviewService service = new ReviewService();
-			
+
 			reviewList = service.selectReview(pro);
+
 			
 		} catch(Exception e) {
 			e.printStackTrace();

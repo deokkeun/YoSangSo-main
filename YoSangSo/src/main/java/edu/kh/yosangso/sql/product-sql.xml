@@ -19,7 +19,13 @@
 	VALUES (CART_SEQ.NEXTVAL, ?, ?, 2)
 	</entry>
 	
-	
+	<entry key="personList">
+		SELECT PRODUCT_IMAGE, PRODUCT_NM
+		FROM PRODUCT
+		WHERE PART = ?
+	</entry>
+	<entry key=""></entry>
+	<entry key=""></entry>
 	<entry key=""></entry>
 	<entry key=""></entry>
 	<entry key=""></entry>

@@ -18,7 +18,7 @@
                         <div>
                             <div class="content-box-left-title">나의 리뷰</div>
                             <div><a href="${contextPath}/board/reviewWriting">리뷰작성</a></div>
-                            <div><a href="${contextPath}/board/reviewList">리뷰조회</a></div>
+                            <div><a href="reviewList">리뷰조회</a></div>
                         </div>
                         <div>
                             <div class="content-box-left-title">고객센터</div>
