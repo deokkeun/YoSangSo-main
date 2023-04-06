@@ -80,6 +80,8 @@ public class ProductDAO {
 	public List<Product> selectProduct(Connection conn, int pro) throws Exception {
 		
 		List<Product> productList = new ArrayList<>();
+		System.out.println("DAO");
+		System.out.println(pro);
 		
 		try {
 			String sql = prop.getProperty("selectProduct");
@@ -101,17 +103,19 @@ public class ProductDAO {
 				int sellRate = rs.getInt("SELL_RATE");
 				String explain = rs.getString("EXPLAIN");
 				String part = rs.getString("PART");
-
-		
 				String img = null;
 				String imgurl = null;
+				int productCount = 0;
+
 				
 				productList.add(
 						new Product(productNo, productName, category, price, stock, productDate, sellRate,
-								explain, part, img, imgurl)			
+								explain, part, img, imgurl, productCount )			
 						);
 
 			} 
+			
+			System.out.println(productList);
 			
 		} finally {
 			close(rs);

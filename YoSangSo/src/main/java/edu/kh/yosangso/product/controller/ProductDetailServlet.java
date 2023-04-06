@@ -28,12 +28,16 @@ public class ProductDetailServlet extends HttpServlet{
 		int pro = Integer.parseInt(req.getParameter("ProductNo"));
 		List<Product> productList = new ArrayList<>();
 		
+		System.out.println(pro);
+		
 		try {
 
 			
 			ProductService service = new ProductService();
 			
 			productList = service.selectProduct(pro);
+			
+			System.out.println(productList);
 		
 			
 	

@@ -11,7 +11,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import edu.kh.yosangso.board.model.service.BoardService;
+import edu.kh.yosangso.board.model.service.ReviewService;
 import edu.kh.yosangso.board.model.vo.Board;
+import edu.kh.yosangso.board.model.vo.Review;
 
 //@WebServlet("")
 public class SelectReviewServlet extends HttpServlet{
@@ -20,13 +22,15 @@ public class SelectReviewServlet extends HttpServlet{
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
 		int pro = Integer.parseInt(req.getParameter("ProductNo"));
-		List<Board> BoardList = new ArrayList<>();
+		
+		List<Review> reviewList = new ArrayList<>();
 		
 		try {
 			
-			BoardService service = new BoardService();
-			
-			//BoardList = service.selectBoard(pro);
+			ReviewService service = new ReviewService();
+
+			reviewList = service.selectReview(pro);
+
 			
 		} catch(Exception e) {
 			e.printStackTrace();
@@ -34,7 +38,7 @@ public class SelectReviewServlet extends HttpServlet{
 		
 		String path = "/WEB-INF/views/product/productDetail.jsp";
 		
-		req.setAttribute("productList", BoardList);
+		req.setAttribute("ReviewList", reviewList );
 		
 		req.getRequestDispatcher(path).forward(req, resp);
 	}
