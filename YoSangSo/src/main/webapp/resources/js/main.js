@@ -11,3 +11,5 @@ document.getElementById("query").addEventListener("focusout", e => {
 document.getElementById("query").addEventListener("mouseover", e => {
     searchForm.style.border = "1px solid rgba(0, 0, 0, 0.2)";
 });
+
+/* ----------------------------------------------------------- */
