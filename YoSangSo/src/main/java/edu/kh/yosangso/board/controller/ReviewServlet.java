@@ -68,7 +68,10 @@ public class ReviewServlet extends HttpServlet{
 					ReviewImage image = new ReviewImage();
 					System.out.println("5.01");
 					image.setImageOriginal(original); // 원본명 
+					System.out.println("5.02");
 					image.setImageReName( folderPath + rename); // 폴더 경로 + 변경명
+					System.out.println("5.03");
+					System.out.println(name);
 					image.setImageLevel(Integer.parseInt(name));
 					System.out.println("5-1");
 					imageList.add(image);
