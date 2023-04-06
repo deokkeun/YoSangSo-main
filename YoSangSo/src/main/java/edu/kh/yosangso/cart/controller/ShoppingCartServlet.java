@@ -10,17 +10,18 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.google.gson.Gson;
-
 import edu.kh.yosangso.cart.model.service.ShoppingCartService;
 import edu.kh.yosangso.cart.model.vo.ShoppingCart;
+import edu.kh.yosangso.member.model.vo.Member;
 
 @WebServlet("/cart/shoppingCart")
 public class ShoppingCartServlet extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		String userNum = req.getParameter("userNum");
+		Member loginMember = (Member)req.getSession().getAttribute("loginMember");
+		
+		int userNum = loginMember.getMemberNo();
 		List<ShoppingCart> cartList = new ArrayList<>();
 		
 		try {
