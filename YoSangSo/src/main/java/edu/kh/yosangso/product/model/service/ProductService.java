@@ -26,9 +26,6 @@ public class ProductService {
 		
 		close(conn);
 		
-		System.out.println(pro);
-		System.out.println(productList);
-		
 		return productList;
 	}
 

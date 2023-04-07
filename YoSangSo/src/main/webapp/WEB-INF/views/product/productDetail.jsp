@@ -73,6 +73,7 @@
                   
                         <input type="hidden" value="${productList[0].productNo}" name="productNo" id="proNo">
                         
+                        <input type="hidden" value="${loginMember.memberNo}" name="loginmember" id="loginmember">
                         <br>
                             <!--구매 버튼-->
                             <div>
@@ -84,6 +85,7 @@
                             <div>
                             <!--장바구니 버튼-->
                            	<button type="button"  onclick="return addcart()" id="btn-addcart">장바구니</button>
+           
                             </div>   
                     </div>
                 </div>

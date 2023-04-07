@@ -80,8 +80,6 @@ public class ProductDAO {
 	public List<Product> selectProduct(Connection conn, int pro) throws Exception {
 		
 		List<Product> productList = new ArrayList<>();
-		System.out.println("DAO");
-		System.out.println(pro);
 		
 		try {
 			String sql = prop.getProperty("selectProduct");
@@ -139,6 +137,7 @@ public class ProductDAO {
 			
 			pstmt.setInt(1, cart.getProductNo());
 			pstmt.setInt(2, cart.getBuyingRate());
+			pstmt.setInt(3, cart.getMemberNo());
 			
 			result = pstmt.executeUpdate();
 			
@@ -162,6 +161,7 @@ public class ProductDAO {
 			
 			pstmt.setInt(1, cart.getProductNo());
 			pstmt.setInt(2, cart.getBuyingRate());
+			pstmt.setInt(3, cart.getMemberNo());
 			
 			result = pstmt.executeUpdate();
 			
