@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import edu.kh.yosangso.member.model.vo.Member;
 import edu.kh.yosangso.order.model.vo.Order;
 import edu.kh.yosangso.refund.service.RefundService;
 
@@ -23,18 +24,23 @@ public class RefundDoneServlet extends HttpServlet{
 		
 		String[] orderNoList = req.getParameterValues("orderNo");
 
-		// 서비스 구현 시 일시적으로 memberNo을 부여
 		
 		HttpSession session = req.getSession();
-		
-		String memberNo = (String)session.getAttribute("memberNo");
-		
-		System.out.println(memberNo);
-		
 		RefundService service = new RefundService();
 		List<Order> refundList = new ArrayList<>();
 		
 		try {
+			
+			Member member = (Member)session.getAttribute("loginMember");
+			
+			if(member == null) {
+				String filePath = "/WEB-INF/views/refund/refundDone.jsp";
+				RequestDispatcher dispatcher = req.getRequestDispatcher(filePath);
+				dispatcher.forward(req, resp);
+			}
+			
+			int memberNo = member.getMemberNo();
+			
 			
 			int result = service.refundDone(orderNoList);
 			

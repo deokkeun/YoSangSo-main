@@ -54,7 +54,7 @@ public ReviewListPagingDAO() {
 		return result;
 	}
 
-	public List<Product> getList(Connection conn,int memberNo, int pageNum, int amount) throws Exception{
+	public List<Product> getList(Connection conn, int memberNo, int pageNum, int amount) throws Exception{
 		
 		List<Product> list = new ArrayList<>();
 		
@@ -64,19 +64,17 @@ public ReviewListPagingDAO() {
 			pstmt = conn.prepareStatement(sql);
 			
 			pstmt.setInt(1, memberNo);
-			pstmt.setInt(2, memberNo);
-			pstmt.setInt(3, pageNum);
-			pstmt.setInt(4, amount);
+			pstmt.setInt(2, (pageNum-1) * amount);
+			pstmt.setInt(3, pageNum * amount);
 			
 			rs= pstmt.executeQuery();
 					
 			while(rs.next()) {
 				
-				int productNo = rs.getInt("PRODUCT_NO");
 				String productName = rs.getString("PRODUCT_NM");
 				String orderDate = rs.getString("ORDER_DATE");
 						
-				list.add(new Product(productNo, productName, orderDate));
+				list.add(new Product(productName, orderDate));
 			}
 			
 		}finally {
@@ -84,4 +82,69 @@ public ReviewListPagingDAO() {
 		}
 		return list;
 	}
+
+	public List<Review> getDoneList(Connection conn, int memberNo, int pageNum, int amount) throws Exception {
+		
+		List<Review> list = new ArrayList<>();
+		
+		try {
+			String sql = prop.getProperty("getDoneList");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, memberNo);
+			pstmt.setInt(2, (pageNum-1) * amount);
+			pstmt.setInt(3, pageNum * amount);
+			
+			rs= pstmt.executeQuery();
+					
+			while(rs.next()) {
+				
+				String reviewContent = rs.getString("REVIEW_CONTENT");
+				int productNo = rs.getInt("PRODUCT_NO");
+				int orderNo = rs.getInt("ORDER_NO");
+				String productName= rs.getString("PRODUCT_NM");
+			
+						
+				list.add(new Review(reviewContent, memberNo,productNo,orderNo, productName));
+			}
+			
+		}finally {
+			
+		}
+		return list;
+	}
+
+	public int getDoneTotal(Connection conn, int memberNo) throws Exception{
+		int result =0;
+		
+		try {
+			String sql = prop.getProperty("getDoneTotal");
+			
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, memberNo);
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				result= rs.getInt("TOTAL");
+			}
+			
+		}finally {
+			close(rs);
+			close(pstmt);
+		}
+		return result;
+	}
+
+//	public String getReviews(Connection conn, int memberNo) throws Exception{
+//		String reviews =null;
+//		
+//		try {
+//			
+//		}finally {
+//			
+//		}
+//		
+//		return null;
+//	}
 }

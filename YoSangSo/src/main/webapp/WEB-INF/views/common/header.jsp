@@ -26,7 +26,7 @@
        <!-- 검색 -->
        <section>
            <article id="search-area">
-               <form action="#" name="search-form">
+               <form action="searchingProduct" name="search-form">
                    <fieldset>
                        <input type="search" id="query" name="query"
                        autocomplete="off">

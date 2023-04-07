@@ -12,7 +12,7 @@ import edu.kh.yosangso.refund.dao.RefundDAO;
 
 public class RefundService {
 
-	public List<Order> orderList(String memberNo) throws Exception{
+	public List<Order> orderList(int memberNo) throws Exception{
 		
 		
 		
@@ -62,7 +62,7 @@ public class RefundService {
 		return result;
 	}
 
-	public List<Order> refundList(String memberNo) throws Exception {
+	public List<Order> refundList(int memberNo) throws Exception {
 		
 		Connection conn = getConnection();
 		

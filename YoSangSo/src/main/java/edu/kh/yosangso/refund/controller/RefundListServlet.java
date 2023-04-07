@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import edu.kh.yosangso.member.model.vo.Member;
 import edu.kh.yosangso.order.model.vo.Order;
 import edu.kh.yosangso.refund.service.RefundService;
 
@@ -23,21 +24,23 @@ public class RefundListServlet extends HttpServlet{
 		
 		RefundService service = new RefundService();
 		
-		// 서비스 구현 시 확인을 위해 일시적으로 멤버 파라미터를 보낸다.
-		String memberNo = req.getParameter("refundMember");
+		Member member = (Member)req.getSession().getAttribute("loginMember");
 		
-		HttpSession loginMemberSession = req.getSession();
-		
-		loginMemberSession.setAttribute("loginMemberNo", memberNo);
-		
-		loginMemberSession.setMaxInactiveInterval(3600);
-		
+
 		List<Order> refundList = new ArrayList<>();
 		
 		try {
+			if(member == null) {
+				String filePath = "/WEB-INF/views/refund/refundDone.jsp";
+				RequestDispatcher dispatcher = req.getRequestDispatcher(filePath);
+				dispatcher.forward(req, resp);
+			}
 			
+			int memberNo = member.getMemberNo();
 			
-			refundList = service.refundList(loginMemberSession);
+			refundList = service.refundList(memberNo);
+			
+			System.out.println(refundList);
 			
 			
 		}catch(Exception e) {

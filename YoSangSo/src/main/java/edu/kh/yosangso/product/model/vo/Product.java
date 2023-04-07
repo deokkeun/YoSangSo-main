@@ -44,12 +44,21 @@ public class Product {
 	}
 
 
-	public Product(int productNo, String productName, String productDate) {
+	public Product(String productName, String productDate) {
 		super();
-		this.productNo = productNo;
 		this.productName = productName;
 		this.productDate = productDate;
 	}
+
+
+	public Product(int productNo, String productName, int price) {
+		super();
+		this.productNo = productNo;
+		this.productName = productName;
+		this.price = price;
+	}
+	
+	
 	
 	
 	

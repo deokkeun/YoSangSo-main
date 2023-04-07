@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>
 
 
 <!DOCTYPE html>
@@ -14,7 +15,7 @@
     <link rel="stylesheet" href="${contextPath}/resources/css/review/ReviewDoneListPage.css">
 
     <script src="https://kit.fontawesome.com/881d1deef7.js" crossorigin="anonymous"></script>
-    <title>index</title>
+    <title>리뷰리스트</title>
 </head>
 <body>
     <!-- 헤더, 컨텐츠 -->
@@ -44,68 +45,78 @@
                                 <div>
         
                                     <div class="myReview">
-                                       	나의 리뷰
+                                       	작성한 리뷰
                                     </div>
         
                                     <div class="rightReview">
         
                                         <div class="rigthReviewTop">
-                                            <div><a href="reviewList" class="inner-review-tab">작성 가능한 리뷰 (0)</a></div>
-                                            <div><a href="reviewDoneList" class="inner-review-tab">작성한 리뷰 (0)</a></div>
+                                            <div><a href="reviewList?pageNum=1&amount=3" class="inner-review-tab">작성 가능한 리뷰 (${total })</a></div>
+                                            <div><a href="reviewDoneList?pageNum=1&amount=3" class="inner-review-tab">작성한 리뷰 (${doneTotal })</a></div>
                                         </div>
 
                                         <div class="rightReivewContent">
-                                    <form>
-                                    		<c:forEach var="list" items="${list }">
+											<c:forEach var="list" items="${list}">
                                             <div class="rightProductImg"> 
 
                                                 <div>
-                                                    <img src="${contextPath}/resources/image/all/${list.productName}.jpg" alt="#" id="reviewImages">
+                                                    <p>${list.productName}</p>
                                                 </div>
         
-                                                <div class="product-info">
-                                                	<div>
-                                                		<p>${list.productDate }일 주문</p>
-                                                	</div>
-                                                    <div>
-                                                    	<p>${list.productName}</p>
+                                                <div class="reivewInfo">
+                                                	<div class="reviewContent">
+                                                		${list.reviewContent }
                                                     </div>
                                                 </div>
         
                                                 <div>
-                                                    <button id="reviewAdd">리뷰작성</button><br><br>
+                                                	<div>
+                                    				<form>
+	                                                    <button class="reviewAdd">리뷰 수정</button><br><br>
+                                    				</form> 
+                                                	</div>
+                                                	<form>
+                                                	<div>
+	                                                    <button class="reviewAdd">리뷰 삭제</button><br><br>
+                                                	</div>
+                                                	</form>
                                                 </div>
 
                                             </div>
                                             </c:forEach>
-                                    </form> 
 
                                         </div>
-        
                                     </div>
-        
-
                                     <div class="reviewListBox">
-                                        <button> < </button> 
-                                        <span><a href="">1</a></span>
-                                        <span><a href="">2</a></span>
-                                        <span><a href="">3</a></span>
-                                        <span><a href="">4</a></span>
-                                        <span><a href="">5</a></span>
-                                        <button> > </button>
+                                    <c:if test="${pageVo.prev}">
+                                        <a href="reviewList?pageNum=${pageVo.startPage - 1 }&amount=${pageVo.amount}">이전</a> 
+                                    </c:if>
+                        			<c:forEach var="num" begin="${pageVo.startPage }" end="${pageVo.endPage }">
+	                        			<li  class="${pageVo.pageNum eq num ? 'active' : '' }">
+	                        				<a href="reviewList?pageNum=${num}&amount=${pageVo.amount}">${num}</a>
+	                        			</li>
+                        			</c:forEach>
+                         			<c:if test="${pageVo.next }">
+                        				<a href="reviewList?pageNum=${pageVo.endPage + 1 }&amount=${pageVo.amount}">다음</a>
+                        			</c:if>
                                     </div>
-                                    
+        
                                 </div>
         
                                 <!-- 컨텐트 공백 -->
                                 <div></div>
                                 
                             </section>
+
                 </section>
 
             <!-- 컨텐츠 내용 끝 -->
             </section>
+
         </section>
+
+
+
     <!-- 헤더, 컨텐츠 끝 -->
     </main>
 

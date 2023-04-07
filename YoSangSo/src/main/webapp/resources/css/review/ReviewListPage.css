@@ -195,11 +195,23 @@
 
 .reviewListBox a {
     text-decoration: none;
-    color: black;
+    color: rgb(192, 192, 192);
     margin: 0 10px;
 }
 
+li{
+	list-style: none;
+}
 
+a{
+	font-size : 20px;
+	
+}
+
+.active > a{
+	font-size: 22px;
+	color : black;
+}
 
 #reviewImages {
     width: 60%;

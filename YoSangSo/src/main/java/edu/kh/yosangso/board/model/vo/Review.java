@@ -22,6 +22,10 @@ public class Review {
 	private String reviewDate;
 	private int reviewRate;
 	private List<ReviewImage> imageList;
+	private int memberNo;
+	private int productNo;
+	private int orderNo;
+	private String productName;
 	
 	public Review(int reviewNo, String reviewContent, String reviewDate, int reviewRate) {
 		super();
@@ -30,6 +34,17 @@ public class Review {
 		this.reviewDate = reviewDate;
 		this.reviewRate = reviewRate;
 	}
+
+	public Review(String reviewContent, int memberNo, int productNo, int orderNo, String productName) {
+		super();
+		this.reviewContent = reviewContent;
+		this.memberNo = memberNo;
+		this.productNo = productNo;
+		this.orderNo = orderNo;
+		this.productName = productName;
+	}
+	
+	
 	
 	
 	

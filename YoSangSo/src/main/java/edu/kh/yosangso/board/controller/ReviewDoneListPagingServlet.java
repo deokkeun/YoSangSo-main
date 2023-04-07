@@ -11,12 +11,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import edu.kh.yosangso.board.model.service.ReviewListPagingService;
+import edu.kh.yosangso.board.model.vo.Review;
 import edu.kh.yosangso.board.model.vo.ReviewListPaging;
 import edu.kh.yosangso.member.model.vo.Member;
 import edu.kh.yosangso.product.model.vo.Product;
 
-@WebServlet("/member/reviewList")
-public class ReviewListPagingServlet extends HttpServlet {
+@WebServlet("/member/reviewDoneList")
+public class ReviewDoneListPagingServlet extends HttpServlet {
 	
 
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
@@ -37,10 +38,13 @@ public class ReviewListPagingServlet extends HttpServlet {
 		ReviewListPagingService service = new ReviewListPagingService();
 		
 		int total = service.getTotal(memberNo);
+		
 		int doneTotal = service.getDoneTotal(memberNo);
 		
-		List<Product> list = service.getList(memberNo,pageNum, amount);
-		ReviewListPaging pageVo = new ReviewListPaging(pageNum, amount, total);
+//		String review = service.getReviews(memberNo);
+		
+		List<Review> list = service.getDoneList(memberNo,pageNum, amount);
+		ReviewListPaging pageVo = new ReviewListPaging(pageNum, amount, doneTotal);
 		
 		
 		
@@ -53,8 +57,7 @@ public class ReviewListPagingServlet extends HttpServlet {
 		req.setAttribute("doneTotal", doneTotal);
 		
 		
-		
-		String path = "/WEB-INF/views/board/reviewList.jsp";
+		String path = "/WEB-INF/views/board/reviewDoneList.jsp";
 		
 		RequestDispatcher dispatcher = req.getRequestDispatcher(path);
 		
