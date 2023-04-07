@@ -44,4 +44,48 @@ public class ReviewListPagingService  {
 		return list;
 	}
 
+	public List<Review> getDoneList(int memberNo, int pageNum, int amount) throws Exception{
+		
+		List<Review> list = new ArrayList<>();
+		
+		ReviewListPagingDAO dao = new ReviewListPagingDAO();
+		
+		conn=getConnection();
+		
+		list= dao.getDoneList(conn,memberNo, pageNum, amount);
+		
+		close(conn);
+		
+		
+		return list;
+	}
+
+	public int getDoneTotal(int memberNo) throws Exception {
+		ReviewListPagingDAO dao = new ReviewListPagingDAO();
+		
+		conn=getConnection();
+		
+		int result= dao.getDoneTotal(conn, memberNo);
+		
+		close(conn);
+		
+		return result;
+	}
+
+//	public String getReviews(int memberNo) {
+//		
+//		ReviewListPagingDAO dao = new ReviewListPagingDAO();
+//
+//		String reviews = null;
+//		
+//		conn = getConnection();
+//		
+//		reviews= dao.getReviews(conn, memberNo);
+//		
+//		close(conn);
+//				
+//		
+//		return reviews;
+//	}
+
 }

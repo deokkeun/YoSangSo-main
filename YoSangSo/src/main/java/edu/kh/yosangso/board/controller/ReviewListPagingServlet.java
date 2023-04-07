@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import edu.kh.yosangso.board.model.service.ReviewListPagingService;
+import edu.kh.yosangso.board.model.vo.ReviewListPaging;
 import edu.kh.yosangso.member.model.vo.Member;
 import edu.kh.yosangso.product.model.vo.Product;
 
@@ -36,16 +37,20 @@ public class ReviewListPagingServlet extends HttpServlet {
 		ReviewListPagingService service = new ReviewListPagingService();
 		
 		int total = service.getTotal(memberNo);
+		int doneTotal = service.getDoneTotal(memberNo);
 		
 		List<Product> list = service.getList(memberNo,pageNum, amount);
+		ReviewListPaging pageVo = new ReviewListPaging(pageNum, amount, total);
 		
-		System.out.println(total);
-		System.out.println(list);
-			
+		
+		
+		req.setAttribute("pageVo", pageVo);
+		
+		req.setAttribute("list", list);
 		
 		req.setAttribute("total", total);
 		
-		req.setAttribute("list", list);
+		req.setAttribute("doneTotal", doneTotal);
 		
 		
 		

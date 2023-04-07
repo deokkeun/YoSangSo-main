@@ -63,7 +63,7 @@
                                             <div><h1>이현경님, 상품은 어떠셨어요?</h1></div>
                                             <div>
                                                 <label for="">평점</label>
-                                                <input type="number" id="reviewAddRate" name="reviewRate">
+                                                <input type="number" id="reviewAddRate" name="reviewRate" min="1" max="5">
                                             </div>
                                             
                                             <div></div>

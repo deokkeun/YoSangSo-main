@@ -108,7 +108,7 @@ public class ProductDAO {
 				
 				productList.add(
 						new Product(productNo, productName, category, price, stock, productDate, sellRate,
-								explain, part, img, imgurl, productCount )			
+								explain, part, img, imgurl )			
 						);
 
 			} 

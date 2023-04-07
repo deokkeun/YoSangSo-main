@@ -17,7 +17,7 @@
 <body>
     <!-- 헤더, 컨텐츠 -->
     <main>
-        
+       
         <!-- 헤더 -->
         <jsp:include page="/WEB-INF/views/common/header.jsp"/>
         
@@ -38,7 +38,7 @@
                             
                         <div id="left-space"></div>
 
-                    <form action="">
+                    <div>
                         <div id="middle-area">
                             <div class="topQuestion">
                                 <div>
@@ -60,21 +60,15 @@
                             </div>
 
                             <div class="questionBtnBox">
-                                <div class="cancelWritingBox">
-                                   
-                                        <button id="cancelWritingQ">취소하기</button>
-                                   
-                                </div>
+                              
 
                                 <div class="confirmWritingBox">
-                                    
-                                        <button id="confirmWritingQ">작성하기</button>
-                                    
+                                     <button type="button" id="confirmWritingQ">작성하기</button>
                                 </div>
                             </div>
 
                         </div>
-                    </form>
+                    </div>
 
 
 

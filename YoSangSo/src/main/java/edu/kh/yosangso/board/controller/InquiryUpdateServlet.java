@@ -1,6 +1,7 @@
 package edu.kh.yosangso.board.controller;
 
 import java.io.IOException;
+import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -21,13 +22,15 @@ public class InquiryUpdateServlet extends HttpServlet{
 		
 		// 로그인 멤버 객체에 멤버 넘버를 가져와야함 from jsp 
 		String updateContent = req.getParameter("textAreaP");
+		String boardNo = req.getParameter("boardNo");
 		int result = 0;
 		
 		try {
 			// boardservice 불러오기
 			BoardService service = new BoardService();
 			
-			result = service.inquiryUpdate(updateContent);
+			result = service.inquiryUpdate(updateContent,boardNo);
+			
 			resp.getWriter().print(result);
 		}catch(Exception e) {
 			e.printStackTrace();

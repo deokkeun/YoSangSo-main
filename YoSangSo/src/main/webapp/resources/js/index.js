@@ -38,6 +38,13 @@ $(function() {
   });
   
 
+
+function dd(){
+	alert("dmdk");
+	alert(sessionStorage.getItem("loginMember"));
+
+	
+}
 	
 	
   

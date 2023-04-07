@@ -32,6 +32,9 @@
                     <div>환불금액</div>
                     <div>상태</div>
                 </div>
+                <c:if test="${empty refundList }">
+                <div class="not-exist">환불한 상품이 없습니다.</div>
+                </c:if>
                 <c:forEach var="list" items="${refundList}">
                 <!-- 제품 상세 영역 -->
                 <div class="goods-detail">
@@ -48,7 +51,7 @@
                         ${list.price }원
                     </div>
                     <div>
-                        취소 완료
+                        취소 처리 중
                     </div>
                 </div>
                 <!-- 마지막 라인 영역 -->

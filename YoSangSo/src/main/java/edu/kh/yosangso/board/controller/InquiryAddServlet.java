@@ -7,8 +7,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import edu.kh.yosangso.board.model.service.BoardService;
+import edu.kh.yosangso.member.model.vo.Member;
 
 @WebServlet("/board/inquiryAdd")
 public class InquiryAddServlet extends HttpServlet{
@@ -27,13 +29,15 @@ public class InquiryAddServlet extends HttpServlet{
 		
 		try {
 			BoardService service = new BoardService();
+			HttpSession session = req.getSession();
 			
-			result = service.inquiryAdd(Content);
+			
+			Member loginMember = (Member)session.getAttribute("loginMember");
+			
+			result = service.inquiryAdd(Content, loginMember);
 			
 			resp.getWriter().print(result);
 			
-			
-			System.out.println("갔음");
 		}catch(Exception e) {
 			e.printStackTrace();
 		}

@@ -51,8 +51,8 @@
                                     <div class="rightReview">
         
                                         <div class="rigthReviewTop">
-                                            <div><a href="" class="inner-review-tab">작성 가능한 리뷰 (0)</a></div>
-                                            <div><a href="" class="inner-review-tab">작성한 리뷰 (0)</a></div>
+                                            <div><a href="reviewList?pageNum=1&amount=3" class="inner-review-tab">작성 가능한 리뷰 (${total })</a></div>
+                                            <div><a href="reviewDoneList?pageNum=1&amount=3" class="inner-review-tab">작성한 리뷰 (${doneTotal })</a></div>
                                         </div>
 
                                         <div class="rightReivewContent">
@@ -66,7 +66,7 @@
         
                                                 <div class="product-info">
                                                 	<div>
-                                                		<p>${list.productDate }일 주문</p>
+                                                		<p>${list.productDate}일 주문</p>
                                                 	</div>
                                                     <div>
                                                     	<p>${list.productName}</p>
@@ -83,15 +83,18 @@
 
                                         </div>
                                     </div>
-        
                                     <div class="reviewListBox">
-                                        <button> < </button> 
-                                        <span><a href="">1</a></span>
-                                        <span><a href="">2</a></span>
-                                        <span><a href="">3</a></span>
-                                        <span><a href="">4</a></span>
-                                        <span><a href="">5</a></span>
-                                        <button> > </button>
+                                    <c:if test="${pageVo.prev}">
+                                        <a href="reviewList?pageNum=${pageVo.startPage - 1 }&amount=${pageVo.amount}">이전</a> 
+                                    </c:if>
+                        			<c:forEach var="num" begin="${pageVo.startPage }" end="${pageVo.endPage }">
+	                        			<li  class="${pageVo.pageNum eq num ? 'active' : '' }">
+	                        				<a href="reviewList?pageNum=${num}&amount=${pageVo.amount}">${num}</a>
+	                        			</li>
+                        			</c:forEach>
+                         			<c:if test="${pageVo.next }">
+                        				<a href="reviewList?pageNum=${pageVo.endPage + 1 }&amount=${pageVo.amount}">다음</a>
+                        			</c:if>
                                     </div>
         
                                 </div>
