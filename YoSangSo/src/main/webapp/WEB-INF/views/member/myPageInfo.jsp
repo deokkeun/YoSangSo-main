@@ -10,6 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="${contextPath}/resources/css/main-style.css">
     <link rel="stylesheet" href="${contextPath}/resources/css/main-sub-style.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/member/myPageInfo.css">
     <script src="https://kit.fontawesome.com/881d1deef7.js" crossorigin="anonymous"></script>
     <title>myPageInfo</title>
 </head>
@@ -32,25 +33,46 @@
                 <!-- 컨텐츠 내용 오른쪽 -->
                 <section  class="content-box-right">
 
+                    <!-- 기본정보 -->
+                    <section class="rightBox">
+                        <div class="font-large line">${loginMember.memberName}</div>
+                        <div class="line">+(82) ${loginMember.memberTel}</div>
+                        <div>${loginMember.memberEmail}</div>
+                        <div class="row">
+                            <div></div>
+                            <button class="update-btn">수정 ></button>
+                        </div>
+                    </section>
 
+                    <!-- 배송지 -->
+                    <section class="rightBox">
+                        <div class="row">
+                            <div class="font-large">배송지 관리</div>
+                            <div class="font-left">구매에서 사용하신 배송지를 관리할 수 있어요.</div>
+                            <div></div>
+                            <button class="update-btn" onclick="location.href='shippinAddress'">수정 </button>
+                        </div>
+                    </section>
 
-
-
-
-
-
-
-
+                    <!-- 프로모션 -->
+                    <section class="rightBox">
+                        <div class="font-large">프로모션 수신 동의</div>
+                        <section class="row line">
+                            <div>문자 메시지</div>
+                            <div class="toggleBG">
+                                <button class="toggleFG"> </button>
+                                <div class="off">off </div>
+                            </div>
+                        </section>
+                        <section class="row">
+                            <div>이메일</div>
+                            <div class="toggleBG">
+                                <button class="toggleFG"> </button>
+                                <div class="off">off </div>
+                            </div>
+                        </section>
+                    </section>
                     
-                    <div>myPageInfo</div>
-
-
-
-
-
-
-
-
 
                 </section>
 
@@ -73,5 +95,8 @@
    
     <!-- main.js 연결 -->
     <script src="${contextPath}/resources/js/main.js"></script>
+
+    <!-- myPageInfo.js 연결 -->
+    <script src="${contextPath}/resources/js/member/myPageInfo.js"></script>
 </body>
 </html>

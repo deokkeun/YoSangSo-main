@@ -65,14 +65,17 @@ public class SignInServlet extends HttpServlet{
 				
 				System.out.println(loginMember);
 				
+				// 로그인 성공시 메인 페이지로 이동
+				resp.sendRedirect(req.getContextPath());
 				
 			} else { // 로그인 실패 경우
 				
 				session.setAttribute("message", "아이디 또는 비밀번호가 일치하지 않습니다.");
+
+				resp.sendRedirect("login");
 				
 			}
 			
-			resp.sendRedirect(req.getContextPath());
 			
 			
 		} catch(Exception e) {

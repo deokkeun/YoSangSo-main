@@ -32,14 +32,14 @@ public class PayServlet extends HttpServlet{
 			int totalPrice = 0;
 			
 			for(Product product : payList) {
-				//productTotalPrice += product.getPrice() * product.getProductCount();
+				productTotalPrice += product.getPrice() * product.getProductCount();
 			}
 			
 			if(productTotalPrice > 10000) {
 				deliveryPrice = 0;
 			}
 			
-			totalPrice = productTotalPrice + discount + deliveryPrice;
+			totalPrice = productTotalPrice - discount + deliveryPrice;
 			
 			req.setAttribute("productTotalPrice", productTotalPrice);
 			req.setAttribute("deliveryPrice", deliveryPrice);

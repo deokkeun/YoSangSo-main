@@ -101,8 +101,7 @@
 	
 			
 			
-			
-                <section class="content-box-right-content  people-bg">
+                <section class="content-box-right-content people-bg">
                     <section>
                         <h2 id="right-title" class="title"></h2>
                         <div id="right-sub-title"></div>
