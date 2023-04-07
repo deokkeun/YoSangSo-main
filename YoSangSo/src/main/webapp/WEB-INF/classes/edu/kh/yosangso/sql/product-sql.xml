@@ -11,12 +11,12 @@
 	
 	<entry key="DetailAddCart">
 	INSERT INTO CART (CART_NO , PRODUCT_NO, BUYING_RATE, MEMBER_NO)
-	VALUES (CART_SEQ.NEXTVAL, ?, ?, 2)
+	VALUES (CART_SEQ.NEXTVAL, ?, ?, ?)
 	</entry>
 	
 	<entry key="DetailPurchase">
 	INSERT INTO CART (CART_NO , PRODUCT_NO, BUYING_RATE, MEMBER_NO)
-	VALUES (CART_SEQ.NEXTVAL, ?, ?, 2)
+	VALUES (CART_SEQ.NEXTVAL, ?, ?, ?)
 	</entry>
 	
 	<entry key="personList">

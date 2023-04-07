@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -14,32 +15,59 @@ import javax.servlet.http.HttpSession;
 import com.google.gson.Gson;
 
 import edu.kh.yosangso.cart.model.vo.ShoppingCart;
+import edu.kh.yosangso.member.model.vo.Member;
 import edu.kh.yosangso.product.model.service.ProductService;
 
 @WebServlet("/product/addcart")
 public class DetailCartServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
-		int pro = Integer.parseInt(req.getParameter("productNo"));
-		int count = Integer.parseInt(req.getParameter("count"));
-		
-		ShoppingCart cart = new ShoppingCart();
-		
-		cart.setProductNo(pro);
-		cart.setBuyingRate(count);
 	
 		try {
 			
-			ProductService service = new ProductService();
+			HttpSession session = req.getSession();
 			
-			int result = service.detailCart(cart);
+			Member loginMember = (Member)( session.getAttribute("loginMember") ) ;
 			
-			System.out.println("result::" + result);
+			String path = null;
 			
-			//resp.getWriter().print(result);
-			new Gson().toJson(result, resp.getWriter());
 			
+			if(loginMember !=null) {
+				
+				ProductService service = new ProductService();
+				
+				int pro = Integer.parseInt(req.getParameter("productNo"));
+				int count = Integer.parseInt(req.getParameter("count"));
+				int memberNo = loginMember.getMemberNo();
+				
+				ShoppingCart cart = new ShoppingCart();
+				
+				cart.setProductNo(pro);
+				cart.setBuyingRate(count);
+				cart.setMemberNo(memberNo);
+				
+				int result = service.detailCart(cart);
+				
+				System.out.println("result::" + result);
+				
+				//resp.getWriter().print(result);
+				new Gson().toJson(result, resp.getWriter());
+				
+				
+			} else {
+				
+				path ="/WEB-INF/views/member/login.jsp";
+				
+				
+				req.getRequestDispatcher(path).forward(req, resp);
+			}
+			
+				
+			
+
+				
+			
+
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
