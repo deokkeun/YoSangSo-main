@@ -13,12 +13,6 @@
 		INSERT INTO REVIEW_IMG VALUES(REVIEW_IMG_SEQ.NEXTVAL, ?, ?,1,5, ?)
 	</entry>
 	
-	
-	<entry key=""></entry>
-	<entry key=""></entry>
-	<entry key=""></entry>
-	<entry key=""></entry>
-	<entry key=""></entry>
 
 
 </properties>

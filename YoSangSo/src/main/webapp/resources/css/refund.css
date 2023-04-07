@@ -2,7 +2,7 @@
 
 .container{
     width: 1280px;
-    height: 100vh;
+    height: 100%;
     margin : auto
 }
 
@@ -42,6 +42,7 @@
     border : 1px solid gainsboro;
     margin : auto;
     margin-top: 30px;
+    margin-bottom: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -172,6 +173,7 @@ button{
 	align-items:center;
 	font-size: 20px;
 	margin-top : 100px;
+	margin-bottom: 200px;
 	flex-direction: column;
 }
 

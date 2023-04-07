@@ -3,19 +3,17 @@ package edu.kh.yosangso.refund.dao;
 import static edu.kh.yosangso.common.JDBCTemplate.close;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.InvalidPropertiesFormatException;
 import java.util.List;
 import java.util.Properties;
 
 import javax.servlet.http.HttpSession;
 
+import edu.kh.yosangso.member.model.vo.Member;
 import edu.kh.yosangso.order.model.vo.Order;
 
 public class RefundDAO {
@@ -37,7 +35,7 @@ public class RefundDAO {
 		
 	}
 
-	public List<Order> orderList(Connection conn, String memberNo) throws Exception{
+	public List<Order> orderList(Connection conn, int memberNo) throws Exception{
 		List<Order> result = new ArrayList<>();
 		
 		try {
@@ -46,7 +44,7 @@ public class RefundDAO {
 			
 			pstmt = conn.prepareStatement(sql);
 			
-			pstmt.setString(1, memberNo);
+			pstmt.setInt(1, memberNo);
 			
 			rs = pstmt.executeQuery();
 			
@@ -56,7 +54,7 @@ public class RefundDAO {
 				int price = rs.getInt("PRICE");
 				int buyingRate = rs.getInt("BUYING_RATE");
 				
-				// result.add(new Order(productName, orderNo, price, buyingRate));
+				 result.add(new Order(productName, orderNo, price, buyingRate));
 				
 			}
 			
@@ -108,18 +106,21 @@ public class RefundDAO {
 		return result;
 	}
 
-	public List<Order> refundList(Connection conn, String memberNo) throws Exception{
+	public List<Order> refundList(Connection conn, int memberNo) throws Exception{
 		List<Order> result = new ArrayList<>();
 		
 		try {
 			
 			String sql = prop.getProperty("refundList");
+			System.out.println("멤버넘" + memberNo);
+			
+			System.out.println(sql);
 			
 			pstmt = conn.prepareStatement(sql);
-			
-			pstmt.setString(1, memberNo);
+			pstmt.setInt(1, memberNo);
 			
 			rs = pstmt.executeQuery();
+			
 			
 			while(rs.next()) {
 				String productName = rs.getString("PRODUCT_NM");
@@ -129,7 +130,7 @@ public class RefundDAO {
 				String refundDate = rs.getString("REFUND_DATE");
 				String orderDate = rs.getString("ORDER_DATE");
 				
-			//	result.add(new Order(productName, memberNo, orderNo, price, buyingRate, refundDate, orderDate));
+				result.add(new Order(productName, memberNo, orderNo, price, buyingRate, refundDate, orderDate));
 			}
 			
 		}finally {
@@ -137,7 +138,6 @@ public class RefundDAO {
 			close(rs);
 			close(pstmt);
 		}
-		
 		return result;
 	}
 
@@ -145,7 +145,7 @@ public class RefundDAO {
 		List<Order> result = new ArrayList<>();
 		
 		try {
-			String memberNo = (String)session.getAttribute("loginMemberNo");
+			int memberNo = ((Member)session.getAttribute("loginMember")).getMemberNo();
 			
 			System.out.println("DAO에서 session 확인 : " + session.getAttribute("loginMemberNo") );
 			
@@ -153,7 +153,7 @@ public class RefundDAO {
 			
 			pstmt = conn.prepareStatement(sql);
 			
-			pstmt.setString(1, memberNo);
+			pstmt.setInt(1, memberNo);
 			
 			rs = pstmt.executeQuery();
 			
@@ -165,7 +165,7 @@ public class RefundDAO {
 				String refundDate = rs.getString("REFUND_DATE");
 				String orderDate = rs.getString("ORDER_DATE");
 				
-			//	result.add(new Order(productName, memberNo, orderNo, price, buyingRate, refundDate, orderDate));
+				result.add(new Order(productName, memberNo, orderNo, price, buyingRate, refundDate, orderDate));
 			}
 			
 		}finally {

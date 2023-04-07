@@ -12,7 +12,7 @@ import lombok.Setter;
 public class Order {
 	
 	private String productName;
-	private String memberNo;
+	private int memberNo;
 	private int orderNo;
 	private int price;
 	private int buyingRate;
