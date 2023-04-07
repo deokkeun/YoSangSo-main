@@ -13,6 +13,7 @@ import java.util.Map;
 import edu.kh.yosangso.board.model.dao.BoardDAO;
 import edu.kh.yosangso.board.model.vo.Board;
 import edu.kh.yosangso.board.model.vo.Pagination;
+import edu.kh.yosangso.member.model.vo.Member;
 
 public class BoardService {
 
@@ -23,7 +24,7 @@ public class BoardService {
 	 * @return
 	 * @throws Exception
 	 */
-	public int inquiryAdd(String content) throws Exception {
+	public int inquiryAdd(String content, Member loginMember) throws Exception {
 		
 		
 		
@@ -31,7 +32,7 @@ public class BoardService {
 		
 		int result = 0;
 		
-		result = dao.inquiryAdd(conn, content);
+		result = dao.inquiryAdd(conn, content, loginMember);
 		
 		
 		if(result > 0) {
@@ -52,16 +53,17 @@ public class BoardService {
 	
 	
 	/** 문의 삭제 서비스
+	 * @param boardNo 
 	 * @param inputPw
 	 * @return
 	 */
-	public int inquiryDelte() throws Exception{
+	public int inquiryDelete(String boardNo) throws Exception{
 		
 		System.out.println("delete 서비스 들어옴");
 		Connection conn = getConnection();
 		int result = 0;
 		
-		result = dao.inquiryDelete(conn);
+		result = dao.inquiryDelete(conn, boardNo);
 		
 		if(result > 0) {
 			commit(conn);
@@ -82,15 +84,17 @@ public class BoardService {
 
 
 	/** 게시물 수정 서비스
+	 * @param boardNo 
+	 * @param boardNo 
 	 * @return
 	 */
-	public int inquiryUpdate(String updateContent) throws Exception{
+	public int inquiryUpdate(String updateContent, String boardNo) throws Exception{
 		
 		Connection conn = getConnection();
 		
 		int result = 0;
 		
-		result = dao.inquiryUpdate(conn,updateContent);
+		result = dao.inquiryUpdate(conn,updateContent,boardNo);
 		
 		if(result > 0) {
 			commit(conn);

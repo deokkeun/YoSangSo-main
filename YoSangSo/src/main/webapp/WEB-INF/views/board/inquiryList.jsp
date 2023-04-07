@@ -5,6 +5,8 @@
 <c:set var="inquiryList" value="${ map.inquiryList }"/>
 <c:set var="url" value="inquiryList?&cp="/>
 
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,7 +26,7 @@
         <!-- 헤더 -->
         <jsp:include page="/WEB-INF/views/common/header.jsp"/>
         
-        
+       
        
        
          <!-- 컨텐츠 -->
@@ -56,48 +58,49 @@
 
                         <div id="topOfList">
                             <div>글번호</div>
-                            <div>제목</div>
+                            <div>내용</div>
                             <div>작성자</div>
                             <div>작성일</div>
                         </div>
                         
-                        
+                     
                         
 						<form action=>
                             <div class="middleListOutBox">
-                            
+                         
                             	<c:choose>
                             		<c:when test="${ !empty inquiryList }" > 
-                            		
-		                         		<c:forEach var="item" items="${ inquiryList }"  varStatus="status">
-			                                <div class="middleOfList">
-			                                    <div>${ item.boardNo } </div>
+
+                                        
+                                        <c:forEach var="item" items="${ inquiryList }"  varStatus="status">
+                                            
+                                            <div class="middleOfList">
+                                                <div>${ item.boardNo } </div>
 			                                    <div>${ item.boardContent }</div>
 			                                    <div>${ item.memberName }</div>
 			                                    <div>${ item.boardDate }</div>
 			                                </div>
-					                    </c:forEach>
-									
-		                                <div class="answerBox">
-		    
-		                                    <div class="questionTitleBox">
-		                                        <p><span>Q</span></p>
-		                                        <p id="questionP"><span>${ item.boardContent }</span></p>
-		                                        
-		                                        <button type="button" id="inquiryDelete">삭제하기</button> 
-		                                        <button type="button" id="inquiryUpdate">수정하기</button> 
-		                                        <!-- <c:if test="${ loginMember eq item.inquiryMemberNo }">
-		                                            <button type="button" id="inquiryDelete">삭제하기</button> 
-		                                        	<button type="button" id="inquiryUpdate">수정하기</button> 
-		                                        </c:if> -->
-		                                    </div>
-		    
-		                                    <div class="answerInnerBox" id="answerInnerBox">
-		                                        <p><span>A</span></p>
-		                                        <p><span>내일쯤 되지 않을까요? 깔깔 몰라융 내가 어떻게 알아요~</span></p>
-		                                    </div>
-		                                    
-		                                </div>
+                                            
+                                            
+                                            <div class="answerBox">
+                
+                                                <div class="questionTitleBox">
+                                                    <p><span>Q</span></p>
+                                                    <p id="questionP"><span>${ item.boardContent }</span></p>
+
+                                                    <c:if test="${ loginMember.memberNo eq item.memberNo }">
+                                                        <button type="button" id="inquiryDelete" onclick="return deleteBoard('${item.boardNo}')">삭제하기</button> 
+                                                        <button type="button" id="inquiryUpdate" onclick="return updateBoard('${item.boardNo}')">수정하기</button> 
+                                                    </c:if>
+                                                </div>
+                
+                                                <div class="answerInnerBox" id="answerInnerBox">
+                                                    <p><span>A</span></p>
+                                                    <p><span>내일쯤 되지 않을까요? 깔깔 몰라융 내가 어떻게 알아요~</span></p>
+                                                </div>
+                                                
+                                            </div>
+                                        </c:forEach>
                             		</c:when>
                             		
                             		<c:otherwise>
@@ -179,31 +182,16 @@
    
 
       <script>
-        
-
         $(function(){
-            // 요소 불러와서 이벤트 주기
-            $(".middleOfList > div:nth-child(2)").on("click", e =>{
-                if($(".answerBox").css("display") == "none") {
-
-                    console.log("if 실행");
-                    $(".answerBox").slideUp();
-                    $(e.target).parent().next().slideDown();
-                    console.log("if 실행 후");  
-                }
-                else{
-                    console.log("else 실행");
-                    $(".answerBox").slideUp();
-                    $(e.target).parent().next().slideDown();
-                    console.log("else 실행 후");
+            $("div.middleOfList").on("click", function() {
+                if($(this).next("div").css("display") == "none") {
+                    $(this).siblings("div.answerBox").slideUp();
+                    $(this).next().slideDown(); 
+                } else{
+                    $(this).next().slideUp();
                 }
             });
-
         });
-
-
-
-
     </script>
 
 	

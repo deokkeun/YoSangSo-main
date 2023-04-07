@@ -13,6 +13,7 @@ import java.util.Properties;
 
 import edu.kh.yosangso.board.model.vo.Board;
 import edu.kh.yosangso.board.model.vo.Pagination;
+import edu.kh.yosangso.member.model.vo.Member;
 
 public class BoardDAO {
 
@@ -40,7 +41,7 @@ public class BoardDAO {
 	 * @return
 	 * @throws Exception
 	 */
-	public int inquiryAdd(Connection conn, String content) throws Exception {
+	public int inquiryAdd(Connection conn, String content, Member loginMember) throws Exception {
 		
 		
 		int result = 0;
@@ -52,11 +53,9 @@ public class BoardDAO {
 		
 			pstmt = conn.prepareStatement(sql);
 			
-			
-			
 			pstmt.setString(1, content);
-			pstmt.setString(2, board.getMemberName());
-			
+			pstmt.setInt(2, loginMember.getMemberNo());
+			pstmt.setString(3, loginMember.getMemberName());
 			
 			result = pstmt.executeUpdate();
 			
@@ -70,13 +69,12 @@ public class BoardDAO {
 
 	/** 게시물 삭제 DAO
 	 * @param conn
+	 * @param boardNo 
 	 * @param inputPw
 	 * @return
 	 * @throws Exception
 	 */
-	public int inquiryDelete(Connection conn) throws Exception {
-		
-		
+	public int inquiryDelete(Connection conn, String boardNo) throws Exception {
 		
 		int result = 0;
 		
@@ -85,9 +83,10 @@ public class BoardDAO {
 			
 			String sql = prop.getProperty("inquiryDelete");
 			
-			stmt = conn.createStatement();
-			result = stmt.executeUpdate(sql);
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, boardNo);
 			
+			result = pstmt.executeUpdate();
 			
 		}catch(Exception e) {
 			e.printStackTrace();
@@ -99,10 +98,17 @@ public class BoardDAO {
 
 	
 
-	public int inquiryUpdate(Connection conn, String updateContent) throws Exception{
+	/** 게시물 수정 DAO
+	 * @param conn
+	 * @param updateContent
+	 * @param boardNo 
+	 * @return
+	 * @throws Exception
+	 */
+	public int inquiryUpdate(Connection conn, String updateContent, String boardNo) throws Exception{
 		
 		int result = 0;
-		// 로그인 객체의 멤버 넘버를 JSP에서 받아와서
+		// 인쿼리 넘버를 JSP에서 받아와서
 		// sql 조건문에 대입 시켜 바꿔야함
 		// 지금은 임시로 모든 구문 수정으로 테스트
 		
@@ -111,6 +117,7 @@ public class BoardDAO {
 			
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, updateContent);
+			pstmt.setString(2, boardNo);
 			
 			result = pstmt.executeUpdate();
 		}finally {

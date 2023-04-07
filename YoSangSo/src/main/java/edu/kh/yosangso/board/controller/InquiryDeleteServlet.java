@@ -18,25 +18,17 @@ public class InquiryDeleteServlet extends HttpServlet{
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
 		int result = 0;
-		String message = null;
+		String boardNo = req.getParameter("boardNo");
 		
 		try {
 			
 			BoardService service = new BoardService();
-			HttpSession session = req.getSession();
 			
-			result = service.inquiryDelte();
+			result = service.inquiryDelete(boardNo);
 			
-//			if( result > 0) {
-//				message = "게시글이 삭제되었습니다.";
-//			}else {
-//				message = "게시글 삭제를 실패했습니다.";
-//			}
-//			
-//			session.setAttribute("message", message);
 			
 			resp.sendRedirect(req.getContextPath() + "/board/inquiryList"); // 프론트 리다이렉트 location.reload();
-			
+			System.out.println("delete 써블릿 나옴");
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
