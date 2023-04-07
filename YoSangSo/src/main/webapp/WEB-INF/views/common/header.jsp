@@ -40,9 +40,21 @@
        <section id="header-box-mypage">
            <nav>
                <ul>
-                   <li>
-                       <a href="${contextPath}/cart/shoppingCart" class="fa-solid fa-cart-shopping"></a>
-                   </li>
+                <!-- 장바구니 -->
+                <c:choose>
+                    <c:when test="${empty loginMember}">
+                        <li>
+                         <a href="${contextPath}/member/login" class="fa-solid fa-cart-shopping"></a> 
+                      </li>              	
+                    </c:when>
+                    <c:otherwise>
+                        <li>
+                            <a href="${contextPath}/cart/shoppingCart" class="fa-solid fa-cart-shopping"></a>
+                        </li>
+                    </c:otherwise>
+                </c:choose>
+
+                   <!-- 사람모양(회원가입, 마이페이지) -->
                    <c:choose>
                   	<c:when test="${empty loginMember}">
                   		<li>
@@ -56,6 +68,7 @@
                   	</c:otherwise>
                   </c:choose>
                   
+                  <!-- 로그인, 로그아웃 -->
                   <c:choose>
                   	<c:when test="${empty loginMember}">
                   		<li>
