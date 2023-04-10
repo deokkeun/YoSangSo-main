@@ -19,8 +19,7 @@ public class SearchingService {
 		
 		conn = getConnection();
 		
-		List<Product> list = dao.searchingProduct(conn, query );
-		
+		List<Product> list = dao.searchingProduct(conn, query);
 		
 		close(conn);
 		

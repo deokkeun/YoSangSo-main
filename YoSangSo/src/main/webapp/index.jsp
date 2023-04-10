@@ -42,6 +42,7 @@ select * from product
 
     <!-- 헤더, 컨텐츠 -->
     <main>
+  
 
     	<!-- 헤더 -->
     	<jsp:include page="/WEB-INF/views/common/header.jsp"/>
@@ -51,11 +52,11 @@ select * from product
         <!-- content 전체 감싸는 영역 -->
         <section class="content-container">
         
-
             <!-- 왼쪽사이드 -->
             <section class="leftSide">
             </section>
-
+            
+			
 
             <!-- 가운데페이지 -->
             <section class="center">

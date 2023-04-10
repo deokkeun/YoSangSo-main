@@ -77,6 +77,7 @@
                         <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
                             <div class="accordion-body">회원 정보는 홈페이지 -> 마이페이지에서 변경 가능합니다. 감사합니다.</div>
                         </div>
+                        </div>
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="flush-headingThree">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
@@ -90,7 +91,6 @@
                             <div class="accordion-body">비밀번호는 로그인 창의 아이디/비밀번호 찾기에서 찾을 수 있습니다. <br>
                             만일 진행이 원할하게 되지 않을 시 요생소 고객센터에 전화를 주시면 친절하게 도와드리겠습니다.</div>
                             </div>
-                        </div>
                         </div>
                         <div class="accordion-item">
                         <h2 class="accordion-header" id="flush-headingFour">
