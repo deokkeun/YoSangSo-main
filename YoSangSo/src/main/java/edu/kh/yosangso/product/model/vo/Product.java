@@ -27,7 +27,7 @@ public class Product {
 	private String productImageUrl;
 	private String part;
 	private int productCount;
-	private int orderNo;
+	private String orderNo;
 	
 	
 	public Product(int productNo, String productName, String category, int price, int stock, String productDate,
@@ -47,7 +47,7 @@ public class Product {
 	}
 
 
-	public Product(String productName, String productDate, int orderNo) {
+	public Product(String productName, String productDate, String orderNo) {
 		super();
 		this.productName = productName;
 		this.productDate = productDate;

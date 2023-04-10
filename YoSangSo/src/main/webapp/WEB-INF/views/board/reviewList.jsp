@@ -59,7 +59,7 @@
 
                                         <div class="rightReivewContent">
                                             
-                                            <!-- <form action="reviewWriting"> -->
+                                            <form action="reviewWriting">
                                                 <c:forEach var="list" items="${list}">
                                                     <div class="rightProductImg"> 
 
@@ -69,7 +69,7 @@
                 
                                                         <div class="product-info">
                                                             <div>
-                                                                <p>${list.productDate}일 주문</p>
+                                                                <p>${list.orderDate}일 주문</p>
                                                             </div>
                                                             <div>
                                                                 <p>${list.productName}</p>
@@ -77,12 +77,12 @@
                                                         </div>
                                                             <input type="hidden" name="orderNo" value="${list.orderNo}">
                                                         <div>
-                                                            <button type="button" id="reviewAdd" >리뷰작성</button><br><br>
+                                                            <button type="submit" id="reviewAdd">리뷰작성</button><br><br>
                                                         </div>
 
                                                     </div>
                                                 </c:forEach>
-                                            <!-- </form>  -->
+                                            </form> 
 
                                         </div>
                                     </div>
