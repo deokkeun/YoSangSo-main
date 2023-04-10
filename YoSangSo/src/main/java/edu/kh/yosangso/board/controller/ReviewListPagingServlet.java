@@ -39,7 +39,7 @@ public class ReviewListPagingServlet extends HttpServlet {
 		int total = service.getTotal(memberNo);
 		int doneTotal = service.getDoneTotal(memberNo);
 		
-		List<Product> list = service.getList(memberNo,pageNum, amount);
+		List<Product> list = service.getList(memberNo,pageNum,amount);
 		ReviewListPaging pageVo = new ReviewListPaging(pageNum, amount, total);
 		
 		

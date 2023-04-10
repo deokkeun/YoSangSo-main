@@ -184,9 +184,9 @@ public class Pagination {
 		endPage = startPage + pageSize - 1;
 		
 		// 만약에 endPage가 maxPage를 초과하는 경우
-//		if(endPage > maxPage) {
-//			endPage = maxPage;
-//		}
+		if(endPage > maxPage) {
+		endPage = maxPage;
+		}
 		
 		
 		// * prevPage(<) : 목록 하단에 노출된 번호의 이전 목록 끝 번호
