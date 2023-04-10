@@ -4,7 +4,7 @@
 	<comment>board-sql.xml</comment>
 	
 	<entry key="searching">
-	SELECT * FROM PRODUCT p WHERE PRODUCT_NM LIKE '%?%'
+	<![CDATA[SELECT * FROM PRODUCT p WHERE PRODUCT_NM LIKE '%'||?||'%' ]]>
 	</entry>
 	
 

@@ -49,7 +49,7 @@
                 </div>
             </div>
             <div class="cart-in-product">
-                <form action="addPayment" name="cart-form" method="post">
+                <form action="${contextPath}/cart/addPayment" name="cart-form" method="post">
                		<c:forEach var="list" items="${cartList}" varStatus="vs">
 	                    <div class="cart-in-product-border">
 	                        <!-- 이미지 -->
@@ -124,6 +124,11 @@
 	<!-- 장바구니 결제 테스트 입니다. -->
        <form action="${contextPath}/order/pay" method="GET">
 			<button>결제 테스트 </button>
+       </form>
+       
+       <form action="${contextPath}/cart/addPayment" method="post">
+       		<input type="hidden" name="productNo" value="2">
+       		<button>개인 테스트</button>
        </form>
         
 

@@ -1,7 +1,6 @@
 package edu.kh.yosangso.cart.controller;
 
 import java.io.IOException;
-import java.util.Arrays;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -18,9 +17,40 @@ public class SendTest extends HttpServlet{
 		
 		String[] cartList = req.getParameterValues("cartList");
 		
-		System.out.println(Arrays.toString(cartList));
+		String productNo = req.getParameter("productNo");
 		
+		String result = null;
+	
+		
+		try {
+			
+			if(cartList != null) {
+				result = order(cartList);
+			}else {
+				result = order(productNo);
+			}
+			
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		
+		String path = "/WEB-INF/views/cart/payTest.jsp";
+		
+		req.setAttribute("result", result);
+		
+		req.getRequestDispatcher(path).forward(req, resp);
 		
 		
 	}
+	
+	public String order(String[] cart) {
+		
+		return cart.toString() + "장바구니 결제 완료";
+	}
+	
+	public String order(String productNo) {
+		
+		return productNo + "개인 결제 완료";
+	}
+	
 }

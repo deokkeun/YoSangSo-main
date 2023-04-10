@@ -53,6 +53,7 @@ public class SearchingDAO {
 			
 			rs = pstmt.executeQuery();
 			
+			
 			while(rs.next()) {
 				
 				int productNo = rs.getInt("PRODUCT_NO");
