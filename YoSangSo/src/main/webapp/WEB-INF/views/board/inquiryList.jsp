@@ -44,10 +44,10 @@
                 <div id="middle-area">
                     <div class="topQuestion">
                         <div>
-                            <h1>1:1 문의</h1>
+                            <span>1:1 문의게시판</span>
                         </div>
                         <div>
-                        구매하려는 상품에 대해 궁금한 점이 있으신 경우 문의해주세요.
+                        회원님들이 남겨주신 문의 내용들입니다.
                         </div>
                     </div>
 
@@ -76,7 +76,7 @@
                                             
                                             <div class="middleOfList">
                                                 <div>${ item.boardNo } </div>
-			                                    <div>${ item.boardContent }</div>
+			                                    <div><span id="textOverFlow">${ item.boardContent }</span></div>
 			                                    <div>${ item.memberName }</div>
 			                                    <div>${ item.boardDate }</div>
 			                                </div>
@@ -85,18 +85,23 @@
                                             <div class="answerBox">
                 
                                                 <div class="questionTitleBox">
-                                                    <p><span>Q</span></p>
-                                                    <p id="questionP"><span>${ item.boardContent }</span></p>
-
+                                                    <div class="questionInnerBox" id="questionInnerBox">
+                                                        <p><span>Q</span></p>
+                                                        <p id="questionP"><span>${ item.boardContent }</span></p>
+                                                    </div>
                                                     <c:if test="${ loginMember.memberNo eq item.memberNo }">
-                                                        <button type="button" id="inquiryDelete" onclick="return deleteBoard('${item.boardNo}')">삭제하기</button> 
-                                                        <button type="button" id="inquiryUpdate" onclick="return updateBoard('${item.boardNo}')">수정하기</button> 
+                                                    <div class="quetionInnerBoxBtn" id="quetionInnerBoxBtn">
+                                                        <button type="button" id="inquiryDelete" onclick="return deleteBoard('${item.boardNo}')">삭제</button> 
+                                                        <button type="button" id="inquiryUpdate" onclick="return updateBoard('${item.boardNo}')">수정</button> 
+                                                    </div>
                                                     </c:if>
                                                 </div>
                 
-                                                <div class="answerInnerBox" id="answerInnerBox">
-                                                    <p><span>A</span></p>
-                                                    <p><span>내일쯤 되지 않을까요? 깔깔 몰라융 내가 어떻게 알아요~</span></p>
+                                                <div class="answerTitleBox">
+                                                    <div class="answerInnerBox" id="answerInnerBox">
+                                                        <p><span>A</span></p>
+                                                        <p><span>내일쯤 되지 않을까요? 깔깔 몰라융 내가 어떻게 알아요~</span></p>
+                                                    </div>
                                                 </div>
                                                 
                                             </div>
@@ -117,7 +122,7 @@
                         
 
                     <div id="writingBtnBox">
-                        <button type="button" id="btnOfWriting" onclick=location.href="inquiry" >글쓰기</button>
+                        <button type="button" id="btnOfWriting" onclick=location.href="inquiry" >문의작성</button>
                     </div>
 	
                     <div class="numListBox">
@@ -126,24 +131,9 @@
                         </div>
                     
                 	<c:forEach var="i" begin="${ pagination.startPage }" end="${ pagination.endPage }" step="1">
-                		
-                		<c:choose>
-                			<c:when test="${i == pagination.currentPage }">
-                				<div id="listBox">
-	                            	<a>${i}</a>
-	                        	</div>
-                			</c:when>
-                			
-                			<c:otherwise>
-                				<div id="listBox">
-	                            	<a href="${url}${i}">${i}</a>
-	                        	</div>
-                			</c:otherwise>
-                			
-                		</c:choose>
-                        	
-                        	
-                        
+                        <li id="listBox" class="${pagination.currentPage eq i ? 'active' : '' }">
+                            <a href="${url}${i}" id="aNum">${i}</a>
+                        </li>
                   	 </c:forEach>
                    	
                         <div id="numListBtnBox2">

@@ -47,6 +47,8 @@
     display: flex;
     flex-basis:90%;
     flex-direction: column;
+    margin-top:50px;
+    margin-right:60px;
 }
 
 
@@ -61,6 +63,12 @@
     /* border:1px solid brown; */
     display: flex;
     flex-direction: column;
+}
+
+.topQuestion > div:nth-child(1) > span {
+    font-size: 25px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.639);
 }
 
 
@@ -112,6 +120,7 @@
     /* background-color: blue; */
     display: flex;
     justify-content: center;
+    padding-right: 110px;
 }
 
 #topOfList > div:nth-child(3){
@@ -119,6 +128,7 @@
     /* background-color: blue; */
     display: flex;
     justify-content: center;
+    padding-right: 152px;
 }
 
 #topOfList > div:nth-child(4){
@@ -166,31 +176,169 @@
     justify-content: center;
 }
 
+#textOverFlow {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100px;
+    height: 20px;
+}
+
+
+
+
 /* ===================================================== */
 
 .answerBox{
     background-color: #d1d5d6;
     width: 100%;
     display: none;
-    
+    height: 250px;
 }
 
-
-.questionTitleBox{
+/* 앤서박스 안  질문박스 */
+.questionTitleBox {
     display: flex;
     width: 100%;
+    height: 100px;
 }
 
-.answerInnerBox{
+.questionTitleBox > div:nth-child(1){ 
+    flex-basis: 70%;
     display: flex;
-    width: 100%;
-    height: 200px;
-    overflow: scroll;
+    align-items: center;
+    padding-left: 50px;
 }
+
+#questionP {
+    padding-left: 50px;
+    width: 90%;
+}
+
+.questionTitleBox > div:nth-child(2){
+    flex-basis: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 
 .questionTitleBox > p, .answerInnerBox > p{
     margin-left: 50px;
 }
+
+.questionTitleBox  button {
+    width: 70px;
+    height: 30px;
+    border-radius: 8px;
+    /* background-color: #2678F3; */
+    margin-right: 50px;
+    border: 3px solid #6aafe6;
+    color: #6e6e6e;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+#inquiryUpdate{
+    margin-top: 23px;
+}
+
+.questionTitleBox  button:hover {
+    letter-spacing: 2px;
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+
+.questionTitleBox  button:active {
+    transform: scale(1.5);
+}
+
+/* ============================= */
+
+/* 앤서 박스 안  답변박스 */
+
+
+.answerTitleBox {
+    display: flex;
+    width: 100%;
+    height: 100px;
+}
+
+.answerInnerBox{
+    flex-basis: 70%;
+    display: flex;
+    align-items: center;
+}
+
+
+/* 앤서 박스 안 텍스트 에리어  */
+
+.answerBoxTextArea {
+    width: 750px;
+    height: 100px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: solid 2px #7f7f80ae;
+    border-radius: 5px;
+    font-size: 17px;
+    resize: none;
+    outline: none;
+    margin-left: 30px;
+    margin-top: 15px;
+}
+
+/* 텍스트 에리어 수정확인 버튼 */
+.btnUpdate {
+    width: 70px;
+    height: 30px;
+    border-radius: 8px;
+    margin-right: 50px;
+    border: 3px solid #6aafe6;
+    color: #6e6e6e;
+    font-size: 15px;
+    font-weight: bold;
+    margin-left:100px;
+}
+
+.btnUpdate:hover{
+    letter-spacing: 2px;
+    transform: scale(1.2);
+    cursor: pointer;
+
+}
+
+.btnUpdate:active{
+    transform: scale(1.5);
+}
+/* 텍스트 에리어 수정취소 버튼 */
+.btnCancel {
+    width: 70px;
+    height: 30px;
+    border-radius: 8px;
+    margin-right: 50px;
+    border: 3px solid #6aafe6;
+    color: #6e6e6e;
+    font-size: 15px;
+    font-weight: bold;
+    margin-left:100px;
+    margin-top: 23px;
+}
+
+.btnCancel:hover{
+    letter-spacing: 2px;
+    transform: scale(1.2);
+    cursor: pointer;
+
+}
+
+.btnCancel:active{
+    transform: scale(1.5);
+}
+
+
 
 
 /* ===================================================== */
@@ -218,18 +366,27 @@
 
 
 #btnOfWriting{
+    width: 115px;
+    height: 40px;
+    border-radius: 8px;
+    /* background-color: #2678F3; */
+    margin-right: 50px;
+    border: 3px solid #6aafe6;
+    color: #6e6e6e;
+}
 
-    width: 90px;
-    height: 30px;
-    border-radius: 10%;
-    border:1px solid #575C63;
-    background-color: #2678F3;
-    color: white;
+#btnOfWriting:hover{
+    letter-spacing: 2px;
+    transform: scale(1.2);
     cursor: pointer;
 }
 
+#btnOfWriting:active{
+    transform: scale(1.5);
+}
 
-.numListBox a{
+
+#numListBtnBox > a , #numListBtnBox2 > a{
     width: 30px;
     height: 20px;
     text-decoration: none;
@@ -247,15 +404,32 @@
 }
 
 
-/* #listBox {
-    width: 300px;
+
+
+#listBox {
+    list-style: none;
+} 
+
+
+/* #listBox > a {
+    font-size:20px;
+    text-decoration: none;
+    color: rgb(192, 192, 192);
+    margin-right: 10px;
+    margin-left: 10px;
 } */
 
-/* #listBox > a{
-    margin: 0 10px;
-    color: black;
+.numListBox  a {
+    font-size:20px;
     text-decoration: none;
-} */
+    color: rgb(192, 192, 192);
+    margin: 0 10px;
+}
+
+.active > a {
+    font-size: 22px;
+	color : black;
+}
 
 
 #numListBtnBox{
@@ -265,3 +439,8 @@
 #numListBtnBox2{
     margin-left: 15px;
 }
+
+
+
+
+/* =============================================== */
