@@ -7,12 +7,14 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Properties;
 
 import edu.kh.yosangso.board.model.vo.Board;
 import edu.kh.yosangso.board.model.vo.Pagination;
+import edu.kh.yosangso.board.model.vo.Review;
 import edu.kh.yosangso.member.model.vo.Member;
 
 public class BoardDAO {
@@ -185,5 +187,24 @@ public class BoardDAO {
 			close(stmt);
 		}
 		return inquiryList;
+	}
+	
+	
+
+	public List<Review> selectqna(Connection conn, int pro) {
+		List<Review> reviewList = new ArrayList<>();
+		
+		try {
+			 
+			String sql = prop.getProperty("selectReview");
+			
+			
+			
+		} finally {
+			close(rs);
+			close(pstmt);
+
+		}
+		return null;
 	}
 }

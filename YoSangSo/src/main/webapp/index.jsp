@@ -9,7 +9,9 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 반응형 페이지 필요 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <link rel="stylesheet" href="${contextPath }/resources/css/index.css">
     <link rel="stylesheet" href="${contextPath }/resources/css/main-style.css">
     <script src="https://kit.fontawesome.com/881d1deef7.js" crossorigin="anonymous"></script>
@@ -28,6 +30,8 @@
     
 </head>
 <body>
+
+
 <sql:setDataSource var= "conn" 
 	driver = "oracle.jdbc.driver.OracleDriver"
 	url="jdbc:oracle:thin:@//112.220.137.37:1521/xe"
@@ -42,6 +46,7 @@ select * from product
 
     <!-- 헤더, 컨텐츠 -->
     <main>
+  
 
     	<!-- 헤더 -->
     	<jsp:include page="/WEB-INF/views/common/header.jsp"/>
@@ -51,11 +56,11 @@ select * from product
         <!-- content 전체 감싸는 영역 -->
         <section class="content-container">
         
-
             <!-- 왼쪽사이드 -->
             <section class="leftSide">
             </section>
-
+            
+			
 
             <!-- 가운데페이지 -->
             <section class="center">
@@ -71,17 +76,17 @@ select * from product
 
                         <div>
                             <img src="resources/image/index/메인슬라이더2편집.jpg" width="100%">
-                        </div>
-
-                        <div>
-                            <img src="resources/image/index/메인슬라이더3편집.png" width="100%">
+                        </div>	
+ 				
+                    	<div>
+                	        <img src="resources/image/index/메인슬라이더3편집.png" width="100%">
                         </div>
                     </div>
+                         
 
                 </section>
 
-
-
+			
 
                 <!-- 2 베스트부분 시작 -->
                 <section class="bestPart">
@@ -524,6 +529,47 @@ select * from product
 	<!-- jQuery 라이브러리 추가 -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
    
+   	<script>
+ // Image 객체를 참조한후 Image 객체의 속성인 src 로 이미지 주소를 담습니다.  
+	var img1 = new Image();
+	img1.src = 'resources/image/index/메인슬라이더1편집.jpg';
+	var img2 = new Image();
+	img2.src = 'resources/image/index/메인슬라이더2편집.jpg';
+	var img3 = new Image();
+	img3.src = 'resources/image/index/메인슬라이더3편집.png';
+
+// 이미지 총 갯수를 maxCount 에 셋팅 해줍니다.
+	var maxCount = 3;
+	var count = 1;   
+    
+	function slideFun() {
+	    if( count == (maxCount + 1) ) { count = 1; } 
+	    document.imgimg.src= eval( "img" + count + ".src");
+	    count++;
+	}
+// setInerval 메소드로 slideFun() 함수를 1초 마다 실행 합니다.   
+	function startFun() {
+	    slideTime = setInterval("slideFun()",1000);
+	}
+// 이미지에 마우스 오버시 실행중인 setInerval 를 clearInterval 로 정지 합니다.
+	function stopFun() {
+	    clearInterval(slideTime);    
+	}
+// 브라우저 호환(크로스브라우징)을 위해 메소드 제공 여부를 체크 합니다. 
+// 이미지에 마우스오버시 "정지", 마우스아웃시 "시작" 이벤트를 적용합니다.
+	if (document.addEventListener){
+	    document.imgimg.addEventListener("mouseover",stopFun,false);
+	    document.imgimg.addEventListener("mouseout",startFun,false);
+	} else {
+	    document.imgimg.attachEvent("onmouseover",stopFun);
+	    document.imgimg.attachEvent("onmouseout",startFun);
+	}
+// 페이지 로딩시 startFun() 함수를 실행 합니다.
+startFun();
+
+
+   	
+   	</script>
     <!-- main.js 연결 -->
     <script src="${contextPath}/resources/js/index.js"></script>
     <script src="${contextPath}/resources/js/main.js"></script>
