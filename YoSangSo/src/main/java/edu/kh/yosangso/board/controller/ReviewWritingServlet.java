@@ -12,12 +12,19 @@ import javax.servlet.http.HttpServletResponse;
  * @author lee
  *
  */
-@WebServlet("/board/review/reviewWriting")
+@WebServlet("/board/reviewWriting")
 public class ReviewWritingServlet extends HttpServlet{
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String path = "/WEB-INF/views/board/reviewWriting.jsp";
+		String orderNo = req.getParameter("orderNO");
+		
+		
+		req.setAttribute("orderNo", orderNo);
+		System.out.println(orderNo);
+		
+		
 		req.getRequestDispatcher(path).forward(req, resp);
 	}
 }

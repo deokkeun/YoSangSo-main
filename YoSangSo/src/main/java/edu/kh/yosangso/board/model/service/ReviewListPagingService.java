@@ -9,7 +9,7 @@ import java.util.List;
 
 import edu.kh.yosangso.board.model.dao.ReviewListPagingDAO;
 import edu.kh.yosangso.board.model.vo.Review;
-import edu.kh.yosangso.product.model.vo.Product;
+import edu.kh.yosangso.order.model.vo.Order;
 
 public class ReviewListPagingService  {
 	
@@ -28,9 +28,9 @@ public class ReviewListPagingService  {
 		return result;
 	}
 
-	public List<Product> getList(int memberNo, int pageNum, int amount) throws Exception{
+	public List<Order> getList(int memberNo, int pageNum, int amount) throws Exception{
 		
-		List<Product> list = new ArrayList<>();
+		List<Order> list = new ArrayList<>();
 		
 		ReviewListPagingDAO dao = new ReviewListPagingDAO();
 		
