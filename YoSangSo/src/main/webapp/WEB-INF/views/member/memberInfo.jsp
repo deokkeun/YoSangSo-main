@@ -9,6 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="${contextPath}/resources/css/main-style.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/main-sub-style.css">
     <script src="https://kit.fontawesome.com/881d1deef7.js" crossorigin="anonymous"></script>
     <title>index</title>
 </head>
@@ -20,16 +21,45 @@
         <jsp:include page="/WEB-INF/views/common/header.jsp"/>
         
         
-		
-       
-       
+            <!-- 컨텐츠 -->
+        <section id="content">
+
+            <!-- 컨텐츠 내용 -->
+            <section class="content-box">
+
+                <jsp:include page="/WEB-INF/views/common/contentBoxLeft.jsp"/>
+                
+                <!-- 컨텐츠 내용 오른쪽 -->
+                <section  class="content-box-right">
 
 
 
 
 
 
-        
+
+
+
+
+                    
+                    내용 작성 공간입니다.(template1)
+
+
+
+
+
+
+
+
+
+                </section>
+
+            <!-- 컨텐츠 내용 끝 -->
+            </section>
+
+        </section>
+
+
 
     <!-- 헤더, 컨텐츠 끝 -->
     </main>

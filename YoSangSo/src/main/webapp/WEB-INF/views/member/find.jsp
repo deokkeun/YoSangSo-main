@@ -9,6 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="${contextPath}/resources/css/main-style.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/member/find.css">
     <script src="https://kit.fontawesome.com/881d1deef7.js" crossorigin="anonymous"></script>
     <title>index</title>
 </head>
@@ -21,13 +22,23 @@
         
         
 
-        
-       
-       <div>아이디 / 비밀번호 찾기</div>
-
-
-
-
+        <section id="find-content">
+            <section>
+                <div class="find-title">요생소</div>
+                <div class="find-sub-title">찾으려는 <div id="memId"> 아이디 </div> / <div id="memPw"> 비밀번호 </div> 를 선택해주세요</div>
+            </section>
+            <section class="find-box">
+                <button class="main-btn">
+                    <i class="fa-solid fa-user find-btn"></i>
+                    <div>요생소 아이디</div>
+                </button>
+                <button class="main-btn">
+                    <i class="fa-solid fa-user-lock find-btn"></i>
+                    <div>요생소 비밀번호</div>
+                </button>
+            </section>
+             
+        </section>
 
 
         
@@ -44,5 +55,8 @@
    
     <!-- main.js 연결 -->
     <script src="${contextPath}/resources/js/main.js"></script>
+
+    <!-- find.js 연결 -->
+    <script src="${contextPath}/resources/js/member/find.js"></script>
 </body>
 </html>

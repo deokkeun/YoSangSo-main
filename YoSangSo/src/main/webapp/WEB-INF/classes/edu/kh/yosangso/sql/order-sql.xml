@@ -4,21 +4,22 @@
 	<comment>order-sql.xml</comment>
 
 	<entry key="payList">
-		SELECT PRODUCT_IMAGE, PRODUCT_NM, PRICE, BUYING_RATE
-		FROM MEMBER
-		JOIN CART USING(MEMBER_NO)
-		JOIN PRODUCT USING(PRODUCT_NO)
+		SELECT p.PRODUCT_IMAGE, p.PRODUCT_NM, p.PRICE, c.BUYING_RATE 
+		FROM "MEMBER" m 
+		JOIN CART c ON(m.MEMBER_NO = c.MEMBER_NO)
+		JOIN PRODUCT p ON(p.PRODUCT_NO = c.PRODUCT_NO)
+		WHERE m.MEMBER_NO = ?
 	</entry>
-<!-- <entry key="payList">
-		회원번호로 장바구니에 담겨있는 제품 조회(이미지, 제품명, 가격, 수량)
-		SELECT PRODUCT_IMAGE, PRODUCT_NM, PRICE, PRODUCT_COUNT
-		FROM MEMBER
-		JOIN CART USING(MEMBER_NO)
-		JOIN PRODUCT USING(PRODUCT_NO)
-		WHERE MEMBER_NO = ?
-	</entry> -->
-	<entry key=""></entry>
-	<entry key=""></entry>
+	<!-- 결제 -->
+	<entry key="pay">
+		INSERT INTO "ORDER" (MEMBER_NO, ORDER_NO, ORDER_NAME, ORDER_PHONE, ZIP_CODE, ADDRESS, ORDER_DATE, REFUND_FL)
+		VALUES(?, ?, ?, ?, ?, ?, DEFAULT, DEFAULT)
+	</entry>
+	<entry key="payOneList">
+		SELECT PRODUCT_IMAGE, PRODUCT_NM, PRICE
+		FROM PRODUCT
+		WHERE PRODUCT_NO = ?
+	</entry>
 	<entry key=""></entry>
 	<entry key=""></entry>
 	<entry key=""></entry>

@@ -40,7 +40,7 @@
                         <div>${loginMember.memberEmail}</div>
                         <div class="row">
                             <div></div>
-                            <button class="update-btn">수정 ></button>
+                            <button class="update-btn" onclick="location.href='memberInfo'">수정 ></button>
                         </div>
                     </section>
 
