@@ -13,6 +13,7 @@ import java.util.Map;
 import edu.kh.yosangso.board.model.dao.BoardDAO;
 import edu.kh.yosangso.board.model.vo.Board;
 import edu.kh.yosangso.board.model.vo.Pagination;
+import edu.kh.yosangso.board.model.vo.Review;
 import edu.kh.yosangso.member.model.vo.Member;
 
 public class BoardService {
@@ -129,6 +130,18 @@ public class BoardService {
 		
 		
 		return map;
+	}
+
+
+
+	public List<Review> selectqna(int pro) throws Exception {
+		Connection conn = getConnection();
+		
+		List<Review> reviewList = dao.selectqna(conn, pro);
+		
+		close(conn);
+		
+		return reviewList;
 	}
 
 }
