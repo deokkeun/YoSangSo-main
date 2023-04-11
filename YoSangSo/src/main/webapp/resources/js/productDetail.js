@@ -77,10 +77,11 @@ count.addEventListener("click", function() {
 function addcart() {
 	const count = document.getElementById("countbox").value;
 	const pro = document.getElementById("proNo").value;
-	const loginmember = document.getElementById("loginmember")
+	var signIn = sessionStorage.getItem('loginmember');
 	console.log(count);
 	console.log(pro);
 	console.log(loginmember);
+	
 
 		$.ajax({
 		url: "addcart",
@@ -95,8 +96,12 @@ function addcart() {
 			
 		}
 	});
-	
 		
+}
+
+function login() {
+	location.href="http://localhost:8080/yosangso/member/login"
+	
 }
 
 
