@@ -4,13 +4,30 @@
 	<comment>board-sql.xml</comment>
 	
 	<entry key="reviewAdd">
-		INSERT INTO REVIEW VALUES(27, ?, DEFAULT, ?, 1, 1)
+		INSERT INTO REVIEW (REVIEW_NO, REVIEW_CONTENT, REVIEW_DATE, REVIEW_RATE, MEMBER_NO, PRODUCT_NO, ORDER_NO, R_IMG_NO)
+		VALUES(4, ? , DEFAULT, ?, 1, 1, 230411090748579,1)
 	</entry>
 	
 	
 	
 	<entry key="reviewImageAdd">
-		INSERT INTO REVIEW_IMG VALUES(REVIEW_IMG_SEQ.NEXTVAL, ?, ?,1,5, ?)
+		INSERT INTO REVIEW_IMG (R_IMG_NO, R_IMG_RENAME, R_IMG_ORNAME, R_IMG_LEVEL, R_IMG_REVIEW_NO)
+		VALUES(2, ?, ?, 30, 3)
+	</entry>
+	
+	
+	<entry key="selectReviewInfo">
+		SELECT p.PRODUCT_NM AS PRO_NM
+		FROM PRODUCT p 
+		JOIN ORDER_DETAIL od ON p.PRODUCT_NO = od.PRODUCT_NO 
+		JOIN "ORDER" o2  ON o2.ORDER_NO = od.ORDER_NO
+		WHERE o2.ORDER_NO = ?
+	</entry>
+	
+	<entry key="selectReview">
+		SELECT REVIEW_NO, REVIEW_CONTENT , REVIEW_DATE , REVIEW_RATE 
+		FROM REVIEW
+		WHERE PRODUCT_NO = ?
 	</entry>
 	
 

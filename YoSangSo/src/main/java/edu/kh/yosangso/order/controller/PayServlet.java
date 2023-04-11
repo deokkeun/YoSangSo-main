@@ -25,11 +25,6 @@ public class PayServlet extends HttpServlet{
 		
 		
 		try {
-			// 1개 구매시 (상품 번호 수량 얻어오기)
-			int productNo = 0;
-			int buyingRate = 0;
-//			int productNo = Integer.parseInt(req.getParameter("productNo"));
-			
 			
 //			장바구니 여러개 구매시
 			HttpSession session = req.getSession();
@@ -41,9 +36,6 @@ public class PayServlet extends HttpServlet{
 				int memberNo = loginMember.getMemberNo();
 				
 				OrderService service = new OrderService();
-				
-				
-				if(productNo == 0) {
 					
 					List<Product> payList = service.payList(memberNo);
 					
@@ -69,44 +61,12 @@ public class PayServlet extends HttpServlet{
 					
 					String path = "/WEB-INF/views/order/pay.jsp";
 					req.getRequestDispatcher(path).forward(req, resp);
-					
-				} else {
-					// PRODUCT_IMAGE, PRODUCT_NM, PRICE
-					Product product = service.payOneList(productNo);
-					
-					int productTotalPrice = 0;
-					int deliveryPrice = 3000;
-					int discount = 1000;
-					int totalPrice = 0;
-					
-					// 수량 파라미터로 얻어와서 변경하기
-					productTotalPrice += product.getPrice() * buyingRate;
-					
-					if(productTotalPrice > 10000) {
-						deliveryPrice = 0;
-					}
-					
-					totalPrice = productTotalPrice - discount + deliveryPrice;
-					
-					req.setAttribute("productTotalPrice", productTotalPrice);
-					req.setAttribute("deliveryPrice", deliveryPrice);
-					req.setAttribute("totalPrice", totalPrice);
-					req.setAttribute("product", product);
-					
-					String path = "/WEB-INF/views/order/pay.jsp";
-					req.getRequestDispatcher(path).forward(req, resp);
-				}
 				
 			}
-			
-			
 			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
-	
-	
-	
 	
 }

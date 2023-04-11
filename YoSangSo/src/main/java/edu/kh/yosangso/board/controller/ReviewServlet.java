@@ -36,13 +36,10 @@ public class ReviewServlet extends HttpServlet{
 			int maxSize = 1024 * 1024 * 100;
 			HttpSession session = req.getSession(); // session 얻어오기 
 			String root = session.getServletContext().getRealPath("/"); // webapp 폴더까지 경로
-			String folderPath = "/resources/image/review/"; // 파일 저장 폴더 경로
+			String folderPath = "resources/image/review/"; // 파일 저장 폴더 경로
 			String filePath = root + folderPath;
-			System.out.println();
-			System.out.println(filePath);
-			System.out.println();
 			
-			System.out.println(session.getServletContext());
+			System.out.println(filePath);
 			
 			String encoding = "UTF-8"; // 파라미터중 파일을 제외한 파라미터(문자열)의 인코딩 지정
 			

@@ -41,9 +41,8 @@
                             <!-- 컨텐트 오른쪽 영역 -->
                             <section class="right">
                                 <!-- 컨텐트 공백 -->
-                                <div><button type="button" onclick="writeReview()">test</button></div>
-
-                            
+                                <div></div>
+                                
                                 <div>
                                     
                                     <div class="myReview">
@@ -55,6 +54,7 @@
                                         <div class="rigthReviewTop">
                                             <div><a href="reviewList?pageNum=1&amount=3" class="inner-review-tab">작성 가능한 리뷰 (${total })</a></div>
                                             <div><a href="reviewDoneList?pageNum=1&amount=3" class="inner-review-tab">작성한 리뷰 (${doneTotal })</a></div>
+                                           
                                         </div>
 
                                         <div class="rightReivewContent">
@@ -76,7 +76,7 @@
                                                             </div>
                                                         </div>
                                                             <input type="hidden" name="orderNo" value="${list.orderNo}">
-                                                        <div>
+                                                        <div id="reviewAddBox">
                                                             <button type="submit" id="reviewAdd">리뷰작성</button><br><br>
                                                         </div>
 
@@ -88,7 +88,7 @@
                                     </div>
                                     <div class="reviewListBox">
                                     <c:if test="${pageVo.prev}">
-                                        <a href="reviewList?pageNum=${pageVo.startPage - 1 }&amount=${pageVo.amount}">이전</a> 
+                                        <a href="reviewList?pageNum=${pageVo.startPage - 1 }&amount=${pageVo.amount}">&lt;</a> 
                                     </c:if>
                         			<c:forEach var="num" begin="${pageVo.startPage }" end="${pageVo.endPage }">
 	                        			<li  class="${pageVo.pageNum eq num ? 'active' : '' }">
@@ -96,7 +96,7 @@
 	                        			</li>
                         			</c:forEach>
                          			<c:if test="${pageVo.next }">
-                        				<a href="reviewList?pageNum=${pageVo.endPage + 1 }&amount=${pageVo.amount}">다음</a>
+                        				<a href="reviewList?pageNum=${pageVo.endPage + 1 }&amount=${pageVo.amount}">&gt;</a>
                         			</c:if>
                                     </div>
         

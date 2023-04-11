@@ -8,6 +8,7 @@ import java.util.List;
 import edu.kh.yosangso.board.model.dao.ReviewDAO;
 import edu.kh.yosangso.board.model.vo.Review;
 import edu.kh.yosangso.board.model.vo.ReviewImage;
+import edu.kh.yosangso.order.model.vo.Order;
 
 public class ReviewService {
 	
@@ -61,6 +62,11 @@ public class ReviewService {
 
 
 
+	/** 리뷰가져오기 service
+	 * @param pro
+	 * @return
+	 * @throws Exception
+	 */
 	public List<Review> selectReview(int pro) throws Exception{
 		
 		Connection conn = getConnection();
@@ -70,6 +76,24 @@ public class ReviewService {
 		close(conn);
 		
 		return reviewList;
+	}
+
+
+
+
+	/** 리뷰 작성 페이지에 어떤 상품을 리뷰 작성하는 지 나타내는 정보를 가져오는 서비스
+	 * @param orderNo
+	 * @return
+	 */
+	public Order selectReviewInfo(String orderNo) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		Order orderInfo = dao.selectReviewInfo(conn, orderNo);
+		
+		close(conn);
+		
+		return orderInfo;
 	}
 
 

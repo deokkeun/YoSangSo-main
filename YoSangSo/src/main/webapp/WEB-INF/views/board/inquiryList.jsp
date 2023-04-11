@@ -91,8 +91,8 @@
                                                     </div>
                                                     <c:if test="${ loginMember.memberNo eq item.memberNo }">
                                                     <div class="quetionInnerBoxBtn" id="quetionInnerBoxBtn">
-                                                        <button type="button" id="inquiryDelete" onclick="return deleteBoard('${item.boardNo}')">삭제</button> 
-                                                        <button type="button" id="inquiryUpdate" onclick="return updateBoard('${item.boardNo}')">수정</button> 
+                                                        <button type="button" class="inquiryDelete" id="inquiryDelete" onclick="return deleteBoard(this,'${item.boardNo}')">삭제</button> 
+                                                        <button type="button" class="inquiryUpdate" id="inquiryUpdate" onclick="return updateBoard(this,'${item.boardNo}')">수정</button> 
                                                     </div>
                                                     </c:if>
                                                 </div>
