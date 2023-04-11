@@ -16,7 +16,7 @@ import edu.kh.yosangso.board.model.vo.ReviewListPaging;
 import edu.kh.yosangso.member.model.vo.Member;
 import edu.kh.yosangso.product.model.vo.Product;
 
-@WebServlet("/member/reviewDoneList")
+@WebServlet("/board/reviewDoneList")
 public class ReviewDoneListPagingServlet extends HttpServlet {
 	
 

@@ -42,9 +42,16 @@ public class Order {
 		this.orderNo = orderNo;
 		this.orderDate = orderDate;
 	}
-
 	
-	
+	public Order(String productName, int memberNo, String orderNo, int price, int buyingRate, String refundDate, String orderDate) {
+		this.productName = productName;
+		this.memberNo = memberNo;
+		this.orderNo = orderNo;
+		this.price = price;
+		this.buyingRate = buyingRate;
+		this.refundDate = refundDate;
+		this.orderDate = orderDate;
+	}
 	
 	/** 주문시 주문테이블 정보 추가(주문번호 생성)
 	 * @param memberNo
@@ -77,5 +84,6 @@ public class Order {
 		this.request = request;
 		this.orderNum = orderNum;
 	}
+
 
 }

@@ -149,19 +149,15 @@
 }
 
 
-
-
-#review-img{
-    width: 178px;
-    height: 178px;
-}
-
 #review-imgBox{
     display: flex;
     justify-content: center;
     align-items: center;
-    border-right: 3px solid rgba(0,0,0,0.1);
     width: 210px;
+}
+
+#review-imgBox > img{
+    width: 95%;
 }
 
 #review-imgExpalin{
@@ -358,18 +354,16 @@ input[type="number"]::-webkit-inner-spin-button {
 
 .review-img{
     height: 150px;
-    padding-left: 200px;
+    padding-left: 110px;
     flex-basis: 80%;
     display: flex;
     /* border : 1px solid red; */
     align-items: center;
 }
 
-#reviewImage {
-    width: 100px;
-    height: 100px;
-    border: 2px solid rgba(0,0,0,0.2);
-}
+
+
+
 
 
 
