@@ -50,14 +50,15 @@ $(".list").click(function() {
                 rightSubTitle.innerText = leftSubTitle;
 
 
-
                 // 제품 이미지
                 const productImage = document.createElement("img");
-                // 이미지 경로는 DB에 경로를 넣어야 하나 String으로 넣어야..
-                productImage.setAttribute("src", product.productImage);   
+                productImage.setAttribute("src", "${contextPath}/resources/image/product/${product.productName}.jpg"); 
+                productImage.style.width = "145px";
+                productImage.style.height = "105px";
+                
                 // 이미지 박스
                 const productImageBox = document.createElement("div");
-                productImageBox.append(productImage);
+                productImageBox.appendChild(productImage);
                 
                     
                 // 제품명

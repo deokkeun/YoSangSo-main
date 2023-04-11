@@ -1,0 +1,109 @@
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+/* 파이어폭스에서의 초기화 방법 */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+input[type=number] {
+    width: 80px;
+}
+select {
+    width: 60px;
+    height: 30px;
+}
+
+
+
+
+.member-info {
+    font-size: 21.33px;
+    font-weight: bold;
+    padding: 50px;
+    text-align: center;
+}
+.member-info-box {
+    width: 90%;
+    border: 1px solid #C6DBDA;
+    margin: 0px auto;
+    border-radius: 20px;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2);
+    letter-spacing: 1px;
+    word-spacing: 2px;
+}
+.info-box > div{
+    display: flex;
+    font-size: 16px;
+    font-weight: bold;
+}
+.info-box > div > div:nth-child(1){
+    margin: 10px 20px;
+    /* width: 150px; */
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-basis: 15%;
+}
+.info-box > div > div:nth-child(2){
+    display: flex;
+    justify-content: flex-start;
+    flex-basis: 85%;
+    margin: 10px 20px;
+    /* width: 650px; */
+    /* border: 1px solid black; */
+    text-align: right;
+}
+.info-box input, 
+.info-box select, 
+.info-box button {
+    margin: 10px;
+    padding: 5px;
+}
+.row {
+    display: flex;
+}
+.col {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+.update-btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.update-btn > button:nth-child(1){
+    width: 200px;
+    height: 50px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    cursor: pointer;
+    letter-spacing: 5px;
+    margin: 50px 10px;
+}
+.update-btn > button:nth-child(2){
+    width: 200px;
+    height: 50px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    background-color: #2678f3;
+    cursor: pointer;
+    letter-spacing: 5px;
+    margin: 50px 10px;
+}
+.withdrawal {
+    border: none;
+    color:rgba(0, 0, 0, 0.5);
+}

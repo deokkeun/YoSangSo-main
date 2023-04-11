@@ -19,7 +19,7 @@
     border: 1px solid rgba(0, 0, 0, 0.5);
 }
 .login-btn .btn{
-    margin: 30px 0;
+    margin: 20px 0px 0px 0px;
     background-color: #2678f3;
     color: white;
     letter-spacing: 5px;
@@ -34,6 +34,19 @@
     background-color: transparent;
     cursor: pointer;
 }
+.signUp-btn {
+    width: 400px;
+    height: 50px;
+    font-size: 16px;
+    color: #2678f3;
+    border-radius: 5px;
+    background-color: transparent;
+    border: 1px solid #2678f3;
+    cursor: pointer;
+    letter-spacing: 5px;
+    margin: 10px 0px;
+}
+
 .status {
     display: flex;
     justify-content: space-between;
@@ -52,4 +65,7 @@
 }
 .google {
     border: 1px solid rgba(0, 0, 0, 0.2);
+}
+#loginResult {
+    color: rgb(251, 157, 167);
 }

@@ -24,6 +24,12 @@
 		WHERE o2.ORDER_NO = ?
 	</entry>
 	
+	<entry key="selectReview">
+		SELECT REVIEW_NO, REVIEW_CONTENT , REVIEW_DATE , REVIEW_RATE 
+		FROM REVIEW
+		WHERE PRODUCT_NO = ?
+	</entry>
+	
 
 
 </properties>

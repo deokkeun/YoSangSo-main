@@ -113,7 +113,6 @@ public class ProductDAO {
 
 			} 
 			
-			System.out.println(productList);
 			
 		} finally {
 			close(rs);

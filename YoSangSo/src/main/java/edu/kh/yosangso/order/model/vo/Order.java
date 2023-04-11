@@ -23,6 +23,9 @@ public class Order {
 	private String zipCode;
 	private String address;
 	private String orderNum;
+	private int productNo;
+	private String request;
+	private int buyingPrice;
 	
 
 	public Order(String productName, String orderNo, int price, int buyingRate) {
@@ -49,7 +52,15 @@ public class Order {
 		this.refundDate = refundDate;
 		this.orderDate = orderDate;
 	}
-
+	
+	/** 주문시 주문테이블 정보 추가(주문번호 생성)
+	 * @param memberNo
+	 * @param orderNum
+	 * @param orderName
+	 * @param orderPhone
+	 * @param zipCode
+	 * @param address
+	 */ 
 	public Order(int memberNo, String orderNum, String orderName, String orderPhone, String zipCode, String address) {
 		this.memberNo = memberNo;
 		this.orderNum = orderNum;
@@ -58,5 +69,21 @@ public class Order {
 		this.zipCode = zipCode;
 		this.address = address;
 	}
+	
+	/** 주문시 주문상세테이블 정보 추가(주문번호로 주문내역 값 INSERT)
+	 * @param productNo
+	 * @param buyingRate
+	 * @param price
+	 * @param request
+	 * @param orderNo
+	 */
+	public Order(int productNo, int buyingRate, int buyingPrice, String request, String orderNum) {
+		this.productNo = productNo;
+		this.buyingRate = buyingRate;
+		this.buyingPrice = buyingPrice;
+		this.request = request;
+		this.orderNum = orderNum;
+	}
+
 
 }
