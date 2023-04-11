@@ -15,13 +15,15 @@ import edu.kh.yosangso.board.model.service.ReviewService;
 import edu.kh.yosangso.board.model.vo.Board;
 import edu.kh.yosangso.board.model.vo.Review;
 
-//@WebServlet("")
+//@WebServlet("/product/productDetail")
 public class SelectReviewServlet extends HttpServlet{
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
 		int pro = Integer.parseInt(req.getParameter("ProductNo"));
+		
+		System.out.println(pro);
 		
 		List<Review> reviewList = new ArrayList<>();
 		
@@ -35,6 +37,8 @@ public class SelectReviewServlet extends HttpServlet{
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
+		
+		System.out.println(" 서블릿:" + reviewList);
 		
 		String path = "/WEB-INF/views/product/productDetail.jsp";
 		

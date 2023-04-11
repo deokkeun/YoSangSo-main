@@ -43,7 +43,19 @@ public class Review {
 		this.orderNo = orderNo;
 		this.productName = productName;
 	}
+
+	public Review(int reviewNo, String reviewContent, String reviewDate, int reviewRate, int productNo) {
+		super();
+		this.reviewNo = reviewNo;
+		this.reviewContent = reviewContent;
+		this.reviewDate = reviewDate;
+		this.reviewRate = reviewRate;
+		this.reviewRate = productNo;
+	}
+
 	
+	
+
 	
 	
 	

@@ -61,6 +61,11 @@ public class ReviewService {
 
 
 
+	/** 리뷰가져오기 service
+	 * @param pro
+	 * @return
+	 * @throws Exception
+	 */
 	public List<Review> selectReview(int pro) throws Exception{
 		
 		Connection conn = getConnection();
