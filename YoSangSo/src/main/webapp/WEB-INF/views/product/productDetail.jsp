@@ -39,47 +39,47 @@
                         <img src="${contextPath}/resources/image/product/${productList[0].productName}.jpg">
                     </div>
                     <!--제품이름, 가격, 수량, 구매가격, 구매및 장바구니-->
-                    <form action="purchase" method="GET" name="purcahse">
-                    <div class ="productover">
-                        <!--제품이름-->
-                        <div class="productNm">
-                            <h3>${productList[0].productName}</h3>
-                        </div>
-                        <!--가격-->
-                        <div class="productPr">
-                            <span id="price">${productList[0].price}</span>원
-                        </div>
-                        <!--배송비-->
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <div class="del-cost">
-                            배송비 :<input id="delcost" value="3000">원
-                        </div>
-                        <br>
-                        <hr>
-                        <!--수량 가격-->
-                        <div class="count">
-                            수량 : <input type="number" id="countbox" min="1" name="count">
-                        </div>
-                        <br>
-                        <hr>
-                        <!--총 금액-->
-                        <div class="total-cost">
-                            <pre>총 상품금액</pre>
-                            <span id="totalcost"></span>원
-                        </div>
-                  
-                        <input type="hidden" value="${productList[0].productNo}" name="productNo" id="proNo">
-                        
-                        <input type="hidden" value="${loginMember.memberNo}" name="loginmember" id="loginmember">
-                        <br>
+                    <form action="${contextPath}/order/payOne" method="GET" name="purcahse">
+	                    <div class ="productover">
+	                        <!--제품이름-->
+	                        <div class="productNm">
+	                            <h3>${productList[0].productName}</h3>
+	                        </div>
+	                        <!--가격-->
+	                        <div class="productPr">
+	                            <span id="price">${productList[0].price}</span>원
+	                        </div>
+	                        <!--배송비-->
+	                        <br>
+	                        <br>
+	                        <br>
+	                        <br>
+	                        <div class="del-cost">
+	                            배송비 :<input id="delcost" value="3000">원
+	                        </div>
+	                        <br>
+	                        <hr>
+	                        <!--수량 가격-->
+	                        <div class="count">
+	                            수량 : <input type="number" id="countbox" min="1" name="count">
+	                        </div>
+	                        <br>
+	                        <hr>
+	                        <!--총 금액-->
+	                        <div class="total-cost">
+	                            <pre>총 상품금액</pre>
+	                            <span id="totalcost"></span>원
+	                        </div>
+	                  
+	                        <input type="hidden" value="${productList[0].productNo}" name="productNo" id="proNo">
+	                        
+	                        <input type="hidden" value="${loginMember.memberNo}" name="loginmember" id="loginmember">
+	                        <br>
                             <!--구매 버튼-->
                             <div>
-                            <button type="submit" id="btn-purchase">구매하기</button>
+	                            <button type="submit" id="btn-purchase">구매하기</button>
                             </div>
-                            
+	                            
                      </form>       
                             <br>
                             <div>

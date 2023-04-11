@@ -61,14 +61,14 @@
                             <div>문자 메시지</div>
                             <div class="toggleBG">
                                 <button class="toggleFG"> </button>
-                                <div class="off">off </div>
+                                <div class="toggleFG-off">off</div>
                             </div>
                         </section>
                         <section class="row">
                             <div>이메일</div>
                             <div class="toggleBG">
                                 <button class="toggleFG"> </button>
-                                <div class="off">off </div>
+                                <div class="toggleFG-off">off</div>
                             </div>
                         </section>
                     </section>
