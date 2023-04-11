@@ -16,7 +16,8 @@
     
     <!-- 슬라이더 파일다운받은거 -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <title>index</title>
     
     <!--탑 버튼 & 스크립트 html 부분-->

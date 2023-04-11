@@ -15,7 +15,7 @@ import edu.kh.yosangso.product.model.service.SearchingService;
 import edu.kh.yosangso.product.model.vo.Product;
 
 @WebServlet("/searchingProduct")
-public class SearchingProductServelt extends HttpServlet{
+public class SearchingProductServlet extends HttpServlet{
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

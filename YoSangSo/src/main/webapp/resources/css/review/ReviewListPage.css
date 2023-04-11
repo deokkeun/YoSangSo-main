@@ -203,11 +203,6 @@ li{
 	list-style: none;
 }
 
-a{
-	font-size : 20px;
-	
-}
-
 .active > a{
 	font-size: 22px;
 	color : black;
