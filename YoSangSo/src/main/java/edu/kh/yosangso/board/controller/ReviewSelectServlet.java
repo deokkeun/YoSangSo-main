@@ -8,7 +8,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-<<<<<<< HEAD
 //
 ///** 사이드 nav 리뷰조회 연결 써블릿
 // * @author lee
@@ -26,7 +25,7 @@ import javax.servlet.http.HttpServletResponse;
 //	}
 //
 //}
-=======
+
 
 /*
 @WebServlet("/board/reviewList")
@@ -42,4 +41,4 @@ public class ReviewSelectServlet extends HttpServlet{
 	}
 
 }*/
->>>>>>> 8441662da34cbcfc9d827a20c3a106ee4ed8b477
+

@@ -18,19 +18,14 @@ public class Order {
 	private int buyingRate;
 	private String refundDate;
 	private String orderDate;
-<<<<<<< HEAD
 	private String address;
 	private int count;
-	
-=======
 	private String orderName;
 	private String orderPhone;
 	private String zipCode;
-	private String address;
 	private String orderNum;
 	
 
->>>>>>> 8441662da34cbcfc9d827a20c3a106ee4ed8b477
 	public Order(String productName, String orderNo, int price, int buyingRate) {
 		super();
 		this.productName = productName;
@@ -39,7 +34,6 @@ public class Order {
 		this.buyingRate = buyingRate;
 	}
 
-<<<<<<< HEAD
 	public Order(String orderNo, String orderDate, String address, String productName, int count) {
 		super();
 		this.orderNo = orderNo;
@@ -47,17 +41,17 @@ public class Order {
 		this.address = address;
 		this.productName =productName;
 		this.count = count;
-		
-=======
+	}
+	
 	public Order(String productName, String orderNo, String orderDate) {
 		super();
 		this.productName = productName;
 		this.orderNo = orderNo;
 		this.orderDate = orderDate;
->>>>>>> 8441662da34cbcfc9d827a20c3a106ee4ed8b477
+
 	}
 	
-	public Order(String productName, int memberNo, int orderNo, int price, int buyingRate, String refundDate, String orderDate) {
+	public Order(String productName, int memberNo, String orderNo, int price, int buyingRate, String refundDate, String orderDate) {
 		this.productName = productName;
 		this.memberNo = memberNo;
 		this.orderNo = orderNo;
@@ -76,19 +70,6 @@ public class Order {
 		this.address = address;
 	}
 	
-	
-	
-	public Order(String productName, int memberNo, String orderNo, int price, int buyingRate, String refundDate, String orderDate) {
-		super();
-		this.productName = productName;
-		this.memberNo = memberNo;
-		this.orderNo = orderNo;
-		this.price = price;
-		this.buyingRate = buyingRate;
-		this.refundDate = refundDate;
-		this.orderDate = orderDate;
-	}
-
 
 	public Order(String productName, int price, int buyingRate) {
 		super();

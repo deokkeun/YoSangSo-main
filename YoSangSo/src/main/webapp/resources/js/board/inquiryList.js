@@ -49,7 +49,7 @@ function updateBoard(boardNo) {
 
     questionP.remove(); // 기존 질문 삭제
 
-    
+    console.log(boardNo);
 
     questionInnerBox.append(textAreaP);
 

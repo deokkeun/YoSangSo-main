@@ -23,7 +23,7 @@
 </head>
 <body>
 	<div class="container">
-		for(int i=0; i<4; i++) { %>
+		<% for(int i=0; i<4; i++) { %>
 			<div class="box">Box <%= i+1 %></div>
 		<% } %>
 	</div>
