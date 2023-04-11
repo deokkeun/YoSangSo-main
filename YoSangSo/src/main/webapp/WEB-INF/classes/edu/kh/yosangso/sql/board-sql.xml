@@ -11,7 +11,7 @@
 	<!--  컬럼 순서  -->
 	<entry key="inquiryAdd">
 		INSERT INTO INQUIRY
-		VALUES(INQUIRY_SEQ.NEXTVAL, ?, DEFAULT, 1, ?)
+		VALUES(INQUIRY_SEQ.NEXTVAL, ?, DEFAULT, ?, ?)
 	</entry>
 
 	
@@ -19,6 +19,7 @@
 	<!-- 게시물 삭제 쿼리 -->
 	<entry key="inquiryDelete">
 		DELETE FROM INQUIRY
+		WHERE INQUIRY_NO = ?
 	</entry>
 	
 	
@@ -46,8 +47,9 @@
 	
 	<!-- 게시물 수정 쿼리 -->
 	<entry key="inquiryUpdate">
-		UPDATE INQUIRY
+		UPDATE INQUIRY 
 		SET INQUIRY_CONTENT = ?
+		WHERE INQUIRY_NO = ?
 	</entry>
 	
 	

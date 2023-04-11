@@ -35,15 +35,17 @@
                 
                 <!-- 컨텐츠 내용 오른쪽 -->
                 <section  class="content-box-right">
-
+                        
+                    
 
                             <!-- 컨텐트 오른쪽 영역 -->
                             <section class="right">
                                 <!-- 컨텐트 공백 -->
-                                <div></div>
-        
+                                <div><button type="button" onclick="writeReview()">test</button></div>
+
+                            
                                 <div>
-        
+                                    
                                     <div class="myReview">
                                        	나의 리뷰
                                     </div>
@@ -56,30 +58,31 @@
                                         </div>
 
                                         <div class="rightReivewContent">
-                                    <form>
-											<c:forEach var="list" items="${list}">
-                                            <div class="rightProductImg"> 
+                                            
+                                            <form action="reviewWriting">
+                                                <c:forEach var="list" items="${list}">
+                                                    <div class="rightProductImg"> 
 
-                                                <div>
-                                                    <img src="${contextPath}/resources/image/all/${list.productName}.jpg" alt="#" id="reviewImages">
-                                                </div>
-        
-                                                <div class="product-info">
-                                                	<div>
-                                                		<p>${list.productDate}일 주문</p>
-                                                	</div>
-                                                    <div>
-                                                    	<p>${list.productName}</p>
+                                                        <div>
+                                                            <img src="${contextPath}/resources/image/all/${list.productName}.jpg" alt="#" id="reviewImages">
+                                                        </div>
+                
+                                                        <div class="product-info">
+                                                            <div>
+                                                                <p>${list.orderDate}일 주문</p>
+                                                            </div>
+                                                            <div>
+                                                                <p>${list.productName}</p>
+                                                            </div>
+                                                        </div>
+                                                            <input type="hidden" name="orderNo" value="${list.orderNo}">
+                                                        <div>
+                                                            <button type="submit" id="reviewAdd">리뷰작성</button><br><br>
+                                                        </div>
+
                                                     </div>
-                                                </div>
-        
-                                                <div>
-                                                    <button id="reviewAdd">리뷰작성</button><br><br>
-                                                </div>
-
-                                            </div>
-                                            </c:forEach>
-                                    </form> 
+                                                </c:forEach>
+                                            </form> 
 
                                         </div>
                                     </div>
@@ -125,5 +128,8 @@
    
     <!-- main.js 연결 -->
     <script src="${contextPath}/resources/js/main.js"></script>
+
+     <!-- reviewList.js 연결 -->
+     <script src="${contextPath}/resources/js/review/reviewList.js"></script>
 </body>
 </html>

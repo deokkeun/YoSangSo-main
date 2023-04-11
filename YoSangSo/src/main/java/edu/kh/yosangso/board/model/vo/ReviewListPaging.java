@@ -18,6 +18,7 @@ public class ReviewListPaging {
 	private int amount =  3; // 한 페이지에 보여질 리뷰 수 == 3
 	private int total; // 총 리뷰 수
 
+
 	
 	public ReviewListPaging(int pageNum, int amount, int total) {
 		this.pageNum = pageNum;

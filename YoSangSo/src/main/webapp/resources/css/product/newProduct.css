@@ -108,11 +108,11 @@
 /******************* 퀵메뉴 부분 css ******************/
 
 
-
 .quickMenu {
     margin : 70px 0px 0px 0px;
-    /* background-color:darkkhaki; */
+    border-bottom: 2px solid black;
 }
+
 
 .quickMenu > a {
     width: 200px;
@@ -120,20 +120,21 @@
     border: solid 1px black;
     align-items: center;
     text-align: center;
-
-    /* font-weight: bold; */
-    color: black;
-  
-   
+    color: black;   
 }
 
 
 .quickMenu > a:hover {
     width: 200px;
-    /* background-color :  rgb(181, 181, 181); */
-    transition-duration: 0.3s;
-    color: #2678F3;
+    transition-duration: 0.5s;
     text-decoration: none;
+    
+}
+
+.mainFont:hover {
+	background-color : #c2e7ff;
+	color: black;
+	transition-duration: 0.3s;
 }
 
 
@@ -143,9 +144,7 @@
     padding: 10px;
     font-weight: bold;
     font-size: 16px;
-    /* border-bottom: 1px solid grey; */
 }
-
 
 
 
@@ -195,8 +194,7 @@
 
 
 
-
-
+/* 제품 */
 .BNitem {
     display:flex;
     flex-basis:25%;
@@ -267,9 +265,9 @@
 
 /* 제품명 글씨 */
 .BNitemName{
-    flex-basis: 20%;
-    padding: 5px;
-    font-size: 12px;
+    flex-basis: 10%;
+    padding: 4px;
+    font-size: 14px;
     position: relative;
     /* z-index : -1; */
 
@@ -282,57 +280,11 @@
 
 
 
-
-/********************* 페이지네이션 부분 css  ****************/
-
-
-/* 숫자페이지 설정 */
-.numListBox{
+/******************** 하단공백 css ********************/
+.blank{
     display: flex;
-    /* border:1px solid black; */
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 50px;
-    margin : 100px 0px 100px 0px;
+    height: 140px;
 }
-
-
-#numListBtnBox {
-    margin-right: 15px;
-}
-
-#numListBtnBox2{
-    margin-left: 15px;
-}
-
-
-/* 왼쪽 버튼설정 */
-#movePrev { 
-    padding: 6px 9px 6px 7px;
-    /* 상 우 하 좌 */
-    border: 1px solid rgb(181, 181, 181);
-    border-radius: 3px;
-    color: white;
-}
-
-/* 오른쪽버튼 설정 */
-#moveNext { 
-    padding: 6px 7px 6px 9px;
-    /* 상 우 하 좌 */
-    border: 1px solid rgb(181, 181, 181);
-    border-radius: 3px;
-    color: white;
-}
-
-
-#listBox > a{
-    margin: 0 10px;
-    color: black;
-    text-decoration: none;
-}
-
-
 
 /************************* 제품  호버값  ******************/
 .BNitem > a {
@@ -354,16 +306,16 @@
 
 
 
-/* 자세히보기 오쏘뮬이윤하이하이 */
+/* 검은화면 글씨 설정 */
 .BNitem > a > .BNitemPic > figcaption {
     position: absolute;
     bottom: 250px;
-    left: 140px;
+    left: 0px;
     /* top: 50px; */
     margin : auto;
     z-index: 1;
     color : #fff;
-    font-size: 12px;
+    font-size: 11px;
     text-align : center;
     transition: all .5s;
     

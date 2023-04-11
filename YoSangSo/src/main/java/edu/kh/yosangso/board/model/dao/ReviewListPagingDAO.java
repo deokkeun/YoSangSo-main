@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.Properties;
 
 import edu.kh.yosangso.board.model.vo.Review;
+import edu.kh.yosangso.order.model.vo.Order;
 import edu.kh.yosangso.product.model.vo.Product;
 
 public class ReviewListPagingDAO {
@@ -54,9 +55,9 @@ public ReviewListPagingDAO() {
 		return result;
 	}
 
-	public List<Product> getList(Connection conn, int memberNo, int pageNum, int amount) throws Exception{
+	public List<Order> getList(Connection conn, int memberNo, int pageNum, int amount) throws Exception{
 		
-		List<Product> list = new ArrayList<>();
+		List<Order> list = new ArrayList<>();
 		
 		try {
 			String sql = prop.getProperty("getList");
@@ -73,13 +74,16 @@ public ReviewListPagingDAO() {
 				
 				String productName = rs.getString("PRODUCT_NM");
 				String orderDate = rs.getString("ORDER_DATE");
+				String orderNo = rs.getString("ORDER_NO");				//int orderNo = rs.getInt("r.ORDER_NO");
 						
-				list.add(new Product(productName, orderDate));
+				list.add(new Order(productName, orderNo, orderDate));
 			}
 			
 		}finally {
-			
+			close(rs);
+			close(pstmt);
 		}
+		
 		return list;
 	}
 
