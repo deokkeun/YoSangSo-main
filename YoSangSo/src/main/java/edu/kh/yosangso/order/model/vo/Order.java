@@ -10,7 +10,6 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Order {
-	
 	private String productName;
 	private int memberNo;
 	private String orderNo;
@@ -19,6 +18,7 @@ public class Order {
 	private String refundDate;
 	private String orderDate;
 	private String address;
+
 	private int count;
 	private String orderName;
 	private String orderPhone;
@@ -27,7 +27,6 @@ public class Order {
 	private int productNo;
 	private String request;
 	private int buyingPrice;
-	
 
 	public Order(String productName, String orderNo, int price, int buyingRate) {
 		super();
@@ -54,15 +53,6 @@ public class Order {
 
 	}
 	
-	public Order(String productName, int memberNo, String orderNo, int price, int buyingRate, String refundDate, String orderDate) {
-		this.productName = productName;
-		this.memberNo = memberNo;
-		this.orderNo = orderNo;
-		this.price = price;
-		this.buyingRate = buyingRate;
-		this.refundDate = refundDate;
-		this.orderDate = orderDate;
-	}
 	
 	/** 주문시 주문테이블 정보 추가(주문번호 생성)
 	 * @param memberNo
@@ -80,10 +70,7 @@ public class Order {
 		this.zipCode = zipCode;
 		this.address = address;
 	}
-	
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
+
 	
 	
 	public Order(String productName, int memberNo, String orderNo, int price, int buyingRate, String refundDate, String orderDate) {
@@ -97,7 +84,6 @@ public class Order {
 		this.orderDate = orderDate;
 	}
 
->>>>>>> f7ee777918c0b4ab7fc07c1cc9b5ee17d15c9a7a
 
 	public Order(String productName, int price, int buyingRate) {
 		super();
@@ -108,8 +94,6 @@ public class Order {
 	}
 
 
-
-=======
 	/** 주문시 주문상세테이블 정보 추가(주문번호로 주문내역 값 INSERT)
 	 * @param productNo
 	 * @param buyingRate
@@ -123,8 +107,7 @@ public class Order {
 		this.buyingPrice = buyingPrice;
 		this.request = request;
 		this.orderNum = orderNum;
+	
 	}
-
->>>>>>> develop
-
+	
 }

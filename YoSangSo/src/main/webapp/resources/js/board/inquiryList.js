@@ -19,7 +19,7 @@ const quetionInnerBoxBtn = document.getElementById("quetionInnerBoxBtn"); // 앤
 
 
 // 삭제기능
-function deleteBoard(boardNo){
+function deleteBoard(e, boardNo){
     if(!confirm("삭제하시겠습니까?")){ // 삭제 취소
         alert("취소되었습니다.");
         location.reload();
@@ -54,15 +54,9 @@ function updateBoard(e, boardNo) {
     console.log(e);
 
 
-<<<<<<< HEAD
-    questionP.remove(); // 기존 질문 삭제
-
-    console.log(boardNo);
-=======
     e.parentElement.previousElementSibling.lastElementChild.remove(); // 기존 질문 삭제
     
-    
->>>>>>> f7ee777918c0b4ab7fc07c1cc9b5ee17d15c9a7a
+
 
     e.parentElement.previousElementSibling.append(textAreaP);
 
