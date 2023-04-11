@@ -16,11 +16,11 @@ import edu.kh.yosangso.member.model.vo.Member;
 import edu.kh.yosangso.order.model.vo.Order;
 import edu.kh.yosangso.refund.service.RefundService;
 
-@WebServlet("/refundList")
+@WebServlet("/refund/refundList")
 public class RefundListServlet extends HttpServlet{
 	
 	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
 		RefundService service = new RefundService();
 		

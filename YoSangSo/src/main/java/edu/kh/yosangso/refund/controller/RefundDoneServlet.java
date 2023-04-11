@@ -16,7 +16,7 @@ import edu.kh.yosangso.member.model.vo.Member;
 import edu.kh.yosangso.order.model.vo.Order;
 import edu.kh.yosangso.refund.service.RefundService;
 
-@WebServlet("/refundDone")
+@WebServlet("/refund/refundDone")
 public class RefundDoneServlet extends HttpServlet{
 	
 	@Override
@@ -60,9 +60,23 @@ public class RefundDoneServlet extends HttpServlet{
 					dispatcher.forward(req, resp);
 				}else {
 					System.out.println("수정실패");
+					String filePath = "/WEB-INF/views/refund/refundDone.jsp";
+					
+					System.out.println(refundList);
+					
+					req.setAttribute("refundList", refundList);
+					RequestDispatcher dispatcher = req.getRequestDispatcher(filePath);
+					dispatcher.forward(req, resp);
 				}
 			}else {
 				System.out.println("실패");
+				String filePath = "/WEB-INF/views/refund/refundDone.jsp";
+				
+				System.out.println(refundList);
+				
+				req.setAttribute("refundList", refundList);
+				RequestDispatcher dispatcher = req.getRequestDispatcher(filePath);
+				dispatcher.forward(req, resp);
 			}
 		}catch(Exception e) {
 			e.printStackTrace();

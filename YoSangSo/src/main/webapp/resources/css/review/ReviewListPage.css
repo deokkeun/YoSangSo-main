@@ -210,11 +210,14 @@ li{
 	list-style: none;
 }
 
+<<<<<<< HEAD
+=======
 /* .reviewListBox a{
 	font-size : 20px;
 	
 } */
 
+>>>>>>> develop
 .active > a{
 	font-size: 22px;
 	color : black;

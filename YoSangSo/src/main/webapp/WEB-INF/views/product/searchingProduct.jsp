@@ -41,10 +41,6 @@
          <!-- content 전체 감싸는 영역 -->
         <section class="content-container">
 
-            <!-- 1. 왼쪽사이드 -->
-            <section class="leftSide">
-            </section>
-
 
             <!-- 2. 가운데페이지 -->
             <section class="center">

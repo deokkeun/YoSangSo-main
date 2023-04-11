@@ -44,7 +44,11 @@ function dd(){
 	alert(sessionStorage.getItem("loginMember"));
 
 	
-}
+};
+
+
+
+
 	
 	
   
