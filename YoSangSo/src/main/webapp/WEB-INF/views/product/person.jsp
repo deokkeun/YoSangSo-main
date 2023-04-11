@@ -27,12 +27,11 @@
 
                 <section class="content-box-left">
                     <div>
-                        <a href="history.back()" class="fa-solid fa-arrow-left" target="#"></a>
+                        <a href="${contextPath}" class="fa-solid fa-arrow-left" target="_self"></a>
                     </div>
                     <section class="content-box-left-title">
                         <div class="person-img">
                             <img src="${contextPath}/resources/image/index/인체이미지누끼.png" alt="인체이미지" width="80px">
-                            <img src="#" alt="두뇌" class="person-img-heart">
                         </div>
                         <div>
                             <div class="title-sub">

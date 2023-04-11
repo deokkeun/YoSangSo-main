@@ -896,3 +896,12 @@ li {
 .item > a:hover .itemPic::after {
     opacity: 1;
 }
+
+/*반응형 레이아웃 */
+/*현재 브라우저 폭이 1280이하일 경우 이걸 적용해주세요*/
+@media screen and (max-width: 1200x) {
+	.mainViewPhoto {
+		width: 700px;}
+	.BNitem {
+		width: 100px;}
+}

@@ -84,6 +84,7 @@
 .product-box > div:nth-child(2){
     flex-basis: 30%;
     padding: 10px;
+    font-size: 15px;
 }
 .product-box > div:nth-child(3){
     flex-basis: 15%;
@@ -251,8 +252,11 @@
     width: 200px;
     height: 200px;
     float: left;
-    border: 1px solid orange;
-    background-color: #eee;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+.slides img {
+    width: 195px;
+    height: 195px;
 }
 .slides li:not(last-child) {
     margin-right: 30px;

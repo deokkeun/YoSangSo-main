@@ -13,9 +13,9 @@ import javax.servlet.http.HttpServletResponse;
 import edu.kh.yosangso.board.model.service.ReviewListPagingService;
 import edu.kh.yosangso.board.model.vo.ReviewListPaging;
 import edu.kh.yosangso.member.model.vo.Member;
-import edu.kh.yosangso.product.model.vo.Product;
+import edu.kh.yosangso.order.model.vo.Order;
 
-@WebServlet("/member/reviewList")
+@WebServlet("/board/reviewList")
 public class ReviewListPagingServlet extends HttpServlet {
 	
 
@@ -39,7 +39,7 @@ public class ReviewListPagingServlet extends HttpServlet {
 		int total = service.getTotal(memberNo);
 		int doneTotal = service.getDoneTotal(memberNo);
 		
-		List<Product> list = service.getList(memberNo,pageNum, amount);
+		List<Order> list = service.getList(memberNo,pageNum,amount);
 		ReviewListPaging pageVo = new ReviewListPaging(pageNum, amount, total);
 		
 		

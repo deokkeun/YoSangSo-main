@@ -26,7 +26,7 @@
        <!-- 검색 -->
        <section>
            <article id="search-area">
-               <form action="searchingProduct" name="search-form">
+               <form action="${contextPath}/searchingProduct" name="search-form" onsubmit="return noSpace()">
                    <fieldset>
                        <input type="search" id="query" name="query"
                        autocomplete="off">

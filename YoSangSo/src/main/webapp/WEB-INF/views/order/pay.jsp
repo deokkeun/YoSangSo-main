@@ -18,10 +18,17 @@
     <!-- 헤더, 컨텐츠 -->
     <main>
         
+		<div id="memNo" style="display: none;">${loginMember.memberNo}</div>
+		<div id="memEmail" style="display: none;">${loginMember.memberEmail}</div>
+		
+		
         <!-- 헤더 -->
         <jsp:include page="/WEB-INF/views/common/header.jsp"/>
 		
+		
+		
         <section id="content">
+		
 
                 <section id="content-left">
                     <section>
@@ -34,24 +41,32 @@
                                 <div>합계</div>
                             </div>
                             <div id="product">
-                            <c:forEach var="product" items="${payList}">
-                                <c:choose>
-                                        <c:when test="${!empty payList}">
-                                            <div class="product-box">
-                                                    <div><img src="" alt="상품이미지"></div>
-                                                    <div>${product.productName}</div>
-                                                    <div>${product.price}원</div>
-                                                    <div>${product.productCount}개</div>
-                                                    <div>${product.price*product.productCount}원</div>
-                                            </div>
-                                        </c:when>
-                                        <c:otherwise>
-                                            <div class="product-box">
-                                                <h1 class="product-box-empty">장바구니가 비어있습니다.</h1>
-                                            </div>
-                                        </c:otherwise>
-                                </c:choose>
-                            </c:forEach>
+                              
+	                            <c:forEach var="product" items="${payList}">
+	                            	<!-- 상품 번호 -->
+	                                <c:choose>
+	                                        <c:when test="${!empty payList}">
+	                                        			<!-- 상품 번호 -->
+						                            	<div class="productNo" style="display: none;">${product.productNo}</div>
+	                                            <div class="product-box">
+	                                                    <div><img src="${contextPath}/resources/image/product/${product.productName}.jpg" alt="상품이미지" height="180px""></div>
+	                                                    <div class="productName">${product.productName}</div>
+	                                                    <div>${product.price}원</div>
+	                                                    <div class="productCount">${product.productCount}개</div>
+	                                                    <div class="productCountPrice">${product.price*product.productCount}원</div>
+	                                            </div>
+	                                        </c:when>
+	                                        
+	                                        <c:otherwise>
+	                                        
+	                                            <div class="product-box">
+	                                                <h1 class="product-box-empty">장바구니가 비어있습니다.</h1>
+	                                            </div>
+	                                        </c:otherwise>
+	                                </c:choose>
+	                            </c:forEach>
+	                            
+	                            
                             
                             </div>
                         </div>
@@ -63,11 +78,11 @@
                         <div class="address">
                             <div>
                                 <span>이름</span>
-                                <input type="text" placeholder=" 이름" id="memberName">
+                                <input type="text" placeholder=" 이름" id="memberName" value="${loginMember.memberName}">
                             </div>
                             <div>
                                 <span>연락처</span>
-                                <input type="tel" placeholder=" 연락처">
+                                <input type="tel" placeholder=" 연락처" id="memberTel" value="${loginMember.memberTel}">
                             </div>
                             <div>            
                                 <span>배송지</span><input type="text" id="sample6_postcode" placeholder=" 우편번호" size="12">
@@ -95,27 +110,27 @@
                     <div id="pay-detail">
                         <div class="pay-detail-box1">
                             <div class="border">
-                                <div>상품금액</div>
-                                <div>${productTotalPrice}원</div>
+                                <div>상품 금액</div>
+                                <div>${productTotalPrice} 원</div>
                             </div>
                             <div class="border">
                                 <div>오픈 할인</div>
-                                <div>- 1,000원</div>
+                                <div>- 1,000 원</div>
                             </div>
                             <div class="border">
                                 <div>배송비</div>
-                                <div>+ ${deliveryPrice}원</div>
+                                <div>+ ${deliveryPrice} 원</div>
                             </div>
                             <div class="border">
                                 <div>최종 결제 금액</div>
-                                <div id="totalPrice">${totalPrice}원</div>
+                                <div id="totalPrice" style="color: #2678F3;">${totalPrice} 원</div>
                             </div>
                         </div>
                     </div>
             
                     <div id="payment-method">
                         <div>
-                            결제수단 <input type="radio" id="kakao"><label for="kakao">카카오페이 <img src="${contextPath}/resources/image/order/payment_icon_yellow_small.png" alt="카카오페이" height="14px"></label>
+                            결제수단 <input type="radio" id="kakao" checked><label for="kakao">카카오페이 <img src="${contextPath}/resources/image/order/payment_icon_yellow_small.png" alt="카카오페이" height="14px"></label>
                         </div>
                         <div>
                             <span>품절시 환불 안내</span>
@@ -140,10 +155,9 @@
                         <button id="pay-btn" onclick="kakaopay()">결제하기</button>
                     </div>
                 </section>
-
-        </section>
-
-
+            </section>
+	
+            
         <!-- 추천 상품 -->
         <section class="recomend">
             <section>
@@ -153,11 +167,11 @@
 
                         <div class="slide_wrapper">
                             <ul class="slides">
-                                <li><img src="" alt=""></li>
-                                <li><img src="" alt=""></li>
-                                <li><img src="" alt=""></li>
-                                <li><img src="" alt=""></li>
-                                <li><img src="" alt=""></li>
+                                <li><img src="${contextPath}/resources/image/product/Life Extension, 비타민D 함유 구연산 칼슘, 캡슐 200정.jpg" alt=""></li>
+                                <li><img src="${contextPath}/resources/image/product/California Gold Nutrition, Immune 4, 면역계 지원, 베지 캡슐 180정.jpg" alt=""></li>
+                                <li><img src="${contextPath}/resources/image/product/Doctors Best, Vein Support with DiosVein and MenaQ7, 베지 캡슐 60정.jpg" alt=""></li>
+                                <li><img src="${contextPath}/resources/image/product/Jarrow Formulas, Zinc Balance, 베지 캡슐 100정.jpg" alt=""></li>
+                                <li><img src="${contextPath}/resources/image/product/NOW Foods, 로즈힙 함유 C-500, 250 정.jpg" alt=""></li>
                             </ul>
                         </div>
 
@@ -168,7 +182,6 @@
         </section>
 
         <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-
 
 
 

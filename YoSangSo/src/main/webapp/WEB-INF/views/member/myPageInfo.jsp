@@ -40,7 +40,7 @@
                         <div>${loginMember.memberEmail}</div>
                         <div class="row">
                             <div></div>
-                            <button class="update-btn">수정 ></button>
+                            <button class="update-btn" onclick="location.href='memberInfo'">수정 ></button>
                         </div>
                     </section>
 
@@ -61,14 +61,14 @@
                             <div>문자 메시지</div>
                             <div class="toggleBG">
                                 <button class="toggleFG"> </button>
-                                <div class="off">off </div>
+                                <div class="toggleFG-off">off</div>
                             </div>
                         </section>
                         <section class="row">
                             <div>이메일</div>
                             <div class="toggleBG">
                                 <button class="toggleFG"> </button>
-                                <div class="off">off </div>
+                                <div class="toggleFG-off">off</div>
                             </div>
                         </section>
                     </section>

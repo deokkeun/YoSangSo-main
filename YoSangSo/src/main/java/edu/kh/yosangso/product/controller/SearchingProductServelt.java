@@ -30,6 +30,8 @@ public class SearchingProductServelt extends HttpServlet{
 			
 			req.setAttribute("productList", list);
 			
+			req.setAttribute("query", query);
+			
 			
 		}catch(Exception e) {
 			e.printStackTrace();

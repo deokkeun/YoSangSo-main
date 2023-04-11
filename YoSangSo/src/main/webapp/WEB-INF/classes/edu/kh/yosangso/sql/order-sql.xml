@@ -4,23 +4,36 @@
 	<comment>order-sql.xml</comment>
 
 	<entry key="payList">
-		SELECT PRODUCT_IMAGE, PRODUCT_NM, PRICE, BUYING_RATE
-		FROM MEMBER
-		JOIN CART USING(MEMBER_NO)
-		JOIN PRODUCT USING(PRODUCT_NO)
+		SELECT p.PRODUCT_NO, p.PRODUCT_IMAGE, p.PRODUCT_NM, p.PRICE, c.BUYING_RATE 
+		FROM "MEMBER" m 
+		JOIN CART c ON(m.MEMBER_NO = c.MEMBER_NO)
+		JOIN PRODUCT p ON(p.PRODUCT_NO = c.PRODUCT_NO)
+		WHERE m.MEMBER_NO = ?
 	</entry>
-<!-- <entry key="payList">
-		회원번호로 장바구니에 담겨있는 제품 조회(이미지, 제품명, 가격, 수량)
-		SELECT PRODUCT_IMAGE, PRODUCT_NM, PRICE, PRODUCT_COUNT
-		FROM MEMBER
-		JOIN CART USING(MEMBER_NO)
-		JOIN PRODUCT USING(PRODUCT_NO)
-		WHERE MEMBER_NO = ?
-	</entry> -->
-	<entry key=""></entry>
-	<entry key=""></entry>
-	<entry key=""></entry>
-	<entry key=""></entry>
+	<!-- 결제 -->
+	<entry key="pay">
+		INSERT INTO "ORDER" (MEMBER_NO, ORDER_NO, ORDER_NAME, ORDER_PHONE, ZIP_CODE, ADDRESS, ORDER_DATE, REFUND_FL)
+		VALUES(?, ?, ?, ?, ?, ?, DEFAULT, DEFAULT)
+	</entry>
+	<entry key="payOneList">
+		SELECT PRODUCT_IMAGE, PRODUCT_NM, PRICE
+		FROM PRODUCT
+		WHERE PRODUCT_NO = ?
+	</entry>
+	<entry key="payDetail">
+		INSERT INTO ORDER_DETAIL (ORDER_DETAIL_NO, PRODUCT_NO, BUYING_RATE, PRICE, REQUEST, ORDER_NO) 
+		VALUES(ORDER_DETAIL_NO_SEQ.NEXTVAL, ?, ?, ?, ?, ?)
+	</entry>
+	<entry key="payResult">
+		SELECT o.ORDER_NO, TO_CHAR(TO_DATE(o.ORDER_DATE, 'YY/MM/DD'), 'YYYY" / "MM" / "DD'), TO_CHAR(TO_DATE(o.ORDER_DATE, 'YY/MM/DD') + INTERVAL '3' DAY, 'DAY"," MM"월" DD"일""," YYYY'), 
+		od.BUYING_RATE, od.PRICE, p.PRODUCT_NM
+		FROM "MEMBER" m 
+		JOIN "ORDER" o ON (o.MEMBER_NO = m.MEMBER_NO)
+		JOIN "ORDER_DETAIL" od ON (od.ORDER_NO = o.ORDER_NO)
+		JOIN "PRODUCT" p ON (p.PRODUCT_NO = od.PRODUCT_NO)
+		WHERE m.MEMBER_NO = ?
+		AND o.ORDER_DATE = TO_DATE(SYSDATE, 'YY/MM/DD')
+</entry>
 	<entry key=""></entry>
 
 

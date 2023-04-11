@@ -78,9 +78,9 @@
                         
                             <!--구매 버튼-->
                             <div>
-                            <button type="submit" id="btn-purchase">구매하기</button>
+	                            <button type="submit" id="btn-purchase">구매하기</button>
                             </div>
-                            
+	                            
                      </form>       
                             <br>
                             <div>

@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="${contextPath}/resources/css/main-style.css">
     <link rel="stylesheet" href="${contextPath}/resources/css/member/login.css">
     <script src="https://kit.fontawesome.com/881d1deef7.js" crossorigin="anonymous"></script>
+    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+    <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.1.0/kakao.min.js" integrity="sha384-dpu02ieKC6NUeKFoGMOKz6102CLEWi9+5RQjWSV0ikYSFFd8M3Wp2reIcquJOemx" crossorigin="anonymous"></script>
     <title>login</title>
 </head>
 <body>
@@ -33,9 +35,16 @@
                     <div>
                         <input type="password" class="input-box" placeholder="비밀번호" name="inputPw" autocomplete="off">
                     </div>
+	
+					<div id="loginResult">
+                        <c:if test="${!empty sessionScope.message}">
+                            <%= session.getAttribute("message") %>
+                        </c:if>
+					</div>
+
+
                     <div class="status">
                         <div>
-                        
                         <c:if test="${!empty cookie.saveId.value}">
                         	<c:set var="chk" value="checked"/>
                         </c:if>
@@ -55,11 +64,14 @@
                     </div>
 
                 </form>
+                <form action="signUp" method="GET">
+                    <button class="signUp-btn">회원가입</button>
+                </form>
             </section>
             <hr>
             <section>
                 <div>
-                    <button class="btn kakao">카카오 로그인</button>
+                    <button class="btn kakao" onclick="kakaoLogin()">카카오 로그인</button>
                 </div>
                 <div>
                     <button class="btn google">구글 로그인</button>
@@ -84,5 +96,8 @@
    
     <!-- main.js 연결 -->
     <script src="${contextPath}/resources/js/main.js"></script>
+    
+    <!-- login.js 연결 -->
+    <script src="${contextPath}/resources/js/member/login.js"></script>
 </body>
 </html>
