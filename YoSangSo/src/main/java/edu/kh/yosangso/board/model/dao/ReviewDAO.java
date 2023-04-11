@@ -1,5 +1,7 @@
 package edu.kh.yosangso.board.model.dao;
 
+import static edu.kh.yosangso.common.JDBCTemplate.close;
+
 import java.io.FileInputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -11,8 +13,7 @@ import java.util.Properties;
 
 import edu.kh.yosangso.board.model.vo.Review;
 import edu.kh.yosangso.board.model.vo.ReviewImage;
-
-import static edu.kh.yosangso.common.JDBCTemplate.*;
+import edu.kh.yosangso.order.model.vo.Order;
 public class ReviewDAO {
 	
 	Properties prop;
@@ -86,7 +87,7 @@ public class ReviewDAO {
 			pstmt.setString(1, image.getImageReName());
 			pstmt.setString(2,  image.getImageOriginal());
 			//pstmt.setInt(3, image.getImageLevel());
-			pstmt.setInt(3, image.getReviewNo());
+//			pstmt.setInt(3, image.getReviewNo());
 			
 			result = pstmt.executeUpdate();
 			System.out.println("리뷰 IMG DAO 업데이트");
@@ -101,7 +102,12 @@ public class ReviewDAO {
 
 
 
-	public List<Review> selectReview(Connection conn, int pro) {
+	/** 리뷰 가져오기 DAO
+	 * @param conn
+	 * @param pro
+	 * @return
+	 */
+	public List<Review> selectReview(Connection conn, int pro) throws Exception{
 		
 		List<Review> reviewList = new ArrayList<>();
 		
@@ -109,14 +115,68 @@ public class ReviewDAO {
 			 
 			String sql = prop.getProperty("selectReview");
 			
+			pstmt = conn.prepareStatement(sql);
 			
+			pstmt.setInt(1, pro);
+			
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				
+				int reviewNo = rs.getInt("REVIEW_NO");
+				String reviewContent = rs.getString("REVIEW_CONTENT");
+				String reviewDate = rs.getString("REVIEW_DATE");
+				int reviewRate = rs.getInt("REVIEW_RATE");
+				String imageList = null;
+				int memberNo = rs.getInt("MEMBER_NO");
+				int productNo = rs.getInt("PRODUCT_NO");
+				int orderNo = 0;
+				String productName = null;
+				
+				reviewList.add(
+						new Review(reviewNo, reviewContent, reviewDate, reviewRate, productNo)
+						);
+				System.out.println("DAO : " +reviewList);
+				
+			}
 			
 		} finally {
 			close(rs);
 			close(pstmt);
 
 		}
-		return null;
+		return reviewList;
+	}
+
+
+
+
+	/** 작성할 리뷰 정보를 가져오는 DAO
+	 * @param conn
+	 * @param orderNo
+	 * @return
+	 * @throws Exception
+	 */
+	public Order selectReviewInfo(Connection conn, String orderNo) throws Exception {
+		
+		Order orderInfo = new Order();
+		
+		try {
+			String sql = prop.getProperty("selectReviewInfo");
+			
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, orderNo);
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				orderInfo.setProductName(rs.getString("PRO_NM"));
+			}
+		}finally {
+			close(rs);
+			close(pstmt);
+		}
+		return orderInfo;
 	}
 
 }

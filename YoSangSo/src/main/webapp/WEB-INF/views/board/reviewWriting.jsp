@@ -40,16 +40,16 @@
                                 <div class="review-content">
                                     <div class="review-content1">
         
-                                        <div><p>${loginMember.memberName}님의 리뷰 작성란</p></div>
+                                        <div><p>${ loginMember.memberName }님의 리뷰 작성란</p></div>
                                         
                                         <div>
                                             <div id="con-box">
                                                 <div id="review-imgBox">
-                                                    <img src="/이미지/요생소로고최종.png" alt="상품인데용" id="review-img"> 
+                                                    <img src="${contextPath}/resources/image/all/${orderInfo.productName}.jpg" /> 
                                                 </div>
                                                 <div id="review-imgExpalin">
                                                     <div>
-                                                        <p>Doctors Best, Quatrefolic이 함유된 완전 활성 B 복합체, 베지 캡슐 60정</p>
+                                                        <p>${orderInfo.productName}</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -85,13 +85,14 @@
                                                 <input type="text" class="upload-name" id="upload-name"
                                                 value="이미지를 업로드 하세요" placeholder="이미지를 업로드 하세요" disabled>
                                                 <label for="upload-file">파일선택</label>
-                                                <input type="file" id="upload-file">
+                                                <input type="file" name="reviewImgFile" id="upload-file">
+
                                             </div>
-                                                
                                             
                                             <div class="review-img">
-                                                <img src="${contextPath}/resources/image/review/" alt="이미지" width="100px">
+                                                <span id="fileName">선택된 파일 없음</span>
                                             </div>
+                                            
                                         </div>
         
         

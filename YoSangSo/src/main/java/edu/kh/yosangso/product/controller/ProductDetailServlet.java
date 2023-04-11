@@ -13,6 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.google.gson.Gson;
 
+import edu.kh.yosangso.board.model.service.ReviewService;
+import edu.kh.yosangso.board.model.vo.Review;
 import edu.kh.yosangso.product.model.service.ProductService;
 import edu.kh.yosangso.product.model.vo.Product;
 
@@ -27,7 +29,7 @@ public class ProductDetailServlet extends HttpServlet{
 		
 		int pro = Integer.parseInt(req.getParameter("ProductNo"));
 		List<Product> productList = new ArrayList<>();
-		
+		List<Review> reviewList = new ArrayList<>();
 		
 		try {
 
@@ -36,6 +38,9 @@ public class ProductDetailServlet extends HttpServlet{
 			
 			productList = service.selectProduct(pro);
 			
+			ReviewService reviewservice = new ReviewService();
+
+			reviewList = reviewservice.selectReview(pro);
 	
 
 			
@@ -47,10 +52,13 @@ public class ProductDetailServlet extends HttpServlet{
 		
 		req.setAttribute("productList", productList);
 		
+		req.setAttribute("reviewList", reviewList );
+		
 		req.getRequestDispatcher(path).forward(req, resp);
 		
+		
 	}
-
+	
 	
 	
 }
