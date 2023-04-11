@@ -103,12 +103,13 @@ public class ProductDAO {
 				String part = rs.getString("PART");
 				String img = null;
 				String imgurl = null;
+				String ingredient = null;
 				int productCount = 0;
 
 				
 				productList.add(
 						new Product(productNo, productName, category, price, stock, productDate, sellRate,
-								explain, part, img, imgurl )			
+								explain, part, img, imgurl, ingredient )			
 						);
 
 			} 

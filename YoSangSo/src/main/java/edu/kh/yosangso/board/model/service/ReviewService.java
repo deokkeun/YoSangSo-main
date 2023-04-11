@@ -1,7 +1,5 @@
 package edu.kh.yosangso.board.model.service;
 
-import static edu.kh.yosangso.common.JDBCTemplate.*;
-
 import java.sql.Connection;
 import java.util.List;
 

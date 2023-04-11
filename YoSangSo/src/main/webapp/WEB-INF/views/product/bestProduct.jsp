@@ -65,27 +65,30 @@ select * from product
             <!-- 2. 가운데페이지 -->
             <section class="center">
 
-
-                <!-- 2-1 퀵메뉴 부분 -->
+				 <!-- 2-1 퀵메뉴 부분 -->
                 <div class="quickMenu">
-
-                    <!-- 2-1 글씨칸 --> 
-                    <a href="${contextPath}/product/allProduct">
-                    	<div class="mainFont allItemFont">전제품</div>
-                    </a>
-                    <a href="${contextPath}/product/newProduct">
-                    	<div class="mainFont newItemFont">신상품</div>
-                    </a>
-                    <a href="${contextPath}/product/bestProduct">
-                    	<div class="mainFont bestItemFont">베스트</div>
-                    </a>
-
+                	<ul class="list">
+	
+	                    <!-- 2-1 글씨칸 -->
+	                    <a href="${contextPath}/product/allProduct"> 
+                    		<li class="mainFont">전제품</li>
+                    	</a>	
+                    	                    
+                    	<a href="${contextPath}/product/newProduct">
+                    		<li class="mainFont">신상품</li>
+                    	</a>	
+                    	
+                   		<a href="${contextPath}/product/bestProduct">
+                    		<li class="mainFont select">베스트</li>
+              			</a>		
+                    
+                    </ul>
                 </div>
+              
 
+     
 
-                
-
-                <!-- 2-2 제품 목록 -->
+          <!-- 2-2 제품 목록 -->
                 <div class="bestItem">
                     
                     <!-- 1행 -->
@@ -95,17 +98,17 @@ select * from product
                         	<p class=rank>1위</p>    
                             <a href="#">    
                                 <div class="BNitemPic bestItem1Pic">
-                                    <figcaption>${rs.rows[40]['PRODUCT_NM']}<hr> ${rs.rows[40]['INGREDIENT']}</figcaption>
-                                    <img src="${contextPath}/resources/image/all/${rs.rows[40]['PRODUCT_NM']}.jpg"
+                                    <figcaption>${rs.rows[9]['PRODUCT_NM']}<hr> ${rs.rows[9]['INGREDIENT']}</figcaption>
+                                    <img src="${contextPath}/resources/image/all/${rs.rows[9]['PRODUCT_NM']}.jpg"
                                      alt="제품사진" id="bestItemPhoto1">
                                 </div>
                             </a>
                                 <div class="BNitemName bestItem1Name">
-                                    <a href="#">${rs.rows[40]['PRODUCT_NM']}</a>  
+                                    <a href="#">${rs.rows[9]['PRODUCT_NM']}</a>  
                                 </div> 
                             
                                 <div class="BNitemPrice bestItem1Price">
-                                	<fmt:formatNumber value="${rs.rows[40]['PRICE']}" pattern="#,###"/>원
+                                	<fmt:formatNumber value="${rs.rows[9]['PRICE']}" pattern="#,###"/>원
                                 </div>  
                         </div>                          
 
@@ -115,361 +118,23 @@ select * from product
                         	<p class=rank>2위</p>    
                             <a href="#">  
                                 <div class="BNitemPic bestItem2Pic">
-                                    <figcaption>${rs.rows[41]['PRODUCT_NM']}<hr> ${rs.rows[41]['INGREDIENT']}</figcaption>
-                                    <img src="${contextPath}/resources/image/all/${rs.rows[41]['PRODUCT_NM']}.jpg"
+                                    <figcaption>${rs.rows[31]['PRODUCT_NM']}<hr> ${rs.rows[31]['INGREDIENT']}</figcaption>
+                                    <img src="${contextPath}/resources/image/all/${rs.rows[31]['PRODUCT_NM']}.jpg"
                                         alt="제품사진" id="bestItemPhoto2"> 
                                 </div>
                             </a>
                                 <div class="BNitemName bestItem2Name">
-                                    <a href="#">${rs.rows[41]['PRODUCT_NM']}</a>
+                                    <a href="#">${rs.rows[31]['PRODUCT_NM']}</a>
                                 </div> 
                             
                                 <div class="BNitemPrice bestItem2Price">
-                                	<fmt:formatNumber value="${rs.rows[41]['PRICE']}" pattern="#,###"/>원
+                                	<fmt:formatNumber value="${rs.rows[31]['PRICE']}" pattern="#,###"/>원
                                 </div>
                         </div>                        
 
                         <!-- 제품1-3 -->
                         <div class="BNitem Bitem3">
                         	<p class=rank>3위</p>    
-                            <a href="#">
-                                <div class="BNitemPic bestItem3Pic">
-                                    <figcaption>${rs.rows[0]['PRODUCT_NM']}<hr> ${rs.rows[0]['INGREDIENT']}</figcaption>
-                                    <img src="${contextPath}/resources/image/all/${rs.rows[0]['PRODUCT_NM']}.jpg"
-                                    alt="제품사진" id="bestItemPhoto3">
-                                </div>
-                            </a>
-
-                                <div class="BNitemName bestItem3Name">
-                                    <a href="#">${rs.rows[0]['PRODUCT_NM']}</a>  
-                                </div>
-
-                                <div class="BNitemPrice bestItem3Price">
-                                	<fmt:formatNumber value="${rs.rows[0]['PRICE']}" pattern="#,###"/>원
-                                </div>  
-                        </div>
-
-
-
-                        <!-- 제품1-4 -->
-                        <div class="BNitem Bitem4">
-                        	<p class=rank>4위</p>
-                            <a href="#">
-                                <div class="BNitemPic bestItem1Pic">
-                                    <figcaption>${rs.rows[1]['PRODUCT_NM']}<hr> ${rs.rows[1]['INGREDIENT']}</figcaption>
-                                    <img src="${contextPath}/resources/image/all/${rs.rows[1]['PRODUCT_NM']}.jpg"
-                                    alt="제품사진" id="bestItemPhoto4">
-                                </div>
-                            </a>
-
-                                <div class="BNitemName bestItem1Name">
-                                    <a href="#">${rs.rows[1]['PRODUCT_NM']}</a>
-                                </div>        
-
-                                <div class="BNitemPrice bestItem4Price">
-                                	<fmt:formatNumber value="${rs.rows[1]['PRICE']}" pattern="#,###"/>원
-                                </div>
-                        </div>
-                        
-                    </div>
-                
-                    <!-- 2행 -->
-                    <div class="line row2">
-                        <!--제품2-1 -->
-                        <div class="BNitem Bitem1">
-                        	<p class=rank>5위</p>    
-                            <a href="#">    
-                                <div class="BNitemPic bestItem1Pic"> 
-                                    <figcaption>${rs.rows[2]['PRODUCT_NM']}<hr> ${rs.rows[2]['INGREDIENT']}</figcaption>
-                                    <img src="${contextPath}/resources/image/all/${rs.rows[2]['PRODUCT_NM']}.jpg" 
-                                        alt="제품사진" id="bestItemPhoto1">
-                                </div>
-                            </a>
-                                <div class="BNitemName bestItem1Name">
-                                    <a href="#">${rs.rows[2]['PRODUCT_NM']}</a>  
-                                </div> 
-                            
-                                <div class="BNitemPrice bestItem1Price">
-                                	<fmt:formatNumber value="${rs.rows[2]['PRICE']}" pattern="#,###"/>원
-                                </div>  
-                        </div>                        
-
-                                                    
-                        <!-- 제품2-2 --> 
-                        <div class="BNitem Bitem2">
-                        	<p class=rank>6위</p>  
-                            <a href="#">  
-                                <div class="BNitemPic bestItem2Pic">
-                                    <figcaption>${rs.rows[3]['PRODUCT_NM']}<hr> ${rs.rows[3]['INGREDIENT']}</figcaption>
-                                    <img src="${contextPath}/resources/image/all/${rs.rows[3]['PRODUCT_NM']}.jpg"
-                                        alt="제품사진" id="bestItemPhoto2"> 
-                                </div>
-                            </a>
-                                <div class="BNitemName bestItem2Name">
-                                    <a href="#">${rs.rows[3]['PRODUCT_NM']}</a>
-                                </div> 
-                            
-                                <div class="BNitemPrice bestItem2Price">
-                                	<fmt:formatNumber value="${rs.rows[3]['PRICE']}" pattern="#,###"/>원
-                                </div>
-                        </div>                        <!-- /li 1-->
-
-
-                        <!-- 제품2-3 -->
-                        <div class="BNitem Bitem3">
-                        	<p class=rank>7위</p>
-                            <a href="#">
-                                <div class="BNitemPic bestItem3Pic">
-                                    <figcaption>${rs.rows[4]['PRODUCT_NM']}<hr> ${rs.rows[4]['INGREDIENT']}</figcaption>
-                                    <img src="${contextPath}/resources/image/all/${rs.rows[4]['PRODUCT_NM']}.jpg"
-                                    alt="제품사진" id="bestItemPhoto3">
-                                </div>
-                            </a>
-
-                                <div class="BNitemName bestItem3Name">
-                                    <a href="#">${rs.rows[4]['PRODUCT_NM']}</a>  
-                                </div>
-
-                                <div class="BNitemPrice bestItem3Price">
-                                	<fmt:formatNumber value="${rs.rows[4]['PRICE']}" pattern="#,###"/>원
-                                </div>  
-                        </div>
-
-
-                        <!-- 제품2-4 -->
-                        <div class="BNitem Bitem4">
-                        	<p class=rank>8위</p>
-                            <a href="#">
-                                <div class="BNitemPic bestItem1Pic">
-                                    <figcaption>${rs.rows[5]['PRODUCT_NM']}<hr> ${rs.rows[5]['INGREDIENT']}</figcaption>
-                                    <img src="${contextPath}/resources/image/all/${rs.rows[5]['PRODUCT_NM']}.jpg"
-                                    alt="제품사진" id="bestItemPhoto4">
-                                </div>
-                            </a>
-
-                                <div class="BNitemName bestItem1Name">
-                                    <a href="#">${rs.rows[5]['PRODUCT_NM']}</a>
-                                </div>        
-
-                                <div class="BNitemPrice bestItem4Price">
-                                	<fmt:formatNumber value="${rs.rows[5]['PRICE']}" pattern="#,###"/>원
-                                </div>
-                        </div>
-                    </div>
-
-                    <!-- 3행 -->
-                    <div class="line row3">
-                        <!--제품3-1 -->
-                        <div class="BNitem Bitem1">
-                        	<p class=rank>9위</p>    
-                            <a href="#">    
-                                <div class="BNitemPic bestItem1Pic"> 
-                                    <figcaption>${rs.rows[6]['PRODUCT_NM']}<hr> ${rs.rows[6]['INGREDIENT']}</figcaption>
-                                    <img src="${contextPath}/resources/image/all/${rs.rows[6]['PRODUCT_NM']}.jpg"
-                                        alt="제품사진" id="bestItemPhoto1">
-                                </div>
-                            </a>
-                                <div class="BNitemName bestItem1Name">
-                                    <a href="#">${rs.rows[6]['PRODUCT_NM']}</a>  
-                                </div> 
-                            
-                                <div class="BNitemPrice bestItem1Price">
-                                	<fmt:formatNumber value="${rs.rows[6]['PRICE']}" pattern="#,###"/>원
-                                </div>  
-                        </div>   
-                                                   
-                        <!-- 제품3-2 -->  
-                        <div class="BNitem Bitem2">
-                        	<p class=rank>10위</p>      
-                            <a href="#"> 
-                                <div class="BNitemPic bestItem2Pic"> 
-                                    <figcaption>${rs.rows[7]['PRODUCT_NM']}<hr> ${rs.rows[7]['INGREDIENT']}</figcaption>
-                                    <img src="${contextPath}/resources/image/all/${rs.rows[7]['PRODUCT_NM']}.jpg"
-                                        alt="제품사진" id="bestItemPhoto2"> 
-                                </div>
-                            </a>
-                                <div class="BNitemName bestItem2Name">
-                                    <a href="#">${rs.rows[7]['PRODUCT_NM']}</a>
-                                </div> 
-                            
-                                <div class="BNitemPrice bestItem2Price">
-                                	<fmt:formatNumber value="${rs.rows[7]['PRICE']}" pattern="#,###"/>원
-                                </div>
-                        </div>                        <!-- /li 1-->
-
-
-                        <!-- 제품3-3 -->
-                        <div class="BNitem Bitem3">
-                        	<p class=rank>11위</p>
-                            <a href="#">
-                                <div class="BNitemPic bestItem3Pic">
-                                    <figcaption>${rs.rows[8]['PRODUCT_NM']}<hr> ${rs.rows[8]['INGREDIENT']}</figcaption>
-                                    <img src="${contextPath}/resources/image/all/${rs.rows[8]['PRODUCT_NM']}.jpg"
-                                    alt="제품사진" id="bestItemPhoto3">
-                                </div>
-                            </a>
-
-                                <div class="BNitemName bestItem3Name">
-                                    <a href="#">${rs.rows[8]['PRODUCT_NM']}</a>  
-                                </div>
-
-                                <div class="BNitemPrice bestItem3Price">
-                                	<fmt:formatNumber value="${rs.rows[8]['PRICE']}" pattern="#,###"/>원
-                                </div>  
-                        </div>
-
-
-
-                        <!-- 제품3-4 -->
-                        <div class="BNitem Bitem4">
-                        	<p class=rank>12위</p>
-                            <a href="#">
-                                <div class="BNitemPic bestItem1Pic">
-                                    <figcaption>${rs.rows[9]['PRODUCT_NM']}<hr> ${rs.rows[9]['INGREDIENT']}</figcaption>
-                                    <img src="${contextPath}/resources/image/all/${rs.rows[9]['PRODUCT_NM']}.jpg"
-                                    alt="제품사진" id="bestItemPhoto4">
-                                </div>
-                            </a>
-
-                                <div class="BNitemName bestItem1Name">
-                                    <a href="#">${rs.rows[9]['PRODUCT_NM']}</a>
-                                </div>        
-
-                                <div class="BNitemPrice bestItem4Price">
-                                	<fmt:formatNumber value="${rs.rows[9]['PRICE']}" pattern="#,###"/>원
-                                </div>
-                        </div>
-                    </div>
-
-                    <!-- 4행 -->
-                    <div class="line row4">
-                        <!--제품4-1 -->
-                        <div class="BNitem Bitem1">
-                        	<p class=rank>13위</p>    
-                            <a href="#">    
-                                <div class="BNitemPic bestItem1Pic"> 
-                                    <figcaption>${rs.rows[10]['PRODUCT_NM']}<hr> ${rs.rows[10]['INGREDIENT']}</figcaption>
-                                    <img src="${contextPath}/resources/image/all/${rs.rows[10]['PRODUCT_NM']}.jpg"
-                                        alt="제품사진" id="bestItemPhoto1">
-                                </div>
-                            </a>
-                                <div class="BNitemName bestItem1Name">
-                                    <a href="#">${rs.rows[10]['PRODUCT_NM']}</a>  
-                                </div> 
-                            
-                                <div class="BNitemPrice bestItem1Price">
-                                	<fmt:formatNumber value="${rs.rows[10]['PRICE']}" pattern="#,###"/>원
-                                </div>  
-                        </div>                             
-
-                                                   
-                        <!-- 제품4-2 -->  
-                        <div class="BNitem Bitem2">
-                        	<p class=rank>14위</p>  
-                            <a href="#">  <!-- a 태그 -->
-                                <div class="BNitemPic bestItem2Pic"> 
-                                    <figcaption>${rs.rows[11]['PRODUCT_NM']}<hr> ${rs.rows[11]['INGREDIENT']}</figcaption>
-                                    <img src="${contextPath}/resources/image/all/${rs.rows[11]['PRODUCT_NM']}.jpg"
-                                        alt="제품사진" id="bestItemPhoto2"> 
-                                </div>
-                            </a>
-                                <div class="BNitemName bestItem2Name">
-                                    <a href="#">${rs.rows[11]['PRODUCT_NM']}</a>
-                                </div> 
-                            
-                                <div class="BNitemPrice bestItem2Price">
-                                	<fmt:formatNumber value="${rs.rows[11]['PRICE']}" pattern="#,###"/>원
-                                </div>
-                        </div>                        
-
-
-                        <!-- 제품4-3 -->
-                        <div class="BNitem Bitem3">
-                        	<p class=rank>15위</p>
-                            <a href="#">
-                                <div class="BNitemPic bestItem3Pic">
-                                    <figcaption>${rs.rows[12]['PRODUCT_NM']}<hr> ${rs.rows[12]['INGREDIENT']}</figcaption>
-                                    <img src="${contextPath}/resources/image/all/${rs.rows[12]['PRODUCT_NM']}.jpg" 
-                                    alt="제품사진" id="bestItemPhoto3">
-                                </div>
-                            </a>
-
-                                <div class="BNitemName bestItem3Name">
-                                    <a href="#">${rs.rows[12]['PRODUCT_NM']}</a>  
-                                </div>
-
-                                <div class="BNitemPrice bestItem3Price">
-                                	<fmt:formatNumber value="${rs.rows[12]['PRICE']}" pattern="#,###"/>원
-                                </div>  
-                        </div>
-
-
-                        <!-- 제품4-4 -->
-                        <div class="BNitem Bitem4">
-                        	<p class=rank>16위</p>
-                            <a href="#">
-                                <div class="BNitemPic bestItem1Pic">
-                                    <figcaption>${rs.rows[13]['PRODUCT_NM']}<hr> ${rs.rows[13]['INGREDIENT']}</figcaption>
-                                    <img src="${contextPath}/resources/image/all/${rs.rows[13]['PRODUCT_NM']}.jpg"
-                                    alt="제품사진" id="bestItemPhoto4">
-                                </div>
-                            </a>
-
-                                <div class="BNitemName bestItem1Name">
-                                    <a href="#">${rs.rows[13]['PRODUCT_NM']}</a>
-                                </div>        
-
-                                <div class="BNitemPrice bestItem4Price">
-                                	<fmt:formatNumber value="${rs.rows[13]['PRICE']}" pattern="#,###"/>원
-                                </div>
-                        </div>
-                    </div>
-
-                    <!-- 5행 -->
-                    <div class="line row5">
-                        <!--제품5-1 -->
-                        <div class="BNitem Bitem1">
-                        	<p class=rank>17위</p>    
-                            <a href="#">    
-                                <div class="BNitemPic bestItem1Pic"> 
-                                    <figcaption>${rs.rows[14]['PRODUCT_NM']}<hr> ${rs.rows[14]['INGREDIENT']}</figcaption>
-                                    <img src="${contextPath}/resources/image/all/${rs.rows[14]['PRODUCT_NM']}.jpg"
-                                        alt="제품사진" id="bestItemPhoto1">
-                                </div>
-                            </a>
-                                <div class="BNitemName bestItem1Name">
-                                    <a href="#">${rs.rows[14]['PRODUCT_NM']}</a>  
-                                </div> 
-                            
-                                <div class="BNitemPrice bestItem1Price">
-                                	<fmt:formatNumber value="${rs.rows[14]['PRICE']}" pattern="#,###"/>원
-                                </div>  
-                        </div>                      
-
-                                                    
-                        <!-- 제품5-2 -->  
-                        <div class="BNitem Bitem2">
-                        	<p class=rank>18위</p>
-                            <a href="#">  <!-- a 태그 -->
-                                <div class="BNitemPic bestItem2Pic">
-                                    <figcaption>${rs.rows[15]['PRODUCT_NM']}<hr> ${rs.rows[15]['INGREDIENT']}</figcaption>
-                                    <img src="${contextPath}/resources/image/all/${rs.rows[15]['PRODUCT_NM']}.jpg"
-                                        alt="제품사진" id="bestItemPhoto2"> 
-                                </div>
-                            </a>
-                                <div class="BNitemName bestItem2Name">
-                                    <a href="#">${rs.rows[15]['PRODUCT_NM']}</a>
-                                </div> 
-                            
-                                <div class="BNitemPrice bestItem2Price">
-                                	<fmt:formatNumber value="${rs.rows[15]['PRICE']}" pattern="#,###"/>원
-                                </div>
-                        </div>                        
-
-
-                        <!-- 제품5-3 -->
-                        <div class="BNitem Bitem3">
-                        	<p class=rank>19위</p>
                             <a href="#">
                                 <div class="BNitemPic bestItem3Pic">
                                     <figcaption>${rs.rows[16]['PRODUCT_NM']}<hr> ${rs.rows[16]['INGREDIENT']}</figcaption>
@@ -488,23 +153,361 @@ select * from product
                         </div>
 
 
-                        <!-- 제품5-4 -->
+
+                        <!-- 제품1-4 -->
                         <div class="BNitem Bitem4">
-                        	<p class=rank>20위</p>
+                        	<p class=rank>4위</p>
                             <a href="#">
                                 <div class="BNitemPic bestItem1Pic">
-                                    <figcaption>${rs.rows[17]['PRODUCT_NM']}<hr> ${rs.rows[17]['INGREDIENT']}</figcaption>
-                                    <img src="${contextPath}/resources/image/all/${rs.rows[17]['PRODUCT_NM']}.jpg"
+                                    <figcaption>${rs.rows[23]['PRODUCT_NM']}<hr> ${rs.rows[23]['INGREDIENT']}</figcaption>
+                                    <img src="${contextPath}/resources/image/all/${rs.rows[23]['PRODUCT_NM']}.jpg"
                                     alt="제품사진" id="bestItemPhoto4">
                                 </div>
                             </a>
 
                                 <div class="BNitemName bestItem1Name">
-                                    <a href="#">${rs.rows[17]['PRODUCT_NM']}</a>
+                                    <a href="#">${rs.rows[23]['PRODUCT_NM']}</a>
                                 </div>        
 
                                 <div class="BNitemPrice bestItem4Price">
-                                	<fmt:formatNumber value="${rs.rows[17]['PRICE']}" pattern="#,###"/>원
+                                	<fmt:formatNumber value="${rs.rows[23]['PRICE']}" pattern="#,###"/>원
+                                </div>
+                        </div>
+                        
+                    </div>
+                
+                    <!-- 2행 -->
+                    <div class="line row2">
+                        <!--제품2-1 -->
+                        <div class="BNitem Bitem1">
+                        	<p class=rank>5위</p>    
+                            <a href="#">    
+                                <div class="BNitemPic bestItem1Pic"> 
+                                    <figcaption>${rs.rows[18]['PRODUCT_NM']}<hr> ${rs.rows[18]['INGREDIENT']}</figcaption>
+                                    <img src="${contextPath}/resources/image/all/${rs.rows[18]['PRODUCT_NM']}.jpg" 
+                                        alt="제품사진" id="bestItemPhoto1">
+                                </div>
+                            </a>
+                                <div class="BNitemName bestItem1Name">
+                                    <a href="#">${rs.rows[18]['PRODUCT_NM']}</a>  
+                                </div> 
+                            
+                                <div class="BNitemPrice bestItem1Price">
+                                	<fmt:formatNumber value="${rs.rows[18]['PRICE']}" pattern="#,###"/>원
+                                </div>  
+                        </div>                        
+
+                                                    
+                        <!-- 제품2-2 --> 
+                        <div class="BNitem Bitem2">
+                        	<p class=rank>6위</p>  
+                            <a href="#">  
+                                <div class="BNitemPic bestItem2Pic">
+                                    <figcaption>${rs.rows[7]['PRODUCT_NM']}<hr> ${rs.rows[7]['INGREDIENT']}</figcaption>
+                                    <img src="${contextPath}/resources/image/all/${rs.rows[7]['PRODUCT_NM']}.jpg"
+                                        alt="제품사진" id="bestItemPhoto2"> 
+                                </div>
+                            </a>
+                                <div class="BNitemName bestItem2Name">
+                                    <a href="#">${rs.rows[7]['PRODUCT_NM']}</a>
+                                </div> 
+                            
+                                <div class="BNitemPrice bestItem2Price">
+                                	<fmt:formatNumber value="${rs.rows[7]['PRICE']}" pattern="#,###"/>원
+                                </div>
+                        </div>                        <!-- /li 1-->
+
+
+                        <!-- 제품2-3 -->
+                        <div class="BNitem Bitem3">
+                        	<p class=rank>7위</p>
+                            <a href="#">
+                                <div class="BNitemPic bestItem3Pic">
+                                    <figcaption>${rs.rows[32]['PRODUCT_NM']}<hr> ${rs.rows[32]['INGREDIENT']}</figcaption>
+                                    <img src="${contextPath}/resources/image/all/${rs.rows[32]['PRODUCT_NM']}.jpg"
+                                    alt="제품사진" id="bestItemPhoto3">
+                                </div>
+                            </a>
+
+                                <div class="BNitemName bestItem3Name">
+                                    <a href="#">${rs.rows[32]['PRODUCT_NM']}</a>  
+                                </div>
+
+                                <div class="BNitemPrice bestItem3Price">
+                                	<fmt:formatNumber value="${rs.rows[32]['PRICE']}" pattern="#,###"/>원
+                                </div>  
+                        </div>
+
+
+                        <!-- 제품2-4 -->
+                        <div class="BNitem Bitem4">
+                        	<p class=rank>8위</p>
+                            <a href="#">
+                                <div class="BNitemPic bestItem1Pic">
+                                    <figcaption>${rs.rows[20]['PRODUCT_NM']}<hr> ${rs.rows[20]['INGREDIENT']}</figcaption>
+                                    <img src="${contextPath}/resources/image/all/${rs.rows[20]['PRODUCT_NM']}.jpg"
+                                    alt="제품사진" id="bestItemPhoto4">
+                                </div>
+                            </a>
+
+                                <div class="BNitemName bestItem1Name">
+                                    <a href="#">${rs.rows[20]['PRODUCT_NM']}</a>
+                                </div>        
+
+                                <div class="BNitemPrice bestItem4Price">
+                                	<fmt:formatNumber value="${rs.rows[20]['PRICE']}" pattern="#,###"/>원
+                                </div>
+                        </div>
+                    </div>
+
+                    <!-- 3행 -->
+                    <div class="line row3">
+                        <!--제품3-1 -->
+                        <div class="BNitem Bitem1">
+                        	<p class=rank>9위</p>    
+                            <a href="#">    
+                                <div class="BNitemPic bestItem1Pic"> 
+                                    <figcaption>${rs.rows[13]['PRODUCT_NM']}<hr> ${rs.rows[13]['INGREDIENT']}</figcaption>
+                                    <img src="${contextPath}/resources/image/all/${rs.rows[13]['PRODUCT_NM']}.jpg"
+                                        alt="제품사진" id="bestItemPhoto1">
+                                </div>
+                            </a>
+                                <div class="BNitemName bestItem1Name">
+                                    <a href="#">${rs.rows[13]['PRODUCT_NM']}</a>  
+                                </div> 
+                            
+                                <div class="BNitemPrice bestItem1Price">
+                                	<fmt:formatNumber value="${rs.rows[13]['PRICE']}" pattern="#,###"/>원
+                                </div>  
+                        </div>   
+                                                   
+                        <!-- 제품3-2 -->  
+                        <div class="BNitem Bitem2">
+                        	<p class=rank>10위</p>      
+                            <a href="#"> 
+                                <div class="BNitemPic bestItem2Pic"> 
+                                    <figcaption>${rs.rows[15]['PRODUCT_NM']}<hr> ${rs.rows[15]['INGREDIENT']}</figcaption>
+                                    <img src="${contextPath}/resources/image/all/${rs.rows[15]['PRODUCT_NM']}.jpg"
+                                        alt="제품사진" id="bestItemPhoto2"> 
+                                </div>
+                            </a>
+                                <div class="BNitemName bestItem2Name">
+                                    <a href="#">${rs.rows[15]['PRODUCT_NM']}</a>
+                                </div> 
+                            
+                                <div class="BNitemPrice bestItem2Price">
+                                	<fmt:formatNumber value="${rs.rows[15]['PRICE']}" pattern="#,###"/>원
+                                </div>
+                        </div>                        <!-- /li 1-->
+
+
+                        <!-- 제품3-3 -->
+                        <div class="BNitem Bitem3">
+                        	<p class=rank>11위</p>
+                            <a href="#">
+                                <div class="BNitemPic bestItem3Pic">
+                                    <figcaption>${rs.rows[33]['PRODUCT_NM']}<hr> ${rs.rows[33]['INGREDIENT']}</figcaption>
+                                    <img src="${contextPath}/resources/image/all/${rs.rows[33]['PRODUCT_NM']}.jpg"
+                                    alt="제품사진" id="bestItemPhoto3">
+                                </div>
+                            </a>
+
+                                <div class="BNitemName bestItem3Name">
+                                    <a href="#">${rs.rows[33]['PRODUCT_NM']}</a>  
+                                </div>
+
+                                <div class="BNitemPrice bestItem3Price">
+                                	<fmt:formatNumber value="${rs.rows[33]['PRICE']}" pattern="#,###"/>원
+                                </div>  
+                        </div>
+
+
+
+                        <!-- 제품3-4 -->
+                        <div class="BNitem Bitem4">
+                        	<p class=rank>12위</p>
+                            <a href="#">
+                                <div class="BNitemPic bestItem1Pic">
+                                    <figcaption>${rs.rows[8]['PRODUCT_NM']}<hr> ${rs.rows[8]['INGREDIENT']}</figcaption>
+                                    <img src="${contextPath}/resources/image/all/${rs.rows[8]['PRODUCT_NM']}.jpg"
+                                    alt="제품사진" id="bestItemPhoto4">
+                                </div>
+                            </a>
+
+                                <div class="BNitemName bestItem1Name">
+                                    <a href="#">${rs.rows[8]['PRODUCT_NM']}</a>
+                                </div>        
+
+                                <div class="BNitemPrice bestItem4Price">
+                                	<fmt:formatNumber value="${rs.rows[8]['PRICE']}" pattern="#,###"/>원
+                                </div>
+                        </div>
+                    </div>
+
+                    <!-- 4행 -->
+                    <div class="line row4">
+                        <!--제품4-1 -->
+                        <div class="BNitem Bitem1">
+                        	<p class=rank>13위</p>    
+                            <a href="#">    
+                                <div class="BNitemPic bestItem1Pic"> 
+                                    <figcaption>${rs.rows[6]['PRODUCT_NM']}<hr> ${rs.rows[6]['INGREDIENT']}</figcaption>
+                                    <img src="${contextPath}/resources/image/all/${rs.rows[6]['PRODUCT_NM']}.jpg"
+                                        alt="제품사진" id="bestItemPhoto1">
+                                </div>
+                            </a>
+                                <div class="BNitemName bestItem1Name">
+                                    <a href="#">${rs.rows[6]['PRODUCT_NM']}</a>  
+                                </div> 
+                            
+                                <div class="BNitemPrice bestItem1Price">
+                                	<fmt:formatNumber value="${rs.rows[6]['PRICE']}" pattern="#,###"/>원
+                                </div>  
+                        </div>                             
+
+                                                   
+                        <!-- 제품4-2 -->  
+                        <div class="BNitem Bitem2">
+                        	<p class=rank>14위</p>  
+                            <a href="#">  <!-- a 태그 -->
+                                <div class="BNitemPic bestItem2Pic"> 
+                                    <figcaption>${rs.rows[35]['PRODUCT_NM']}<hr> ${rs.rows[35]['INGREDIENT']}</figcaption>
+                                    <img src="${contextPath}/resources/image/all/${rs.rows[35]['PRODUCT_NM']}.jpg"
+                                        alt="제품사진" id="bestItemPhoto2"> 
+                                </div>
+                            </a>
+                                <div class="BNitemName bestItem2Name">
+                                    <a href="#">${rs.rows[35]['PRODUCT_NM']}</a>
+                                </div> 
+                            
+                                <div class="BNitemPrice bestItem2Price">
+                                	<fmt:formatNumber value="${rs.rows[35]['PRICE']}" pattern="#,###"/>원
+                                </div>
+                        </div>                        
+
+
+                        <!-- 제품4-3 -->
+                        <div class="BNitem Bitem3">
+                        	<p class=rank>15위</p>
+                            <a href="#">
+                                <div class="BNitemPic bestItem3Pic">
+                                    <figcaption>${rs.rows[19]['PRODUCT_NM']}<hr> ${rs.rows[19]['INGREDIENT']}</figcaption>
+                                    <img src="${contextPath}/resources/image/all/${rs.rows[19]['PRODUCT_NM']}.jpg" 
+                                    alt="제품사진" id="bestItemPhoto3">
+                                </div>
+                            </a>
+
+                                <div class="BNitemName bestItem3Name">
+                                    <a href="#">${rs.rows[19]['PRODUCT_NM']}</a>  
+                                </div>
+
+                                <div class="BNitemPrice bestItem3Price">
+                                	<fmt:formatNumber value="${rs.rows[19]['PRICE']}" pattern="#,###"/>원
+                                </div>  
+                        </div>
+
+
+                        <!-- 제품4-4 -->
+                        <div class="BNitem Bitem4">
+                        	<p class=rank>16위</p>
+                            <a href="#">
+                                <div class="BNitemPic bestItem1Pic">
+                                    <figcaption>${rs.rows[10]['PRODUCT_NM']}<hr> ${rs.rows[10]['INGREDIENT']}</figcaption>
+                                    <img src="${contextPath}/resources/image/all/${rs.rows[10]['PRODUCT_NM']}.jpg"
+                                    alt="제품사진" id="bestItemPhoto4">
+                                </div>
+                            </a>
+
+                                <div class="BNitemName bestItem1Name">
+                                    <a href="#">${rs.rows[10]['PRODUCT_NM']}</a>
+                                </div>        
+
+                                <div class="BNitemPrice bestItem4Price">
+                                	<fmt:formatNumber value="${rs.rows[10]['PRICE']}" pattern="#,###"/>원
+                                </div>
+                        </div>
+                    </div>
+
+                    <!-- 5행 -->
+                    <div class="line row5">
+                        <!--제품5-1 -->
+                        <div class="BNitem Bitem1">
+                        	<p class=rank>17위</p>    
+                            <a href="#">    
+                                <div class="BNitemPic bestItem1Pic"> 
+                                    <figcaption>${rs.rows[5]['PRODUCT_NM']}<hr> ${rs.rows[5]['INGREDIENT']}</figcaption>
+                                    <img src="${contextPath}/resources/image/all/${rs.rows[5]['PRODUCT_NM']}.jpg"
+                                        alt="제품사진" id="bestItemPhoto1">
+                                </div>
+                            </a>
+                                <div class="BNitemName bestItem1Name">
+                                    <a href="#">${rs.rows[5]['PRODUCT_NM']}</a>  
+                                </div> 
+                            
+                                <div class="BNitemPrice bestItem1Price">
+                                	<fmt:formatNumber value="${rs.rows[5]['PRICE']}" pattern="#,###"/>원
+                                </div>  
+                        </div>                      
+
+                                                    
+                        <!-- 제품5-2 -->  
+                        <div class="BNitem Bitem2">
+                        	<p class=rank>18위</p>
+                            <a href="#">  <!-- a 태그 -->
+                                <div class="BNitemPic bestItem2Pic">
+                                    <figcaption>${rs.rows[2]['PRODUCT_NM']}<hr> ${rs.rows[2]['INGREDIENT']}</figcaption>
+                                    <img src="${contextPath}/resources/image/all/${rs.rows[2]['PRODUCT_NM']}.jpg"
+                                        alt="제품사진" id="bestItemPhoto2"> 
+                                </div>
+                            </a>
+                                <div class="BNitemName bestItem2Name">
+                                    <a href="#">${rs.rows[2]['PRODUCT_NM']}</a>
+                                </div> 
+                            
+                                <div class="BNitemPrice bestItem2Price">
+                                	<fmt:formatNumber value="${rs.rows[2]['PRICE']}" pattern="#,###"/>원
+                                </div>
+                        </div>                        
+
+
+                        <!-- 제품5-3 -->
+                        <div class="BNitem Bitem3">
+                        	<p class=rank>19위</p>
+                            <a href="#">
+                                <div class="BNitemPic bestItem3Pic">
+                                    <figcaption>${rs.rows[37]['PRODUCT_NM']}<hr> ${rs.rows[37]['INGREDIENT']}</figcaption>
+                                    <img src="${contextPath}/resources/image/all/${rs.rows[37]['PRODUCT_NM']}.jpg"
+                                    alt="제품사진" id="bestItemPhoto3">
+                                </div>
+                            </a>
+
+                                <div class="BNitemName bestItem3Name">
+                                    <a href="#">${rs.rows[37]['PRODUCT_NM']}</a>  
+                                </div>
+
+                                <div class="BNitemPrice bestItem3Price">
+                                	<fmt:formatNumber value="${rs.rows[37]['PRICE']}" pattern="#,###"/>원
+                                </div>  
+                        </div>
+
+
+                        <!-- 제품5-4 -->
+                        <div class="BNitem Bitem4">
+                        	<p class=rank>20위</p>
+                            <a href="#">
+                                <div class="BNitemPic bestItem1Pic">
+                                    <figcaption>${rs.rows[39]['PRODUCT_NM']}<hr> ${rs.rows[39]['INGREDIENT']}</figcaption>
+                                    <img src="${contextPath}/resources/image/all/${rs.rows[39]['PRODUCT_NM']}.jpg"
+                                    alt="제품사진" id="bestItemPhoto4">
+                                </div>
+                            </a>
+
+                                <div class="BNitemName bestItem1Name">
+                                    <a href="#">${rs.rows[39]['PRODUCT_NM']}</a>
+                                </div>        
+
+                                <div class="BNitemPrice bestItem4Price">
+                                	<fmt:formatNumber value="${rs.rows[39]['PRICE']}" pattern="#,###"/>원
                                 </div>
                         </div>
                     </div>
@@ -528,7 +531,7 @@ select * from product
                 
                 <!-- 인체사진 플로팅바-->
                 <div class="floating">
-                    <a href="#"> 
+                    <a href="${contextPath}/product/person"/>
                         <img id="people" src="${contextPath}/resources/image/index/인체이미지누끼.png">
                     </a>
                 </div>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>main-sql.xml</comment>
+
+	<!--  메인페이지 이미지/제품명/가격 출력하기?  -->
+	<entry key="mainProduct">
+	SELECT PRODUCT_NM, PRICE, INGREDIENT
+	FROM PRODUCT
+	</entry>
+	
+	
+
+	<entry key=""></entry>
+	<entry key=""></entry>
+	<entry key=""></entry>
+	<entry key=""></entry>
+	<entry key=""></entry>
+
+
+</properties>
