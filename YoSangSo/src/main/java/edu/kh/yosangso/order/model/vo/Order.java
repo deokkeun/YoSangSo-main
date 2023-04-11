@@ -40,7 +40,7 @@ public class Order {
 		this.orderDate = orderDate;
 	}
 	
-	public Order(String productName, int memberNo, int orderNo, int price, int buyingRate, String refundDate, String orderDate) {
+	public Order(String productName, int memberNo, String orderNo, int price, int buyingRate, String refundDate, String orderDate) {
 		this.productName = productName;
 		this.memberNo = memberNo;
 		this.orderNo = orderNo;
@@ -58,6 +58,5 @@ public class Order {
 		this.zipCode = zipCode;
 		this.address = address;
 	}
-	
 
 }

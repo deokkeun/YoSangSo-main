@@ -13,6 +13,7 @@ import edu.kh.yosangso.board.model.vo.Review;
 //@WebServlet("")
 public class SelectQNAServlet extends HttpServlet{
 	
+	
 	int pro = Integer.parseInt(req.getParameter("ProductNo"));
 	
 	List<Review> qnaList = new ArrayList<>();
@@ -38,4 +39,4 @@ public class SelectQNAServlet extends HttpServlet{
 
 	
 
-}
+

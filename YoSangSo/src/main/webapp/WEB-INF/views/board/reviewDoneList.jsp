@@ -89,7 +89,7 @@
                                     </div>
                                     <div class="reviewListBox">
                                     <c:if test="${pageVo.prev}">
-                                        <a href="reviewList?pageNum=${pageVo.startPage - 1 }&amount=${pageVo.amount}">이전</a> 
+                                        <a href="reviewList?pageNum=${pageVo.startPage - 1 }&amount=${pageVo.amount}">&lt;</a> 
                                     </c:if>
                         			<c:forEach var="num" begin="${pageVo.startPage }" end="${pageVo.endPage }">
 	                        			<li  class="${pageVo.pageNum eq num ? 'active' : '' }">
@@ -97,7 +97,7 @@
 	                        			</li>
                         			</c:forEach>
                          			<c:if test="${pageVo.next }">
-                        				<a href="reviewList?pageNum=${pageVo.endPage + 1 }&amount=${pageVo.amount}">다음</a>
+                        				<a href="reviewList?pageNum=${pageVo.endPage + 1 }&amount=${pageVo.amount}">&gt;</a>
                         			</c:if>
                                     </div>
         
