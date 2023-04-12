@@ -1,7 +1,7 @@
 
 function kakaopay() {
-	
 
+	
 	
     // 회원 번호
     const memberNo = document.getElementById("memNo");
@@ -107,12 +107,13 @@ function kakaopay() {
 		type : "POST",
 		dataType : "JSON",
 		success : function() {
-			
+			alert("주문 성공");
+			alert(orderNum);
 			addOrderDetail();
-			console.log("구매자 정보 order테이블 추가 성공");
+			
 		},
 		error : function() {
-			alert("구매자 정보 order테이블 추가 실패");
+			alert("주문 실패");
 		}
 	});
 		
@@ -137,10 +138,12 @@ function kakaopay() {
 				type : "POST",
 				dataType : "JSON",
 				success : function(result) {
-					console.log("구매한 상품정보 등록 성공");
+					alert("상품 구매정보 추가 성공");
+					console.log(result + '구매한 상품정보 등록 성공');
 					
 				},
 				error : function() {
+					alert(orderNum);
 					alert("상품 구매정보 추가 실패");
 				}
 			});		
@@ -174,15 +177,20 @@ function kakaopay() {
 			fail_url: "http://localhost:8080/YoSangSo/order/pay"
 		},
 		success: function(result) {
-			console.log("카카오페이 결제 성공");
-			window.open(result.next_redirect_pc_url);
+			
+				alert("성공");
+				window.open(result.next_redirect_pc_url);
+
 		},
 		error: function() {
-			alert("카카오페이 결제 실패");
+			alert("실패");
 		}
 	});
 
 	}, 3000);
+
+
+	
 	
 	
 }

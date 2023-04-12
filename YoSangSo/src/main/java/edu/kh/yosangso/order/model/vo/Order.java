@@ -10,6 +10,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Order {
+	
 	private String productName;
 	private int memberNo;
 	private String orderNo;
@@ -17,9 +18,11 @@ public class Order {
 	private int buyingRate;
 	private String refundDate;
 	private String orderDate;
-	private String orderDetailNo;
+
 	private String address;
 	private int count;
+	
+
 	private String orderName;
 	private String orderPhone;
 	private String zipCode;
@@ -27,6 +30,8 @@ public class Order {
 	private int productNo;
 	private String request;
 	private int buyingPrice;
+	
+
 
 	public Order(String productName, String orderNo, int price, int buyingRate) {
 		super();
@@ -37,33 +42,33 @@ public class Order {
 	}
 
 
-
-
-
 	public Order(String orderNo, String orderDate, String address, String productName, int count) {
 		super();
 		this.orderNo = orderNo;
 		this.orderDate = orderDate;
 		this.address = address;
-		this.productName = productName;
+		this.productName =productName;
 		this.count = count;
 	}
-
-
-
-
 
 	public Order(String productName, String orderNo, String orderDate) {
 		super();
 		this.productName = productName;
-		this.orderDetailNo = orderDetailNo;
+		this.orderNo = orderNo;
 		this.orderDate = orderDate;
 
 	}
 	
+	public Order(String productName, int memberNo, String orderNo, int price, int buyingRate, String refundDate, String orderDate) {
+		this.productName = productName;
+		this.memberNo = memberNo;
+		this.orderNo = orderNo;
+		this.price = price;
+		this.buyingRate = buyingRate;
+		this.refundDate = refundDate;
+		this.orderDate = orderDate;
+	}
 	
-  
-  
 	/** 주문시 주문테이블 정보 추가(주문번호 생성)
 	 * @param memberNo
 	 * @param orderNum
@@ -80,10 +85,10 @@ public class Order {
 		this.zipCode = zipCode;
 		this.address = address;
 	}
+	
 
 	
-	
-	public Order(String productName, int memberNo, String orderNo, int price, int buyingRate, String refundDate, String orderDate) {
+	/*public Order(String productName, int memberNo, String orderNo, int price, int buyingRate, String refundDate, String orderDate) {
 		super();
 		this.productName = productName;
 		this.memberNo = memberNo;
@@ -92,8 +97,7 @@ public class Order {
 		this.buyingRate = buyingRate;
 		this.refundDate = refundDate;
 		this.orderDate = orderDate;
-	}
-
+	}*/
 
 
 	public Order(String productName, int price, int buyingRate) {
@@ -103,7 +107,6 @@ public class Order {
 		this.buyingRate = buyingRate;
 		
 	}
-
 
 
 
@@ -121,15 +124,7 @@ public class Order {
 		this.buyingPrice = buyingPrice;
 		this.request = request;
 		this.orderNum = orderNum;
-	
 	}
 
 
-
-
-
-
-
-
 }
-

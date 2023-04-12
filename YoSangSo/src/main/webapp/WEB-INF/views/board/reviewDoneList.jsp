@@ -89,15 +89,15 @@
                                     </div>
                                     <div class="reviewListBox">
                                     <c:if test="${pageVo.prev}">
-                                        <a href="reviewDoneList?pageNum=${pageVo.startPage - 1 }&amount=${pageVo.amount}">&lt;</a> 
+                                        <a href="reviewList?pageNum=${pageVo.startPage - 1 }&amount=${pageVo.amount}">&lt;</a> 
                                     </c:if>
                         			<c:forEach var="num" begin="${pageVo.startPage }" end="${pageVo.endPage }">
 	                        			<li  class="${pageVo.pageNum eq num ? 'active' : '' }">
-	                        				<a href="reviewDoneList?pageNum=${num}&amount=${pageVo.amount}">${num}</a>
+	                        				<a href="reviewList?pageNum=${num}&amount=${pageVo.amount}">${num}</a>
 	                        			</li>
                         			</c:forEach>
                          			<c:if test="${pageVo.next }">
-                        				<a href="reviewDoneList?pageNum=${pageVo.endPage + 1 }&amount=${pageVo.amount}">&gt;</a>
+                        				<a href="reviewList?pageNum=${pageVo.endPage + 1 }&amount=${pageVo.amount}">&gt;</a>
                         			</c:if>
                                     </div>
         

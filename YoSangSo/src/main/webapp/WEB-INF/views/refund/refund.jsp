@@ -43,7 +43,7 @@
 					<div class="container">
 			            <div class="info-bar">
 			                <div>
-			                    <span> 주문 내역 조회 </span>
+			                    <span>환불신청</span>
 			                </div>
 			            </div>
 			                <div class="outer-line">

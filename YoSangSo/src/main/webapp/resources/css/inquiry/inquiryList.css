@@ -120,7 +120,7 @@
     /* background-color: blue; */
     display: flex;
     justify-content: center;
-    padding-right: 150px;
+    padding-right: 110px;
 }
 
 #topOfList > div:nth-child(3){
@@ -184,7 +184,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    width: 150px;
+    width: 100px;
     height: 20px;
 }
 
@@ -233,23 +233,7 @@
     margin-left: 50px;
 }
 
-/*
 .questionTitleBox  button {
-    width: 70px;
-    height: 30px;
-    border-radius: 8px;
-    background-color: #2678F3; 
-    margin-right: 50px;
-    border: 3px solid #6aafe6;
-    color: #6e6e6e;
-    font-size: 15px;
-    font-weight: bold;
-} */
-
-
-
-#inquiryUpdate{
-    margin-top: 23px;
     width: 70px;
     height: 30px;
     border-radius: 8px;
@@ -261,18 +245,8 @@
     font-weight: bold;
 }
 
-#inquiryDelete{
-
-    width: 70px;
-    height: 30px;
-    border-radius: 8px;
-    /* background-color: #2678F3; */
-    margin-right: 50px;
-    border: 3px solid #6aafe6;
-    color: #6e6e6e;
-    font-size: 15px;
-    font-weight: bold;
-
+#inquiryUpdate{
+    margin-top: 23px;
 }
 
 .questionTitleBox  button:hover {

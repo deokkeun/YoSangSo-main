@@ -1,0 +1,139 @@
+
+/* 콘텐츠 */
+#content {
+    display: flex;
+    /* 콘텐츠 전체 크기(높이) 수정 부분 입니다 */
+    height: 1600px;
+    background-color: rgba(0, 0, 0, 0.05);
+}
+/* 컨텐츠 공간 */
+#content > section {
+    width: 1280px;
+    margin: 0 auto;
+    background-color: white;
+}
+
+/* ---------------------------------------------------------- */
+.content-box {
+    display: flex;
+}
+.content-box-left {
+    width: 640px;
+    border-right:1px solid rgba(0, 0, 0, 0.2);
+}
+.content-box-left > div:nth-child(1) {
+    margin: 50px 0px 25px 0px;
+}
+.content-box-right {
+    width: 640px;
+}
+.fa-arrow-left {
+    text-decoration: none;
+    color: black;
+    margin: 0 50px;
+}
+
+.content-box-left-title {
+    display: flex;
+    padding: 20px;
+    margin: 0 50px;
+}
+.content-box-left-title > div:nth-child(2) {
+    padding: 25px 20px;
+}
+.title {
+    font-size: 28.43px;
+    font-weight: bold;
+}
+
+.content-box-left-content > ul {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0 50px;
+    gap: 16px;
+    list-style: none;
+}
+.content-box-left-content li {
+    width: 538px;
+    height: 150px;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: rgba(108, 108, 108, 0.25) 0px 1px 10px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.content-box-left-content a {
+    text-decoration: none;
+    color: black;
+}
+.content-box-left-content h2,
+.content-box-left-content p {
+    width: 500px;
+    height: 40px;
+    cursor: pointer;
+    margin: 0 auto;
+}
+
+
+
+
+.content-box-right-content > section:nth-child(1) {
+    padding: 50px;
+}
+.content-box-right-content ul {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0 50px;
+    gap: 16px;
+    list-style: none;
+}
+.content-box-right-content li {
+    width: 538px;
+    height: 150px;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: rgba(108, 108, 108, 0.25) 0px 1px 10px;
+    cursor: pointer;
+    text-decoration: none;
+    background-color: white;
+}
+
+.content-box-right-content a {
+    text-decoration: none;
+    color: black;
+}
+
+.product {
+    width: 500px;
+    height: 110px;
+    display: flex;
+}
+.product > div:nth-child(1) {
+    width: 150px;
+    height: 110px;
+    border: 1px solid orange;
+    display: flex;
+}
+.product > div:nth-child(2) {
+    margin-left: 10px;
+    width: 350px;
+    height: 110px;
+    display: flex;
+}
+
+/* 내용 배경색 */
+.people-bg {
+    background-color: #ffb3b3;
+}
+
+.person-img {
+    position: relative;
+}
+.person-img-heart {
+    position: absolute;
+    left: 27px;
+    top: 0px;
+}

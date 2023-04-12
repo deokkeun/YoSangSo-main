@@ -19,7 +19,7 @@ const quetionInnerBoxBtn = document.getElementById("quetionInnerBoxBtn"); // 앤
 
 
 // 삭제기능
-function deleteBoard(e, boardNo){
+function deleteBoard(boardNo){
     if(!confirm("삭제하시겠습니까?")){ // 삭제 취소
         alert("취소되었습니다.");
         location.reload();
@@ -54,10 +54,9 @@ function updateBoard(e, boardNo) {
     console.log(e);
 
 
-
     e.parentElement.previousElementSibling.lastElementChild.remove(); // 기존 질문 삭제
     
-
+    
 
     e.parentElement.previousElementSibling.append(textAreaP);
 
@@ -66,31 +65,17 @@ function updateBoard(e, boardNo) {
     textAreaP.className ="answerBoxTextArea";
 
    
-    e.parentElement.append(updateConfirm);
-    updateConfirm.innerText = "확인";
-    updateConfirm.setAttribute('type', 'button');
-    updateConfirm.className = "btnUpdate";
-
-
-    // 업데이트 취소 버튼도 생기게 하기
-    e.parentElement.append(cancleUpdateConfirm);
-    cancleUpdateConfirm.innerText = "취소";
-    cancleUpdateConfirm.setAttribute('type', 'button');
-    cancleUpdateConfirm.className = "btnCancel";
-    cancleUpdateConfirm.setAttribute('onclick', 'cloneP()');
+    
     
 
     // 기존에 삭제버튼,수정 버튼 삭제하고 업데이트 확인 버튼 생기게 하자
-    
-    
-   
-
-    console.log(e);
-    console.log(e.previousElementSibling);
+    e.previousElementSibling.remove();
+    e.remove();
     
     // 업데이트 확인 버튼 생기게 하기
     // 답변 박스쪽에 생기게 하기
     console.log(e.parentElement);
+
 
     // if(e.parentElement == null){
     //     console.log("if 문 진입");
@@ -106,7 +91,9 @@ function updateBoard(e, boardNo) {
     // }
     
 
-    e.parentElement.append(updateConfirm);
+
+
+    e.append(updateConfirm);
     updateConfirm.innerText = "확인";
     updateConfirm.setAttribute('type', 'button');
     updateConfirm.className = "btnUpdate";
@@ -117,10 +104,7 @@ function updateBoard(e, boardNo) {
     cancleUpdateConfirm.innerText = "취소";
     cancleUpdateConfirm.setAttribute('type', 'button');
     cancleUpdateConfirm.className = "btnCancel";
-    cancleUpdateConfirm.setAttribute('onclick', 'cloneP(this)');
-
-    e.previousElementSibling.remove();
-    e.remove();
+    cancleUpdateConfirm.setAttribute('onclick', 'cloneP()');
 
     // 수정확인 버튼을 누르면 글이 수정될 수 있게 해야함
 
@@ -160,29 +144,20 @@ function updateBoard(e, boardNo) {
 
 
 // 수정 취소 버튼을 눌렀을 때, 기존 문의내용 불러오는 함수
-function cloneP(e){
-    if(e.parentElement.previousElementSibling.lastElementChild != null){
-        textAreaP.remove();
-        console.log(e.parentElement.previousElementSibling.lastElementChild);
-        let questionP = e.parentElement.previousElementSibling.lastElementChild
-        questionP.style.display = "block"
-        e.parentElement.previousElementSibling.append(questionP);
-        e.parentElement.append(inquiryDelete);
-        e.parentElement.append(inquiryUpdate);
+function cloneP(){
+    if(questionP != null){
+        questionInnerBox.append(questionP);
+        quetionInnerBoxBtn.append(inquiryDelete);
+        quetionInnerBoxBtn.append(inquiryUpdate);
 
-        
+        textAreaP.remove();
         updateConfirm.remove();
         cancleUpdateConfirm.remove();
-        
     }
     else{
         alert("실패!");
     }
 }
-
-
-
-
 
 
 

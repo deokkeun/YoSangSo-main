@@ -45,8 +45,6 @@
                                     <span>Question</span>
                                 </div>
                                 <div>
-                                ${loginMember.memberName}님 무엇이 궁금하세요?
-                                <br>
                                 구매하려는 상품에 대해 궁금한 점이 있으신 경우 문의해주세요.
                                 </div>
                             </div>

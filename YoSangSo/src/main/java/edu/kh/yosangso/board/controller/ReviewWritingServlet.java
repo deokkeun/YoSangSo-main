@@ -25,11 +25,11 @@ public class ReviewWritingServlet extends HttpServlet{
 		ReviewService service = new ReviewService();
 		
 		try {
-			String orderDetailNo = req.getParameter("orderDetailNo");
+			String orderNo = req.getParameter("orderNo");
 			
-			orderInfo = service.selectReviewInfo(orderDetailNo);
+			orderInfo = service.selectReviewInfo(orderNo);
 			
-			req.setAttribute("orderNo", orderDetailNo);
+			req.setAttribute("orderNo", orderNo);
 			req.setAttribute("orderInfo", orderInfo);
 			req.getRequestDispatcher(path).forward(req, resp);
 			

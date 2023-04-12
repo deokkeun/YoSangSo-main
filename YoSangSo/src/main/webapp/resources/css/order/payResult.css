@@ -1,0 +1,125 @@
+
+.title {
+    font-size: 21.33px;
+    padding: 5px;
+    margin-top: 10px;
+    font-weight: bold;
+    display: flex;
+    align-items: flex-end;
+}
+#title1 {
+    color: #2678f3;
+    font-weight: 700;
+    padding: 0 5px;
+    margin: 0;
+}
+.content-entire {
+    display: flex;
+    margin-bottom: 100px;
+    width: 1280px;
+    margin: 0 auto;
+}
+.content-entire > section {
+    height: 1300px;
+    min-width: 1280px;
+    
+}
+.content {
+    display: flex;
+    flex-direction: column;
+    min-width: 1280px;
+}
+
+.content-top > div {
+    margin-top: 100px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+}
+.content-mid {
+    height: 250px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+}
+.content-mid > div:nth-child(1) {
+    font-size: 28.43px;
+    margin: 50px 10px 10px 10px;
+    line-height: 60px;
+
+}
+.content-mid > div:nth-child(2) {
+    font-size: 16px;
+    line-height: 40px;
+    margin: 10px;
+}
+.content-mid > div:nth-child(3) {
+    margin: 10px;
+}
+.content-mid > div:nth-child(4) {
+    margin: 10px;
+}
+.content-bottom {
+    height: 800px;
+    display: flex;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+}
+.content-bottom > div:nth-child(1){
+    flex-basis: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid rgba(0, 0, 0, 0.5);
+
+}
+.content-bottom > div:nth-child(2){
+    flex-basis: 75%;
+}
+
+.box-title {
+    height: 50px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin: 10px;
+    border-bottom: 1px solid black;
+}
+.box {
+    height: 200px;
+    width: 100%;
+    border-radius: 10px;
+    margin: 10px 0px;
+    display: flex;
+    border: 1px solid black;
+    scale: 0.95;
+}
+.box-container {
+    height: 730px;
+    overflow: auto;
+}
+
+.box > div:nth-child(1) {
+    flex-basis: 40%;
+    margin: 10px;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+}
+.box > div:nth-child(2) {
+    flex-basis: 60%;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0px 10px 0px 0px;
+}
+
+.box-stock-name {
+    font-size: 21.33px;
+}
+
+.price {
+    color: #7E1212;
+    font-size: 16px;
+    font-weight: bold;
+}
+hr {
+    width: 95%;
+}
+

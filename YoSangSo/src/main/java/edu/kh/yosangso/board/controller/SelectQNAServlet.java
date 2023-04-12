@@ -10,9 +10,8 @@ import javax.servlet.http.HttpServlet;
 import edu.kh.yosangso.board.model.service.BoardService;
 import edu.kh.yosangso.board.model.vo.Review;
 
-/*
 //@WebServlet("")
-public class SelectQNAServlet extends HttpServlet{
+/*public class SelectQNAServlet extends HttpServlet{
 	
 	
 	int pro = Integer.parseInt(req.getParameter("ProductNo"));
@@ -36,7 +35,8 @@ public class SelectQNAServlet extends HttpServlet{
 	
 	req.getRequestDispatcher(path).forward(req, resp);
 }
-}
-<<<<<<< HEAD
-*/
+}*/
+
+	
+
 

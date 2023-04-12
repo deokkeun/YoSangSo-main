@@ -11,8 +11,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.google.gson.Gson;
-
 import edu.kh.yosangso.member.model.vo.Member;
 import edu.kh.yosangso.order.model.service.OrderService;
 import edu.kh.yosangso.order.model.vo.ApprovalUrl;
@@ -22,7 +20,7 @@ public class PayResultServlet extends HttpServlet{
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		List<ApprovalUrl> approval = new ArrayList<>();
+		List<ApprovalUrl> approval = null;
 		
 		try {
 			OrderService service = new OrderService();
@@ -37,6 +35,10 @@ public class PayResultServlet extends HttpServlet{
 			
 			approval = service.approvalUrl(memberNo);
 			
+//			req.setAttribute("approval", approval);
+//			String path = "/WEB-INF/views/order/approval_url.jsp";
+//			req.getRequestDispatcher(path).forward(req, resp);
+			
 			if(approval != null) {
 				System.out.println(approval.get(0).getOrderNo());
 				System.out.println(approval.get(0).getOrderDate());
@@ -45,15 +47,15 @@ public class PayResultServlet extends HttpServlet{
 				System.out.println(approval.get(0).getPrice());
 				System.out.println(approval.get(0).getProductName());
 				
-				
-				System.out.println("payResult Servlet 나감");
-				
-//				req.setAttribute("approval", approval);
-//				String path = "/WEB-INF/views/order/approval_url.jsp";
-//				req.getRequestDispatcher(path).forward(req, resp);
-				new Gson().toJson(approval, resp.getWriter());
 			}
 
+			
+			System.out.println("payResult Servlet 나감");
+			req.setAttribute("approval", approval);
+
+			String path = "/WEB-INF/views/order/approval_url.jsp";
+			
+			req.getRequestDispatcher(path).forward(req, resp);
 			
 		} catch(Exception e) {
 			e.printStackTrace();

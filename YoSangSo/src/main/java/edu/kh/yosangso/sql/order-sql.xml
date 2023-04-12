@@ -24,8 +24,6 @@
 		INSERT INTO ORDER_DETAIL (ORDER_DETAIL_NO, PRODUCT_NO, BUYING_RATE, PRICE, REQUEST, ORDER_NO) 
 		VALUES(ORDER_DETAIL_NO_SEQ.NEXTVAL, ?, ?, ?, ?, ?)
 	</entry>
-	
-	<!-- 조건 변경하기 5분안에 결제된 상품만 보이게 -->
 	<entry key="payResult">
 		SELECT o.ORDER_NO, TO_CHAR(TO_DATE(o.ORDER_DATE, 'YY/MM/DD'), 'YYYY" / "MM" / "DD'), TO_CHAR(TO_DATE(o.ORDER_DATE, 'YY/MM/DD') + INTERVAL '3' DAY, 'DAY"," MM"월" DD"일""," YYYY'), 
 		od.BUYING_RATE, od.PRICE, p.PRODUCT_NM
@@ -34,8 +32,8 @@
 		JOIN "ORDER_DETAIL" od ON (od.ORDER_NO = o.ORDER_NO)
 		JOIN "PRODUCT" p ON (p.PRODUCT_NO = od.PRODUCT_NO)
 		WHERE m.MEMBER_NO = ?
-		AND TO_NUMBER(TO_CHAR(SYSDATE, 'YYMMDDHH24MI')) - TO_NUMBER(SUBSTR(o.ORDER_NO, 1, 10)) &lt; 5
-	</entry>
+		AND o.ORDER_DATE = TO_DATE(SYSDATE, 'YY/MM/DD')
+</entry>
 	<entry key=""></entry>
 
 

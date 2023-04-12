@@ -15,27 +15,24 @@
     <title>index</title>
 </head>
 <body>
-
-    
     <!-- 헤더, 컨텐츠 -->
     <main>
         
-        <div id="memNo" style="display: none;">${loginMember.memberNo}</div>
+		<div id="memNo" style="display: none;">${loginMember.memberNo}</div>
 		<div id="memEmail" style="display: none;">${loginMember.memberEmail}</div>
 		
 		
         <!-- 헤더 -->
         <jsp:include page="/WEB-INF/views/common/header.jsp"/>
-        
 		
-
+		
+		
         <section id="content">
-            
 		
 
                 <section id="content-left">
                     <section>
-                        <div class="title-main">장바구니 > <span class="title">주문 / 결제</span> > 결제완료</div>
+                        <div class="title-main">장바구니 > <span class="title">주문 / 결제</span> > 완료</div>
                         <div class="product-info">
                             <div class="product-info-title">
                                 <div>상품정보</div>
