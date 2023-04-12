@@ -90,6 +90,9 @@
 	                            3000 원
 	                            
 	                        </div>
+	                        <div>
+	                        	<button type="button" class="x-btn" onclick="deleteOne(${list.productNo})"><i class="fa-solid fa-xmark"></i></button>
+	                        </div>
 	                    </div>
                         <input type="hidden" value="${list.cartNo}" name="cartList">
 	                   <c:set var="total" value ="${total + eachTotal}"/>

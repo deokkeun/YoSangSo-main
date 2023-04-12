@@ -128,9 +128,7 @@ public class ReviewDAO {
 				String reviewDate = rs.getString("REVIEW_DATE");
 				int reviewRate = rs.getInt("REVIEW_RATE");
 				String imageList = null;
-				int memberNo = rs.getInt("MEMBER_NO");
 				int productNo = rs.getInt("PRODUCT_NO");
-				int orderNo = 0;
 				String productName = null;
 				
 				reviewList.add(

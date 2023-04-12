@@ -74,14 +74,11 @@ onload = function() {
 				const productInfo = document.createElement("div");
 				productInfo.classList.add("product-info");
 				productInfo.append(productName, deliveryDate, row);
-
 				// 이미지 박스 + 상품정보
-				deliveryBox.append(imgBox, productInfo);
-
-				package.append(deliveryBox);
+				
+				//deliveryBox.append(imgBox, productInfo);
+				//package.append(deliveryBox);	
 			}
-			
-
 
 
 			// 주문번호, 주문날짜
