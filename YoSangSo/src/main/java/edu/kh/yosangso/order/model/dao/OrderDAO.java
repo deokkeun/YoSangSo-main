@@ -36,6 +36,12 @@ public class OrderDAO {
 	
 	}
 
+	/** 카트에서 결제 리스트 불러오기
+	 * @param conn
+	 * @param memberNo
+	 * @return
+	 * @throws Exception
+	 */
 	public List<Product> payList(Connection conn, int memberNo) throws Exception{
 
 		List<Product> payList = new ArrayList<>();
@@ -197,8 +203,6 @@ public class OrderDAO {
 		}
 		return approval;
 	}
-
-
 
 	
 	

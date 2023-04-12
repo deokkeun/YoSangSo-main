@@ -170,7 +170,7 @@
 
                         <div class="slide_wrapper">
                             <ul class="slides">
-                                <li><img src="${contextPath}/resources/image/product/Life Extension, 비타민D 함유 구연산 칼슘, 캡슐 200정.jpg" alt=""></li>
+                                <li><a href="${contextPath}/product/productDetail?ProductNo=1"><img src="${contextPath}/resources/image/product/Life Extension, 비타민D 함유 구연산 칼슘, 캡슐 200정.jpg" alt=""></a></li>
                                 <li><img src="${contextPath}/resources/image/product/California Gold Nutrition, Immune 4, 면역계 지원, 베지 캡슐 180정.jpg" alt=""></li>
                                 <li><img src="${contextPath}/resources/image/product/Doctors Best, Vein Support with DiosVein and MenaQ7, 베지 캡슐 60정.jpg" alt=""></li>
                                 <li><img src="${contextPath}/resources/image/product/Jarrow Formulas, Zinc Balance, 베지 캡슐 100정.jpg" alt=""></li>
