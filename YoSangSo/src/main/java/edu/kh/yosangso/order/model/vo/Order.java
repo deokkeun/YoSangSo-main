@@ -53,7 +53,7 @@ public class Order {
 
 
 
-	public Order(String productName, String orderNo, String orderDate) {
+	public Order(String productName, String orderDetailNo, String orderDate) {
 		super();
 		this.productName = productName;
 		this.orderDetailNo = orderDetailNo;

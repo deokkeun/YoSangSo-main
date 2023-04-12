@@ -155,7 +155,7 @@ public class ReviewDAO {
 	 * @return
 	 * @throws Exception
 	 */
-	public Order selectReviewInfo(Connection conn, String orderNo) throws Exception {
+	public Order selectReviewInfo(Connection conn, String orderDetailNo) throws Exception {
 		
 		Order orderInfo = new Order();
 		
@@ -163,7 +163,7 @@ public class ReviewDAO {
 			String sql = prop.getProperty("selectReviewInfo");
 			
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, orderNo);
+			pstmt.setString(1, orderDetailNo);
 			
 			rs = pstmt.executeQuery();
 			
@@ -177,4 +177,60 @@ public class ReviewDAO {
 		return orderInfo;
 	}
 
+
+
+
+	public int updateReview(Connection conn, String updateContent, int reviewRate, String orderDetailNo) throws Exception{
+		
+		int result = 0;
+			
+		try {
+			String sql = prop.getProperty("updateReview");
+			
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, updateContent);
+			
+			pstmt.setInt(2, reviewRate);
+			
+			pstmt.setString(3, orderDetailNo);
+			
+			
+			result = pstmt.executeUpdate();
+			
+			
+		}finally {
+			close(pstmt);
+		}
+		System.out.println("리뷰 수정 DAO 나감");
+		return result;
+	}
+
+
+
+
+	/** 리뷰 삭제 DAO 
+	 * @param conn
+	 * @param orderDetailNo
+	 * @return
+	 * @throws Exception
+	 */
+	public int reviewDelete(Connection conn, String orderDetailNo) throws Exception {
+		
+		int result = 0;
+		
+		try {
+			String sql = prop.getProperty("reviewDelete");
+			
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, orderDetailNo);
+			
+			result = pstmt.executeUpdate();
+			
+		}finally{
+			close(pstmt);
+		}
+		return result;
+	}
 }
