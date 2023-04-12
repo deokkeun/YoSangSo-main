@@ -54,13 +54,31 @@ function updateBoard(e, boardNo) {
     console.log(e);
 
 
-    e.parentElement.previousElementSibling.lastElementChild.style.display = "none"; // 기존 질문 삭제
+
+    e.parentElement.previousElementSibling.lastElementChild.remove(); // 기존 질문 삭제
+    
+
 
     e.parentElement.previousElementSibling.append(textAreaP);
 
     textAreaP.setAttribute('placeholder', '수정하실 문의를 작성해주세요.');
     
     textAreaP.className ="answerBoxTextArea";
+
+   
+    e.parentElement.append(updateConfirm);
+    updateConfirm.innerText = "확인";
+    updateConfirm.setAttribute('type', 'button');
+    updateConfirm.className = "btnUpdate";
+
+
+    // 업데이트 취소 버튼도 생기게 하기
+    e.parentElement.append(cancleUpdateConfirm);
+    cancleUpdateConfirm.innerText = "취소";
+    cancleUpdateConfirm.setAttribute('type', 'button');
+    cancleUpdateConfirm.className = "btnCancel";
+    cancleUpdateConfirm.setAttribute('onclick', 'cloneP()');
+    
 
     // 기존에 삭제버튼,수정 버튼 삭제하고 업데이트 확인 버튼 생기게 하자
     

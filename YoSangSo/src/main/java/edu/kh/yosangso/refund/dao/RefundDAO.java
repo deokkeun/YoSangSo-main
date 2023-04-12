@@ -13,6 +13,7 @@ import java.util.Properties;
 
 import javax.servlet.http.HttpSession;
 
+import edu.kh.yosangso.member.controller.LoginServlet;
 import edu.kh.yosangso.member.model.vo.Member;
 import edu.kh.yosangso.order.model.vo.Order;
 
@@ -84,6 +85,7 @@ public class RefundDAO {
 				
 			}finally {
 				close(pstmt);
+				
 			}
 		}
 		
@@ -205,6 +207,8 @@ public class RefundDAO {
 			close(rs);
 			close(pstmt);
 		}
+		
+		
 		return list;
 	}
 

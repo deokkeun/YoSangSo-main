@@ -17,22 +17,16 @@ public class Order {
 	private int buyingRate;
 	private String refundDate;
 	private String orderDate;
+	private String orderDetailNo;
 	private String address;
 	private int count;
-	
-
 	private String orderName;
 	private String orderPhone;
 	private String zipCode;
-	//private String address;
 	private String orderNum;
 	private int productNo;
 	private String request;
 	private int buyingPrice;
-
-
-
-
 
 	public Order(String productName, String orderNo, int price, int buyingRate) {
 		super();
@@ -62,8 +56,9 @@ public class Order {
 	public Order(String productName, String orderNo, String orderDate) {
 		super();
 		this.productName = productName;
-		this.orderNo = orderNo;
+		this.orderDetailNo = orderDetailNo;
 		this.orderDate = orderDate;
+
 	}
 	
 	
@@ -85,9 +80,6 @@ public class Order {
 		this.zipCode = zipCode;
 		this.address = address;
 	}
-	
-
-
 
 	
 	
@@ -101,8 +93,6 @@ public class Order {
 		this.refundDate = refundDate;
 		this.orderDate = orderDate;
 	}
-
-
 
 
 

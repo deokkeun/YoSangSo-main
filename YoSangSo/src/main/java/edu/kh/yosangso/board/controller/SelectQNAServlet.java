@@ -37,7 +37,6 @@ public class SelectQNAServlet extends HttpServlet{
 	req.getRequestDispatcher(path).forward(req, resp);
 }
 }
+<<<<<<< HEAD
 */
-	
-
 

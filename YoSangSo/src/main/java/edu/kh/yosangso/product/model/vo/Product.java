@@ -61,9 +61,6 @@ public class Product {
 		
 	}
 	
-	
-	
-
 
 	public Product(int productNo, String productName, int price) {
 		super();

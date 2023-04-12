@@ -12,13 +12,13 @@
                         </div>
                         <div>
                             <div class="content-box-left-title">MY 쇼핑</div>
-                            <div><a href="${contextPath}/order/orderHistory">주문내역조회</a></div>
-                            <div><a href="${contextPath}/refund/refunds">환불 신청</a></div>
+                            <div><a href="${contextPath}/refund/refunds">주문 내역 조회</a></div>
                             <div><a href="${contextPath}/refund/refundList">환불 내역 조회</a></div>
                         </div>
                         <div>
                             <div class="content-box-left-title">나의 리뷰</div>
                             <div><a href="${contextPath}/board/reviewList?pageNum=1&amount=3">리뷰조회</a></div>
+
                         </div>
                         <div>
                             <div class="content-box-left-title">고객센터</div>
