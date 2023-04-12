@@ -28,7 +28,7 @@ public class InquiryDeleteServlet extends HttpServlet{
 			
 			
 			resp.sendRedirect(req.getContextPath() + "/board/inquiryList"); // 프론트 리다이렉트 location.reload();
-			System.out.println("delete 써블릿 나옴");
+			
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
