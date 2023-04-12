@@ -64,14 +64,28 @@ const price = document.getElementById("price");
 const count = document.getElementById("countbox");
 const totalcost = document.getElementById("totalcost");
 const delcost = document.getElementById("delcost");
+const deltip = document.getElementById("deltip");
+const counting =document.getElementById("counting");
 
 count.addEventListener("click", function() {
 
-
     const n1 = Number(price.innerText) * count.value
-    const n2 = delcost.value
+    //const n2 = delcost.innerText;
+    counting.innerText = Number(n1);
 
-    totalcost.innerText = Number(n1)+Number(n2)
+	if(Number(n1) < 10000) {
+		const n2 = 3000;
+	
+        totalcost.innerText = Number(n1)+Number(n2)
+        deltip.innerText = n2;
+
+	} else {
+		
+		const n2 = 0;
+        totalcost.innerText = Number(n1)+Number(n2)
+        deltip.innerText = n2;
+	
+    }
 });
 
 function addcart() {
@@ -100,7 +114,7 @@ function addcart() {
 }
 
 function login() {
-	location.href="http://localhost:8080/yosangso/member/login"
+	location.href="http://localhost:8080/YoSangSo/member/login"
 	
 }
 

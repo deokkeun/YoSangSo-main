@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 
 /*
-@WebServlet("/board/reviewList")
+@WebServlet()
 
 public class ReviewSelectServlet extends HttpServlet{
 	
