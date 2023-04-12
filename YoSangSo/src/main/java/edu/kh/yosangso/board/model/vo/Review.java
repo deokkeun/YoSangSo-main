@@ -24,7 +24,7 @@ public class Review {
 	private List<ReviewImage> imageList;
 	private int memberNo;
 	private int productNo;
-	private int orderNo;
+	private String orderDetailNo;
 	private String productName;
 	
 	public Review(int reviewNo, String reviewContent, String reviewDate, int reviewRate) {
@@ -35,12 +35,12 @@ public class Review {
 		this.reviewRate = reviewRate;
 	}
 
-	public Review(String reviewContent, int memberNo, int productNo, int orderNo, String productName) {
+	public Review(String reviewContent, int memberNo, int productNo, String orderDetailNo, String productName) {
 		super();
 		this.reviewContent = reviewContent;
 		this.memberNo = memberNo;
 		this.productNo = productNo;
-		this.orderNo = orderNo;
+		this.orderDetailNo = orderDetailNo;
 		this.productName = productName;
 	}
 

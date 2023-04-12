@@ -57,6 +57,7 @@ public class ReviewDoneListPagingServlet extends HttpServlet {
 		req.setAttribute("doneTotal", doneTotal);
 		
 		
+		
 		String path = "/WEB-INF/views/board/reviewDoneList.jsp";
 		
 		RequestDispatcher dispatcher = req.getRequestDispatcher(path);

@@ -18,7 +18,7 @@ public class Order {
 	private String refundDate;
 	private String orderDate;
 	private String address;
-
+	private String orderDetailNo;
 	private int count;
 	private String orderName;
 	private String orderPhone;
@@ -45,10 +45,10 @@ public class Order {
 		this.count = count;
 	}
 	
-	public Order(String productName, String orderNo, String orderDate) {
+	public Order(String productName, String orderDetailNo, String orderDate) {
 		super();
 		this.productName = productName;
-		this.orderNo = orderNo;
+		this.orderDetailNo = orderDetailNo;
 		this.orderDate = orderDate;
 
 	}
