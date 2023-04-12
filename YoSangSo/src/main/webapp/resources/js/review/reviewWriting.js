@@ -1,12 +1,11 @@
-// 리뷰 글  작성 기능 js
-// 버튼 요소들을 얻어오자
-console.log("if 버튼 누름");
-const reviewUpdate = document.getElementById("reviewUpdate"); // 리뷰 등록 
-const reviewCancel = document.getElementById("reviewCancel") // 리뷰 취소 
 
+document.getElementById("upload-file").addEventListener("change", function(){
 
-function reivewUpdateBtn(){
-    
-    
-    
-}
+    let fileName = document.getElementById("fileName");
+    if(this.files[0] == undefined){
+        fileName.innerText = "선택된 파일이 없습니다.";
+        return;
+    }else{
+        fileName.innerText = "파일명 : " + this.files[0].name;
+    }
+});

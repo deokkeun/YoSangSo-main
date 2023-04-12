@@ -38,8 +38,15 @@ header{
     position: sticky;
     top: 0;
     background-color: white;
-    z-index: 1;
+    z-index: 10;
+    box-shadow: -8px -6px 18px 8px #aba5a5;
 }
+
+
+  
+  
+  
+
 #header-box {
     width: 1280px;
     min-width: 750px;

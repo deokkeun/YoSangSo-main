@@ -91,8 +91,8 @@
                                                     </div>
                                                     <c:if test="${ loginMember.memberNo eq item.memberNo }">
                                                     <div class="quetionInnerBoxBtn" id="quetionInnerBoxBtn">
-                                                        <button type="button" id="inquiryDelete" onclick="return deleteBoard('${item.boardNo}')">삭제</button> 
-                                                        <button type="button" id="inquiryUpdate" onclick="return updateBoard('${item.boardNo}')">수정</button> 
+                                                        <button type="button" class="inquiryDelete" id="inquiryDelete" onclick="return deleteBoard(this,'${item.boardNo}')">삭제</button> 
+                                                        <button type="button" class="inquiryUpdate" id="inquiryUpdate" onclick="return updateBoard(this,'${item.boardNo}')">수정</button> 
                                                     </div>
                                                     </c:if>
                                                 </div>
@@ -100,7 +100,7 @@
                                                 <div class="answerTitleBox">
                                                     <div class="answerInnerBox" id="answerInnerBox">
                                                         <p><span>A</span></p>
-                                                        <p><span>내일쯤 되지 않을까요? 깔깔 몰라융 내가 어떻게 알아요~</span></p>
+                                                        <p><span>답변 준비중입니다....   :<( </span></p>
                                                     </div>
                                                 </div>
                                                 

@@ -182,7 +182,13 @@
 
 
 
-
+#reviewAddBox{
+    display: flex;
+    /* padding-left: 50px; */
+    margin-left: 60px;
+    justify-content: center;
+    align-items: center;
+}
 
 
 .reviewListBox{
@@ -197,17 +203,21 @@
     text-decoration: none;
     color: rgb(192, 192, 192);
     margin: 0 10px;
+    font-size : 20px;
 }
 
 li{
 	list-style: none;
 }
 
-a{
+<<<<<<< HEAD
+=======
+/* .reviewListBox a{
 	font-size : 20px;
 	
-}
+} */
 
+>>>>>>> develop
 .active > a{
 	font-size: 22px;
 	color : black;
@@ -222,7 +232,6 @@ a{
     height: 30px;
     border-radius: 8px;
     /* background-color: #2678F3; */
-    margin-right: 50px;
     border: 3px solid #6aafe6;
     color: #6e6e6e;
 }

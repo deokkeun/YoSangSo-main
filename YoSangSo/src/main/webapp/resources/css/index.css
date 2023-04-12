@@ -38,8 +38,11 @@ header{
     position: sticky;
     top: 0;
     background-color: white;
-    z-index: 1;
+    z-index: 10;
+    box-shadow: 3px -6px 20px 5px #6a6666
 }
+
+
 #header-box {
     width: 1280px;
     min-width: 750px;
@@ -580,6 +583,7 @@ li {
     overflow: hidden;
     object-fit: cover;
     z-index : -1;
+    box-shadow: 4px 4px 3px 3px #aea9a9;
 }
   
   

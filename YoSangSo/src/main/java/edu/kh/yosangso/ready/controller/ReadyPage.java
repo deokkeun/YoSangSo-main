@@ -1,4 +1,4 @@
-package edu.kh.yosangso.board.controller;
+package edu.kh.yosangso.ready.controller;
 
 import java.io.IOException;
 
@@ -8,18 +8,23 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+<<<<<<< HEAD:YoSangSo/src/main/java/edu/kh/yosangso/board/controller/ReviewSelectServlet.java
 
 /*
 @WebServlet()
 
 public class ReviewSelectServlet extends HttpServlet{
 	
+=======
+@WebServlet("/ready/ready")
+public class ReadyPage extends HttpServlet {
+>>>>>>> develop:YoSangSo/src/main/java/edu/kh/yosangso/ready/controller/ReadyPage.java
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
+		String path = "/WEB-INF/views/ready/ready.jsp";
 		
-		String path = "/WEB-INF/views/board/reviewList.jsp";
 		req.getRequestDispatcher(path).forward(req, resp);
 	}
 
-}*/
+}

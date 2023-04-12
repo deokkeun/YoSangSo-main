@@ -1,0 +1,96 @@
+
+.container{
+	width: 800px;
+	border-radius: 4px;
+	margin: auto;
+}
+
+.outer-box{
+	border : 1px solid silver;
+	width: 100%;
+	display: flex;
+	height: 180px;
+	border-radius: 5px;
+	margin: 5px;
+	justify-content: center;
+    align-items: center;
+}
+
+img{
+	width: 80%;
+	height: 80%;
+}
+
+.outer-box > div:nth-child(1) {
+	flex-basis: 30%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+}
+.outer-box > div:nth-child(2) {
+	flex-basis: 40%;
+	margin:10px;
+
+	}
+.outer-box > div:nth-child(3) {
+	flex-basis: 15%;
+	margin:10px;
+	display: flex;
+    justify-content: center;
+
+	}
+.outer-box > div:nth-child(4) {
+	flex-basis: 15%;
+	margin:10px;
+	}
+	
+#goods{
+	width: 70%;
+	height: 70%;
+	margin: auto;
+	
+}
+
+.all-price{
+	font-size: 20px;
+	display: flex;
+	justify-content: center;
+	
+}
+
+.low{
+	display: flex;
+	height: 50px;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(38, 120, 243, 10%);
+	
+}
+
+.close{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+}
+
+.low > div:first-child {
+	flex-basis: 70%;
+	font-weight: 600;
+}
+
+.low > div:last-child {
+	flex-basis: 30%;
+}
+
+#close-btn{
+	width: 150px;
+    height: 40px;
+    font-size: 20px;
+    border-radius: 5px;
+    background-color: #2678F3;
+    border-color: #2678F3;
+    color: white;
+    cursor: pointer;
+}

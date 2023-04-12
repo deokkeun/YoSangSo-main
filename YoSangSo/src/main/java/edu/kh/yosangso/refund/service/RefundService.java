@@ -92,5 +92,20 @@ public class RefundService {
 		return result;
 	}
 
+	public List<Order> seeDetail(String orderNo) throws Exception{
+		
+		Connection conn = getConnection();
+		
+		RefundDAO dao = new RefundDAO();
+		
+		List<Order> list = dao.seeDetail(conn, orderNo);
+		
+		close(conn);
+		
+		return list;
+	}
+
+
+
 
 }
