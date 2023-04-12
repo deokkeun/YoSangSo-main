@@ -18,16 +18,32 @@ public class Order {
 	private String refundDate;
 	private String orderDate;
 	private String address;
+<<<<<<< HEAD
 	private String orderDetailNo;
+=======
+>>>>>>> 1e22dd3ba3766986107cb5157db09aa049ce2ad8
 	private int count;
+	
+
 	private String orderName;
 	private String orderPhone;
 	private String zipCode;
+<<<<<<< HEAD
+=======
+	//private String address;
+>>>>>>> 1e22dd3ba3766986107cb5157db09aa049ce2ad8
 	private String orderNum;
 	private int productNo;
 	private String request;
 	private int buyingPrice;
 
+<<<<<<< HEAD
+=======
+
+
+
+
+>>>>>>> 1e22dd3ba3766986107cb5157db09aa049ce2ad8
 	public Order(String productName, String orderNo, int price, int buyingRate) {
 		super();
 		this.productName = productName;
@@ -36,16 +52,29 @@ public class Order {
 		this.buyingRate = buyingRate;
 	}
 
+
+
+
+
 	public Order(String orderNo, String orderDate, String address, String productName, int count) {
 		super();
 		this.orderNo = orderNo;
 		this.orderDate = orderDate;
 		this.address = address;
-		this.productName =productName;
+		this.productName = productName;
 		this.count = count;
 	}
+<<<<<<< HEAD
 	
 	public Order(String productName, String orderDetailNo, String orderDate) {
+=======
+
+
+
+
+
+	public Order(String productName, String orderNo, String orderDate) {
+>>>>>>> 1e22dd3ba3766986107cb5157db09aa049ce2ad8
 		super();
 		this.productName = productName;
 		this.orderDetailNo = orderDetailNo;
@@ -54,6 +83,8 @@ public class Order {
 	}
 	
 	
+  
+  
 	/** 주문시 주문테이블 정보 추가(주문번호 생성)
 	 * @param memberNo
 	 * @param orderNum
@@ -70,6 +101,12 @@ public class Order {
 		this.zipCode = zipCode;
 		this.address = address;
 	}
+<<<<<<< HEAD
+=======
+	
+
+
+>>>>>>> 1e22dd3ba3766986107cb5157db09aa049ce2ad8
 
 	
 	
@@ -85,6 +122,9 @@ public class Order {
 	}
 
 
+
+
+
 	public Order(String productName, int price, int buyingRate) {
 		super();
 		this.productName = productName;
@@ -92,6 +132,9 @@ public class Order {
 		this.buyingRate = buyingRate;
 		
 	}
+
+
+
 
 
 	/** 주문시 주문상세테이블 정보 추가(주문번호로 주문내역 값 INSERT)
@@ -109,5 +152,13 @@ public class Order {
 		this.orderNum = orderNum;
 	
 	}
-	
+
+
+
+
+
+
+
+
 }
+

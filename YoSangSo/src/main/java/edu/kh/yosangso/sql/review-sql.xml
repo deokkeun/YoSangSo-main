@@ -12,7 +12,7 @@
 	
 	<entry key="reviewImageAdd">
 		INSERT INTO REVIEW_IMG (R_IMG_NO, R_IMG_RENAME, R_IMG_ORNAME, R_IMG_LEVEL, R_IMG_REVIEW_NO)
-		VALUES(2, ?, ?, 30, 3)
+		VALUES(3, ?, ?, 30, 3)
 	</entry>
 	
 	

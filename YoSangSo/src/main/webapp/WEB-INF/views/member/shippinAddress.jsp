@@ -38,11 +38,12 @@
                     <div class="tel">${loginMember.memberTel}</div>
                     <div class="address">${loginMember.memberAddress}</div>
                 </div>
-
+          
                 <div class="modify-btn">
-                    <button class="delete">삭제</button>
-                    <button class="modify">수정</button>
+                    <button class="delete" onclick="location.href='${contextPath}/ready/ready'">삭제</button>
+                    <button class="modify" onclick="location.href='${contextPath}/ready/ready'">수정</button>
                 </div>
+     
             </section>
         </section>
 		

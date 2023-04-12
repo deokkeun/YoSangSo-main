@@ -21,6 +21,7 @@
 	<entry key="getDoneTotal">
 		SELECT COUNT(*) TOTAL FROM REVIEW WHERE MEMBER_NO = ? 
 	</entry>
+	
 	<entry key=""></entry>
 	<entry key=""></entry>
 	<entry key=""></entry>
