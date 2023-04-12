@@ -17,33 +17,17 @@ public class Order {
 	private int buyingRate;
 	private String refundDate;
 	private String orderDate;
-	private String address;
-<<<<<<< HEAD
 	private String orderDetailNo;
-=======
->>>>>>> 1e22dd3ba3766986107cb5157db09aa049ce2ad8
+	private String address;
 	private int count;
-	
-
 	private String orderName;
 	private String orderPhone;
 	private String zipCode;
-<<<<<<< HEAD
-=======
-	//private String address;
->>>>>>> 1e22dd3ba3766986107cb5157db09aa049ce2ad8
 	private String orderNum;
 	private int productNo;
 	private String request;
 	private int buyingPrice;
 
-<<<<<<< HEAD
-=======
-
-
-
-
->>>>>>> 1e22dd3ba3766986107cb5157db09aa049ce2ad8
 	public Order(String productName, String orderNo, int price, int buyingRate) {
 		super();
 		this.productName = productName;
@@ -64,17 +48,12 @@ public class Order {
 		this.productName = productName;
 		this.count = count;
 	}
-<<<<<<< HEAD
-	
-	public Order(String productName, String orderDetailNo, String orderDate) {
-=======
 
 
 
 
 
 	public Order(String productName, String orderNo, String orderDate) {
->>>>>>> 1e22dd3ba3766986107cb5157db09aa049ce2ad8
 		super();
 		this.productName = productName;
 		this.orderDetailNo = orderDetailNo;
@@ -101,12 +80,6 @@ public class Order {
 		this.zipCode = zipCode;
 		this.address = address;
 	}
-<<<<<<< HEAD
-=======
-	
-
-
->>>>>>> 1e22dd3ba3766986107cb5157db09aa049ce2ad8
 
 	
 	
@@ -120,8 +93,6 @@ public class Order {
 		this.refundDate = refundDate;
 		this.orderDate = orderDate;
 	}
-
-
 
 
 

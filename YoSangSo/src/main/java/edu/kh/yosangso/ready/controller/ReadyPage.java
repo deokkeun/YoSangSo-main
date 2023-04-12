@@ -8,8 +8,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-<<<<<<< HEAD:YoSangSo/src/main/java/edu/kh/yosangso/board/controller/ReviewSelectServlet.java
-
 /*
 @WebServlet()
 
