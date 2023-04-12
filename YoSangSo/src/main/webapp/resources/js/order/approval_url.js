@@ -83,6 +83,7 @@ onload = function() {
 			
 
 
+
 			// 주문번호, 주문날짜
 			orderNo.style.fontSize = "12px";
 			orderNo.style.fontWeight = "bold";
@@ -94,5 +95,6 @@ onload = function() {
 			alert("실패");
 		}
 	});
+
 
 };
