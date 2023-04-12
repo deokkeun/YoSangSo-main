@@ -85,15 +85,65 @@ public class ReviewService {
 	 * @param orderNo
 	 * @return
 	 */
-	public Order selectReviewInfo(String orderNo) throws Exception {
+	public Order selectReviewInfo(String orderDetailNo) throws Exception {
 		
 		Connection conn = getConnection();
 		
-		Order orderInfo = dao.selectReviewInfo(conn, orderNo);
+		Order orderInfo = dao.selectReviewInfo(conn, orderDetailNo);
 		
 		close(conn);
 		
 		return orderInfo;
+	}
+
+
+
+
+	/** 리뷰 업데이트 서비스
+	 * @param orderDetailNo
+	 * @param updateContent 
+	 * @param reviewRate 
+	 * @return
+	 */
+	public int updateReview(String updateContent, int reviewRate, String orderDetailNo) throws Exception{
+		
+		Connection conn = getConnection();
+		
+		
+		
+		int result = dao.updateReview(conn, updateContent,reviewRate, orderDetailNo);
+		
+		
+		if(result > 0) {
+			commit(conn);
+		}else {
+			rollback(conn);
+		}
+		
+		return result;
+	}
+
+
+
+
+	/** 리뷰 삭제 서비스
+	 * @param orderDetailNo
+	 * @return
+	 */
+	public int reviewDelete(String orderDetailNo) throws Exception{
+		
+		Connection conn = getConnection();
+		
+		int result = dao.reviewDelete(conn, orderDetailNo);
+		
+		
+		if(result > 0) {
+			commit(conn);
+		}else {
+			rollback(conn);
+		}
+		
+		return result;
 	}
 
 
