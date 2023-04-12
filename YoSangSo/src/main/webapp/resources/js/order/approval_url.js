@@ -96,5 +96,4 @@ onload = function() {
 		}
 	});
 
-
 };
