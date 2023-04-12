@@ -62,3 +62,24 @@ function minusCount(index) {
 	});
 
 }
+
+function deleteOne(productNo){
+	
+	$.ajax({
+		url: "cartDeleteOne",
+		type:  "post",
+		data: {"productNo" : productNo},
+		success: function(result){
+			if(result>0){
+				document.location.reload();
+				console.log("성공");
+			}else{
+				document.location.reload();
+			}
+		}
+	});
+	
+	
+}
+
+

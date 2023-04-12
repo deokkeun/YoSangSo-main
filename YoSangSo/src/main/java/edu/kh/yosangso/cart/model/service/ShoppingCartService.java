@@ -64,6 +64,22 @@ public class ShoppingCartService {
 		return result;
 	}
 
+	public int cartDeleteOne(String productNo, int memberNo) throws Exception{
+		
+		int result = 0;
+		
+		Connection conn = getConnection();
+		
+		result = dao.cartDeleteOne(conn, productNo, memberNo);
+		
+		if(result>0) commit(conn);
+		else rollback(conn);
+		
+		close(conn);
+		
+		return result;
+	}
+
 	
 	
 	
