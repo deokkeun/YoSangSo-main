@@ -39,11 +39,13 @@
                         <img src="${contextPath}/resources/image/product/${productList[0].productName}.jpg">
                     </div>
                     <!--제품이름, 가격, 수량, 구매가격, 구매및 장바구니-->
-                    <form action="purchase" method="GET" name="purcahse">
+                    <form action="${contextPath}/order/pay" method="GET" name="purcahse">
+                    <input type="hidden" name="pay_mode" value="detail"/>
                     <div class ="productover">
                         <!--제품이름-->
                         <div class="productNm">
                             <h3>${productList[0].productName}</h3>
+                            
                         </div>
                         <!--가격-->
                         <div class="productPr">
@@ -72,9 +74,10 @@
                         
                         </div>
                         
-                  
+                  		<!-- 결제페이지로 넘기는 값 입니다. -->
                         <input type="hidden" value="${productList[0].productNo}" name="productNo" id="proNo">
-                        
+                        <input type="hidden" value="${productList[0].productName}" name="productName">
+                        <input type="hidden" value="${productList[0].price}" name="price">
                         <input type="hidden" value="${loginMember.memberNo}" name="loginmember" id="loginmember">
                         <br>
                         
