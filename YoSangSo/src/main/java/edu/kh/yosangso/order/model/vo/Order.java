@@ -17,17 +17,23 @@ public class Order {
 	private int buyingRate;
 	private String refundDate;
 	private String orderDate;
+	private String address;
 	private int count;
+	
+
 	private String orderName;
 	private String orderPhone;
 	private String zipCode;
-	private String address;
+	//private String address;
 	private String orderNum;
 	private int productNo;
 	private String request;
 	private int buyingPrice;
 
-	
+
+
+
+
 	public Order(String productName, String orderNo, int price, int buyingRate) {
 		super();
 		this.productName = productName;
@@ -36,15 +42,23 @@ public class Order {
 		this.buyingRate = buyingRate;
 	}
 
+
+
+
+
 	public Order(String orderNo, String orderDate, String address, String productName, int count) {
 		super();
 		this.orderNo = orderNo;
 		this.orderDate = orderDate;
 		this.address = address;
-		this.productName =productName;
+		this.productName = productName;
 		this.count = count;
 	}
-	
+
+
+
+
+
 	public Order(String productName, String orderNo, String orderDate) {
 		super();
 		this.productName = productName;
@@ -53,6 +67,8 @@ public class Order {
 	}
 	
 	
+  
+  
 	/** 주문시 주문테이블 정보 추가(주문번호 생성)
 	 * @param memberNo
 	 * @param orderNum
@@ -70,6 +86,9 @@ public class Order {
 		this.address = address;
 	}
 	
+
+
+
 	
 	
 	public Order(String productName, int memberNo, String orderNo, int price, int buyingRate, String refundDate, String orderDate) {
@@ -84,6 +103,9 @@ public class Order {
 	}
 
 
+
+
+
 	public Order(String productName, int price, int buyingRate) {
 		super();
 		this.productName = productName;
@@ -91,6 +113,9 @@ public class Order {
 		this.buyingRate = buyingRate;
 		
 	}
+
+
+
 
 
 	/** 주문시 주문상세테이블 정보 추가(주문번호로 주문내역 값 INSERT)
@@ -108,5 +133,13 @@ public class Order {
 		this.orderNum = orderNum;
 	
 	}
-	
+
+
+
+
+
+
+
+
 }
+

@@ -74,7 +74,7 @@ public class BoardService {
 		}
 		
 		close(conn);
-		System.out.println("delete 서비스 나감");
+		
 		return result;
 	}
 
