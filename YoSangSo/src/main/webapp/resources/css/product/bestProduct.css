@@ -26,7 +26,7 @@
 
 /* 가운데메인영역 */
 .center {
-    flex-basis : 70%;
+    flex-basis: 148%;
     display: flex;
     flex-direction: column;
     /* background-color:pink; */
@@ -84,31 +84,31 @@
 
 
 
-
 /* quickMenu */
 .center > div:nth-child(1) {
     display: flex;
-    flex-basis: 10%;
+  /*   flex-basis: 10%; */
 }
 
 /* itemList */
 .center > div:nth-child(2) {
     display: flex;
-    flex-basis: 80%;
-    flex-direction: column;
+    flex-wrap: wrap;
+    flex-basis: 80%; 
+   /*  flex-direction: row; */
 }
 
 /* blank */
 .center > div:nth-child(3) {
-    flex-basis: 10%;
-    display: flex;
+   /*  flex-basis: 10%; */
+    display: flex; 
 }
 
 
 /******************* 퀵메뉴 부분 css ******************/
 
 .quickMenu {
-    margin : 70px 0px 0px 0px;
+    margin : 70px 0px 30px 0px;
     border-bottom: 2px solid #ccc;
 }
 
@@ -126,7 +126,7 @@ ul.list::after {
     clear: both;
 }
   
-  
+ 
 .mainFont {
     display: block;
     padding: 10px 20px 10px 20px;
@@ -154,7 +154,6 @@ ul.list::after {
     background-color:  #c2e7ff;
 }
 
-
 /*********************제품 부분 css  ****************/
 
 
@@ -165,7 +164,7 @@ ul.list::after {
 .rank {
 	font-weight: 700;
 	font-size: 16px;
-	 color: #2678F3;
+	color: #2678F3;
 }
 
 
@@ -173,11 +172,11 @@ ul.list::after {
 .BNitem {
     display:flex;
     flex-basis:25%;
-    height: 330px;
-    /* margin-left: 15px; */
-    /* padding: 15px;   */
+    height: 370px;
+    width: 15%;
     flex-direction: column;
     position: relative;
+    padding: 10px;
 }
 
 
@@ -187,7 +186,7 @@ ul.list::after {
     border: 1px solid rgb(181, 181, 181);
     align-items: center;
     justify-content: center;
-    width: 250px;
+    width: 245px;
     height: 200px;
     position: relative;
     z-index : -1;
@@ -219,7 +218,6 @@ ul.list::after {
     color:brown;
     padding: 5px;
     position: relative;
-    
     z-index : -1;
     /* background-color: red; */
 } 
@@ -227,21 +225,14 @@ ul.list::after {
 
 /* 제품명 글씨 */
 .BNitemName{
-    flex-basis: 10%;
+    flex-basis: 16%;
     padding: 4px;
     font-size: 14px;
     position: relative;
-    /* z-index : -1; */
-
-    /* z-index 설정해제하면 글씨가 보이고 안하면 a태그 호버설정이 안되고
-    어케해야되나요ㅠㅠㅠ*/
-
-    /* text-decoration: underline; */
-    /* background-color: purple; */
 }
 
 /******************** 하단공백 css ********************/
-.blank{
+.blank {
     display: flex;
     height: 140px;
 }
@@ -258,6 +249,7 @@ ul.list::after {
 
 
 
+
 /* 사진 밖으로 나가면 안보임 */
 .BNitem > a  {
     position: relative;
@@ -271,15 +263,17 @@ ul.list::after {
 /* 검은화면 글씨 설정 */
 .BNitem > a > .BNitemPic > figcaption {
     position: absolute;
-    bottom: 250px;
-    left: 0px;
+    bottom: 300px;
+    left: 50%;
     /* top: 50px; */
     margin : auto;
     z-index: 1;
     color : #fff;
-    font-size: 11px;
+    font-size: 12px;
     text-align : center;
     transition: all .5s;
+    /* (,위에서 내려올 때 높이간격) */
+    transform: translate(-50%, 40%);
     
 }
 

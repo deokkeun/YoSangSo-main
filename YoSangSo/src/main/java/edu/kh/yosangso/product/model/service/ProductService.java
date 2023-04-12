@@ -89,7 +89,7 @@ public class ProductService {
 
 
 	
-	/** 전제품 불러오기 service
+	/** 전제품 메뉴 불러오기 service
 	 * @return apdList
 	 * @throws Exception
 	 */
@@ -102,6 +102,38 @@ public class ProductService {
 		close(conn);
 		
 		return apdList;
+	}
+
+
+	/** 베스트 메뉴 불러오기 service
+	 * @return bpdList
+	 * @throws Exception
+	 */
+	public List<Product> bestProduct() throws Exception {
+		
+		Connection conn = getConnection();
+		
+		List<Product> bpdList = dao.bestProduct(conn);
+		
+		close(conn);
+		
+		return bpdList;
+	}
+
+
+	/** 신상품 메뉴 불러오기 service
+	 * @return npdList
+	 * @throws Exception
+	 */
+	public List<Product> newProduct() throws Exception {
+		
+		Connection conn = getConnection();
+		
+		List<Product> npdList = dao.newProduct(conn);
+		
+		close(conn);
+		
+		return npdList;
 	}
 
 

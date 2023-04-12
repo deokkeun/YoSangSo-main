@@ -13,7 +13,7 @@ public class MainService {
 	
 	private MainDAO dao = new MainDAO();
 
-	/** 메인 제품 불러오기 service
+	/** 메인페이지 안 전제품 불러오기 service
 	 * @param 
 	 * @return mpdList
 	 * @throws Exception
@@ -32,7 +32,39 @@ public class MainService {
 		
 		// 4. 결과반환
 		return mpdList;
+	
 	}
+
+	/** 메인페이지 안 베스트 불러오기 service
+	 * @return mbpdList
+	 * @throws Exception
+	 */
+	public List<Product> bPartProduct() throws Exception {
+		
+		Connection conn = getConnection();
+		
+		List<Product> mbpdList = dao.bPartProduct(conn);
+	
+		close(conn);
+		
+		return mbpdList;
+	}
+
+	/** 메인페이지 안 신제품 불러오기 service
+	 * @return mnpdList
+	 * @throws Exception
+	 */
+	public List<Product> nPartProduct()throws Exception {
+		Connection conn = getConnection();
+		
+		List<Product> mnpdList = dao.nPartProduct(conn);
+	
+		close(conn);
+		
+		return mnpdList;
+	}
+
+	
 
 }
 

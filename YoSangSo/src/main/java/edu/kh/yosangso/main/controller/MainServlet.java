@@ -21,6 +21,8 @@ public class MainServlet extends HttpServlet{
 		
 
 		List<Product> mpdList = new ArrayList<>();
+		List<Product> mbpdList = new ArrayList<>();
+		List<Product> mnpdList = new ArrayList<>();
 	
 		
 		try {
@@ -28,8 +30,9 @@ public class MainServlet extends HttpServlet{
 			MainService service = new MainService();
 			
 			mpdList = service.mainProduct();
+			mbpdList = service.bPartProduct();
+			mnpdList = service.nPartProduct();
 			
-					
 			
 		} catch(Exception e) {
 			e.printStackTrace();
@@ -38,8 +41,14 @@ public class MainServlet extends HttpServlet{
 		String path = "/WEB-INF/views/common/main.jsp";
 		
 		req.setAttribute("mpdList", mpdList);
+		req.setAttribute("mbpdList", mbpdList);
+		req.setAttribute("mnpdList", mnpdList);
+		
 		
 		System.out.println(mpdList);
+		System.out.println(mbpdList);
+		System.out.println(mnpdList);
+		
 		
 		req.getRequestDispatcher(path).forward(req, resp);
 		

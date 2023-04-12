@@ -198,6 +198,7 @@ public class ProductDAO {
 				product.setProductName(rs.getString("PRODUCT_NM"));
 				product.setPrice(rs.getInt("PRICE"));
 				product.setIngredient(rs.getString("INGREDIENT"));
+				product.setProductNo(rs.getInt("PRODUCT_NO"));	
 					
 				apdList.add(product);
 			}
@@ -211,6 +212,84 @@ public class ProductDAO {
 			
 		return apdList;
 		
+	}
+
+	/** 베스트 조회 dao
+	 * @param conn
+	 * @return bpdList
+	 * @throws Exception
+	 */
+	public List<Product> bestProduct(Connection conn) throws Exception {
+		
+		List<Product> bpdList = new ArrayList<>();
+		
+		try {
+			
+			String sql = prop.getProperty("bestProduct");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				
+				Product product = new Product();
+				
+				product.setProductName(rs.getString("PRODUCT_NM"));
+				product.setPrice(rs.getInt("PRICE"));
+				product.setIngredient(rs.getString("INGREDIENT"));
+				product.setProductNo(rs.getInt("PRODUCT_NO"));	
+					
+				bpdList.add(product);
+			}
+		 
+				System.out.println(bpdList);
+			
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+		
+		return bpdList;
+	}
+
+	/** 신상품 조회 dao
+	 * @param conn
+	 * @return npdList
+	 * @throws Exception
+	 */
+	public List<Product> newProduct(Connection conn) throws Exception {
+		
+	List<Product> npdList = new ArrayList<>();
+		
+		try {
+			
+			String sql = prop.getProperty("newProduct");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				
+				Product product = new Product();
+				
+				product.setProductName(rs.getString("PRODUCT_NM"));
+				product.setPrice(rs.getInt("PRICE"));
+				product.setIngredient(rs.getString("INGREDIENT"));
+				product.setProductNo(rs.getInt("PRODUCT_NO"));	
+					
+				npdList.add(product);
+			}
+		 
+				System.out.println(npdList);
+			
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+		
+		return npdList;
 	}
 
 	

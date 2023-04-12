@@ -3,11 +3,25 @@
 <properties>
 	<comment>main-sql.xml</comment>
 
-	<!--  메인페이지 이미지/제품명/가격 출력하기?  -->
+	<!--  메인페이지 안 전제품 조회 sql  -->
 	<entry key="mainProduct">
-	SELECT PRODUCT_NM, PRICE, INGREDIENT
-	FROM PRODUCT
-	ORDER BY SELL_RATE DESC
+		SELECT PRODUCT_NM, PRICE, INGREDIENT, PRODUCT_NO
+		FROM PRODUCT
+	</entry>
+	
+	<!-- 메인페이지 안 신상품 조회 sql  -->
+	<entry key="nPartProduct">
+		SELECT PRODUCT_NM, PRICE, INGREDIENT, PRODUCT_NO
+		FROM PRODUCT
+		ORDER BY PRODUCT_DATE DESC
+	</entry>
+	
+	
+	<!-- 메인페이지 안 베스트 조회 sql -->
+	<entry key="bPartProduct">
+		SELECT PRODUCT_NM, PRICE, INGREDIENT, PRODUCT_NO
+		FROM PRODUCT
+		ORDER BY SELL_RATE DESC
 	</entry>
 	
 	

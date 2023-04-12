@@ -88,21 +88,21 @@ select * from product
                 <!-- 2-2 제품 목록 -->
                 <div class="itemList">
                  
-                  	<c:forEach begin="1" end="42" var="i">
+                  	<c:forEach begin="1" end="42" var="i" items="${apdList}">
                         <div class="BNitem"> 
-                            <a href="product/productDetail?ProductNo=${apdList[i].productNo}">    
+                            <a href="${contextPath}/product/productDetail?ProductNo=${i.productNo}">    
                                 <div class="BNitemPic">
-                        			<figcaption>${apdList[i].productName}<hr>${apdList[i].ingredient}</figcaption>   
-                                    <img src="${contextPath}/resources/image/all/${apdList[i].productName}.jpg">
+                        			<figcaption>${i.productName}<hr>${i.ingredient}</figcaption>   
+                                    <img src="${contextPath}/resources/image/all/${i.productName}.jpg">
                                 </div>
                             </a>
                             
                             <div class="BNitemName">
-                            	<a href="${contextPath}/product/productDetail?ProductNo=${apdList[i].productNo}">${apdList[i].productName}</a>  
+                            	<a href="${contextPath}/product/productDetail?ProductNo=${i.productNo}">${i.productName}</a>  
                             </div> 
                             
                             <div class="BNitemPrice">
-                               	<fmt:formatNumber value="${apdList[i].price}" pattern="#,###"/>원
+                               	<fmt:formatNumber value="${i.price}" pattern="#,###"/>원
                             </div>  
                         </div>  
 					</c:forEach>                      

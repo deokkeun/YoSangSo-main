@@ -55,21 +55,23 @@
                         <br>
                         <br>
                         <div class="del-cost">
-                            배송비 :<input id="delcost" value="3000" disabled>원
+                            배송비 : <span id="delcost">3000</span>원&nbsp;&nbsp;(10000원 이상 구매시 무료)
                         </div>
                         <br>
                         <hr>
                         <!--수량 가격-->
                         <div class="count">
-                            수량 : <input type="number" id="countbox" min="1" name="count">
+                            수량 : &nbsp;&nbsp;&nbsp;&nbsp;<input type="number" id="countbox" min="1" name="count" value="1">
                         </div>
                         <br>
                         <hr>
                         <!--총 금액-->
                         <div class="total-cost">
-                            <pre>총 상품금액</pre>
-                            <span id="totalcost"></span>원
+                        상품금액&nbsp;&nbsp;<span id="counting"></span>원 + 배송비&nbsp;&nbsp;<span id=deltip></span> = 총 상품금액
+                            &nbsp;&nbsp;<span id="totalcost"></span>원
+                        
                         </div>
+                        
                   
                         <input type="hidden" value="${productList[0].productNo}" name="productNo" id="proNo">
                         

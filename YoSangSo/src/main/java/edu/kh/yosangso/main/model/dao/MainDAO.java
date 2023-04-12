@@ -36,7 +36,7 @@ public class MainDAO {
 			e.printStackTrace();
 		}
 	}
-	/** 메인 dao
+	/** 메인페이지 안 전제품조회 dao
 	 * @param conn
 	 * @return mpdList
 	 * @throws Exception
@@ -60,7 +60,7 @@ public class MainDAO {
 				product.setProductName(rs.getString("PRODUCT_NM"));
 				product.setPrice(rs.getInt("PRICE"));
 				product.setIngredient(rs.getString("INGREDIENT"));
-					
+				product.setProductNo(rs.getInt("PRODUCT_NO"));	
 				mpdList.add(product);
 			}
 		 
@@ -74,5 +74,86 @@ public class MainDAO {
 		return mpdList;
 		
 	}
+	/** 메인페이지 안 베스트 조회 dao
+	 * @param conn
+	 * @return mbpdList
+	 * @throws Exception
+	 */
+	public List<Product> bPartProduct (Connection conn) throws Exception {
+		
+		List<Product> mbpdList = new ArrayList<>();
+
+		try {
+			
+			String sql = prop.getProperty("bPartProduct");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				
+				Product product = new Product();
+				
+				product.setProductName(rs.getString("PRODUCT_NM"));
+				product.setPrice(rs.getInt("PRICE"));
+				product.setIngredient(rs.getString("INGREDIENT"));
+				product.setProductNo(rs.getInt("PRODUCT_NO"));	
+					
+				mbpdList.add(product);
+			}
+		 
+				System.out.println(mbpdList);
+			
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+			
+		return mbpdList;
+	}
+	
+	
+	
+	/** 메인페이지 안 신제품 조회 dao
+	 * @param conn
+	 * @return mnpdList
+	 * @throws Exception
+	 */
+	public List<Product> nPartProduct(Connection conn) throws Exception {
+		
+		List<Product> mnpdList = new ArrayList<>();
+
+		try {
+			
+			String sql = prop.getProperty("nPartProduct");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				
+				Product product = new Product();
+				
+				product.setProductName(rs.getString("PRODUCT_NM"));
+				product.setPrice(rs.getInt("PRICE"));
+				product.setIngredient(rs.getString("INGREDIENT"));
+				product.setProductNo(rs.getInt("PRODUCT_NO"));	
+					
+				mnpdList.add(product);
+			}
+		 
+				System.out.println(mnpdList);
+			
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+			
+		return mnpdList;
+	}
+	
+	
 
 }

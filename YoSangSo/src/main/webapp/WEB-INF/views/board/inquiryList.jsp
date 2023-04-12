@@ -100,7 +100,7 @@
                                                 <div class="answerTitleBox">
                                                     <div class="answerInnerBox" id="answerInnerBox">
                                                         <p><span>A</span></p>
-                                                        <p><span>내일쯤 되지 않을까요? 깔깔 몰라융 내가 어떻게 알아요~</span></p>
+                                                        <p><span>답변 준비중입니다....   :<( </span></p>
                                                     </div>
                                                 </div>
                                                 
