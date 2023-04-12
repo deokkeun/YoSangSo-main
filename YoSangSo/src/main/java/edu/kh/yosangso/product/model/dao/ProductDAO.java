@@ -114,7 +114,6 @@ public class ProductDAO {
 
 			} 
 			
-			System.out.println(productList);
 			
 		} finally {
 			close(rs);
@@ -174,5 +173,45 @@ public class ProductDAO {
 		
 		return result;
 	}
+
+	/** 전제품 조회 dao
+	 * @param conn
+	 * @return apdList
+	 * @throws Exception
+	 */
+	public List<Product> allProduct(Connection conn) throws Exception {
+		
+		List<Product> apdList = new ArrayList<>();
+		
+		try {
+			
+			String sql = prop.getProperty("allProduct");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				
+				Product product = new Product();
+				
+				product.setProductName(rs.getString("PRODUCT_NM"));
+				product.setPrice(rs.getInt("PRICE"));
+				product.setIngredient(rs.getString("INGREDIENT"));
+					
+				apdList.add(product);
+			}
+		 
+				System.out.println(apdList);
+			
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+			
+		return apdList;
+		
+	}
+
 	
 }

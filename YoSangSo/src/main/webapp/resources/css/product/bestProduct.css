@@ -91,7 +91,7 @@
     flex-basis: 10%;
 }
 
-/* bestItem */
+/* itemList */
 .center > div:nth-child(2) {
     display: flex;
     flex-basis: 80%;
@@ -159,48 +159,6 @@ ul.list::after {
 
 
 
-.bestItem > .line:nth-child(1) {
-    display:flex;
-    flex-basis : 15%;
-    margin-top: 50px;
-    /* background-color: red; */
-}
-
-
-.bestItem > .line:nth-child(2) {
-    display:flex;
-    flex-basis : 15%;
-    margin-top: 40px;
-    /* background-color: orange; */
-}
-.bestItem > .line:nth-child(3) {
-    display:flex;
-    flex-basis : 15%;
-    margin-top: 40px;
-    /* background-color: yellow; */
-}
-.bestItem > .line:nth-child(4) {
-    display:flex;
-    flex-basis : 15%;
-    margin-top: 40px;
-    /* background-color: lightgreen; */
-}
-.bestItem > .line:nth-child(5) {
-    display:flex;
-    flex-basis : 15%;
-    margin-top: 40px;
-    /* background-color: skyblue; */
-}
-.bestItem > .line:nth-child(6) {
-    display:flex;
-    flex-basis : 15%;
-    margin-top: 40px;
-    /* background-color: purple; */
-}
-
-
-
-
 
 /* 순위 */
 
@@ -221,19 +179,6 @@ ul.list::after {
     flex-direction: column;
     position: relative;
 }
-
-
-/* 제품  */
-.Bitem2, .Bitem3, .Bitem4 {
-    display:flex;
-    flex-basis:25%;
-    height: 330px;
-    margin-left: 20px;
-    /*padding-left: 15px; */
-    flex-direction: column;
-    position: relative;
-}
-
 
 
 /* 제품 사진 영역 */
@@ -261,7 +206,7 @@ ul.list::after {
 
 
 /* 제품 이름 글씨 효과 */
-.itemName a:hover, .BNitemName a:hover {
+.BNitemName a:hover {
     text-decoration: underline;
 }
 

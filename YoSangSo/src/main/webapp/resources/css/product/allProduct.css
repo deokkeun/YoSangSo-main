@@ -26,7 +26,7 @@
 
 /* 가운데메인영역 */
 .center {
-    flex-basis : 70%;
+    flex-basis : 70%;  /*103%*/
     display: flex;
     flex-direction: column;
     /* background-color:pink; */
@@ -91,11 +91,12 @@
   /*   flex-basis: 10%; */
 }
 
-/* bestItem */
+/* itemList */
 .center > div:nth-child(2) {
     display: flex;
-    flex-basis: 80%;
-    flex-direction: column;
+    flex-wrap: wrap;
+    flex-basis: 80%; 
+   /*  flex-direction: row; */
 }
 
 /* more */
@@ -108,7 +109,7 @@
 /******************* 퀵메뉴 부분 css ******************/
 
 .quickMenu {
-    margin : 70px 0px 0px 0px;
+    margin : 70px 0px 70px 0px;
     border-bottom: 2px solid rgba(0, 0, 0, 0.2);
 }
 
@@ -159,99 +160,14 @@ ul.list::after {
 
 
 
-.bestItem > .line:nth-child(1) {
-    display:flex;
-    flex-basis : 15%;
-    margin-top: 50px;
-    /* background-color: red; */
-}
-
-
-.bestItem > .line:nth-child(2) {
-    display:flex;
-    flex-basis : 10%;
-    margin-top: 40px;
-    /* background-color: orange; */
-}
-
-.bestItem > .line:nth-child(3) {
-    display:flex;
-    flex-basis : 10%;
-    margin-top: 40px;
-    /* background-color: yellow; */
-}
-
-.bestItem > .line:nth-child(4) {
-    display:flex;
-    flex-basis : 10%;
-    margin-top: 40px;
-    /* background-color: lightgreen; */
-}
-
-.bestItem > .line:nth-child(5) {
-    display:flex;
-    flex-basis : 10%;
-    margin-top: 40px;
-    /* background-color: skyblue; */
-}
-
-.bestItem > .line:nth-child(6) {
-    display:flex;
-    flex-basis : 10%;
-    margin-top: 40px;
-    /* background-color: purple; */
-}
-
-.bestItem > .line:nth-child(7) {
-    display:flex;
-    flex-basis : 10%;
-    margin-top: 40px;
-    /* background-color: purple; */
-}
-
-.bestItem > .line:nth-child(8) {
-    display:flex;
-    flex-basis : 10%;
-    margin-top: 40px;
-    /* background-color: purple; */
-}
-
-.bestItem > .line:nth-child(9) {
-    display:flex;
-    flex-basis : 10%;
-    margin-top: 40px;
-    /* background-color: purple; */
-}
-
-.bestItem > .line:nth-child(10) {
-    display:flex;
-    flex-basis : 10%;
-    margin-top: 40px;
-    /* background-color: purple; */
-}
-
-
-
-
-/* 제품 */
+/* 제품 */ 
 .BNitem {
     display:flex;
     flex-basis:25%;
-    height: 300px;
-    /* margin-left: 15px; */
-    /* padding: 15px;   */
-    flex-direction: column;
-    position: relative;
-}
-
-
-/* 제품  */
-.Bitem2, .Bitem3, .Bitem4 {
-    display:flex;
-    flex-basis:25%;
-    height: 285px;
-    margin-left: 20px;
-    /*padding-left: 15px; */
+    height: 330px;
+    width: 15%;
+   /*  margin-left:15px;
+    margin: 15px; */
     flex-direction: column;
     position: relative;
 }
@@ -282,8 +198,10 @@ ul.list::after {
 }
 
 
+
+
 /* 제품 이름 글씨 효과 */
-.itemName a:hover, .BNitemName a:hover {
+.BNitemName a:hover {
     text-decoration: underline;
 }
 

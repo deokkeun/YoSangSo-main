@@ -20,7 +20,6 @@
         <!-- 헤더 -->
         <jsp:include page="/WEB-INF/views/common/header.jsp"/>
 
-        
         <section id="pay-result">
             <section>
                 <div class="title-main">장바구니 > 주문 / 결제<span class="title"> > 완료</span></div>
@@ -28,8 +27,8 @@
             <section class="processing">
                 <div>주문을 처리중입니다.</div>
                 <div>제품을 발송하게 되면 이메일을 보내드립니다.</div>
-                <div>주문 번호: <span></span></div>
-                <div>주문 날짜: <span></span></div>
+                <div>주문 번호: <span><%= request.getAttribute("approval") %></span></div>
+                <div>주문 날짜: <span><%= request.getAttribute("approval_date") %></span></div>
             </section>
             <section class="processing-result">
                 <section>
@@ -65,5 +64,8 @@
    
     <!-- main.js 연결 -->
     <script src="${contextPath}/resources/js/main.js"></script>
+
+    <!-- approval_url.js 연결 -->
+    <script src="${contextPath}/resources/js/order/approval_url.js"></script>
 </body>
 </html>

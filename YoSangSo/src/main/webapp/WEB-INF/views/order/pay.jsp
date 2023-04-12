@@ -49,11 +49,11 @@
 	                                        			<!-- 상품 번호 -->
 						                            	<div class="productNo" style="display: none;">${product.productNo}</div>
 	                                            <div class="product-box">
-	                                                    <div><img src="" alt="상품이미지"></div>
+	                                                    <div><img src="${contextPath}/resources/image/product/${product.productName}.jpg" alt="상품이미지" height="180px""></div>
 	                                                    <div class="productName">${product.productName}</div>
 	                                                    <div>${product.price}원</div>
 	                                                    <div class="productCount">${product.productCount}개</div>
-	                                                    <div>${product.price*product.productCount}원</div>
+	                                                    <div class="productCountPrice">${product.price*product.productCount}원</div>
 	                                            </div>
 	                                        </c:when>
 	                                        
@@ -130,7 +130,7 @@
             
                     <div id="payment-method">
                         <div>
-                            결제수단 <input type="radio" id="kakao"><label for="kakao">카카오페이 <img src="${contextPath}/resources/image/order/payment_icon_yellow_small.png" alt="카카오페이" height="14px"></label>
+                            결제수단 <input type="radio" id="kakao" checked><label for="kakao">카카오페이 <img src="${contextPath}/resources/image/order/payment_icon_yellow_small.png" alt="카카오페이" height="14px"></label>
                         </div>
                         <div>
                             <span>품절시 환불 안내</span>
@@ -167,11 +167,11 @@
 
                         <div class="slide_wrapper">
                             <ul class="slides">
-                                <li><img src="" alt=""></li>
-                                <li><img src="" alt=""></li>
-                                <li><img src="" alt=""></li>
-                                <li><img src="" alt=""></li>
-                                <li><img src="" alt=""></li>
+                                <li><img src="${contextPath}/resources/image/product/Life Extension, 비타민D 함유 구연산 칼슘, 캡슐 200정.jpg" alt=""></li>
+                                <li><img src="${contextPath}/resources/image/product/California Gold Nutrition, Immune 4, 면역계 지원, 베지 캡슐 180정.jpg" alt=""></li>
+                                <li><img src="${contextPath}/resources/image/product/Doctors Best, Vein Support with DiosVein and MenaQ7, 베지 캡슐 60정.jpg" alt=""></li>
+                                <li><img src="${contextPath}/resources/image/product/Jarrow Formulas, Zinc Balance, 베지 캡슐 100정.jpg" alt=""></li>
+                                <li><img src="${contextPath}/resources/image/product/NOW Foods, 로즈힙 함유 C-500, 250 정.jpg" alt=""></li>
                             </ul>
                         </div>
 

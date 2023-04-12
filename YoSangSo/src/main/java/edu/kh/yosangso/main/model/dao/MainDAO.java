@@ -38,8 +38,8 @@ public class MainDAO {
 	}
 	/** 메인 dao
 	 * @param conn
-	 * @param pro
 	 * @return mpdList
+	 * @throws Exception
 	 */
 	public List<Product> mainProduct(Connection conn) throws Exception {
 		
@@ -68,7 +68,7 @@ public class MainDAO {
 			
 		} finally {
 			close(rs);
-			close(stmt);
+			close(pstmt);
 		}
 			
 		return mpdList;

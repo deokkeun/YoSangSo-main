@@ -1,7 +1,7 @@
 
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
+<%-- <%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %> --%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <!DOCTYPE html>
@@ -27,7 +27,7 @@
 </head>
 <body>
 
-
+<%-- 
 <!-- db자료불러오는 sql구문 -->
 <sql:setDataSource var= "all" 
 	driver = "oracle.jdbc.driver.OracleDriver"
@@ -41,7 +41,7 @@ select * from product
 </sql:query>
 
 
-
+ --%>
     <!-- 헤더, 컨텐츠 -->
     <main>
         
@@ -84,35 +84,45 @@ select * from product
                     
                     </ul>
                 </div>
-              
+          	
+          	
+          	
+          	
+          	<!-- items : 반복접근객체(배열,컬렉션) / 
+						 var   : 반복 변수명  ${mpdList[i-1].price}/
+						 begin : 반복시 시작값 
+						 end   : 반복시 종료값 
+						 step  : 반복시 증가값
+						 varStatus : 반복상태와 관련된 정보 제공 변수선언 -->    
 
      
 
           <!-- 2-2 제품 목록 -->
                 <div class="bestItem">
-                    
-                    <!-- 1행 -->
-                    <div class="line row1">
-                        <!--제품1-1 -->
-                        <div class="BNitem Bitem1">
-                        	<p class=rank>1위</p>    
-                            <a href="#">    
-                                <div class="BNitemPic bestItem1Pic">
-                                    <figcaption>${rs.rows[9]['PRODUCT_NM']}<hr> ${rs.rows[9]['INGREDIENT']}</figcaption>
-                                    <img src="${contextPath}/resources/image/all/${rs.rows[9]['PRODUCT_NM']}.jpg"
-                                     alt="제품사진" id="bestItemPhoto1">
+                    <c:forEach begin="1" end="20" var="i">
+                        <div class="BNitem">
+                        <c:forEach var="rank" begin="1" step="1" end="20" var="rank">
+  								<p class="rank"><c:out value="${rank}"/>위</p>
+						</c:forEach>
+                        	
+                        	<a href="product/productDetail?ProductNo=${npdList[i].productNo}">  
+   								<div class="BNitemPic">
+                                    <figcaption>${npdList[i].productName}<hr>${npdList[i].ingredient}</figcaption>
+                                    <img src="${contextPath}/resources/image/all/${npdList[i].productName}.jpg">
                                 </div>
                             </a>
-                                <div class="BNitemName bestItem1Name">
-                                    <a href="#">${rs.rows[9]['PRODUCT_NM']}</a>  
-                                </div> 
+                                 <div class="BNitemName">
+                            	<a href="${contextPath}/product/productDetail?ProductNo=${npdList[i].productNo}">${npdList[i].productName}</a>  
+                            </div> 
                             
-                                <div class="BNitemPrice bestItem1Price">
-                                	<fmt:formatNumber value="${rs.rows[9]['PRICE']}" pattern="#,###"/>원
-                                </div>  
-                        </div>                          
+                            <div class="BNitemPrice">
+                               	<fmt:formatNumber value="${npdList[i].price}" pattern="#,###"/>원
+                            </div>  
+						</div>  
+					</c:forEach>    
+				</div>                         
 
-                                                    
+          <%--                                           
                         <!--제품1-2 -->
                         <div class="BNitem Bitem2">
                         	<p class=rank>2위</p>    
@@ -512,7 +522,7 @@ select * from product
                         </div>
                     </div>
 
-                   
+                    --%>
 
                 <!-- 2-3 하단공백 -->
                 <div class="blank"></div>                   

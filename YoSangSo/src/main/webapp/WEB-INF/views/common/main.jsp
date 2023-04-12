@@ -20,8 +20,7 @@
     
     <title>index</title>
     
-    <!--탑 버튼 & 스크립트 html 부분-->
-    
+
     <!--탑 버튼-->
     <a id="topBtn" href="#"> 
         <i class="fa-solid fa-angles-up fa-2x"></i>
@@ -30,7 +29,8 @@
 </head>
 <body>
 
-<!--  
+<%-- 
+<!-- db자료불러오는 sql구문 -->
 <sql:setDataSource var= "conn" 
 	driver = "oracle.jdbc.driver.OracleDriver"
 	url="jdbc:oracle:thin:@//112.220.137.37:1521/xe"
@@ -38,12 +38,9 @@
 	password="yosangso"
 />
 
-  -->
-
-
-<!--<sql:query var ="rs" dataSource="${conn}">
+<sql:query var ="rs" dataSource="${conn}">
 select * from product
-</sql:query>-->
+</sql:query> --%>
 
     <!-- 헤더, 컨텐츠 -->
     <main>
@@ -93,177 +90,108 @@ select * from product
                 <section class="bestPart">
 
                     <!-- 2-1 베스트 글씨 -->
-                    <div class="mainFont bestFont">베스트</div>
+                    <div class="mainFont">베스트</div>
+                    
+                    
 
-
+					<!-- items : 반복접근객체(배열,컬렉션) / 
+						 var   : 반복 변수명  ${mpdList[i-1].price}/
+						 begin : 반복시 시작값 
+						 end   : 반복시 종료값 
+						 step  : 반복시 증가값
+						 varStatus : 반복상태와 관련된 정보 제공 변수선언 -->
                     <!-- 2-2 베스트 제품 -->
-                    <div class="bestItem"> 
-
-					
-						                        
-                        <!-- 베스트제품1 -->
-                        <div class="BNitem">  
-                            <a href="product/productDetail?ProductNo=15">  
-                                <div class="BNitemPic"> 
-                                    <figcaption>${mpdList[15].ingredient}<hr></figcaption>
-                                    <img src="resources/image/all/${mpdList[15].productName}.jpg">
-                                </div>
-                            </a>
-                                <div class="BNitemName">
-                                    <a href="product/productDetail?ProductNo=15">${mpdList[15].productName}</a>
-                                </div> 
-                            
-                                <div class="BNitemPrice"><fmt:formatNumber value="${mpdList[15].price}" pattern="#,###"/>원</div>
-                        </div>                          
-
-                                                 
-                        <!-- 베스트제품2 -->  
-                       <div class="BNitem">  
-                            <a href="product/productDetail?ProductNo=22">  
-                                <div class="BNitemPic"> 
-                                    <figcaption>${mpdList[22].ingredient}<hr></figcaption>
-                                    <img src="resources/image/all/${mpdList[22].productName}.jpg">
-                                </div>
-                            </a>
-                                <div class="BNitemName">
-                                    <a href="product/productDetail?ProductNo=22">${mpdList[22].productName}</a>
-                                </div> 
-                            
-                                <div class="BNitemPrice"><fmt:formatNumber value="${mpdList[22].price}" pattern="#,###"/>원</div>
-                        </div>                          
-                  
-
-
-                        <!-- 베스트제품3 -->
-                        <div class="BNitem">  
-                            <a href="product/productDetail?ProductNo=33">  
-                                <div class="BNitemPic"> 
-                                    <figcaption>${mpdList[33].ingredient}<hr></figcaption>
-                                    <img src="resources/image/all/${mpdList[33].productName}.jpg">
-                                </div>
-                            </a>
-                                <div class="BNitemName">
-                                    <a href="product/productDetail?ProductNo=33">${mpdList[33].productName}</a>
-                                </div> 
-                            
-                                <div class="BNitemPrice"><fmt:formatNumber value="${mpdList[33].price}" pattern="#,###"/>원</div>
-                        </div>                          
-
-
-
-                        <!-- 베스트제품4 -->
-                        <div class="BNitem">  
-                            <a href="product/productDetail?ProductNo=3">  
-                                <div class="BNitemPic"> 
-                                    <figcaption>${mpdList[3].ingredient}<hr></figcaption>
-                                    <img src="resources/image/all/${mpdList[3].productName}.jpg">
-                                </div>
-                            </a>
-                                <div class="BNitemName">
-                                    <a href="product/productDetail?ProductNo=3">${mpdList[3].productName}</a>
-                                </div> 
-                            
-                                <div class="BNitemPrice"><fmt:formatNumber value="${mpdList[3].price}" pattern="#,###"/>원</div>
-                        </div>                          
+                    <div class="newItem">
+                    
+                    	<c:forEach begin="1" end="4" var="i">
+					  		<div class="BNitem">
+					    		<a href="product/productDetail?ProductNo=${mpdList[i].productNo}">
+					      			<div class="BNitemPic">
+					      	  			<figcaption>${mpdList[i].productName}<hr>${mpdList[i].ingredient}</figcaption>
+					        			<img src="resources/image/all/${mpdList[i].productName}.jpg">
+					      			</div>
+					    		</a>
+					    			<div class="BNitemName">
+					      				<a href="product/productDetail?ProductNo=${mpdList[i].productNo}">${mpdList[i].productName}</a>
+					    			</div>
+					    			<div class="BNitemPrice">
+					    				<fmt:formatNumber value="${mpdList[i].price}" pattern="#,###"/>원
+					    			</div>
+					  		</div>
+					  	</c:forEach>
+					</div>
 
                     
-                    </div>
-
-
-                    
-                    <!-- 2-3 베스트제품더보기 -->
+                   <!-- 2-3 베스트제품더보기 -->
                     <div>
                         <div class="more bestMore">
                             <a href="${contextPath}/product/bestProduct">더보기 
                             		<i class="fa-solid fa-angles-right" id="allow"></i>
                             </a>
                         </div>
-                    </div>
+                    </div> 
 
                 </section>
 
 
 
 
-                <!-- 3 신제품부분 시작 -->
+                <!-- 3 신상품부분 시작 -->
                 <section class="newPart">
 
-                    <!-- 3-1 신제품 글씨 -->
-                    <div class="mainFont newFont">신제품</div>
+                    <!-- 3-1 신상품 글씨 -->
+                    <div class="mainFont">신상품</div>
 
-
-                    <!-- 3-2 신제품 순 -->
+                    <!-- 3-2 신상품 -->
                     <div class="newItem">
-
-                        <!-- 신제품1 -->
-                        <div class="BNitem">
-                            <a href="#">
-                                <div class="BNitemPic">
-                                    <figcaption>${mpdList[0].ingredient}<hr></figcaption>
-                                    <img src="resources/image/all/${mpdList[0].productName}.jpg">
-                                </div>
-                            </a>
-                                <div class="BNitemName">
-                                    <a href="#">${mpdList[0].productName}</a> 
-                                </div>
-                           
-                                <div class="BNitemPrice"><fmt:formatNumber value="${mpdList[0].price}" pattern="#,###"/>원</div>
-                        </div>
-
-
-                        <!-- 신제품2 -->
-                        <div class="BNitem">
-                            <a href="#">
-                                <div class="BNitemPic">
-                                    <figcaption>${mpdList[1].ingredient}<hr></figcaption>
-                                    <img src="resources/image/all/${mpdList[1].productName}.jpg">
-                                </div>
-                            </a>
-                                <div class="BNitemName">
-                                    <a href="#">${mpdList[1].productName}</a> 
-                                </div>
-                           
-                                <div class="BNitemPrice"><fmt:formatNumber value="${mpdList[1].price}" pattern="#,###"/>원</div>
-                        </div>
-
-                        <!-- 신제품3 -->
-                        <div class="BNitem">
-                            <a href="#">
-                                <div class="BNitemPic">
-                                    <figcaption>${mpdList[20].ingredient}<hr></figcaption>
-                                    <img src="resources/image/all/${mpdList[20].productName}.jpg">
-                                </div>
-                            </a>
-                                <div class="BNitemName">
-                                    <a href="#">${mpdList[20].productName}</a> 
-                                </div>
-                           
-                                <div class="BNitemPrice"><fmt:formatNumber value="${mpdList[20].price}" pattern="#,###"/>원</div>
-                        </div>
-
-                        <!-- 신제품4 -->
-                         <div class="BNitem">
-                            <a href="#">
-                                <div class="BNitemPic">
-                                    <figcaption>${mpdList[10].ingredient}<hr></figcaption>
-                                    <img src="resources/image/all/${mpdList[10].productName}.jpg">
-                                </div>
-                            </a>
-                                <div class="BNitemName">
-                                    <a href="#">${mpdList[10].productName}</a> 
-                                </div>
-                           
-                                <div class="BNitemPrice"><fmt:formatNumber value="${mpdList[10].price}" pattern="#,###"/>원</div>
-                        </div>
                     
-                    </div>
-
+                    	<c:forEach begin="1" end="4" var="i">
+					  		<div class="BNitem">
+					    		<a href="product/productDetail?ProductNo=${mpdList[i-1].productNo}">
+					      			<div class="BNitemPic">
+					      	  			<figcaption>${mpdList[i-1].ingredient}<hr></figcaption>
+					        			<img src="resources/image/all/${mpdList[i-1].productName}.jpg">
+					      			</div>
+					    		</a>
+					    			<div class="BNitemName">
+					      				<a href="product/productDetail?ProductNo=${mpdList[i-1].productNo}">${mpdList[i-1].productName}</a>
+					    			</div>
+					    			<div class="BNitemPrice">
+					    				<fmt:formatNumber value="${mpdList[i-1].price}" pattern="#,###"/>원
+					    			</div>
+					  		</div>
+					  	</c:forEach>
+					</div>
+					
+					<div class="newItem">
+                    
+                    	<c:forEach begin="1" end="4" var="i">
+					  		<div class="BNitem">
+					    		<a href="product/productDetail?ProductNo=${mpdList[i-1].productNo}">
+					      			<div class="BNitemPic">
+					      	  			<figcaption>${mpdList[i-1].ingredient}<hr></figcaption>
+					        			<img src="resources/image/all/${mpdList[i-1].productName}.jpg">
+					      			</div>
+					    		</a>
+					    			<div class="BNitemName">
+					      				<a href="product/productDetail?ProductNo=${mpdList[i-1].productNo}">${mpdList[i-1].productName}</a>
+					    			</div>
+					    			<div class="BNitemPrice">
+					    				<fmt:formatNumber value="${mpdList[i-1].price}" pattern="#,###"/>원
+					    			</div>
+					  		</div>
+					  	</c:forEach>
+					</div>
+                    
+                    
 
 
                     <!-- 3-3 신제품 더보기 -->
                     <div>
                         <div class="more newMore">
-                            <a href="${contextPath}/product/newProduct">더보기 <i class="fa-solid fa-angles-right" id="allow"></i></a>
+                            <a href="${contextPath}/product/newProduct">더보기
+                            	<i class="fa-solid fa-angles-right" id="allow"></i>
+                            </a>
                         </div>
                     </div>
 
@@ -278,7 +206,7 @@ select * from product
                 <section class="itemPart">
 
                     <!-- 4-1 제품글씨 -->
-                    <div class="mainFont itemFont">제품</div>
+                    <div class="mainFont">제품</div>
 
 
                     <!-- 4-2 제품모음 -->
@@ -294,7 +222,7 @@ select * from product
                                 <a href="#">
                                     <div class="itemPic">
                                         <figcaption>${mpdList[10].ingredient}<hr></figcaption>
-                                        <img src="resources/image/all/${mpdList[10].productName}.jpg">
+                                       	<img src="resources/image/all/${mpdList[10].productName}.jpg">
                                     </div>
                                 </a>
                                 
@@ -302,25 +230,25 @@ select * from product
                                         <a href="#">${mpdList[10].productName}</a> 
                                     </div>
 
-                                    <div class="BNitemPrice"><fmt:formatNumber value="${mpdList[10].price}" pattern="#,###"/>원</div>
+                                    <div class="itemPrice"><fmt:formatNumber value="${mpdList[10].price}" pattern="#,###"/>원</div>
                             </div>
 
 
                             <!-- 제품2 -->
-                            <div class="item item2">
+                            <div class="item">
                                 <a href="#">
-                                    <div class="itemPic item2Pic">
+                                    <div class="itemPic">
                                         <figcaption>제품2<br><br>상세설명칸<br><br>입니다</figcaption>
                                         <img src="resources/image/index/제품_오쏘뮬.jpg" 
                                             alt="이미지입니다" id="itemPhoto2">
                                     </div>
                                 </a>    
 
-                                    <div class="itemName item2Name">
+                                    <div class="itemName">
                                         <a href="">[오쏘뮬] 오쏘뮬 이뮨 멀티비타민&미네랄 14입+1입 증정 기획 (2주분)</a>
                                     </div>
 
-                                    <div class="itemPrice item2Price">16,000원</div>
+                                    <div class="itemPrice">16,000원</div>
                             </div>
 
 

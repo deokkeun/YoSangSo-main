@@ -1,7 +1,6 @@
 package edu.kh.yosangso.product.model.service;
 
 import static edu.kh.yosangso.common.JDBCTemplate.*;
-import static edu.kh.yosangso.common.JDBCTemplate.getConnection;
 
 import java.sql.Connection;
 import java.util.ArrayList;
@@ -87,7 +86,25 @@ public class ProductService {
 		
 		return result;	
 	}
+
+
 	
+	/** 전제품 불러오기 service
+	 * @return apdList
+	 * @throws Exception
+	 */
+	public List<Product> allProduct() throws Exception{
+		
+		Connection conn = getConnection();
+		
+		List<Product> apdList = dao.allProduct(conn);
+		
+		close(conn);
+		
+		return apdList;
+	}
+
+
 	
 	
 	

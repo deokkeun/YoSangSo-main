@@ -14,8 +14,9 @@ public class MainService {
 	private MainDAO dao = new MainDAO();
 
 	/** 메인 제품 불러오기 service
-	 * @param pro
+	 * @param 
 	 * @return mpdList
+	 * @throws Exception
 	 */
 	public List<Product> mainProduct() throws Exception {
 		// 1. 커넥션 생성 및 얻어오기
@@ -34,3 +35,6 @@ public class MainService {
 	}
 
 }
+
+
+

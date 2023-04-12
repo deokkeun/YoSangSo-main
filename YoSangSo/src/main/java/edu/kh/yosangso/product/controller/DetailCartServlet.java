@@ -29,10 +29,6 @@ public class DetailCartServlet extends HttpServlet {
 			
 			Member loginMember = (Member)( session.getAttribute("loginMember") ) ;
 			
-			String path = null;
-			
-			
-			if(loginMember !=null) {
 				
 				ProductService service = new ProductService();
 				
@@ -52,21 +48,7 @@ public class DetailCartServlet extends HttpServlet {
 				
 				//resp.getWriter().print(result);
 				new Gson().toJson(result, resp.getWriter());
-				
-				
-			} else {
-				
-				path ="/WEB-INF/views/member/login.jsp";
-				
-				
-				req.getRequestDispatcher(path).forward(req, resp);
-			}
-			
-				
-			
-
-				
-			
+		
 
 		} catch(Exception e) {
 			e.printStackTrace();

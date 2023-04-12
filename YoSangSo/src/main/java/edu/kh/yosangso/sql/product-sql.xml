@@ -24,9 +24,30 @@
 		FROM PRODUCT
 		WHERE PART = ?
 	</entry>
-	<entry key=""></entry>
-	<entry key=""></entry>
-	<entry key=""></entry>
+	
+	
+	<!-- 전제품 조회 sql -->
+	<entry key="allProduct">
+		SELECT PRODUCT_NM, PRICE, INGREDIENT
+		FROM PRODUCT
+	</entry>
+	
+	
+	<!-- 신상품 조회 sql  -->
+	<entry key="newProduct">
+		SELECT PRODUCT_NM, PRICE, INGREDIENT
+		FROM PRODUCT
+		ORDER BY SELL_RATE DESC
+	</entry>
+	
+	
+	<!-- 베스트 조회 sql -->
+	<entry key="bestProduct">
+		SELECT PRODUCT_NM, PRICE, INGREDIENT
+		FROM PRODUCT
+		ORDER BY SELL_RATE DESC
+	</entry>
+
 	<entry key=""></entry>
 	<entry key=""></entry>
 	<entry key=""></entry>
