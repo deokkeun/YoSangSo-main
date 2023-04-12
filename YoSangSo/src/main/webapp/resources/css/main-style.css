@@ -38,7 +38,7 @@ header{
     position: sticky;
     top: 0;
     background-color: white;
-    z-index: 1;
+    z-index: 999;
 }
 #header-box {
     width: 1280px;
