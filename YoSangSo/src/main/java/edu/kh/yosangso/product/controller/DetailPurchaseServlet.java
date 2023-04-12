@@ -56,10 +56,10 @@ public class DetailPurchaseServlet extends HttpServlet{
 					
 				} else {
 					
-					path ="/WEB-INF/views/member/login.jsp";
+					path ="/YoSangSo/member/login";
 					
+					resp.sendRedirect(path);
 					
-					req.getRequestDispatcher(path).forward(req, resp);
 					
 				}
 				
