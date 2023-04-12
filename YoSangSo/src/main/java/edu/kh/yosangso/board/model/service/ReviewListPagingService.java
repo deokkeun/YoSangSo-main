@@ -40,7 +40,6 @@ public class ReviewListPagingService  {
 		
 		close(conn);
 		
-		
 		return list;
 	}
 

@@ -58,25 +58,35 @@
                                         <div class="rightReivewContent">
 											<c:forEach var="list" items="${list}">
                                             <div class="rightProductImg"> 
-
-                                                <div>
-                                                    <p>${list.productName}</p>
-                                                </div>
-        
-                                                <div class="reivewInfo">
-                                                	<div class="reviewContent">
-                                                		${list.reviewContent }
+                                            
+                                            <c:choose>
+                                                <c:when test="${!empty list.productName}">
+                                                    <div>
+                                                        <p>${list.productName}</p>
                                                     </div>
-                                                </div>
-        
+            
+                                                    <div class="reivewInfo">
+                                                        <div class="reviewContent">
+                                                            ${list.reviewContent }
+                                                        </div>
+                                                    </div>
+                                                </c:when>
+
+                                                <c:otherwise>
+                                                    <div>작성된 리뷰가 존재하지 않습니다.</div>
+                                                </c:otherwise>
+                                            </c:choose>
+                                               
                                                 <div>
                                                 	<div>
-                                    				<form>
+                                    				<form action="reviewUpdate">
+                                                        <input type="hidden" name="orderDetailNo" value="${list.orderDetailNo}">
 	                                                    <button class="reviewAdd">리뷰 수정</button><br><br>
                                     				</form> 
                                                 	</div>
-                                                	<form>
+                                                	<form action="reviewDelete">
                                                 	<div>
+                                                        <input type="hidden" name="orderDetailNo" value="${list.orderDetailNo}">
 	                                                    <button class="reviewAdd">리뷰 삭제</button><br><br>
                                                 	</div>
                                                 	</form>

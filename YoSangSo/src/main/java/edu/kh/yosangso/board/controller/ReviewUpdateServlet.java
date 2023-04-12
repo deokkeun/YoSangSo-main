@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import edu.kh.yosangso.board.model.service.ReviewService;
+
 
 /** 리뷰 업데이트 창 넘어가는 써블릿
  * @author lee
@@ -18,8 +20,51 @@ public class ReviewUpdateServlet extends HttpServlet{
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
+		
 		String path = "/WEB-INF/views/board/reviewUpdate.jsp";
+		
+		try {
+			req.setAttribute("orderDetailNo", req.getParameter("orderDetailNo"));
+			req.setAttribute("productName", req.getParameter("productName"));
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
 		req.getRequestDispatcher(path).forward(req, resp);
 	}
 
+	
+	  @Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		  	
+		  ReviewService service = new ReviewService();
+		  int result = 0;
+		  
+		  try {
+			  
+			 
+			  String orderDetailNo = req.getParameter("orderDetailNo");
+			  int reviewRate = Integer.parseInt(req.getParameter("reviewRate"));
+			  String updateContent = req.getParameter("reviewUpdateContent");
+			  
+			  System.out.println(updateContent);
+			  System.out.println(reviewRate);
+			  System.out.println(orderDetailNo);
+			  
+			  result = service.updateReview(updateContent,reviewRate,orderDetailNo);
+			  
+			  if(result > 0) {
+				  resp.sendRedirect("reviewList");
+				  System.out.println("수정성공!");
+			  }else {
+				  System.out.println("수정 실패");
+			  }
+			  
+		  }catch(Exception e) {
+			  e.printStackTrace();
+		  }
+	}
+	  
 }

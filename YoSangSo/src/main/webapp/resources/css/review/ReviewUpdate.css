@@ -152,15 +152,14 @@
 
 
 #review-img{
-    width: 178px;
-    height: 178px;
+    width: 100%;
 }
 
 #review-imgBox{
     display: flex;
     justify-content: center;
     align-items: center;
-    border-right: 3px solid rgba(0,0,0,0.1);
+    /* border-right: 3px solid rgba(0,0,0,0.1); */
     width: 210px;
 }
 

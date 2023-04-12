@@ -9,37 +9,32 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import edu.kh.yosangso.board.model.service.ReviewService;
-import edu.kh.yosangso.order.model.vo.Order;
 
-/** 리뷰 작성창 넘어가는 써블릿
- * @author lee
- *
- */
-@WebServlet("/board/reviewWriting")
-public class ReviewWritingServlet extends HttpServlet{
-	
+
+@WebServlet("/board/reviewDelete")
+public class ReviewDeleteServlet extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String path = "/WEB-INF/views/board/reviewWriting.jsp";
-		Order orderInfo = null;
+		
 		ReviewService service = new ReviewService();
+		int result = 0;
 		
 		try {
 			
 			String orderDetailNo = req.getParameter("orderDetailNo");
 			
-			orderInfo = service.selectReviewInfo(orderDetailNo);
-			
-			req.setAttribute("orderDetaillNo", orderDetailNo);
-			req.setAttribute("orderInfo", orderInfo);
+			result = service.reviewDelete(orderDetailNo);
 			
 			
-			req.getRequestDispatcher(path).forward(req, resp);
+			if(result > 0) {
+				resp.sendRedirect("reviewList");
+				System.out.println("삭제 성공");
+			}else {
+				System.out.println("삭제 실패");
+			}
 			
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
-		
-		
 	}
 }
