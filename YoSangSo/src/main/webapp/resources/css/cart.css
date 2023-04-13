@@ -18,14 +18,14 @@
 }
 
 .info-bar span{
-    color: gray;
+    color: black;
     font-size: 25px;
     padding: 10px;
 }
 
 .info-bar span:first-child{
     font-weight: bold;
-    color: black;
+    color: rgb(37, 120, 244);
     margin-left: 10px;
 }
 

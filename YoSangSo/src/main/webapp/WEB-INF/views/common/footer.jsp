@@ -48,13 +48,13 @@
                 </div>
             </section>
             <article>
-                <a href="#">이용약관</a>
+                <a href="${contextPath}/terms/termsOfService">이용약관</a>
                 <span> | </span>
-                <a href="#">개인정보처리방침</a>
+                <a href="${contextPath}/terms/termsOfPrivacy">개인정보처리방침</a>
                 <span> | </span>
-                <a href="#">FAQ</a>
+                <a href="${contextPath}/board/faq">FAQ</a>
                 <span> | </span>
-                <a href="#">고객센터</a>
+                <a href="${contextPath}/board/inquiryList">고객센터</a>
                 <span> | </span>
                 <span>Copyright &copy; KH Information Educational Institute D-Class</span>
             </article>
