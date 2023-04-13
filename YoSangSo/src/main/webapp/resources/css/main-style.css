@@ -38,15 +38,8 @@ header{
     position: sticky;
     top: 0;
     background-color: white;
-    z-index: 10;
-    box-shadow: -8px -6px 18px 8px #aba5a5;
+    z-index: 1;
 }
-
-
-  
-  
-  
-
 #header-box {
     width: 1280px;
     min-width: 750px;
@@ -98,8 +91,7 @@ header{
 	border : 1px solid black;
 	border-radius: 3px;
 	width: 140px;
-	background-color: #F8F3E6;
-	box-shadow: 3px 3px 3px 3px #555555;
+	background-color: rgba(241, 240, 238, 1);
 }
 
 .menu-list li{
@@ -136,7 +128,7 @@ header{
 .mypage-menu-div{
 	position :absolute;
 	display: none;	
-	right: 10px;
+	right: 20px;
 	margin-top : 2px;
 	flex-direction : column;
 	align-items: center;
@@ -144,8 +136,7 @@ header{
 	border : 1px solid black;
 	border-radius: 3px;
 	width: 140px;
-	background-color: #F8F3E6;
-	box-shadow: 3px 3px 3px 3px #555555;
+	background-color: rgba(241, 240, 238, 1);
 }
 .mypage-menu-list li{
 	 display: none; 
@@ -349,63 +340,6 @@ footer {
 
 .content-container a:hover  {
     text-decoration:underline;
-}
-
-
-
-/* 왼쪽사이드 */
-.leftSide {
-    flex-basis : 15%;
-    /* background-color:aqua; */
-}
-
-/* 가운데메인영역 */
-.center {
-    flex-basis : 70%;
-    display: flex;
-    flex-direction: column;
-    /* background-color:pink; */
-}
-
-/* 오른쪽사이드 */
-.rightSide {
-    flex-basis : 15%;
-    padding: 5px;
-    /* position: relative;
-    justify-content: center;
-    align-items: center;
-    justify-content: center; */
-    /* background-color:green; */
- 
-}
-
-
-/* -------------------- 오른쪽 사이드 영역 --------------------  */
-
-
-/*인체바 에니메이션*/
-
-
-#floating{
-	transition : all 2s;
-}
-
-
-
-#people2 {
-	display: none;
-    width: 120px;
-    height:330px;
-    padding: 50px 0px 40px 0px;
-    /* position: absolute; */
-    
-}
-
-
-#people2:hover{
-	transform: scale(1.3);
-	transition : all 4s;
-	
-}
+} 
 
 

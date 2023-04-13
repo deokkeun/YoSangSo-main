@@ -26,7 +26,7 @@
 
 /* 가운데메인영역 */
 .center {
-    flex-basis : 70%;
+    flex-basis: 148%;
     display: flex;
     flex-direction: column;
     /* background-color:pink; */
@@ -88,133 +88,86 @@
 /* quickMenu */
 .center > div:nth-child(1) {
     display: flex;
-    flex-basis: 10%;
+  /*   flex-basis: 10%; */
 }
 
-/* bestItem */
+/* itemList */
 .center > div:nth-child(2) {
     display: flex;
-    flex-basis: 80%;
-    flex-direction: column;
+    flex-wrap: wrap;
+    flex-basis: 80%; 
+   /*  flex-direction: row; */
 }
 
-/* numListBox */
+/* blank */
 .center > div:nth-child(3) {
-    flex-basis: 10%;
+   /*  flex-basis: 10%; */
     display: flex; 
 }
 
 
 /******************* 퀵메뉴 부분 css ******************/
 
-
 .quickMenu {
-    margin : 70px 0px 0px 0px;
-    border-bottom: 2px solid black;
+    margin : 70px 0px 30px 0px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.2);
 }
 
 
-.quickMenu > a {
-    width: 200px;
-    text-decoration: none;
-    border: solid 1px black;
-    align-items: center;
-    text-align: center;
-    color: black;   
+ul.list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
-
-
-.quickMenu > a:hover {
-    width: 200px;
-    transition-duration: 0.5s;
-    text-decoration: none;
-    
+  
+ul.list::after {
+    content: '';
+    display: block;
+    clear: both;
 }
-
-.mainFont:hover {
-	background-color : #c2e7ff;
-	color: black;
-	transition-duration: 0.3s;
-}
-
-
-/* 퀵메뉴이름 */
+  
+  
 .mainFont {
-    align-items: center;
-    padding: 10px;
-    font-weight: bold;
-    font-size: 16px;
+    display: block;
+    padding: 10px 20px 10px 20px;
+    float: left;
+    margin-right: -1px;
+    margin-bottom: -1px;
+    color: grey;
+    text-decoration: none;
+    cursor: pointer;
+    width: 200px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 16px;
 }
-
-
+  
+  
+.select {
+    border-top: 2px solid #c2e7ff;
+    border-right: 1px solid #ccc;
+   /* border-bottom: 1px solid white;*/
+    border-left: 1px solid #ccc; 
+    /*border:2px solid black;*/
+    color: black;
+    margin-top: -2px;
+    background-color:  #c2e7ff;
+}
 
 /*********************제품 부분 css  ****************/
 
 
 
-.bestItem > .line:nth-child(1) {
-    display:flex;
-    flex-basis : 15%;
-    margin-top: 50px;
-    /* background-color: red; */
-}
-
-
-.bestItem > .line:nth-child(2) {
-    display:flex;
-    flex-basis : 15%;
-    margin-top: 40px;
-    /* background-color: orange; */
-}
-.bestItem > .line:nth-child(3) {
-    display:flex;
-    flex-basis : 15%;
-    margin-top: 40px;
-    /* background-color: yellow; */
-}
-.bestItem > .line:nth-child(4) {
-    display:flex;
-    flex-basis : 15%;
-    margin-top: 40px;
-    /* background-color: lightgreen; */
-}
-.bestItem > .line:nth-child(5) {
-    display:flex;
-    flex-basis : 15%;
-    margin-top: 40px;
-    /* background-color: skyblue; */
-}
-.bestItem > .line:nth-child(6) {
-    display:flex;
-    flex-basis : 15%;
-    margin-top: 40px;
-    /* background-color: purple; */
-}
-
-
-
-
-/* 제품 */
+/* 제품 */ 
 .BNitem {
     display:flex;
     flex-basis:25%;
-    height: 300px;
-    /* margin-left: 15px; */
-    /* padding: 15px;   */
+    height: 310px;
+    width: 15%;
     flex-direction: column;
     position: relative;
-}
-
-
-/* 제품  */
-.Bitem2, .Bitem3, .Bitem4 {
-    display:flex;
-    flex-basis:25%;
-    height: 285px;
-    margin-left: 20px;
-    /* padding-left: 15px;   */
-    flex-direction: column;
-    position: relative;
+    padding: 10px;
 }
 
 
@@ -225,7 +178,7 @@
     border: 1px solid rgb(181, 181, 181);
     align-items: center;
     justify-content: center;
-    width: 250px;
+    width: 245px;
     height: 200px;
     position: relative;
     z-index : -1;
@@ -243,8 +196,10 @@
 }
 
 
+
+
 /* 제품 이름 글씨 효과 */
-.itemName a:hover, .BNitemName a:hover {
+.BNitemName a:hover {
     text-decoration: underline;
 }
 
@@ -256,8 +211,7 @@
     text-align: left;
     color:brown;
     padding: 5px;
-    position: relative;
-    
+    position: relative;    
     z-index : -1;
     /* background-color: red; */
 } 
@@ -265,26 +219,19 @@
 
 /* 제품명 글씨 */
 .BNitemName{
-    flex-basis: 10%;
+    flex-basis: 20%;
     padding: 4px;
     font-size: 14px;
     position: relative;
-    /* z-index : -1; */
-
-    /* z-index 설정해제하면 글씨가 보이고 안하면 a태그 호버설정이 안되고
-    어케해야되나요ㅠㅠㅠ*/
-
-    /* text-decoration: underline; */
-    /* background-color: purple; */
 }
 
+/*********************  하단공백 css   ****************/
 
-
-/******************** 하단공백 css ********************/
 .blank{
     display: flex;
     height: 140px;
 }
+
 
 /************************* 제품  호버값  ******************/
 .BNitem > a {
@@ -309,15 +256,17 @@
 /* 검은화면 글씨 설정 */
 .BNitem > a > .BNitemPic > figcaption {
     position: absolute;
-    bottom: 250px;
-    left: 0px;
+    bottom: 300px;
+    left: 50%;
     /* top: 50px; */
     margin : auto;
     z-index: 1;
     color : #fff;
-    font-size: 11px;
+    font-size: 12px;
     text-align : center;
     transition: all .5s;
+    /* (,위에서 내려올 때 높이간격) */
+    transform: translate(-50%, 40%);
     
 }
 
