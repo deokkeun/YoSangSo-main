@@ -47,7 +47,7 @@
 	                    
 	                    <!-- ajax 생성부분 -->
 	                    
-	                        <!-- <div class="delivery-box">
+	                        <div class="delivery-box">
                                 <div class="product-image">
                                     <img src="#" alt="">
                                 </div>
@@ -59,7 +59,7 @@
                                         <div class="price"><span>원</span></div>
                                     </div>
                                 </div>
-                            </div> -->
+                            </div> 
                             
 	                    </section>
 	                </section>

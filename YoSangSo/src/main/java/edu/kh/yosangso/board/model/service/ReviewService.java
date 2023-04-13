@@ -17,35 +17,25 @@ public class ReviewService {
 	
 	
 	
-	/** 리뷰등록 서비스 + 이미지
+	/** 리뷰등록 서비스
 	 * @param reviewContent
+	 * @param memberNo 
+	 * @param productNo 
+	 * @param orderDetailNo 
 	 * @return
 	 */
-	public int reviewAdd(String reviewContent, int reviewAddRate, List<ReviewImage> imageList) throws Exception{
+	public int reviewAdd(String reviewContent, int reviewAddRate, int memberNo, int productNo, int orderDetailNo) throws Exception{
 		
 		
 		System.out.println("리뷰작성 서비스 들어옴");
 		// 결과 저장용 변수
 		int result = 0;
-		
-		
 		// 커넥션 연결해주기
 		Connection conn = getConnection();
 		
-		result = dao.reviewAdd(conn, reviewContent, reviewAddRate);
+		result = dao.reviewAdd(conn, reviewContent, reviewAddRate, memberNo, productNo,orderDetailNo);
 		
-		if(result > 0 ) {
-			System.out.println("리뷰 이미지 if문 진입");
-			for(ReviewImage image : imageList) {
-				if(result == 0) { // 이미지 삽입 실패
-					System.out.println("리뷰 이미지 if문 reulst == 0 진입");
-					break;
-				}else {
-					System.out.println("리뷰 이미지 else문 진입");
-					result = dao.reviewImageAdd(conn,image);
-				}
-			}
-		}
+		
 		if(result > 0) {
 			commit(conn);
 		}else {
@@ -85,14 +75,12 @@ public class ReviewService {
 	 * @param orderNo
 	 * @return
 	 */
-	public Order selectReviewInfo(String orderDetailNo) throws Exception {
+	public Order selectReviewInfo(int orderDetailNo) throws Exception {
 		
 		Connection conn = getConnection();
-		
 		Order orderInfo = dao.selectReviewInfo(conn, orderDetailNo);
 		
 		close(conn);
-		
 		return orderInfo;
 	}
 

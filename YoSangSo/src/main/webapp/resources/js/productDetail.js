@@ -102,7 +102,8 @@ function addcart() {
 		type: "get",
 		data: {"count" : count, "productNo" : pro},
 		success: function(result){
-			alert("장바구니에 추가됨");;
+			swal("장바구니에 추가되었습니다.",'','success');
+			$("#sql-div").load(window.location.href + "#sql-div");
 		},
 		error: function() {
 			alert("수량을 선택해주세요");

@@ -1,37 +1,18 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"  pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%-- 
+    JSP 액션 태그 증 forward
+    - Servlet -> JSP(==Servlet) 요청 위임
+      JSP 위임 시 JSP 파일 경로 작성
+    - JSP(==Servlet) -> Servlet 요청 위임
+      Servlet 위임 시 요청 주소 작성
+--%>
+
+<jsp:forward page= "main"/>
 
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- 반응형 페이지 필요 -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link rel="stylesheet" href="${contextPath }/resources/css/index.css">
-    <link rel="stylesheet" href="${contextPath }/resources/css/main-style.css">
-    <script src="https://kit.fontawesome.com/881d1deef7.js" crossorigin="anonymous"></script>
-    
-    <!-- 슬라이더 파일다운받은거 -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-    <title>index</title>
-    
-    <!--탑 버튼 & 스크립트 html 부분-->
-    
-    <!--탑 버튼-->
-    <a id="topBtn" href="#"> 
-        <i class="fa-solid fa-angles-up fa-2x"></i>
-    </a> 
-    
-</head>
-<body>
-
+<<<<<<< HEAD
 
 
 <sql:setDataSource var= "conn" 
@@ -537,3 +518,10 @@ select * from product
     <script src="${contextPath}/resources/js/main.js"></script>
 </body>
 </html>
+=======
+<%-- 메인 페이지(index.jsp) 요청이 왔을 때 
+  요청 주소가 /main인 servlet으로 요청 위임
+    -> Servlet == Back-End -> DB 연결 가능
+    -> 다시 JSP 위임 가능
+--%>
+>>>>>>> develop

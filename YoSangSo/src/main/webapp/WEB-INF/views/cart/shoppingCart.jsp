@@ -75,8 +75,8 @@
 	                                <input type="text" class="counting-input" value=${ list.buyingRate } disabled >
 	                                <input type="hidden" class="productNo" name="productNo" value=${ list.productNo }>
 	                                <input type="hidden" class="hiddencount" name="count" value=${ list.buyingRate }>
-		                            <button type="button" onclick="plusCount(${vs.index})" id="plus">+</button>
-	                                <button type="button" onclick="minusCount(${vs.index})" id="minus">-</button>
+	                                <button type="button" onclick="minusCount(${vs.index})" id="minus" class="pm-btn">-</button>
+		                            <button type="button" onclick="plusCount(${vs.index})" id="plus" class="pm-btn">+</button>
 	                            </div>
 	                        </div>
 	                        <!-- 총 가격 -->
