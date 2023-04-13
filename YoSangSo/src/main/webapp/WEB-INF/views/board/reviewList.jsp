@@ -46,7 +46,7 @@
                                 <div>
                                     
                                     <div class="myReview">
-                                       	나의 리뷰
+                                       	나의 리뷰 
                                     </div>
         
                                     <div class="rightReview">
@@ -77,7 +77,6 @@
                                                         </div>
                                                             <input type="hidden" name="orderDetailNo" value="${list.orderDetailNo}">
                                                             <input type="hidden" name="productNo" value="${list.productNo}">
-                                                     
                                                         <div id="reviewAddBox">
                                                             <button type="submit" id="reviewAdd">리뷰작성</button><br><br>
                                                         </div>
