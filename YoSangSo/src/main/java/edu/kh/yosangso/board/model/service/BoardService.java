@@ -13,6 +13,7 @@ import java.util.Map;
 import edu.kh.yosangso.board.model.dao.BoardDAO;
 import edu.kh.yosangso.board.model.vo.Board;
 import edu.kh.yosangso.board.model.vo.Pagination;
+import edu.kh.yosangso.board.model.vo.QNA;
 import edu.kh.yosangso.board.model.vo.Review;
 import edu.kh.yosangso.member.model.vo.Member;
 
@@ -74,7 +75,7 @@ public class BoardService {
 		}
 		
 		close(conn);
-		
+		System.out.println("delete 서비스 나감");
 		return result;
 	}
 
@@ -133,15 +134,19 @@ public class BoardService {
 	}
 
 
-
-	public List<Review> selectqna(int pro) throws Exception {
+	/** QNA 가져오기
+	 * @param pro
+	 * @return
+	 * @throws Exception
+	 */
+	public List<QNA> selectQNA() throws Exception{
 		Connection conn = getConnection();
 		
-		List<Review> reviewList = dao.selectqna(conn, pro);
+		List<QNA> QNAList = dao.selectQNA(conn);
 		
 		close(conn);
 		
-		return reviewList;
+		return QNAList;
 	}
 
 }

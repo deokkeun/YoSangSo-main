@@ -132,12 +132,16 @@ public class ReviewDAO {
 				String reviewContent = rs.getString("REVIEW_CONTENT");
 				String reviewDate = rs.getString("REVIEW_DATE");
 				int reviewRate = rs.getInt("REVIEW_RATE");
-				String imageList = null;
+				List<ReviewImage> imageList = null;
+				int memberNo = rs.getInt("MEMBER_NO");
 				int productNo = rs.getInt("PRODUCT_NO");
+				int orderNo = 0;
+				String orderDetailNumber = null;
 				String productName = null;
+				String memberName = rs.getString("MEMBER_NM");
 				
 				reviewList.add(
-						new Review(reviewNo, reviewContent, reviewDate, reviewRate, productNo)
+						new Review(reviewNo, reviewContent, reviewDate, reviewRate, imageList, memberNo, productNo, orderDetailNumber, productName, memberName)
 						);
 				System.out.println("DAO : " +reviewList);
 				

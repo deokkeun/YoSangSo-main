@@ -14,6 +14,7 @@ import java.util.Properties;
 
 import edu.kh.yosangso.board.model.vo.Board;
 import edu.kh.yosangso.board.model.vo.Pagination;
+import edu.kh.yosangso.board.model.vo.QNA;
 import edu.kh.yosangso.board.model.vo.Review;
 import edu.kh.yosangso.member.model.vo.Member;
 
@@ -189,22 +190,43 @@ public class BoardDAO {
 		return inquiryList;
 	}
 	
-	
 
-	public List<Review> selectqna(Connection conn, int pro) {
-		List<Review> reviewList = new ArrayList<>();
+	/** QNA 가져오기 DAO
+	 * @param conn
+	 * @param pro
+	 * @return
+	 */
+	public List<QNA> selectQNA(Connection conn) throws Exception{
+		
+		List<QNA> QNAList = new ArrayList<>();
 		
 		try {
-			 
-			String sql = prop.getProperty("selectReview");
 			
+			String sql = prop.getProperty("selectQNA");
 			
+			stmt = conn.createStatement();
+			rs = stmt.executeQuery(sql);
+			
+			while(rs.next()) {
+				
+				int inquiryNO = rs.getInt("INQUIRY_NO");
+				String inquiryContent = rs.getString("INQUIRY_CONTENT");
+				String inquiryDate = rs.getString("INQUIRY_DATE");
+				int memberNo = rs.getInt("MEMBER_NO");
+				String memberName = rs.getString("MEMBER_NM");
+
+				
+				QNAList.add(new QNA(inquiryNO, inquiryContent, inquiryDate, memberNo, memberName));
+				
+			}
 			
 		} finally {
 			close(rs);
-			close(pstmt);
-
+			close(stmt);
+			
 		}
-		return null;
+		
+		
+		return QNAList;
 	}
 }
