@@ -52,10 +52,10 @@
 		WHERE INQUIRY_NO = ?
 	</entry>
 	
-	
-	
-	
-	<entry key=""></entry>
+	<entry key="selectQNA">
+		SELECT INQUIRY_NO , INQUIRY_CONTENT , INQUIRY_DATE , MEMBER_NO , MEMBER_NM
+		FROM INQUIRY
+	</entry>
 	<entry key=""></entry>
 
 
