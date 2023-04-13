@@ -76,9 +76,10 @@ public ReviewListPagingDAO() {
 				
 				String productName = rs.getString("PRODUCT_NM");
 				String orderDate = rs.getString("ORDER_DATE");
-				String orderDetailNo = rs.getString("ORDER_DETAIL_NO");
+				int orderDetailNo = rs.getInt("ORDER_DETAIL_NO");
+				int productNo = rs.getInt("PRODUCT_NO");
 				
-				list.add(new Order(productName, orderDetailNo, orderDate));
+				list.add(new Order(productName, orderDetailNo, orderDate, productNo));
 			}
 		}finally {
 			close(rs);

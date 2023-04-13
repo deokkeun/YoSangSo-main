@@ -55,7 +55,7 @@ public class ProductDAO {
 			
 			while(rs.next()) {
 				Product product = new Product();
-				
+				product.setProductNo(rs.getInt("PRODUCT_NO"));
 				product.setProductImage(rs.getString("PRODUCT_IMAGE"));
 				product.setProductName(rs.getString("PRODUCT_NM"));
 				
@@ -103,12 +103,13 @@ public class ProductDAO {
 				String part = rs.getString("PART");
 				String img = null;
 				String imgurl = null;
+				String ingredient = null;
 				int productCount = 0;
 
 				
 				productList.add(
 						new Product(productNo, productName, category, price, stock, productDate, sellRate,
-								explain, part, img, imgurl )			
+								explain, part, img, imgurl, ingredient )			
 						);
 
 			} 
@@ -172,5 +173,124 @@ public class ProductDAO {
 		
 		return result;
 	}
+
+	/** 전제품 조회 dao
+	 * @param conn
+	 * @return apdList
+	 * @throws Exception
+	 */
+	public List<Product> allProduct(Connection conn) throws Exception {
+		
+		List<Product> apdList = new ArrayList<>();
+		
+		try {
+			
+			String sql = prop.getProperty("allProduct");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				
+				Product product = new Product();
+				
+				product.setProductName(rs.getString("PRODUCT_NM"));
+				product.setPrice(rs.getInt("PRICE"));
+				product.setIngredient(rs.getString("INGREDIENT"));
+				product.setProductNo(rs.getInt("PRODUCT_NO"));	
+					
+				apdList.add(product);
+			}
+		 
+				System.out.println(apdList);
+			
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+			
+		return apdList;
+		
+	}
+
+	/** 베스트 조회 dao
+	 * @param conn
+	 * @return bpdList
+	 * @throws Exception
+	 */
+	public List<Product> bestProduct(Connection conn) throws Exception {
+		
+		List<Product> bpdList = new ArrayList<>();
+		
+		try {
+			
+			String sql = prop.getProperty("bestProduct");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				
+				Product product = new Product();
+				
+				product.setProductName(rs.getString("PRODUCT_NM"));
+				product.setPrice(rs.getInt("PRICE"));
+				product.setIngredient(rs.getString("INGREDIENT"));
+				product.setProductNo(rs.getInt("PRODUCT_NO"));	
+					
+				bpdList.add(product);
+			}
+		 
+				System.out.println(bpdList);
+			
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+		
+		return bpdList;
+	}
+
+	/** 신상품 조회 dao
+	 * @param conn
+	 * @return npdList
+	 * @throws Exception
+	 */
+	public List<Product> newProduct(Connection conn) throws Exception {
+		
+	List<Product> npdList = new ArrayList<>();
+		
+		try {
+			
+			String sql = prop.getProperty("newProduct");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				
+				Product product = new Product();
+				
+				product.setProductName(rs.getString("PRODUCT_NM"));
+				product.setPrice(rs.getInt("PRICE"));
+				product.setIngredient(rs.getString("INGREDIENT"));
+				product.setProductNo(rs.getInt("PRODUCT_NO"));	
+					
+				npdList.add(product);
+			}
+		 
+				System.out.println(npdList);
+			
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+		
+		return npdList;
+	}
+
 	
 }

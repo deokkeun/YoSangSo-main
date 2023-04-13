@@ -17,7 +17,7 @@ public class Order {
 	private int buyingRate;
 	private String refundDate;
 	private String orderDate;
-	private String orderDetailNo;
+	private int orderDetailNo;
 	private String address;
 	private int count;
 	private String orderName;
@@ -53,7 +53,7 @@ public class Order {
 
 
 
-	public Order(String productName, String orderNo, String orderDate) {
+	public Order(String productName, int orderDetailNo, String orderDate) {
 		super();
 		this.productName = productName;
 		this.orderDetailNo = orderDetailNo;
@@ -128,7 +128,16 @@ public class Order {
 
 
 
+	public Order(String productName, int orderDetailNo, String orderDate, int productNo) {
+		super();
+		this.productName = productName;
+		this.orderDetailNo = orderDetailNo;
+		this.orderDate = orderDate;
+		this.productNo = productNo;
+	}
 
+
+	
 
 
 }

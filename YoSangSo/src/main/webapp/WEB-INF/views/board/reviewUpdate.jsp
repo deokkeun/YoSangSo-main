@@ -2,6 +2,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,9 +36,9 @@
                 <section  class="content-box-right">
                     
                             <!-- 컨텐트 오른쪽 영역 -->
-                            <section class="right">
+                            <section class="right"> 
                                 <div></div>
-                                <form action="reviewAdd" id="reviewImageContent" enctype="multipart/form-data" method="POST">
+                                <form action="reviewUpdate" method="POST">
                                 <div class="review-content">
                                     <div class="review-content1">
         
@@ -45,11 +47,11 @@
                                         <div>
                                             <div id="con-box">
                                                 <div id="review-imgBox">
-                                                    <img src="/이미지/요생소로고최종.png" alt="상품인데용" id="review-img"> 
+                                                    <img src="${contextPath}/resources/image/all/${productName}.jpg" alt="상품인데용" id="review-img"> 
                                                 </div>
                                                 <div id="review-imgExpalin">
                                                     <div>
-                                                        <p>Doctors Best, Quatrefolic이 함유된 완전 활성 B 복합체, 베지 캡슐 60정</p>
+                                                        <p>${productName}</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -74,7 +76,7 @@
                                         <div class="review-content2-2">
                                             <div>리뷰 작성</div>
                                             <div>
-                                                <textarea name="reivewContentName" id="reivewTextarea" style="resize:none" 
+                                                <textarea name="reviewUpdateContent" id="reivewTextarea" style="resize:none" 
                                                 placeholder="리뷰를 남겨주세요."></textarea>
                                             </div>
                                         </div> 
@@ -96,7 +98,9 @@
         
         
                                     </div>
-        
+
+                                    <input type="hidden" name="orderDetailNo" value="${orderDetailNo}">
+                                   
                                     <div class="review-content3">
                                         <button type="submit" id="reviewCancel">취소하기</button>
                                         <button type="submit" id="reviewUpdate">수정하기</button>

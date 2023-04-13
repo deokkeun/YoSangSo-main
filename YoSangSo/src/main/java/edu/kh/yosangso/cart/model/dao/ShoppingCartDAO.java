@@ -130,6 +130,27 @@ public class ShoppingCartDAO {
 		return result;
 		
 	}
+
+
+	public int cartDeleteOne(Connection conn, String productNo, int memberNo) throws Exception {
+		
+		int result=0;
+		
+		try {
+			String sql = prop.getProperty("cartDeleteOne");
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, memberNo );
+			pstmt.setString(2, productNo);
+			
+			result = pstmt.executeUpdate();
+			
+		}finally {
+			close(pstmt);
+		}
+
+		return result;
+	}
 	
 	
 }

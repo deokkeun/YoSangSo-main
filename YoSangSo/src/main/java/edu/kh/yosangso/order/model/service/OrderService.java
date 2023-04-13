@@ -53,7 +53,6 @@ public class OrderService {
 	 * @return
 	 */
 	public int orderDetail(Order order) throws Exception{
-		System.out.println("orderDetailserivce 들어옴");
 		
 		Connection conn = getConnection();
 		
@@ -63,7 +62,7 @@ public class OrderService {
 		else rollback(conn);
 		
 		close(conn);
-		System.out.println("orderDetailserivce 나감");
+		
 		return result;
 	}
 	
@@ -93,6 +92,8 @@ public class OrderService {
 		
 		return approval;
 	}
+
+
 
 	
 	

@@ -40,10 +40,13 @@ public class ReviewDAO {
 	/** 리뷰 글 등록 DAO
 	 * @param conn
 	 * @param reviewContent
+	 * @param memberNo 
+	 * @param productNo 
+	 * @param orderDetailNo 
 	 * @return
 	 * @throws Exception
 	 */
-	public int reviewAdd(Connection conn, String reviewContent, int reviewAddRate) throws Exception{
+	public int reviewAdd(Connection conn, String reviewContent, int reviewAddRate, int memberNo, int productNo, int orderDetailNo) throws Exception{
 		System.out.println("리뷰작성 DAO 들어옴");
 		int result = 0;
 		
@@ -55,7 +58,9 @@ public class ReviewDAO {
 			
 			pstmt.setString(1, reviewContent);
 			pstmt.setInt(2, reviewAddRate);
-			
+			pstmt.setInt(3, memberNo);
+			pstmt.setInt(4, productNo);
+			pstmt.setInt(5, orderDetailNo);
 			
 			result = pstmt.executeUpdate();
 			
@@ -75,28 +80,28 @@ public class ReviewDAO {
 	 * @return
 	 * @throws Exception
 	 */
-	public int reviewImageAdd(Connection conn, ReviewImage image) throws Exception{
-		
-		int result = 0;
-		System.out.println("리뷰 IMG DAO 진입");
-		try {
-			String sql = prop.getProperty("reviewImageAdd");
-			
-			pstmt = conn.prepareStatement(sql);
-			
-			pstmt.setString(1, image.getImageReName());
-			pstmt.setString(2,  image.getImageOriginal());
+//	public int reviewImageAdd(Connection conn, ReviewImage image) throws Exception{
+//		
+//		int result = 0;
+//		System.out.println("리뷰 IMG DAO 진입");
+//		try {
+//			String sql = prop.getProperty("reviewImageAdd");
+//			
+//			pstmt = conn.prepareStatement(sql);
+//			
+//			pstmt.setString(1, image.getImageReName());
+//			pstmt.setString(2,  image.getImageOriginal());
 			//pstmt.setInt(3, image.getImageLevel());
 //			pstmt.setInt(3, image.getReviewNo());
-			
-			result = pstmt.executeUpdate();
-			System.out.println("리뷰 IMG DAO 업데이트");
-		}finally {
-			close(pstmt);
-		}
-		System.out.println("리뷰 IMG DAO 나옴");
-		return result;
-	}
+//			
+//			result = pstmt.executeUpdate();
+//			System.out.println("리뷰 IMG DAO 업데이트");
+//		}finally {
+//			close(pstmt);
+//		}
+//		System.out.println("리뷰 IMG DAO 나옴");
+//		return result;
+//	}
 
 
 
@@ -159,20 +164,23 @@ public class ReviewDAO {
 	 * @return
 	 * @throws Exception
 	 */
-	public Order selectReviewInfo(Connection conn, String orderNo) throws Exception {
+	public Order selectReviewInfo(Connection conn, int orderDetailNo) throws Exception {
 		
 		Order orderInfo = new Order();
 		
 		try {
+			
 			String sql = prop.getProperty("selectReviewInfo");
 			
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, orderNo);
+			pstmt.setInt(1, orderDetailNo);
 			
 			rs = pstmt.executeQuery();
 			
 			if(rs.next()) {
 				orderInfo.setProductName(rs.getString("PRO_NM"));
+				orderInfo.setProductNo(rs.getInt("PRO_NO"));
+				orderInfo.setOrderDetailNo(rs.getInt("OD_NO"));
 			}
 		}finally {
 			close(rs);
@@ -181,4 +189,60 @@ public class ReviewDAO {
 		return orderInfo;
 	}
 
+
+
+
+	public int updateReview(Connection conn, String updateContent, int reviewRate, String orderDetailNo) throws Exception{
+		
+		int result = 0;
+			
+		try {
+			String sql = prop.getProperty("updateReview");
+			
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, updateContent);
+			
+			pstmt.setInt(2, reviewRate);
+			
+			pstmt.setString(3, orderDetailNo);
+			
+			
+			result = pstmt.executeUpdate();
+			
+			
+		}finally {
+			close(pstmt);
+		}
+		System.out.println("리뷰 수정 DAO 나감");
+		return result;
+	}
+
+
+
+
+	/** 리뷰 삭제 DAO 
+	 * @param conn
+	 * @param orderDetailNo
+	 * @return
+	 * @throws Exception
+	 */
+	public int reviewDelete(Connection conn, String orderDetailNo) throws Exception {
+		
+		int result = 0;
+		
+		try {
+			String sql = prop.getProperty("reviewDelete");
+			
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, orderDetailNo);
+			
+			result = pstmt.executeUpdate();
+			
+		}finally{
+			close(pstmt);
+		}
+		return result;
+	}
 }

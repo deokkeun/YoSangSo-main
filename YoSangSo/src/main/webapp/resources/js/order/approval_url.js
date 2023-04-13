@@ -38,7 +38,9 @@ onload = function() {
 
 				// 이미지 생성
 				const img = document.createElement("img");
-				img.setAttribute("src", "${contextPath}/resources/image/product/" + app.productName + ".jpg");
+				img.setAttribute("src", "/YoSangSo/resources/image/product/" + app.productName + ".jpg");
+				img.style.width = "225px";
+				img.style.height = "175px";
 				// 이미지 공간 크기 할당(이미지 담기)
 				const imgBox = document.createElement("div");
 				imgBox.classList.add("product-image");
@@ -74,14 +76,11 @@ onload = function() {
 				const productInfo = document.createElement("div");
 				productInfo.classList.add("product-info");
 				productInfo.append(productName, deliveryDate, row);
-
 				// 이미지 박스 + 상품정보
+				
 				deliveryBox.append(imgBox, productInfo);
-
-				package.append(deliveryBox);
+				package.append(deliveryBox);	
 			}
-			
-
 
 
 			// 주문번호, 주문날짜

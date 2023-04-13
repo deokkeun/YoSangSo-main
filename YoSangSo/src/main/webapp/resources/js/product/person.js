@@ -49,12 +49,12 @@ $(".list").click(function() {
                 rightTitle.innerText = leftTitle;
                 rightSubTitle.innerText = leftSubTitle;
 
-
+				
                 // 제품 이미지
                 const productImage = document.createElement("img");
-                productImage.setAttribute("src", "${contextPath}/resources/image/product/${product.productName}.jpg"); 
-                productImage.style.width = "145px";
-                productImage.style.height = "105px";
+                productImage.setAttribute("src", "/YoSangSo/resources/image/product/" + product.productName + ".jpg"); 
+                productImage.style.width = "135px";
+                productImage.style.height = "115px";
                 
                 // 이미지 박스
                 const productImageBox = document.createElement("div");
@@ -75,8 +75,7 @@ $(".list").click(function() {
                 
                 // 제품 링크 연결
                 const productLink = document.createElement("a");
-                productLink.setAttribute("href", "");              
-                // 경로 연결...................
+                productLink.setAttribute("href", "/YoSangSo/product/productDetail?ProductNo=" + product.productNo);              
                 productLink.append(productBox);
             
                 // li

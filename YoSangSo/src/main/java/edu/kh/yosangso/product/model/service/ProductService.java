@@ -1,7 +1,6 @@
 package edu.kh.yosangso.product.model.service;
 
 import static edu.kh.yosangso.common.JDBCTemplate.*;
-import static edu.kh.yosangso.common.JDBCTemplate.getConnection;
 
 import java.sql.Connection;
 import java.util.ArrayList;
@@ -35,7 +34,6 @@ public class ProductService {
 	 * @return
 	 */
 	public List<Product> personList(String part) throws Exception{
-		System.out.println("서비ㅡㅅ 들어옴 ");
 		Connection conn = getConnection();
 		
 		List<Product> personList = dao.personList(conn, part);
@@ -87,7 +85,57 @@ public class ProductService {
 		
 		return result;	
 	}
+
+
 	
+	/** 전제품 메뉴 불러오기 service
+	 * @return apdList
+	 * @throws Exception
+	 */
+	public List<Product> allProduct() throws Exception{
+		
+		Connection conn = getConnection();
+		
+		List<Product> apdList = dao.allProduct(conn);
+		
+		close(conn);
+		
+		return apdList;
+	}
+
+
+	/** 베스트 메뉴 불러오기 service
+	 * @return bpdList
+	 * @throws Exception
+	 */
+	public List<Product> bestProduct() throws Exception {
+		
+		Connection conn = getConnection();
+		
+		List<Product> bpdList = dao.bestProduct(conn);
+		
+		close(conn);
+		
+		return bpdList;
+	}
+
+
+	/** 신상품 메뉴 불러오기 service
+	 * @return npdList
+	 * @throws Exception
+	 */
+	public List<Product> newProduct() throws Exception {
+		
+		Connection conn = getConnection();
+		
+		List<Product> npdList = dao.newProduct(conn);
+		
+		close(conn);
+		
+		return npdList;
+	}
+
+
 	
 	
 	

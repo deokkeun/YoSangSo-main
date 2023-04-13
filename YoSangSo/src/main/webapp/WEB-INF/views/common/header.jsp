@@ -11,10 +11,23 @@
                <img src="${contextPath}/resources/image/logo/로고-001.png" alt="로고" id="home-logo" width="90px">
            </a>
        </section>
+       
+       <!-- 미디어쿼리용 지우지 마세요 -->
+		<div class="menu-btn">
+       	   <i class="fa-solid fa-bars menu-icon"></i>
+       	   <div class="list-menu-div">
+		       <ul class="menu-list">
+		            <li><a href="${contextPath}/product/allProduct">전제품</a></li>
+		            <li><a href="${contextPath}/product/newProduct">신상품</a></li>
+		            <li><a href="${contextPath}/product/bestProduct">베스트</a></li>
+		        </ul>
+       	   </div>
+       </div>
 
+		
        <!-- 메뉴 -->
        <section id="header-box-menu">
-           <nav>
+           <nav class="list-nav">
                <ul>
                    <li><a href="${contextPath}/product/allProduct">전제품</a></li>
                    <li><a href="${contextPath}/product/newProduct">신상품</a></li>
@@ -22,6 +35,7 @@
                </ul>
            </nav>
        </section>
+       
 
        <!-- 검색 -->
        <section>
@@ -35,10 +49,57 @@
                </form>
            </article>
        </section>
-
+		<!-- 미디어쿼리용 지우지 마세욧 -->
+   	   <div class="mypage-menu-btn">
+			<i class="fa-solid fa-bars menu-icon"></i>
+			<div class="mypage-menu-div">
+				<ul  class="mypage-menu-list">
+					<c:choose>
+						<c:when test="${empty loginMember}">
+							 <li>
+                         		<a href="${contextPath}/member/login">장바구니</a> 
+                      		</li>      
+						</c:when>
+						<c:otherwise>
+		                   <li>
+		                       <a href="${contextPath}/cart/shoppingCart">장바구니</a>
+		                   </li>
+						</c:otherwise>
+                   </c:choose>
+                   <c:choose>
+                  	<c:when test="${empty loginMember}">
+                  		<li>
+	                       <a href="${contextPath}/member/signUp" >마이페이지</a> 
+	                    </li>              	
+                  	</c:when>
+                  	<c:otherwise>
+                  		<li>
+	                       <a href="${contextPath}/member/myPageInfo">마이페이지</a>
+	                    </li>
+                  	</c:otherwise>
+                  </c:choose>
+				  <c:choose>
+                  	<c:when test="${empty loginMember}">
+                  		<li>
+	                       <a href="${contextPath}/member/login">로그인</a>    
+	                    </li>              	
+                  	</c:when>
+                  	<c:otherwise>
+                  		<li>
+	                       <a href="${contextPath}/member/logout">로그아웃</a>
+	                    </li>
+                  	</c:otherwise>
+                  </c:choose>
+                   <li>
+                       <a href="${contextPath}/board/faq">FAQ</a>
+                   </li>
+               </ul>
+			</div>
+   	   </div>
+   	   <!-- 미디어쿼리용이예요 꼭 살려주세요 -->
        <!-- 마이페이지 -->
-       <section id="header-box-mypage">
-           <nav>
+       <section id="header-box-mypage" class="mypage-nav">
+           <nav class="mypage-nav">
                <ul>
                 <!-- 장바구니 -->
                 <c:choose>

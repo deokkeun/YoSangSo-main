@@ -4,26 +4,27 @@
 	<comment>board-sql.xml</comment>
 	
 	<entry key="reviewAdd">
-		INSERT INTO REVIEW (REVIEW_NO, REVIEW_CONTENT, REVIEW_DATE, REVIEW_RATE, MEMBER_NO, PRODUCT_NO, ORDER_DETAIL_NO, R_IMG_NO)
-		VALUES(4, ? , DEFAULT, ?, 1, 1, 230411090748579,1)
+		INSERT INTO REVIEW (REVIEW_NO, REVIEW_CONTENT, REVIEW_DATE, REVIEW_RATE, MEMBER_NO, PRODUCT_NO, ORDER_DETAIL_NO)
+		VALUES(1, ? , DEFAULT, ?, ?, ?, ?)
 	</entry>
 	
 	
 	
-	<entry key="reviewImageAdd">
+	<!-- <entry key="reviewImageAdd">
 		INSERT INTO REVIEW_IMG (R_IMG_NO, R_IMG_RENAME, R_IMG_ORNAME, R_IMG_LEVEL, R_IMG_REVIEW_NO)
-		VALUES(3, ?, ?, 30, 3)
+		VALUES(200, ?, ?, 30, 200)
 	</entry>
-	
+	 -->
 	
 	<entry key="selectReviewInfo">
-		SELECT p.PRODUCT_NM AS PRO_NM
+		SELECT p.PRODUCT_NM AS PRO_NM, p.PRODUCT_NO AS PRO_NO, od.ORDER_DETAIL_NO AS OD_NO
 		FROM PRODUCT p 
 		JOIN ORDER_DETAIL od ON p.PRODUCT_NO = od.PRODUCT_NO 
-		JOIN "ORDER" o2  ON o2.ORDER_NO = od.ORDER_NO
-		WHERE o2.ORDER_NO = ?
+		JOIN "ORDER" o  ON o.ORDER_NO = od.ORDER_NO
+		WHERE od.ORDER_DETAIL_NO = ?
 	</entry>
 	
+
 	<entry key="selectReview">
 		SELECT REVIEW_NO, REVIEW_CONTENT , REVIEW_DATE , REVIEW_RATE, PRODUCT_NO , MEMBER_NM
 		FROM REVIEW
@@ -31,6 +32,15 @@
 		WHERE PRODUCT_NO = ?
 	</entry>
 	
+	
+	<entry key="updateReview">
+		UPDATE REVIEW SET REVIEW_CONTENT = ?, REVIEW_DATE = SYSDATE, REVIEW_RATE = ? WHERE ORDER_DETAIL_NO = ?
+	</entry>
+	
+	
+	<entry key="reviewDelete">
+		DELETE REVIEW WHERE ORDER_DETAIL_NO = ?
+	</entry>
 
 
 </properties>

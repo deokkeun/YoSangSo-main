@@ -10,7 +10,7 @@
 	<!-- 게시물 등록 쿼리 -->
 	<!--  컬럼 순서  -->
 	<entry key="inquiryAdd">
-		INSERT INTO INQUIRY
+		INSERT INTO INQUIRY (INQUIRY_NO, INQUIRY_CONTENT, INQUIRY_DATE, MEMBER_NO, MEMBER_NM)
 		VALUES(INQUIRY_SEQ.NEXTVAL, ?, DEFAULT, ?, ?)
 	</entry>
 

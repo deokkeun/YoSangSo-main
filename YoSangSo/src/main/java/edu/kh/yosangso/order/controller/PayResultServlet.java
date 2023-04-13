@@ -19,6 +19,10 @@ import edu.kh.yosangso.order.model.vo.ApprovalUrl;
 
 @WebServlet("/order/payResult")
 public class PayResultServlet extends HttpServlet{
+	
+	/** 카카오페이 -> js onload ajax를 통해서 productDetail 테이블에서 가져옴
+	 *
+	 */
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
@@ -33,7 +37,6 @@ public class PayResultServlet extends HttpServlet{
 			
 			System.out.println(memberNo);
 			
-			System.out.println("payResult Servlet 들어옴");
 			
 			approval = service.approvalUrl(memberNo);
 			
@@ -45,12 +48,6 @@ public class PayResultServlet extends HttpServlet{
 				System.out.println(approval.get(0).getPrice());
 				System.out.println(approval.get(0).getProductName());
 				
-				
-				System.out.println("payResult Servlet 나감");
-				
-//				req.setAttribute("approval", approval);
-//				String path = "/WEB-INF/views/order/approval_url.jsp";
-//				req.getRequestDispatcher(path).forward(req, resp);
 				new Gson().toJson(approval, resp.getWriter());
 			}
 

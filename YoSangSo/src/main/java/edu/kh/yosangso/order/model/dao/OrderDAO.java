@@ -36,6 +36,12 @@ public class OrderDAO {
 	
 	}
 
+	/** 카트에서 결제 리스트 불러오기
+	 * @param conn
+	 * @param memberNo
+	 * @return
+	 * @throws Exception
+	 */
 	public List<Product> payList(Connection conn, int memberNo) throws Exception{
 
 		List<Product> payList = new ArrayList<>();
@@ -112,7 +118,6 @@ public class OrderDAO {
 		int result = 0;
 		
 		try {
-			System.out.println("orderDetailDAO 들어옴");
 			
 			String sql = prop.getProperty("payDetail");
 			pstmt = conn.prepareStatement(sql);
@@ -124,7 +129,6 @@ public class OrderDAO {
 			
 			result = pstmt.executeUpdate();
 			
-			System.out.println("orderDetailDAO 나감");
 		} finally {
 			close(pstmt);
 		}
@@ -197,8 +201,6 @@ public class OrderDAO {
 		}
 		return approval;
 	}
-
-
 
 	
 	

@@ -28,7 +28,7 @@
                 <div>요생소</div>
             </section>
             <section>
-                <form action="signIn" method="POST">
+                <form action="${contextPath}/member/signIn" method="POST">
                     <div>
                         <input type="text" class="input-box" placeholder="아이디(이메일)" name="inputEmail" value="${cookie.saveId.value}" autocomplete="off">
                     </div>
@@ -80,6 +80,10 @@
         </section>
 
 
+
+                <div>테스트입니다 
+                <a href="https://developers.kakao.com/logout">카카오 로그아웃</a>
+                </div>
 
 
 

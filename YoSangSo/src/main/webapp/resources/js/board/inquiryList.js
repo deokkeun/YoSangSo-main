@@ -55,7 +55,7 @@ function updateBoard(e, boardNo) {
 
 
 
-    e.parentElement.previousElementSibling.lastElementChild.remove(); // 기존 질문 삭제
+    e.parentElement.previousElementSibling.lastElementChild.style.display = "none"; // 기존 질문 디스플레이 논으로 바꾸기
     
 
 
@@ -77,7 +77,7 @@ function updateBoard(e, boardNo) {
     cancleUpdateConfirm.innerText = "취소";
     cancleUpdateConfirm.setAttribute('type', 'button');
     cancleUpdateConfirm.className = "btnCancel";
-    cancleUpdateConfirm.setAttribute('onclick', 'cloneP()');
+    cancleUpdateConfirm.setAttribute('onclick', 'cloneP(this)');
     
 
     // 기존에 삭제버튼,수정 버튼 삭제하고 업데이트 확인 버튼 생기게 하자

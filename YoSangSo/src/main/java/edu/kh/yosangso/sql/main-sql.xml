@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>main-sql.xml</comment>
+
+	<!--  메인페이지 안 전제품 조회 sql  -->
+	<entry key="mainProduct">
+		SELECT PRODUCT_NM, PRICE, INGREDIENT, PRODUCT_NO
+		FROM PRODUCT
+	</entry>
+	
+	<!-- 메인페이지 안 신상품 조회 sql  -->
+	<entry key="nPartProduct">
+		SELECT PRODUCT_NM, PRICE, INGREDIENT, PRODUCT_NO
+		FROM PRODUCT
+		ORDER BY PRODUCT_DATE DESC
+	</entry>
+	
+	
+	<!-- 메인페이지 안 베스트 조회 sql -->
+	<entry key="bPartProduct">
+		SELECT PRODUCT_NM, PRICE, INGREDIENT, PRODUCT_NO
+		FROM PRODUCT
+		ORDER BY SELL_RATE DESC
+	</entry>
+	
+	
+	
+	<entry key=""></entry>
+	<entry key=""></entry>
+	<entry key=""></entry>
+	<entry key=""></entry>
+
+
+</properties>

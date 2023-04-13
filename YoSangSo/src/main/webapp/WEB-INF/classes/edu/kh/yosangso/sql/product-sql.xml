@@ -20,7 +20,7 @@
 	</entry>
 	
 	<entry key="personList">
-		SELECT PRODUCT_IMAGE, PRODUCT_NM
+		SELECT PRODUCT_NO, PRODUCT_IMAGE, PRODUCT_NM
 		FROM PRODUCT
 		WHERE PART = ?
 	</entry>

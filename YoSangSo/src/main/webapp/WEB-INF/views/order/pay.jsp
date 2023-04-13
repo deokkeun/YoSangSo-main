@@ -15,8 +15,11 @@
     <title>index</title>
 </head>
 <body>
-
     
+        <div class="loader-fix">
+            <div class="loader">Loading...</div>
+        </div>
+        
     <!-- 헤더, 컨텐츠 -->
     <main>
         
@@ -27,6 +30,7 @@
         <!-- 헤더 -->
         <jsp:include page="/WEB-INF/views/common/header.jsp"/>
         
+
 		
 
         <section id="content">
@@ -81,21 +85,21 @@
                         <div class="address">
                             <div>
                                 <span>이름</span>
-                                <input type="text" placeholder=" 이름" id="memberName" value="${loginMember.memberName}">
+                                <input type="text" placeholder=" 이름" id="memberName" class="memName" value="${loginMember.memberName}">
                             </div>
                             <div>
                                 <span>연락처</span>
-                                <input type="tel" placeholder=" 연락처" id="memberTel" value="${loginMember.memberTel}">
+                                <input type="tel" placeholder=" 연락처" id="memberTel" class="memTel" value="${loginMember.memberTel}">
                             </div>
                             <div>            
-                                <span>배송지</span><input type="text" id="sample6_postcode" placeholder=" 우편번호" size="12">
+                                <span>배송지</span><input type="text" id="sample6_postcode" class="zip" placeholder=" 우편번호" size="12">
                                 <button onclick="sample6_execDaumPostcode()" id="zip">우편번호 찾기</button>
                             </div>
                             <div>
-                                <span></span><input type="text" id="sample6_address" placeholder=" 주소" size="65"><br>
+                                <span></span><input type="text" id="sample6_address" class="add" placeholder=" 주소" size="65"><br>
                             </div>
                             <div>
-                                <span></span><input type="text" id="sample6_detailAddress" placeholder=" 상세주소" size="45">
+                                <span></span><input type="text" id="sample6_detailAddress" class="addDetail" placeholder=" 상세주소" size="45">
                                 <input type="text" id="sample6_extraAddress" placeholder=" 참고항목" size="30" class="address-sub">
                             </div>
                             <div id="request-box">
@@ -155,7 +159,7 @@
                         </div>
                     </div>
                     <div class="btn-box">
-                        <button id="pay-btn" onclick="kakaopay()">결제하기</button>
+                        <button id="pay-btn" onclick="return kakaopay()">결제하기</button>
                     </div>
                 </section>
             </section>
@@ -170,7 +174,7 @@
 
                         <div class="slide_wrapper">
                             <ul class="slides">
-                                <li><img src="${contextPath}/resources/image/product/Life Extension, 비타민D 함유 구연산 칼슘, 캡슐 200정.jpg" alt=""></li>
+                                <li><a href="${contextPath}/product/productDetail?ProductNo=1"><img src="${contextPath}/resources/image/product/Life Extension, 비타민D 함유 구연산 칼슘, 캡슐 200정.jpg" alt=""></a></li>
                                 <li><img src="${contextPath}/resources/image/product/California Gold Nutrition, Immune 4, 면역계 지원, 베지 캡슐 180정.jpg" alt=""></li>
                                 <li><img src="${contextPath}/resources/image/product/Doctors Best, Vein Support with DiosVein and MenaQ7, 베지 캡슐 60정.jpg" alt=""></li>
                                 <li><img src="${contextPath}/resources/image/product/Jarrow Formulas, Zinc Balance, 베지 캡슐 100정.jpg" alt=""></li>
