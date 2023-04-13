@@ -36,11 +36,12 @@
                             <!-- 컨텐트 오른쪽 영역 -->
                             <section class="right">
                                 <div></div>
-                                <form action="reviewAdd" id="reviewImageContent" enctype="multipart/form-data" method="POST">
+                                <form action="reviewAdd" id="reviewImageContent" method="POST">
                                 <div class="review-content">
                                     <div class="review-content1">
-        
-                                        <div><p>${ loginMember.memberName }님의 리뷰 작성란</p></div>
+                                        
+                                        <div><p>${ loginMember.memberName }님의 리뷰 작성란 
+                                        </div>
                                         
                                         <div>
                                             <div id="con-box">
@@ -48,8 +49,11 @@
                                                     <img src="${contextPath}/resources/image/all/${orderInfo.productName}.jpg" /> 
                                                 </div>
                                                 <div id="review-imgExpalin">
+                                                    <c:set var="productNo" value="orderInfo.productNo"/>
                                                     <div>
                                                         <p>${orderInfo.productName}</p>
+                                                        <input type="hidden" name="productNo" value="${orderInfo.productNo}">
+                                                        <input type="hidden" name="orderDetailNo" value="${orderInfo.orderDetailNo}">
                                                     </div>
                                                 </div>
                                             </div>
@@ -74,7 +78,7 @@
                                         <div class="review-content2-2">
                                             <div>리뷰 작성</div>
                                             <div>
-                                                <textarea name="reivewContentName" id="reivewTextarea" style="resize:none" 
+                                                <textarea name="reviewContentName" id="reivewTextarea" style="resize:none" 
                                                 placeholder="리뷰를 남겨주세요."></textarea>
                                             </div>
                                         </div> 
@@ -85,7 +89,7 @@
                                                 <input type="text" class="upload-name" id="upload-name"
                                                 value="이미지를 업로드 하세요" placeholder="이미지를 업로드 하세요" disabled>
                                                 <label for="upload-file">파일선택</label>
-                                                <input type="file" name="reviewImgFile" id="upload-file">
+                                                <input type="file" name="reviewImgFile" id="upload-file" disabled>
 
                                             </div>
                                             
@@ -97,10 +101,10 @@
         
         
                                     </div>
-        
+                                    <input type="hidden" name="memberNo" value="loginMember.memberNo">
                                     <div class="review-content3">
                                         <button type="submit" id="reviewCancel">취소하기</button>
-                                        <button type="submit" id="reviewUpdate">등록하기</button>
+                                        <button type="submit" id="reviewUpdate" onclick="submitForm()">등록하기</button>
                                     </div>
                                 </form>
         
