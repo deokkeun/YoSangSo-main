@@ -261,4 +261,9 @@ button{
 	
 }
 
-
+.pm-btn{
+	border-radius: 5px;
+    border: 1px solid silver;
+    width: 23px;
+    
+}
