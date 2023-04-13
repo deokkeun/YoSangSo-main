@@ -122,8 +122,12 @@ public class PayServlet extends HttpServlet{
 					
 			} else {
 				// loginMember == null
+				
 				String path = "/WEB-INF/views/member/login.jsp";
 				req.getRequestDispatcher(path).forward(req, resp);
+				
+		
+				
 			}
 			
 		} catch (Exception e) {

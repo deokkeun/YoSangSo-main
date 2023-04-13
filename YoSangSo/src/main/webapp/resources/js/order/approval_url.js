@@ -78,8 +78,8 @@ onload = function() {
 				productInfo.append(productName, deliveryDate, row);
 				// 이미지 박스 + 상품정보
 				
-				//deliveryBox.append(imgBox, productInfo);
-				//package.append(deliveryBox);	
+				deliveryBox.append(imgBox, productInfo);
+				package.append(deliveryBox);	
 			}
 
 

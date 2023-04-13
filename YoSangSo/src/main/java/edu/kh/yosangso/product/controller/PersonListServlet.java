@@ -18,7 +18,6 @@ import edu.kh.yosangso.product.model.vo.Product;
 public class PersonListServlet extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		System.out.println("test!!");
 		
 		try {
 			String part = req.getParameter("part");

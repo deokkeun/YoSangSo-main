@@ -15,8 +15,11 @@
     <title>index</title>
 </head>
 <body>
-
     
+        <div class="loader-fix">
+            <div class="loader">Loading...</div>
+        </div>
+        
     <!-- 헤더, 컨텐츠 -->
     <main>
         
@@ -27,6 +30,7 @@
         <!-- 헤더 -->
         <jsp:include page="/WEB-INF/views/common/header.jsp"/>
         
+
 		
 
         <section id="content">
@@ -81,21 +85,21 @@
                         <div class="address">
                             <div>
                                 <span>이름</span>
-                                <input type="text" placeholder=" 이름" id="memberName" value="${loginMember.memberName}">
+                                <input type="text" placeholder=" 이름" id="memberName" class="memName" value="${loginMember.memberName}">
                             </div>
                             <div>
                                 <span>연락처</span>
-                                <input type="tel" placeholder=" 연락처" id="memberTel" value="${loginMember.memberTel}">
+                                <input type="tel" placeholder=" 연락처" id="memberTel" class="memTel" value="${loginMember.memberTel}">
                             </div>
                             <div>            
-                                <span>배송지</span><input type="text" id="sample6_postcode" placeholder=" 우편번호" size="12">
+                                <span>배송지</span><input type="text" id="sample6_postcode" class="zip" placeholder=" 우편번호" size="12">
                                 <button onclick="sample6_execDaumPostcode()" id="zip">우편번호 찾기</button>
                             </div>
                             <div>
-                                <span></span><input type="text" id="sample6_address" placeholder=" 주소" size="65"><br>
+                                <span></span><input type="text" id="sample6_address" class="add" placeholder=" 주소" size="65"><br>
                             </div>
                             <div>
-                                <span></span><input type="text" id="sample6_detailAddress" placeholder=" 상세주소" size="45">
+                                <span></span><input type="text" id="sample6_detailAddress" class="addDetail" placeholder=" 상세주소" size="45">
                                 <input type="text" id="sample6_extraAddress" placeholder=" 참고항목" size="30" class="address-sub">
                             </div>
                             <div id="request-box">
@@ -155,7 +159,7 @@
                         </div>
                     </div>
                     <div class="btn-box">
-                        <button id="pay-btn" onclick="kakaopay()">결제하기</button>
+                        <button id="pay-btn" onclick="return kakaopay()">결제하기</button>
                     </div>
                 </section>
             </section>

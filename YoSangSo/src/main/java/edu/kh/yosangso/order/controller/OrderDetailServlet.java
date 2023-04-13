@@ -16,7 +16,6 @@ public class OrderDetailServlet extends HttpServlet{
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		try {
-			System.out.println("orderDetail 들어옴");
 			int productNo = Integer.parseInt(req.getParameter("productNo"));
 			int buyingRate = Integer.parseInt(req.getParameter("count"));
 			int buyingPrice = Integer.parseInt(req.getParameter("countPrice"));
@@ -29,7 +28,6 @@ public class OrderDetailServlet extends HttpServlet{
 			
 			int result = service.orderDetail(order);
 			
-			System.out.println("orderDetail 나감");
 			
 			resp.getWriter().print(result);
 			

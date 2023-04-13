@@ -75,8 +75,7 @@ $(".list").click(function() {
                 
                 // 제품 링크 연결
                 const productLink = document.createElement("a");
-                productLink.setAttribute("href", "productDetail?ProductNo=" + product.productNo);              
-                // 경로 연결...................
+                productLink.setAttribute("href", "/YoSangSo/product/productDetail?ProductNo=" + product.productNo);              
                 productLink.append(productBox);
             
                 // li
