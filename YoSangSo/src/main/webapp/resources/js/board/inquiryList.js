@@ -55,7 +55,7 @@ function updateBoard(e, boardNo) {
 
 
 
-    e.parentElement.previousElementSibling.lastElementChild.remove(); // 기존 질문 삭제
+    e.parentElement.previousElementSibling.lastElementChild.style.display = "none"; // 기존 질문 디스플레이 논으로 바꾸기
     
 
 
