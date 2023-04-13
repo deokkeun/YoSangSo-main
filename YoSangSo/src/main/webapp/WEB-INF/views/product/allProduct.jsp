@@ -24,6 +24,7 @@
 </head>
 <body>
 
+
     <!-- 헤더, 컨텐츠 -->
     <main>
         
@@ -109,12 +110,13 @@
             <!-- 3. 오른쪽사이드바 -->
             <section class="rightSide">
 
-                
+
                 <!-- 인체사진 플로팅바-->
                 <div class="floating">
                     <a href="${contextPath}/product/person"/>
                   
                         <img id="people" src="${contextPath}/resources/image/index/인체이미지누끼.png">
+
                     </a>
                 </div>
 
