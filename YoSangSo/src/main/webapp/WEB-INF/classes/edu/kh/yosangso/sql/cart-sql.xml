@@ -12,6 +12,9 @@
 	<entry key="updateCount">
 		UPDATE CART SET BUYING_RATE = ? WHERE MEMBER_NO = ? AND PRODUCT_NO= ?
 	</entry>
+	<entry key="cartDeleteOne">
+		DELETE FROM CART WHERE MEMBER_NO = ? AND PRODUCT_NO = ?
+	</entry>
 
 
 </properties>

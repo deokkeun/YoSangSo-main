@@ -35,7 +35,6 @@ public class ProductService {
 	 * @return
 	 */
 	public List<Product> personList(String part) throws Exception{
-		System.out.println("서비ㅡㅅ 들어옴 ");
 		Connection conn = getConnection();
 		
 		List<Product> personList = dao.personList(conn, part);

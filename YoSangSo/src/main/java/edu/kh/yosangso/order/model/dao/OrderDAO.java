@@ -118,7 +118,6 @@ public class OrderDAO {
 		int result = 0;
 		
 		try {
-			System.out.println("orderDetailDAO 들어옴");
 			
 			String sql = prop.getProperty("payDetail");
 			pstmt = conn.prepareStatement(sql);
@@ -130,7 +129,6 @@ public class OrderDAO {
 			
 			result = pstmt.executeUpdate();
 			
-			System.out.println("orderDetailDAO 나감");
 		} finally {
 			close(pstmt);
 		}

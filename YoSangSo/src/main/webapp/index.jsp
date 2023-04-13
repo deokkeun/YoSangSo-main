@@ -67,7 +67,6 @@ select * from product
             <!-- 가운데페이지 -->
             <section class="center">
 
-
                 <!-- 1. 메인페이지 슬라이더 사진 영역 -->
                 <section class="mainViewPhoto">
                                  
