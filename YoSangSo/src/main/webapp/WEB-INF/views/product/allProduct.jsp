@@ -40,8 +40,6 @@
 select * from product
 </sql:query>
 
-
-
     <!-- 헤더, 컨텐츠 -->
     <main>
         
@@ -605,9 +603,8 @@ select * from product
                 
                  <!-- 인체사진 플로팅바-->
                  <div class="floating" id="floating">
-                    <a href="product/person">
-                        <img id="people" src="resources/image/index/인체이미지누끼.png" >
-                        <img id="people2" src="resources/image/index/인체이미지누끼2.png" >
+                    <a href="${contextPath}/product/person">
+                        <img id="people" src="${contextPath}/resources/image/index/인체이미지누끼.png" >
                     </a>
                 </div>
 
