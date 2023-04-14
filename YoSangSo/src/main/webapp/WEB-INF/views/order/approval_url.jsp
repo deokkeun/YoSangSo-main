@@ -45,9 +45,9 @@
 	                    <section id="package">
 	                    
 	                    
-	                    <!-- ajax 생성부분 -->
+	                    <!-- ajax 생성부분 주석 상태가 맞습니다 -->
 	                    
-	                        <div class="delivery-box">
+	                        <!-- <div class="delivery-box">
                                 <div class="product-image">
                                     <img src="#" alt="">
                                 </div>
@@ -59,7 +59,7 @@
                                         <div class="price"><span>원</span></div>
                                     </div>
                                 </div>
-                            </div> 
+                            </div>  -->
                             
 	                    </section>
 	                </section>

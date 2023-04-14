@@ -66,10 +66,11 @@
 .product-box {
     width: 99%;
     height: 200px;
-    margin-top: 5px;
+    margin: 10px auto;
     border-radius: 5px;
     border: 1px solid rgba(0, 0, 0, 0.5);
     display: flex;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
 }
 .product-box > div:not(div:nth-child(2)) {
     display: flex;
@@ -79,7 +80,6 @@
 }
 .product-box > div:nth-child(1){
     flex-basis: 30%;
-    border: 1px solid rgba(0, 0, 0, 0.1);
 }
 .product-box > div:nth-child(2){
     flex-basis: 30%;
@@ -185,12 +185,16 @@
 #payment-method > div {
     padding: 10px;
     border: 1px solid black;
+    border-radius: 5px;
 }
-#payment-method  pre {
+#payment-method pre {
     padding: 0px 10px;
     height: 50%;
     font-size: 11px;
     line-height: 17px;
+}
+#payment-method a{
+    color: rgb(37, 120, 244);
 }
 #payment-method > span {
     padding: 0px 10px;

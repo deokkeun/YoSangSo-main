@@ -63,7 +63,7 @@ function kakaopay() {
 			if(!checkObj[key]) {
 				switch(key) {
 					case "memName": str="이름이"; break;
-					case "memTel": str="휴대폰번호가"; break;
+					case "memTel": str="휴대폰번호 형식이"; break;
 					case "zip": str="우편번호가"; break;
 					case "add": str="주소가"; break;
 					case "addDetail": str="상세주소가"; break;
@@ -71,7 +71,8 @@ function kakaopay() {
 				
 				str += " 유효하지 않습니다.";
 				
-				alert(str);
+				// alert(str);
+				swal('결제 실패!', str, 'warning');
 				
 				document.getElementsByClassName(key[0]).focus();
 				

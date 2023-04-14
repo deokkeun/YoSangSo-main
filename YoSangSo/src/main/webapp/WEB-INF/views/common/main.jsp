@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="${contextPath}/resources/css/main.css">
     <link rel="stylesheet" href="${contextPath}/resources/css/main-style.css">
     <script src="https://kit.fontawesome.com/881d1deef7.js" crossorigin="anonymous"></script>
-    
     <!-- 슬라이더 파일다운받은거 -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     
@@ -248,5 +247,6 @@
     <!-- main.js 연결 -->
     <script src="${contextPath}/resources/js/mainReal.js"></script>
     <script src="${contextPath}/resources/js/main.js"></script>
+
 </body>
 </html>

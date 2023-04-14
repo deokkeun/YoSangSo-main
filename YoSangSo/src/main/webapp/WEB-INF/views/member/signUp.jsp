@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="${contextPath}/resources/css/main-style.css">
     <link rel="stylesheet" href="${contextPath}/resources/css/member/signUp.css">
     <script src="https://kit.fontawesome.com/881d1deef7.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <title>signUp</title>
 </head>
 <body>
@@ -65,31 +66,24 @@
                             <section class="agree-box2">
                                 <div>
                                     <label>
-                                        <input type="checkbox" name="agree" onclick="checkConfirm()"> [필수] 만 14세 이상입니다.
+                                        <input type="checkbox" name="agree" onclick="return checkConfirm()"> [필수] 만 14세 이상입니다.
+                                    </label>
+                                </div>
+                                <div>
+                                    <label>
+                                        <input type="checkbox" name="agree" onclick="return checkConfirm()"> [필수] 개발자국 비타 이용약관
                                     </label>
                                     <button><a href="#">더보기</a></button>
                                 </div>
                                 <div>
                                     <label>
-                                        <input type="checkbox" name="agree" onclick="checkConfirm()"> [필수] 개발자국 비타 이용약관
+                                        <input type="checkbox" name="agree" onclick="return checkConfirm()"> [필수] 전자금융거래 이용약관 동의
                                     </label>
                                     <button><a href="#">더보기</a></button>
                                 </div>
                                 <div>
                                     <label>
-                                        <input type="checkbox" name="agree" onclick="checkConfirm()"> [필수] 전자금융거래 이용약관 동의
-                                    </label>
-                                    <button><a href="#">더보기</a></button>
-                                </div>
-                                <div>
-                                    <label>
-                                        <input type="checkbox" name="agree" onclick="checkConfirm()"> [필수] 개인정보 수집 및 이용 동의
-                                    </label>
-                                    <button><a href="#">더보기</a></button>
-                                </div>     
-                                <div>
-                                    <label>
-                                        <input type="checkbox" name="agree"> [선택] 월 9,900원이 매달 자동결제 됩니다.
+                                        <input type="checkbox" name="agree" onclick="return checkConfirm()"> [필수] 개인정보 수집 및 이용 동의
                                     </label>
                                     <button><a href="#">더보기</a></button>
                                 </div>     
@@ -113,10 +107,9 @@
             <hr>
             <section>
                 <div>
-                    <button class="btn kakao">카카오 가입</button>
-                </div>
-                <div>
-                    <button class="btn google">구글 가입</button>
+                    <button class="kakaoLogin">
+                        <img src="${contextPath}/resources/image/login/kakao_login_large_wide.png" alt="카카오로그인" class="kakao">
+                    </button>
                 </div>
             </section>
         </section>

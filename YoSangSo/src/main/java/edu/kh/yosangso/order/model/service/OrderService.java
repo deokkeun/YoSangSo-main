@@ -33,6 +33,7 @@ public class OrderService {
 	/** 주문 정보 추가
 	 * @param order
 	 * @return
+	 * 
 	 */
 	public int order(Order order) throws Exception{
 		Connection conn = getConnection();

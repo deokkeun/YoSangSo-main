@@ -5,7 +5,7 @@
 	
 	<entry key="reviewAdd">
 		INSERT INTO REVIEW (REVIEW_NO, REVIEW_CONTENT, REVIEW_DATE, REVIEW_RATE, MEMBER_NO, PRODUCT_NO, ORDER_DETAIL_NO)
-		VALUES(1, ? , DEFAULT, ?, ?, ?, ?)
+		VALUES(REVIEW_SEQ.NEXTVAL, ? , DEFAULT, ?, ?, ?, ?)
 	</entry>
 	
 	

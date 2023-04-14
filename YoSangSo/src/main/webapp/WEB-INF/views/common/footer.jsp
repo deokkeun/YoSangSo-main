@@ -16,8 +16,7 @@
                     <div></div>
                     <div>
                         <pre>
-          
- 회사명 : 요즘 생활의 소중함
+ <div id="footer-title"> 요즘 생활의 소중함</div>
  대표자 : 조미현
  사업자등록번호 : 209-12-12345
  통신판매업신고 : 2022-서울강남-1111호
@@ -52,9 +51,9 @@
                 <span> | </span>
                 <a href="#">개인정보처리방침</a>
                 <span> | </span>
-                <a href="#">FAQ</a>
+                <a href="${contextPath}/board/faq">FAQ</a>
                 <span> | </span>
-                <a href="#">고객센터</a>
+                <a href="${contextPath}/board/inquiry">고객센터</a>
                 <span> | </span>
                 <span>Copyright &copy; KH Information Educational Institute D-Class</span>
             </article>

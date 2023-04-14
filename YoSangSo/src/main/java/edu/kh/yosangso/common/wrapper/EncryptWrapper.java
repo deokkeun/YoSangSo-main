@@ -20,10 +20,10 @@ public class EncryptWrapper extends HttpServletRequestWrapper{
 		String value = null;
 		
 		switch(name) {
-		case "inputPw" :
+//		case "inputPw" :
 		case "memberPw" :
-		case "currentPw" :
-		case "newPw" :
+		case "inputPw" :
+//		case "newPw" :
 			value = getSha512(super.getParameter(name));
 			
 			break;
@@ -49,6 +49,8 @@ public class EncryptWrapper extends HttpServletRequestWrapper{
 			
 			encryptPw = Base64.getEncoder().encodeToString(md.digest());
 
+			System.out.println("암호화 전 : " + pw );
+			System.out.println("암호화 전 : " + encryptPw );
 	
 		} catch(NoSuchAlgorithmException e) {
 			e.printStackTrace();

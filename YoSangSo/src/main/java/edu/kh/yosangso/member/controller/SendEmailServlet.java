@@ -33,10 +33,8 @@ public class SendEmailServlet extends HttpServlet{
 		String fromUsername = "YoSangSo(요즘 생활의 소중함)";
 		String toEmail = cMessage;
 		
-//		mcddqnjzcgltjyua
-		
 		final String smtpEmail = "deokk91@gmail.com";
-		final String password = "mcddqnjzcgltjyua";
+		final String password = "ryenqodzbwfgozpk";
 	
 	
 		// 메일 옵션 설정
