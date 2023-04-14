@@ -54,6 +54,7 @@ public class PayResultServlet extends HttpServlet{
 			
 		} catch(Exception e) {
 			e.printStackTrace();
+			throw new NullPointerException();
 		}
 	}
 

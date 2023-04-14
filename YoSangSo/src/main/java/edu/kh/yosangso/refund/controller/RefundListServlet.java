@@ -45,6 +45,7 @@ public class RefundListServlet extends HttpServlet{
 			
 		}catch(Exception e) {
 			e.printStackTrace();
+			throw new NullPointerException();
 		}
 		
 		String filePath = "/WEB-INF/views/refund/refundDone.jsp";

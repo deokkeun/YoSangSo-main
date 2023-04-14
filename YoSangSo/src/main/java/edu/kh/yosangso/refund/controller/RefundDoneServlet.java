@@ -80,6 +80,7 @@ public class RefundDoneServlet extends HttpServlet{
 			}
 		}catch(Exception e) {
 			e.printStackTrace();
+			throw new NullPointerException();
 		}
 	}
 }

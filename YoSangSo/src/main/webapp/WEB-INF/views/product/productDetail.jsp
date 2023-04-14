@@ -101,11 +101,17 @@
                         <input type="hidden" value="${loginMember.memberNo}" name="loginmember" id="loginmember">
                         <br>
                         <br>
-                        
-                            <!--구매 버튼-->
-                            <div>
-	                            <button type="submit" id="btn-purchase">구매하기</button>
-                            </div>
+                        	
+                        	<c:if test="${loginMember != null}">
+	                            <div>
+		                            <button type="submit" id="btn-purchase">구매하기</button>
+	                            </div>
+                        	</c:if>
+							<c:if test="${loginMember == null}">
+	                            <div>
+		                            <button type="button"  onclick="return login()" id="btn-purchase">구매하기</button>
+	                            </div>
+                        	</c:if>
 	                            
                      </form>       
                             <br>

@@ -44,6 +44,7 @@ public class RefundServlet extends HttpServlet{
 			
 		}catch(Exception e) {
 			e.printStackTrace();
+			throw new NullPointerException();
 		}
 		
 		String path = "/WEB-INF/views/refund/refund.jsp";
