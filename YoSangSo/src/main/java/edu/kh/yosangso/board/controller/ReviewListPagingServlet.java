@@ -63,6 +63,7 @@ public class ReviewListPagingServlet extends HttpServlet {
 		dispatcher.forward(req, resp);
 		}catch(Exception e) {
 			e.printStackTrace();
+			throw new NullPointerException();
 		}
 	}
 	

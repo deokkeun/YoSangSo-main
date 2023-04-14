@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ page isErrorPage="true" %>
 
 
 <!DOCTYPE html>
@@ -32,7 +31,7 @@
 <body>
     <!-- 헤더, 컨텐츠 -->
     <main>
-     <img src="${contextPath}/resources/image/error/error404.jpeg" id="err">
+     <img src="${contextPath}/resources/image/error/errorlog.jpg" id="err">
      <a href="${contextPath}">메인 페이지로 이동</a>
    </main>
 </body>

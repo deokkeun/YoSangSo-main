@@ -32,6 +32,7 @@ public class ShoppingCartServlet extends HttpServlet{
 			
 		}catch(Exception e) {
 			e.printStackTrace();
+			throw new NullPointerException();
 		}
 
 		String path = "/WEB-INF/views/cart/shoppingCart.jsp";

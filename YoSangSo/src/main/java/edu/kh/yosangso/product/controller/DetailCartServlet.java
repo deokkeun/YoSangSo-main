@@ -52,6 +52,7 @@ public class DetailCartServlet extends HttpServlet {
 
 		} catch(Exception e) {
 			e.printStackTrace();
+			throw new NullPointerException();
 		}
 	
 		//String path = "/WEB-INF/views/product/productDetail.jsp";

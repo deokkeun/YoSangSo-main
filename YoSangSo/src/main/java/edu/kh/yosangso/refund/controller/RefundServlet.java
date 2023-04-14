@@ -29,11 +29,11 @@ public class RefundServlet extends HttpServlet{
 		try {
 			Member member = (Member)session.getAttribute("loginMember");
 			
-			if(member == null) {
-				String filePath = "/WEB-INF/views/refund/refund.jsp";
-				RequestDispatcher dispatcher = req.getRequestDispatcher(filePath);
-				dispatcher.forward(req, resp);
-			}
+//			if(member == null) {
+//				String filePath = "/WEB-INF/views/refund/refund.jsp";
+//				RequestDispatcher dispatcher = req.getRequestDispatcher(filePath);
+//				dispatcher.forward(req, resp);
+//			}
 			
 			int memberNo = member.getMemberNo();
 			
@@ -44,6 +44,7 @@ public class RefundServlet extends HttpServlet{
 			
 		}catch(Exception e) {
 			e.printStackTrace();
+			throw new NullPointerException();
 		}
 		
 		String path = "/WEB-INF/views/refund/refund.jsp";

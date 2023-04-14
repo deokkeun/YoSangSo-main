@@ -53,20 +53,13 @@ public class DetailPurchaseServlet extends HttpServlet{
 					
 					
 					req.getRequestDispatcher(path).forward(req, resp);
-					
-				} else {
-					
-					path ="/${contextPath}/member/login";
-					
-					resp.sendRedirect(path);
-					
-					
-				}
-				
-				
+
+				} 
+
 				
 			} catch (Exception e) {
 				e.printStackTrace();
+				throw new NullPointerException();
 			}
 			
 		
