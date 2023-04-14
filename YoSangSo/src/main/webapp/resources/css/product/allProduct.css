@@ -301,7 +301,7 @@ ul.list::after {
     background:rgba(0,0,0, .5);
     z-index: -1;
     opacity: 0;
-    transition: all.30s;
+    transition: all .30s;
     margin: 0px 0px 0px 0px;
 
 }
@@ -309,5 +309,4 @@ ul.list::after {
 .BNitem > a:hover .BNitemPic::after {
     opacity: 1;
 }   
-
 

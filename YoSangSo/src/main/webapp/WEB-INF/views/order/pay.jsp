@@ -153,9 +153,9 @@
                             <span>주문자 동의</span>
                             <pre>
     회원 본인은 구매 조건, 주문 내용 확인 및 결제에 동의합니다
-    개인정보 수집 및 이용 동의 <a href="">자세히</a>
-    개인정보 제 3자 제공 동의 <a href="">자세히</a>
-    전자결제대행 이용 동의 <a href="">자세히</a></pre>
+    개인정보 수집 및 이용 동의 <a href="${contextPath}/terms/termsOfPrivacy" target="_black">자세히</a>
+    개인정보 제 3자 제공 동의 <a href="${contextPath}/terms/termsOfPrivacy" target="_black">자세히</a>
+    전자결제대행 이용 동의 <a href="${contextPath}/terms/termsOfBank" target="_black">자세히</a></pre>
                         </div>
                     </div>
                     <div class="btn-box">

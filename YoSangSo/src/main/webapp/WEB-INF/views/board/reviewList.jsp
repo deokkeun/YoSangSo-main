@@ -1,4 +1,4 @@
-'/<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>
 
@@ -59,8 +59,8 @@
 
                                         <div class="rightReivewContent">
                                             
-                                            <form action="reviewWriting">
-                                                <c:forEach var="list" items="${list}">
+                                            <c:forEach var="list" items="${list}" varStatus="status">
+                                                    <form action="reviewWriting">
                                                     <div class="rightProductImg"> 
 
                                                         <div>
@@ -75,15 +75,17 @@
                                                                 <p>${list.productName}</p>
                                                             </div>
                                                         </div>
-                                                            <input type="hidden" name="orderDetailNo" value="${list.orderDetailNo}">
-                                                            <input type="hidden" name="productNo" value="${list.productNo}">
+                                                        <!-- 가져가야하는 내용들 -->
+                                                        <input type="hidden" name="orderDetailNo" value="${list.orderDetailNo}">
+                                                        <input type="hidden" name="productNo" value="${list.productNo}">
+                                                        <input type="hidden" name="productName" value="${list.productName}">
                                                         <div id="reviewAddBox">
                                                             <button type="submit" id="reviewAdd">리뷰작성</button><br><br>
                                                         </div>
 
                                                     </div>
+                                                </form> 
                                                 </c:forEach>
-                                            </form> 
 
                                         </div>
                                     </div>
@@ -132,5 +134,8 @@
 
      <!-- reviewList.js 연결 -->
      <script src="${contextPath}/resources/js/review/reviewList.js"></script>
+
+     <!-- alert창 바꾸기 -->
+     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </body>
 </html>

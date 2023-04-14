@@ -83,9 +83,15 @@
                         <hr>
                         <!--총 금액-->
                         <div class="total-cost">
-                        상품금액&nbsp;&nbsp;<span id="counting" ></span>원 + 배송비&nbsp;&nbsp;<span id=deltip></span> = 총 상품금액
-                            &nbsp;&nbsp;<span id="totalcost"></span>원
-                        
+                        	
+                        상품금액&nbsp;&nbsp;<span id="counting" >${productList[0].price}</span>원 + 배송비&nbsp;&nbsp;<span id=deltip>0</span> 
+                      	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      			
+                        총 상품금액
+                        &nbsp;<span id="totalcost">${productList[0].price}</span>원
+                        	
                         </div>
                         
                   		<!-- 결제페이지로 넘기는 값 입니다. -->
@@ -93,6 +99,7 @@
                         <input type="hidden" value="${productList[0].productName}" name="productName">
                         <input type="hidden" value="${productList[0].price}" name="price">
                         <input type="hidden" value="${loginMember.memberNo}" name="loginmember" id="loginmember">
+                        <br>
                         <br>
                         
                             <!--구매 버튼-->
@@ -202,15 +209,19 @@
                             <!--고객 이름-->
                             <div class="review-name"><span>${reviewList[0].memberName}</span></div>
                             <!--게시일-->
-                            <div class="review-date"><span>${reviewList[0].reviewDate}</span></div>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <div class="review-date">게시일 : <span>${reviewList[0].reviewDate}</span></div>
+                            <!-- 평점 -->
+                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <div class="review-rate">평점 : <span>${reviewList[0].reviewRate}</span></div>
                         </div>
             
                         <!--리뷰 내용-->
                         <div class="review-main">
                             
-                            <div>
+                            
                                 <pre class="review-con">${reviewList[0].reviewContent}</pre>
-                            </div>    
+                              
                         </div>
             
                     </div>
@@ -225,7 +236,11 @@
                             <!--고객 이름-->
                             <div class="review-name"><span>${reviewList[1].memberName}</span></div>
                             <!--게시일-->
-                            <div class="review-date">${reviewList[1].reviewDate}</div>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <div class="review-date">게시일 : ${reviewList[1].reviewDate}</div>
+                             <!-- 평점 -->
+                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <div class="review-rate">평점 : <span>${reviewList[1].reviewRate}</span></div>
                         </div>
             
                         <!--리뷰 내용-->
@@ -249,7 +264,7 @@
                 <!--FAQ 컨테이너-->
                 
                 <div class="FAQ-container">
-                    <h2>QNA</h2>
+                    <h2>Q&A</h2>
                     <!--FAQ1-->
                     <div class="QNAbox">
                         <!--고객 아이콘, 이름, 게시일-->
@@ -272,7 +287,7 @@
                           </div>
                         </div>
                         <div class="anw">
-                         <span>하루에 300 달톤씩 복용하시면 됩니다</span>   
+                         <span>준비중입니다</span>   
                         </div>
                     </div>
             
@@ -297,7 +312,7 @@
                           </div>
                         </div>
                         <div class="anw">
-                         <span>즉시 복용 중지 후 병원을 찾아가 주세요</span>   
+                         <span>준비중입니다</span>   
                         </div>
                     </div>
                 </div>

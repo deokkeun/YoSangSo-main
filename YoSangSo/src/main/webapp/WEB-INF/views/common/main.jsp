@@ -20,8 +20,10 @@
     
 
     <!--탑 버튼-->
-    <a id="topBtn" href="#"> 
-        <i class="fa-solid fa-angles-up fa-2x"></i>
+    <a id="topBtn" href="#">
+    <i class="fa-solid fa-angle-up fa-2x"></i> 
+       <!-- 2줄 -->
+       <!--  <i class="fa-solid fa-angles-up fa-2x"></i> -->
     </a> 
     
 </head>
@@ -54,15 +56,17 @@
                                  
                     <div id="visual">
                         <div class="on">
-                            <img src="resources/image/index/메인슬라이더1편집.jpg"  width="100%">
+                        		<a href="${contextPath}/member/login">
+                            	<img src="resources/image/index/슬라이더용1오픈이벤트.png"  width="100%">
+                          		</a>
                         </div>
 
                         <div>
-                            <img src="resources/image/index/메인슬라이더2편집.jpg" width="100%">
+                            <img src="resources/image/index/슬라이더용2닥터스베스트.png" width="100%">
                         </div>	
  				
                     	<div>
-                	        <img src="resources/image/index/메인슬라이더3편집.png" width="100%">
+                	        <img src="resources/image/index/슬라이더용3라이프익스텐션.png" width="100%">
                         </div>
                     </div>
                          

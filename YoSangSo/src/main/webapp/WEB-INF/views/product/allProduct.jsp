@@ -17,8 +17,10 @@
     <title>allProduct</title>
     
     <!--탑 버튼-->
-    <a id="topBtn" href="#"> 
-        <i class="fa-solid fa-angles-up fa-2x"></i>
+    <a id="topBtn" href="#">
+    <i class="fa-solid fa-angle-up fa-2x"></i> 
+       <!-- 2줄 -->
+       <!--  <i class="fa-solid fa-angles-up fa-2x"></i> -->
     </a> 
     
 </head>
@@ -97,9 +99,8 @@
 
 
                 <!-- 2-3  공백버튼 -->
-                <div class="blank"></div>                   
-                
-
+                <div class="blank"></div>     
+ 
 
             <!-- 가운데페이지 끝 -->
             </section>

@@ -73,13 +73,13 @@
                                     <label>
                                         <input type="checkbox" name="agree" onclick="return checkConfirm()"> [필수] 개발자국 비타 이용약관
                                     </label>
-                                    <button><a href="#">더보기</a></button>
+                                    <button><a href="${contextPath}/terms/termsOfService" target="_black">더보기</a></button>
                                 </div>
                                 <div>
                                     <label>
                                         <input type="checkbox" name="agree" onclick="return checkConfirm()"> [필수] 전자금융거래 이용약관 동의
                                     </label>
-                                    <button><a href="#">더보기</a></button>
+                                    <button><a href="${contextPath}/terms/termsOfBank" target="_black">더보기</a></button>
                                 </div>
                                 <div>
                                     <label>

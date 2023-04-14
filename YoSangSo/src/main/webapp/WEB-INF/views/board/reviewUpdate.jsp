@@ -38,11 +38,11 @@
                             <!-- 컨텐트 오른쪽 영역 -->
                             <section class="right"> 
                                 <div></div>
-                                <form action="reviewUpdate" method="POST">
+                                <form action="reviewUpdate" id="reviewImageContent" method="POST">
                                 <div class="review-content">
                                     <div class="review-content1">
         
-                                        <div><p>${loginMember.memberName}님의 리뷰 작성란</p></div>
+                                        <div><p>${loginMember.memberName}님의 리뷰 수정란</p></div>
                                         
                                         <div>
                                             <div id="con-box">
@@ -74,7 +74,7 @@
                                         </div>
         
                                         <div class="review-content2-2">
-                                            <div>리뷰 작성</div>
+                                            <div>리뷰 수정</div>
                                             <div>
                                                 <textarea name="reviewUpdateContent" id="reivewTextarea" style="resize:none" 
                                                 placeholder="리뷰를 남겨주세요."></textarea>
@@ -92,7 +92,7 @@
                                                 
                                             
                                             <div class="review-img">
-                                                <img src="${contextPath}/resources/image/review/" alt="이미지" width="100px">
+                                                <span id="fileName">선택된 파일 없음</span>
                                             </div>
                                         </div>
         
@@ -102,8 +102,8 @@
                                     <input type="hidden" name="orderDetailNo" value="${orderDetailNo}">
                                    
                                     <div class="review-content3">
-                                        <button type="submit" id="reviewCancel">취소하기</button>
-                                        <button type="submit" id="reviewUpdate">수정하기</button>
+                                        <button type="button" id="reviewCancel" onclick="cancelAndRedirect()">취소하기</button>
+                                        <button type="submit" id="reviewUpdate" onclick="handleSubmit(event)">수정하기</button>
                                     </div>
                                 </form>
         
@@ -133,6 +133,9 @@
     <!-- main.js 연결 -->
     <script src="${contextPath}/resources/js/main.js"></script>
     <!-- reviewWriting.js 연결 -->
-    <script src="${contextPath}/resources/js/review/reviewWriting.js"></script>
+    <script src="${contextPath}/resources/js/review/reviewUpdate.js"></script>
+
+    <!-- alert창 바꾸기 -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </body>
 </html>

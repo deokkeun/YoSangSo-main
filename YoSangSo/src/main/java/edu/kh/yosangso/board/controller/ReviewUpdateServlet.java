@@ -25,8 +25,14 @@ public class ReviewUpdateServlet extends HttpServlet{
 		String path = "/WEB-INF/views/board/reviewUpdate.jsp";
 		
 		try {
-			req.setAttribute("orderDetailNo", req.getParameter("orderDetailNo"));
-			req.setAttribute("productName", req.getParameter("productName"));
+			
+			String productName = req.getParameter("productName");
+			int orderDetailNo = Integer.parseInt(req.getParameter("orderDetailNo"));
+			
+			req.setAttribute("orderDetailNo", orderDetailNo);
+			req.setAttribute("productName", productName);
+			
+			
 			
 		}catch(Exception e) {
 			e.printStackTrace();
@@ -49,9 +55,6 @@ public class ReviewUpdateServlet extends HttpServlet{
 			  int reviewRate = Integer.parseInt(req.getParameter("reviewRate"));
 			  String updateContent = req.getParameter("reviewUpdateContent");
 			  
-			  System.out.println(updateContent);
-			  System.out.println(reviewRate);
-			  System.out.println(orderDetailNo);
 			  
 			  result = service.updateReview(updateContent,reviewRate,orderDetailNo);
 			  
