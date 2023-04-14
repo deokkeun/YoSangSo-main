@@ -82,6 +82,8 @@ object-fit : contain;
 .total-cost {
     margin-top: 20px;
     font-size: 15px;
+    display: flex;
+    justify-content: space-between;
    
     
 }
@@ -107,24 +109,26 @@ object-fit : contain;
 }
 
 #btn-purchase {
-    margin-left: 7vh;
+    
     background-color: #2678f3;
     color: white;
     border-radius: 5px;
-    width: 45vh;
-    height: 5vh;
+    width: 450px;
+    height: 45px;
     border:0px;
+    letter-spacing: 2px;
+    font-size: 16px;
 
 
 }
 
 #btn-addcart {
-    margin-left: 27vh;
+    margin-left: 250px;
     border-radius: 5px;
     border:0px;
     color: #2678f3;
-    width: 25vh;
-    height: 5vh;
+    width: 200px;
+    height: 40px;
     background-color: white;
     border: 1px solid #2678f3;
 }
