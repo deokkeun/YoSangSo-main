@@ -43,6 +43,7 @@ public class BoardDAO {
 	 * @param content
 	 * @return
 	 * @throws Exception
+	 * @author lee
 	 */
 	public int inquiryAdd(Connection conn, String content, Member loginMember) throws Exception {
 		
@@ -76,6 +77,7 @@ public class BoardDAO {
 	 * @param inputPw
 	 * @return
 	 * @throws Exception
+	 * @author lee
 	 */
 	public int inquiryDelete(Connection conn, String boardNo) throws Exception {
 		
@@ -107,6 +109,7 @@ public class BoardDAO {
 	 * @param boardNo 
 	 * @return
 	 * @throws Exception
+	 * @author lee
 	 */
 	public int inquiryUpdate(Connection conn, String updateContent, String boardNo) throws Exception{
 		
@@ -133,6 +136,7 @@ public class BoardDAO {
 	 * @param conn
 	 * @return
 	 * @throws Exception
+	 * @author lee
 	 */
 	public int selectInquiryCount(Connection conn) throws Exception{
 		int result = 0;
@@ -153,6 +157,15 @@ public class BoardDAO {
 		return result ;
 	}
 
+	/** 전체 게시물 목록 조회 DAO
+	 * @param conn
+	 * @param inquiryList
+	 * @param pagination
+	 * @return
+	 * @throws Exception
+	 * @author lee
+	 * 
+	 */
 	public List<Board> selectInquiryList(Connection conn, List<Board> inquiryList, Pagination pagination) throws Exception{
 		
 		

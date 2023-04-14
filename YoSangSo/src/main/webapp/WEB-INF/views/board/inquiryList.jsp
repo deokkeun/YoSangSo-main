@@ -110,7 +110,11 @@
                             		
                             		<c:otherwise>
                             			
-                            			<div><h1>게시물이 존재하지 않습니다.</h1></div>
+                            			<div id="emptyBox">
+                                            <div>게시물이 존재하지 않습니다.</div>
+                                            <div><img src="${contextPath}/resources/image/ready/readyImg.gif" alt=""></div>
+                                        </div>
+                                        
                             		
                             		</c:otherwise>
 
@@ -126,9 +130,11 @@
                     </div>
 	
                     <div class="numListBox">
+                        
                         <div id="numListBtnBox">
                             <a id="movePrev" href="${url}${pagination.prevPage}">&lt;</a> 
                         </div>
+                        
                     
                 	<c:forEach var="i" begin="${ pagination.startPage }" end="${ pagination.endPage }" step="1">
                         <li id="listBox" class="${pagination.currentPage eq i ? 'active' : '' }">
@@ -136,10 +142,11 @@
                         </li>
                   	 </c:forEach>
                    	
+                        
                         <div id="numListBtnBox2">
                             <a id="moveNext" href="${url}${pagination.nextPage}">&gt;</a>
                         </div>
-                        
+                       
                     </div>
 
                 </div>
@@ -190,5 +197,8 @@
 
     <!-- inquiryList.js 연결 -->
     <script src="${contextPath}/resources/js/board/inquiryList.js"></script>
+
+    <!-- alert 창 바꾸기 -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </body>
 </html>

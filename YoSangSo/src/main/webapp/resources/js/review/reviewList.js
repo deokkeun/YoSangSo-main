@@ -1,11 +1,11 @@
-function writeReview(orderNo){
+// function writeReview(orderNo){
     
-    location.href = "/YoSangSo/board/review/reviewWriting";
+//     location.href = "/YoSangSo/board/review/reviewWriting";
 
-    const reviewUpdate = document.getElementById("reviewUpdate");
+//     const reviewUpdate = document.getElementById("reviewUpdate");
     
-    reviewUpdate.addEventListener("click", function(){
+//     reviewUpdate.addEventListener("click", function(){
 
-    });
+//     });
 
-}
+// }

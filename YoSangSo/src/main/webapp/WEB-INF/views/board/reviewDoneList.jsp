@@ -79,17 +79,18 @@
                                                
                                                 <div>
                                                 	<div>
-                                    				<form action="reviewUpdate">
-                                                        <input type="hidden" name="orderDetailNo" value="${list.orderDetailNo}">
-	                                                    <button class="reviewAdd">리뷰 수정</button><br><br>
-                                    				</form> 
+                                    				    <form action="reviewUpdate">
+                                                            <input type="hidden" name="orderDetailNo" value="${list.orderDetailNo}">
+                                                            <input type="hidden" name="productName" value="${list.productName}">
+                                                            <button class="reviewAdd">리뷰 수정</button><br><br>
+                                    				    </form> 
                                                 	</div>
-                                                	<form action="reviewDelete">
                                                 	<div>
-                                                        <input type="hidden" name="orderDetailNo" value="${list.orderDetailNo}">
-	                                                    <button class="reviewAdd">리뷰 삭제</button><br><br>
+                                                        <form action="reviewDelete">
+                                                            <input type="hidden" name="orderDetailNo" value="${list.orderDetailNo}">
+                                                            <button class="reviewAdd" onclick="reviewDelete()">리뷰 삭제</button><br><br>
+                                                	    </form>
                                                 	</div>
-                                                	</form>
                                                 </div>
 
                                             </div>
@@ -139,5 +140,10 @@
    
     <!-- main.js 연결 -->
     <script src="${contextPath}/resources/js/main.js"></script>
+    <!-- reviewDone.js 연결 -->
+    <script src="${contextPath}/resources/js/review/reviewDone.js"></script>
+
+    <!-- alert창 바꾸기 -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </body>
 </html>

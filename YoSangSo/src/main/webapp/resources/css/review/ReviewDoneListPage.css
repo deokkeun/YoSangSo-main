@@ -63,24 +63,20 @@
 /* 컨텐츠 오른쪽 내용 */
 
 /* 오른쪽 영역 시작 */
+
 .right{
     width: 100%;
     height: 1200px;
-    /* border: 2px solid red; */
     display: flex;
 }
 
 
 
-
-
 .right > div:nth-child(1) {
-    /* background-color: blue; */
     flex-basis: 3%;
 }
 
 .right > div:nth-child(3){
-    /* background-color: red; */
     flex-basis: 3%;
 }
 
@@ -106,7 +102,6 @@
 .rightReview {
     width: 100%;
     height: 780px;
-    /* border: 1px solid red; */
 }
 
 
@@ -161,7 +156,7 @@
 }
 
 .rightProductImg > div:nth-child(1) > p{
-    margin-left : 25px;
+    margin-left : 10px;
     
 }
 
@@ -176,6 +171,7 @@
 	border: 2px solid silver;
     border-radius: 8px;
 	align-self: center;
+    margin-left: 10px;
 }
 
 .reviewContent{
@@ -194,16 +190,11 @@
 }
 
 
-
-
-
-
 .reviewListBox{
     width: 20%;
     display: flex;
     justify-content: center;
     align-items: center;
-    /* border:solid 3px blue; */
 }
 
 .reviewListBox a {
@@ -215,11 +206,6 @@
 li{
 	list-style: none;
 }
-
-/* a{
-	font-size : 20px;
-	
-} */
 
 .active > a{
 	font-size: 22px;
@@ -233,35 +219,33 @@ li{
 }
 
 
-.reviewAdd{
-    width: 100px;
-    height: 30px;
-    border-radius: 8px;
-    /* background-color: #2678F3; */
-    margin-right: 50px;
-    border: 3px solid #6aafe6;
-    color: #6e6e6e;
+/*====================================수정버튼==========================================================*/
+
+.reviewAdd {
+	box-shadow: 0px 1px 0px 0px #f0f7fa;
+	background:linear-gradient(to bottom, #94d4e8 5%, #42a3c7 100%);
+	background-color:#94d4e8;
+	border-radius:10px;
+	border:1px solid #1fa0f0;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 25px;
+	text-decoration:none;
+	text-shadow:0px 0px 0px #5b6178;
+}
+.reviewAdd:hover {
+	background:linear-gradient(to bottom, #42a3c7 5%, #94d4e8 100%);
+	background-color:#42a3c7;
+}
+.reviewAdd:active {
+	position:relative;
+	top:1px;
 }
 
-.reviewAdd:hover{
-    letter-spacing: 2px;
-    transform: scale(1.2);
-    cursor: pointer;
-}
-
-.reviewAdd:active{
-    transform: scale(1.5);
-}
+/*====================================수정버튼==========================================================*/
 
 
-
-
-/* #reviewUpdate{
-    display: none;
-    width: 70px;
-    height: 50px;
-    border:1px solid #575C63;
-    border-radius: 8px;
-    background-color: #2678F3;
-    color: white;
-} */
