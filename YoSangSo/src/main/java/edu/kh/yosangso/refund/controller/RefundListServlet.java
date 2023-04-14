@@ -42,16 +42,15 @@ public class RefundListServlet extends HttpServlet{
 			
 			System.out.println(refundList);
 			
+			req.getSession().setAttribute("refundList", refundList);
 			
 		}catch(Exception e) {
 			e.printStackTrace();
 			throw new NullPointerException();
 		}
 		
-		String filePath = "/WEB-INF/views/refund/refundDone.jsp";
-		req.setAttribute("refundList", refundList);
-		RequestDispatcher dispatcher = req.getRequestDispatcher(filePath);
-		dispatcher.forward(req, resp);
+		String filePath = "/YoSangSo/openJSP/refundDone.jsp";
+		resp.sendRedirect(filePath);
 	
 	}
 }

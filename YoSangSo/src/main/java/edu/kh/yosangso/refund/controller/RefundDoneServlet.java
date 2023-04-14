@@ -33,11 +33,7 @@ public class RefundDoneServlet extends HttpServlet{
 			
 			Member member = (Member)session.getAttribute("loginMember");
 			
-			if(member == null) {
-				String filePath = "/WEB-INF/views/refund/refundDone.jsp";
-				RequestDispatcher dispatcher = req.getRequestDispatcher(filePath);
-				dispatcher.forward(req, resp);
-			}
+			String filePath = "/YoSangSo/openJSP/refundDone.jsp";
 			
 			int memberNo = member.getMemberNo();
 			
@@ -51,32 +47,25 @@ public class RefundDoneServlet extends HttpServlet{
 				if(refundResult>0) {
 					// 서비스 구현 시 일시적으로 memberNo을 부여
 					refundList = service.refundList(memberNo);
-					String filePath = "/WEB-INF/views/refund/refundDone.jsp";
 					
 					System.out.println(refundList);
 					
-					req.setAttribute("refundList", refundList);
-					RequestDispatcher dispatcher = req.getRequestDispatcher(filePath);
-					dispatcher.forward(req, resp);
+					req.getSession().setAttribute("refundList", refundList);
+
+					resp.sendRedirect(filePath);
 				}else {
 					System.out.println("수정실패");
-					String filePath = "/WEB-INF/views/refund/refundDone.jsp";
 					
 					System.out.println(refundList);
 					
-					req.setAttribute("refundList", refundList);
-					RequestDispatcher dispatcher = req.getRequestDispatcher(filePath);
-					dispatcher.forward(req, resp);
+					req.getSession().setAttribute("refundList", refundList);
+
+					
+					resp.sendRedirect(filePath);
 				}
 			}else {
 				System.out.println("실패");
-				String filePath = "/WEB-INF/views/refund/refundDone.jsp";
-				
-				System.out.println(refundList);
-				
-				req.setAttribute("refundList", refundList);
-				RequestDispatcher dispatcher = req.getRequestDispatcher(filePath);
-				dispatcher.forward(req, resp);
+				resp.sendRedirect(filePath);
 			}
 		}catch(Exception e) {
 			e.printStackTrace();
