@@ -5,8 +5,14 @@
     border:1px solid gainsboro;
     width: 1000px;
     border-radius: 3px;
-
+    margin-top:20px;
+    margin-bottom:20px;
     
+}
+
+.content-part{
+	height: 1000px;
+	overflow: auto;
 }
 
 .head-part{
@@ -35,7 +41,7 @@ a{
     color: #2678F3;
 }
 
-pre{
+main pre{
     white-space: pre-wrap;
     margin:30px;
     line-height: 25px;
