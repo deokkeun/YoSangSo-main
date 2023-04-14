@@ -159,7 +159,7 @@
                         </div>
                     </div>
                     <div class="btn-box">
-                        <button id="pay-btn" onclick="return kakaopay()">결제하기</button>
+                        <button id="pay-btn" onclick="kakaopay()">결제하기</button>
                     </div>
                 </section>
             </section>
