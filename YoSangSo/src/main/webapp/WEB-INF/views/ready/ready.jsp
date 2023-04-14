@@ -60,5 +60,8 @@
 
     <!-- myPageInfo.js 연결 -->
     <script src="${contextPath}/resources/js/member/myPageInfo.js"></script>
+
+    <!-- ready.js 연결 -->
+    <script src="${contextPath}/resources/js/ready/ready.js"></script>
 </body>
 </html>

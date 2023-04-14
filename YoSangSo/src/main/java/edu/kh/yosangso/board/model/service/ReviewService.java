@@ -25,12 +25,13 @@ public class ReviewService {
 	 * @param memberNo 
 	 * @param productNo 
 	 * @param orderDetailNo 
-	 * @return
+	 * @return result
+	 * @author lee
 	 */
 	public int reviewAdd(String reviewContent, int reviewAddRate, int memberNo, int productNo, int orderDetailNo) throws Exception{
 		
 		
-		System.out.println("리뷰작성 서비스 들어옴");
+		
 		// 결과 저장용 변수
 		int result = 0;
 		// 커넥션 연결해주기
@@ -48,7 +49,7 @@ public class ReviewService {
 		
 		// 커넥션 반환
 		close(conn);
-		System.out.println("리뷰작성 서비스 나감");
+		
 		return result;
 	}
 
@@ -76,7 +77,8 @@ public class ReviewService {
 
 	/** 리뷰 작성 페이지에 어떤 상품을 리뷰 작성하는 지 나타내는 정보를 가져오는 서비스
 	 * @param orderNo
-	 * @return
+	 * @return orderInfo
+	 * @author lee
 	 */
 	public Order selectReviewInfo(int orderDetailNo) throws Exception {
 		
@@ -94,7 +96,8 @@ public class ReviewService {
 	 * @param orderDetailNo
 	 * @param updateContent 
 	 * @param reviewRate 
-	 * @return
+	 * @return result
+	 * @author lee
 	 */
 	public int updateReview(String updateContent, int reviewRate, String orderDetailNo) throws Exception{
 		
@@ -119,7 +122,8 @@ public class ReviewService {
 
 	/** 리뷰 삭제 서비스
 	 * @param orderDetailNo
-	 * @return
+	 * @return result
+	 * @author lee
 	 */
 	public int reviewDelete(String orderDetailNo) throws Exception{
 		

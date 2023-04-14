@@ -27,10 +27,10 @@ public class ReviewDeleteServlet extends HttpServlet{
 			
 			
 			if(result > 0) {
-				resp.sendRedirect("reviewList");
-				System.out.println("삭제 성공");
+				resp.sendRedirect("reviewDoneList");
+				System.out.println("리뷰 삭제 성공");
 			}else {
-				System.out.println("삭제 실패");
+				System.out.println("리뷰 삭제 실패");
 			}
 			
 		}catch(Exception e) {

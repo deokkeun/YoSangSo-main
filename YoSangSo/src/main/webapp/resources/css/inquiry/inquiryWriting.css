@@ -211,23 +211,32 @@ textarea {
 }
 
 
-#confirmWritingQ{
-    width: 130px;
-    height: 50px;
-    border-radius: 8px;
-    /* background-color: #2678F3; */
-    margin-right: 50px;
-    border: 3px solid #6aafe6;
-    color: #6e6e6e;
-}
 
+/*====================================수정버튼==========================================================*/
+
+#confirmWritingQ {
+	box-shadow: 0px 1px 0px 0px #f0f7fa;
+	background:linear-gradient(to bottom, #94d4e8 5%, #42a3c7 100%);
+	background-color:#94d4e8;
+	border-radius:10px;
+	border:1px solid #1fa0f0;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:15px 35px;
+	text-decoration:none;
+	text-shadow:0px 0px 0px #5b6178;
+}
 #confirmWritingQ:hover{
-    letter-spacing: 2px;
-    transform: scale(1.2);
-    cursor: pointer;
+	background:linear-gradient(to bottom, #42a3c7 5%, #94d4e8 100%);
+	background-color:#42a3c7;
+}
+#confirmWritingQ:active {
+	position:relative;
+	top:1px;
 }
 
-
-#confirmWritingQ:active{
-    transform: scale(1.5);
-}
+/*====================================수정버튼==========================================================*/

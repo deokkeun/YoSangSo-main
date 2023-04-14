@@ -21,7 +21,6 @@ public class Review {
 	private String reviewContent;
 	private String reviewDate;
 	private int reviewRate;
-	private List<ReviewImage> imageList;
 	private int memberNo;
 	private int productNo;
 	private String orderDetailNo;
