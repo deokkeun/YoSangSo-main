@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="${contextPath}/resources/css/main-style.css">
     <link rel="stylesheet" href="${contextPath}/resources/css/order/pay.css">
     <script src="https://kit.fontawesome.com/881d1deef7.js" crossorigin="anonymous"></script>
-    
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <title>index</title>
 </head>
 <body>
@@ -174,11 +174,11 @@
 
                         <div class="slide_wrapper">
                             <ul class="slides">
-                                <li><a href="${contextPath}/product/productDetail?ProductNo=1"><img src="${contextPath}/resources/image/product/Life Extension, 비타민D 함유 구연산 칼슘, 캡슐 200정.jpg" alt=""></a></li>
-                                <li><img src="${contextPath}/resources/image/product/California Gold Nutrition, Immune 4, 면역계 지원, 베지 캡슐 180정.jpg" alt=""></li>
-                                <li><img src="${contextPath}/resources/image/product/Doctors Best, Vein Support with DiosVein and MenaQ7, 베지 캡슐 60정.jpg" alt=""></li>
-                                <li><img src="${contextPath}/resources/image/product/Jarrow Formulas, Zinc Balance, 베지 캡슐 100정.jpg" alt=""></li>
-                                <li><img src="${contextPath}/resources/image/product/NOW Foods, 로즈힙 함유 C-500, 250 정.jpg" alt=""></li>
+                                <li><a href="${contextPath}/product/productDetail?ProductNo=6"><img src="${contextPath}/resources/image/product/Life Extension, 비타민D 함유 구연산 칼슘, 캡슐 200정.jpg" alt=""></a></li>
+                                <li><a href="${contextPath}/product/productDetail?ProductNo=41"><img src="${contextPath}/resources/image/product/California Gold Nutrition, Immune 4, 면역계 지원, 베지 캡슐 180정.jpg" alt=""></a></li>
+                                <li><a href="${contextPath}/product/productDetail?ProductNo=11"><img src="${contextPath}/resources/image/product/Doctors Best, Vein Support with DiosVein and MenaQ7, 베지 캡슐 60정.jpg" alt=""></a></li>
+                                <li><a href="${contextPath}/product/productDetail?ProductNo=24"><img src="${contextPath}/resources/image/product/Jarrow Formulas, Zinc Balance, 베지 캡슐 100정.jpg" alt=""></a></li>
+                                <li><a href="${contextPath}/product/productDetail?ProductNo=18"><img src="${contextPath}/resources/image/product/NOW Foods, 로즈힙 함유 C-500, 250 정.jpg" alt=""></a></li>
                             </ul>
                         </div>
 

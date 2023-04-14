@@ -107,9 +107,9 @@
                     </section>
                     <section>
                         <ul id="list-box">
-              				<div>요생소에 방문해주셔서 감사합니다!!</div>
               				
-              				<div>신체 부위별 권장 비타민</div>
+              				<div class="vitamin-title">비타민의 종류와 효능을 확인해주세요.</div>
+              				<img src="${contextPath}/resources/image/people/하루비타민권장량.png" alt="" width="540px" height="500px">
                             
                         </ul>
 

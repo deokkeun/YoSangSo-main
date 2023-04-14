@@ -60,11 +60,15 @@
     color: #2678f3;
 }
 
-.kakao {
-    background-color: #FEE500;
+.kakaoLogin {
+    border: none;
+    background-color: transparent;
+    padding: 0px;
 }
-.google {
-    border: 1px solid rgba(0, 0, 0, 0.2);
+.kakao {
+    width: 400px;
+    height: 55px;
+    cursor: pointer;
 }
 #loginResult {
     color: rgb(251, 157, 167);

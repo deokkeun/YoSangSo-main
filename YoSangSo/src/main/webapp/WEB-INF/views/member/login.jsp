@@ -11,8 +11,6 @@
     <link rel="stylesheet" href="${contextPath}/resources/css/main-style.css">
     <link rel="stylesheet" href="${contextPath}/resources/css/member/login.css">
     <script src="https://kit.fontawesome.com/881d1deef7.js" crossorigin="anonymous"></script>
-	<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
-
     <title>login</title>
 </head>
 <body>
@@ -71,21 +69,12 @@
             <hr>
             <section>
                 <div>
-                    <button class="btn kakao" onclick="kakaoLogin()">카카오 로그인</button>
-                </div>
-                <div>
-                    <button class="btn google">구글 로그인</button>
+                    <button class="kakaoLogin">
+                        <img src="${contextPath}/resources/image/login/kakao_login_large_wide.png" alt="카카오로그인" class="kakao">
+                    </button>
                 </div>
             </section>
         </section>
-
-
-
-                <div>테스트입니다 
-                <a href="https://developers.kakao.com/logout">카카오 로그아웃</a>
-                </div>
-
-
 
 
     <!-- 헤더, 컨텐츠 끝 -->
