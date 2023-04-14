@@ -18,6 +18,13 @@
     
     
     <title>productDetail</title>
+    
+     <!--탑 버튼-->
+    <a id="topBtn" href="#"> 
+        <i class="fa-solid fa-angle-up fa-2x"></i>
+    </a>
+    
+    
 </head>
 <body>
     <!-- 헤더, 컨텐츠 -->

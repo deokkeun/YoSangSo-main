@@ -56,7 +56,7 @@ public class DetailPurchaseServlet extends HttpServlet{
 					
 				} else {
 					
-					path ="/YoSangSo/member/login";
+					path ="/${contextPath}/member/login";
 					
 					resp.sendRedirect(path);
 					
