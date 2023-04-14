@@ -157,7 +157,7 @@
 }
 
 #review-imgBox > img{
-    width: 95%;
+    width: 70%;
 }
 
 #review-imgExpalin{
@@ -267,7 +267,7 @@ input[type="number"]::-webkit-inner-spin-button {
     justify-content: center;
     align-items: center;
     padding: 30px 0;
-    
+    font-size: 25px;
 }
 
 .review-content2-2 > div:nth-child(2){
@@ -390,45 +390,33 @@ form {
     margin-right: 50px;
 }
 
-#reviewCancel{
-    width: 115px;
-    height: 40px;
-    border-radius: 8px;
-    /* background-color: #2678F3; */
-    margin-right: 50px;
-    border: 3px solid #6aafe6;
-    color: #6e6e6e;
+
+/*====================================수정버튼==========================================================*/
+
+
+#reviewCancel, #reviewUpdate {
+	box-shadow: 0px 1px 0px 0px #f0f7fa;
+	background:linear-gradient(to bottom, #94d4e8 5%, #42a3c7 100%);
+	background-color:#94d4e8;
+	border-radius:10px;
+	border:1px solid #1fa0f0;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:15px 35px;
+	text-decoration:none;
+	text-shadow:0px 0px 0px #5b6178;
+}
+#reviewCancel:hover, #reviewUpdate:hover {
+	background:linear-gradient(to bottom, #42a3c7 5%, #94d4e8 100%);
+	background-color:#42a3c7;
+}
+#reviewCancel:active, #reviewUpdate:active {
+	position:relative;
+	top:1px;
 }
 
-#reviewCancel:hover{
-    letter-spacing: 2px;
-    transform: scale(1.2);
-    cursor: pointer;
-}
-
-#reviewCancel:active{
-    transform: scale(1.5);
-}
-
-
-
-
-#reviewUpdate{
-    width: 115px;
-    height: 40px;
-    border-radius: 8px;
-    /* background-color: #2678F3; */
-    margin-right: 50px;
-    border: 3px solid #6aafe6;
-    color: #6e6e6e;
-}
-
-#reviewUpdate:hover{
-    letter-spacing: 2px;
-    transform: scale(1.2);
-    cursor: pointer;
-}
-
-#reviewUpdate:active{
-    transform: scale(1.5);
-}
+/*====================================수정버튼==========================================================*/

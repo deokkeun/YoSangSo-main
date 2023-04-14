@@ -43,11 +43,12 @@ public class ReviewDAO {
 	 * @param memberNo 
 	 * @param productNo 
 	 * @param orderDetailNo 
-	 * @return
+	 * @return result
 	 * @throws Exception
+	 * @author lee
 	 */
 	public int reviewAdd(Connection conn, String reviewContent, int reviewAddRate, int memberNo, int productNo, int orderDetailNo) throws Exception{
-		System.out.println("리뷰작성 DAO 들어옴");
+		
 		int result = 0;
 		
 		try {
@@ -67,41 +68,11 @@ public class ReviewDAO {
 		}finally {
 			close(pstmt);
 		}
-		System.out.println("리뷰작성 DAO 나감");
+		
 		return result;
 	}
 
 	
-	
-
-	/** 리뷰이미지 추가 DAO
-	 * @param conn
-	 * @param image
-	 * @return
-	 * @throws Exception
-	 */
-//	public int reviewImageAdd(Connection conn, ReviewImage image) throws Exception{
-//		
-//		int result = 0;
-//		System.out.println("리뷰 IMG DAO 진입");
-//		try {
-//			String sql = prop.getProperty("reviewImageAdd");
-//			
-//			pstmt = conn.prepareStatement(sql);
-//			
-//			pstmt.setString(1, image.getImageReName());
-//			pstmt.setString(2,  image.getImageOriginal());
-			//pstmt.setInt(3, image.getImageLevel());
-//			pstmt.setInt(3, image.getReviewNo());
-//			
-//			result = pstmt.executeUpdate();
-//			System.out.println("리뷰 IMG DAO 업데이트");
-//		}finally {
-//			close(pstmt);
-//		}
-//		System.out.println("리뷰 IMG DAO 나옴");
-//		return result;
-//	}
 
 
 
@@ -132,7 +103,6 @@ public class ReviewDAO {
 				String reviewContent = rs.getString("REVIEW_CONTENT");
 				String reviewDate = rs.getString("REVIEW_DATE");
 				int reviewRate = rs.getInt("REVIEW_RATE");
-				List<ReviewImage> imageList = null;
 				int memberNo = rs.getInt("MEMBER_NO");
 				int productNo = rs.getInt("PRODUCT_NO");
 				int orderNo = 0;
@@ -141,7 +111,7 @@ public class ReviewDAO {
 				String memberName = rs.getString("MEMBER_NM");
 				
 				reviewList.add(
-						new Review(reviewNo, reviewContent, reviewDate, reviewRate, imageList, memberNo, productNo, orderDetailNumber, productName, memberName)
+						new Review(reviewNo, reviewContent, reviewDate, reviewRate, memberNo, productNo, orderDetailNumber, productName, memberName)
 						);
 				System.out.println("DAO : " +reviewList);
 				
@@ -161,8 +131,9 @@ public class ReviewDAO {
 	/** 작성할 리뷰 정보를 가져오는 DAO
 	 * @param conn
 	 * @param orderNo
-	 * @return
+	 * @return orderInfo
 	 * @throws Exception
+	 * @author lee
 	 */
 	public Order selectReviewInfo(Connection conn, int orderDetailNo) throws Exception {
 		
@@ -192,6 +163,15 @@ public class ReviewDAO {
 
 
 
+	/**
+	 * @param conn
+	 * @param updateContent
+	 * @param reviewRate
+	 * @param orderDetailNo
+	 * @return result
+	 * @throws Exception
+	 * @author lee
+	 */
 	public int updateReview(Connection conn, String updateContent, int reviewRate, String orderDetailNo) throws Exception{
 		
 		int result = 0;
@@ -215,7 +195,7 @@ public class ReviewDAO {
 		}finally {
 			close(pstmt);
 		}
-		System.out.println("리뷰 수정 DAO 나감");
+		
 		return result;
 	}
 
@@ -225,8 +205,9 @@ public class ReviewDAO {
 	/** 리뷰 삭제 DAO 
 	 * @param conn
 	 * @param orderDetailNo
-	 * @return
+	 * @return result
 	 * @throws Exception
+	 * @author lee
 	 */
 	public int reviewDelete(Connection conn, String orderDetailNo) throws Exception {
 		

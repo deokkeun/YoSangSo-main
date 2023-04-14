@@ -16,6 +16,8 @@ import edu.kh.yosangso.member.model.vo.Member;
 public class ReviewServlet extends HttpServlet{
 	// 리뷰 콘텐트, 리뷰 평점, 멤버넘버, 프로덕트 넘버, 오더디테일 넘
 	
+	
+	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
@@ -23,36 +25,42 @@ public class ReviewServlet extends HttpServlet{
 		ReviewService service = new ReviewService();
 		try {
 			
-			System.out.println("리뷰 평점");
-			int reviewRate = Integer.parseInt(req.getParameter("reviewRate"));
-			System.out.println(reviewRate);
+			String reviewRateParam = req.getParameter("reviewRate");
+			int reviewRate = 0;
 			
-			
+			// 리뷰 평점 작성 안했을 때,메세지 가게할거임.
+			if (reviewRateParam == null) {
+			    req.setAttribute("msg", "평점을 입력해주세요.");
+			} else {
+		        reviewRate = Integer.parseInt(reviewRateParam);
+			}
+
 			// 리뷰 콘텐트
-			System.out.println("리뷰 콘텐트");
+			
 			String reviewContent = req.getParameter("reviewContentName");
-			System.out.println(reviewContent);
+			
 			// 리뷰 평점
 			
 			// 로그인 멤버 넘버
 			HttpSession session = req.getSession();
 			Member loginMember = (Member) session.getAttribute("loginMember");
-			System.out.println("멤버넘버");
+			
 			int memberNo = loginMember.getMemberNo();
-			System.out.println(memberNo);
 			
-			System.out.println("상품번호");
+			
+			
 			int productNo = Integer.parseInt(req.getParameter("productNo"));
-			System.out.println(productNo);
 			
-			System.out.println("디테일 넘버");
+			
+			
 			int orderDetailNo = Integer.parseInt(req.getParameter("orderDetailNo"));
-			System.out.println(orderDetailNo);
+			
 			
 			result = service.reviewAdd(reviewContent, reviewRate, memberNo, productNo, orderDetailNo);
 			
 			if(result > 0 ) {
 				resp.sendRedirect("reviewList");
+				System.out.println("성공!");
 			}else {
 				System.out.println("실패");
 			}

@@ -40,7 +40,7 @@
                         <div>${loginMember.memberEmail}</div>
                         <div class="row">
                             <div></div>
-                            <button class="update-btn" onclick="location.href='memberInfo'">수정 ></button>
+                            <button class="update-btn" onclick="location.href='memberInfo'">수정 </button>
                         </div>
                     </section>
 
@@ -50,7 +50,7 @@
                             <div class="font-large">배송지 관리</div>
                             <div class="font-left">구매에서 사용하신 배송지를 관리할 수 있어요.</div>
                             <div></div>
-                            <button class="update-btn" onclick="location.href='shippinAddress'">수정 </button>
+                            <button class="update-btn" onclick="location.href='${contextPath}/ready/ready'">수정 </button>
                         </div>
                     </section>
 
