@@ -8,6 +8,7 @@ import java.util.List;
 import edu.kh.yosangso.board.model.dao.ReviewDAO;
 import edu.kh.yosangso.board.model.vo.Review;
 import edu.kh.yosangso.board.model.vo.ReviewImage;
+import edu.kh.yosangso.order.model.vo.Order;
 
 public class ReviewService {
 	

@@ -26,6 +26,7 @@ public class Review {
 	private int productNo;
 	private String orderDetailNo;
 	private String productName;
+	private String memberName;
 	
 	public Review(int reviewNo, String reviewContent, String reviewDate, int reviewRate) {
 		super();
