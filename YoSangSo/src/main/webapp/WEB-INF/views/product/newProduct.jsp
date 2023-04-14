@@ -120,7 +120,7 @@
                 <!-- 인체사진 플로팅바-->
                 <div class="floating">
                     <a href="${contextPath}/product/person"/>
-                        <img id="people" src="${contextPath}/resources/image/index/인체이미지누끼.png">
+                         <img id="people" src="${contextPath}/resources/image/index/인체일러스트누끼.png">
 
                     </a>
                 </div>
