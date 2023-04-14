@@ -19,9 +19,11 @@
     
     <title>newProduct</title>
     
-     <!--탑 버튼-->
-    <a id="topBtn" href="#"> 
-        <i class="fa-solid fa-angles-up fa-2x"></i>
+    <!--탑 버튼-->
+    <a id="topBtn" href="#">
+    <i class="fa-solid fa-angle-up fa-2x"></i> 
+       <!-- 2줄 -->
+       <!--  <i class="fa-solid fa-angles-up fa-2x"></i> -->
     </a> 
     
 </head>
