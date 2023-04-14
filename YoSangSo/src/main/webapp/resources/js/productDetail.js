@@ -78,12 +78,14 @@ count.addEventListener("click", function() {
 	
         totalcost.innerText = Number(n1)+Number(n2)
         deltip.innerText = n2;
+        counting.innerText = Number(n1);
 
 	} else {
 		
 		const n2 = 0;
         totalcost.innerText = Number(n1)+Number(n2)
         deltip.innerText = n2;
+        counting.innerText = Number(n1);
 	
     }
 });
