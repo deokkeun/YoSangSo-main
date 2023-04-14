@@ -112,46 +112,52 @@
 /******************* 퀵메뉴 부분 css ******************/
 
 
-
 .quickMenu {
-    margin : 70px 0px 0px 0px;
-    /* background-color:darkkhaki; */
+    margin : 70px 0px 30px 0px;
+    border-bottom: 2px solid #ccc;
 }
 
-.quickMenu > a {
-    width: 200px;
-    text-decoration: none;
-    border: solid 1px black;
-    align-items: center;
-    text-align: center;
 
-    /* font-weight: bold; */
-    color: black;
+ul.list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid #ccc;
+}
   
-   
+ul.list::after {
+    content: '';
+    display: block;
+    clear: both;
 }
-
-
-.quickMenu > a:hover {
-    width: 200px;
-    /* background-color :  rgb(181, 181, 181); */
-    transition-duration: 0.3s;
-    color: #2678F3;
-    text-decoration: none;
-}
-
-
-/* 퀵메뉴이름 */
+  
+  
 .mainFont {
-    align-items: center;
-    padding: 10px;
-    font-weight: bold;
-    font-size: 16px;
-    /* border-bottom: 1px solid grey; */
+    display: block;
+    padding: 10px 20px 10px 20px;
+    float: left;
+    margin-right: -1px;
+    margin-bottom: -1px;
+    color: grey;
+    text-decoration: none;
+    cursor: pointer;
+    width: 200px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 16px;
 }
-
-
-
+  
+  
+.select {
+    border-top: 2px solid #c2e7ff;
+    border-right: 1px solid #ccc;
+   /* border-bottom: 1px solid white;*/
+    border-left: 1px solid #ccc; 
+    /*border:2px solid black;*/
+    color: black;
+    margin-top: -2px;
+    background-color:  #c2e7ff;
+}
 
 /*********************제품 부분 css  ****************/
 
@@ -339,15 +345,17 @@
 /* 검은화면 글씨 설정 */
 .BNitem > a > .BNitemPic > figcaption {
     position: absolute;
-    bottom: 250px;
-    left: 10px;
+    bottom: 300px;
+    left: 50%;
     /* top: 50px; */
     margin : auto;
     z-index: 1;
     color : #fff;
-    font-size: 11px;
+    font-size: 12px;
     text-align : center;
     transition: all .5s;
+    /* (,위에서 내려올 때 높이간격) */
+    transform: translate(-50%, 40%);
     
 }
 

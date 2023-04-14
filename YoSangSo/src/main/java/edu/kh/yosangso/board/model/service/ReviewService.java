@@ -1,6 +1,9 @@
 package edu.kh.yosangso.board.model.service;
 
-import static edu.kh.yosangso.common.JDBCTemplate.*;
+import static edu.kh.yosangso.common.JDBCTemplate.close;
+import static edu.kh.yosangso.common.JDBCTemplate.commit;
+import static edu.kh.yosangso.common.JDBCTemplate.getConnection;
+import static edu.kh.yosangso.common.JDBCTemplate.rollback;
 
 import java.sql.Connection;
 import java.util.List;
