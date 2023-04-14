@@ -372,7 +372,7 @@ li {
   
 #visual {
     position: relative;
-    height: 400px;
+    height: 385px;
     margin: 0 auto;
     overflow: hidden;
     object-fit: cover;
@@ -413,7 +413,7 @@ li {
     margin: 0 2px;
 }
   
-#control a.on {
+#control a.on{
     background: #9ab3f5;
 }
 
