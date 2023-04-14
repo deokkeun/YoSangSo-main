@@ -97,7 +97,7 @@ object-fit : contain;
 }
 
 #countbox {
-    width: 100px;
+    width: 40px;
 }
 
 #costbox {
@@ -107,24 +107,24 @@ object-fit : contain;
 }
 
 #btn-purchase {
-    margin-left: 16vh;
+    margin-left: 7vh;
     background-color: #2678f3;
     color: white;
     border-radius: 5px;
-    width: 35vh;
-    height: 4vh;
+    width: 45vh;
+    height: 5vh;
     border:0px;
 
 
 }
 
 #btn-addcart {
-    margin-left: 31vh;
+    margin-left: 27vh;
     border-radius: 5px;
     border:0px;
     color: #2678f3;
-    width: 20vh;
-    height: 4vh;
+    width: 25vh;
+    height: 5vh;
     background-color: white;
     border: 1px solid #2678f3;
 }
@@ -230,11 +230,13 @@ object-fit : contain;
     background-color: rgb(239, 171, 45);
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
+    height: 30px;
 }
 
 .review-name {
     width: 10vh;
     margin-left: 5vh;
+    margin-top: 5px;
 }
 
 .review-con {
@@ -245,6 +247,21 @@ object-fit : contain;
    margin-top: 3%;
    
 
+}
+
+.review-icon {
+	margin-top: 5px;
+	margin-left: 10px
+}
+
+.review-date {
+	margin-top: 5px;
+	margin-left: 10px
+}
+
+.review-rate {
+	margin-top: 5px;
+	margin-left: 10px
 }
 
 .review-main {
@@ -273,7 +290,7 @@ margin-top: 3vh;
     display: flex;
     border: 1px solid black;
     background-color: rgb(233, 233, 106);
-    border-radius: 10px;
+    height:30px;
 }
 
 .FAQ-all1 {
@@ -282,12 +299,24 @@ margin-top: 3vh;
   background-color: rgb(233, 233, 106);
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
+  height:30px;
 }
 
 .FAQ-name {
     width: 10vh;
     margin-left: 5vh;
+    margin-top: 5px;
 }
+
+.FAQ-icon {
+	margin-left:10px;
+	margin-top: 5px; 
+}
+
+.FAQ-date {
+	margin-top: 5px;
+}
+
 
 #Accordion_wrap2 {
 
@@ -410,13 +439,13 @@ margin-top: 3vh;
 
 .prev{
  width: 50px; height: 20px;
-  border: none; background-color: coral; color: white; outline: none; 
+ border: none; background-color: white;  color: black; outline: none; font-size: 30px; font-weight: bold;
   
 }
 
 .next {
   width: 50px; height: 20px;
-  border: none; background-color: coral; color: white; outline: none; 
+  border: none; background-color: white;  color: black; outline: none; font-size: 30px; font-weight: bold;outline: none; 
 }
 
 .stepper{
@@ -454,6 +483,15 @@ margin-top: 3vh;
 
 button{
     cursor: pointer;
+}
+
+#topBtn{
+	position: fixed;
+	right: 90px;
+    /* left : 25px; */
+	bottom: 25px;
+	display: none;
+	z-index: 9;
 }
 
 
