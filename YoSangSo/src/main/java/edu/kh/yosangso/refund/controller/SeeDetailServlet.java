@@ -35,6 +35,7 @@ public class SeeDetailServlet extends HttpServlet {
 			
 		}catch(Exception e) {
 			e.printStackTrace();
+			throw new NullPointerException();
 		}
 		
 		req.setAttribute("detailList", list);

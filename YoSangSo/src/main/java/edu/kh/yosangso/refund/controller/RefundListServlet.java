@@ -24,12 +24,12 @@ public class RefundListServlet extends HttpServlet{
 		
 		RefundService service = new RefundService();
 		
-		Member member = (Member)req.getSession().getAttribute("loginMember");
 		
 
 		List<Order> refundList = new ArrayList<>();
 		
 		try {
+			Member member = (Member)req.getSession().getAttribute("loginMember");
 			if(member == null) {
 				String filePath = "/WEB-INF/views/refund/refundDone.jsp";
 				RequestDispatcher dispatcher = req.getRequestDispatcher(filePath);
