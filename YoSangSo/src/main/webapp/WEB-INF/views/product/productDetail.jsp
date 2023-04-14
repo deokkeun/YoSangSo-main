@@ -91,13 +91,24 @@
                         <!--총 금액-->
                         <div class="total-cost">
                         	
-                        상품금액&nbsp;&nbsp;<span id="counting" >${productList[0].price}</span>원 + 배송비&nbsp;&nbsp;<span id=deltip>0</span> 
+                        상품금액&nbsp;&nbsp;<span id="counting">${productList[0].price}</span>원 + 배송비&nbsp;&nbsp;
+                        
+                        	<c:if test="${productList[0].price >= 10000}">
+                        		<span id=deltip>0</span>원
+                        		<c:set var="del" value="0"/>
+                        	</c:if>
+                        	
+                        	<c:if test="${productList[0].price < 10000}">
+                        		<c:set var="del" value="3000"/>
+                        		<span id=deltip>3000</span>원
+                        	</c:if>
+                        =
                       	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                       	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                       	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                       			
                         총 상품금액
-                        &nbsp;<span id="totalcost">${productList[0].price}</span>원
+                        &nbsp;<span id="totalcost">${productList[0].price + del}</span>원
                         	
                         </div>
                         
