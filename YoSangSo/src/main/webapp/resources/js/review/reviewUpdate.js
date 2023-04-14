@@ -78,7 +78,7 @@ function handleSubmit(event){
   form.submit();
   swal('리뷰 수정 성공!', '리뷰가 수정되었어요! :-) ', 'success')
   .then(function(){         
-    location.href="reviewList";
+    // location.href="reviewList";
   })
 }
 

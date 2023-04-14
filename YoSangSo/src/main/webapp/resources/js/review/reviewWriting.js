@@ -95,7 +95,7 @@ function handleSubmit(event){
   form.submit();
   swal('리뷰 등록 성공!', '소중한 리뷰 감사합니다! :-) ', 'success')
   .then(function(){       
-    location.href="reviewList";
+    // location.href="reviewList";
   })
 }
 
