@@ -53,8 +53,9 @@ public class DetailPurchaseServlet extends HttpServlet{
 					
 					
 					req.getRequestDispatcher(path).forward(req, resp);
-					
+
 				} 
+
 				
 			} catch (Exception e) {
 				e.printStackTrace();

@@ -16,6 +16,19 @@ function prev(){
         $(".prev")[0].setAttribute("disabled",'true')
     }
 }
+
+$(function() {
+    $(window).scroll(function() { 
+      if ($(this).scrollTop() > 200) { 
+        $('#topBtn').fadeIn(); } 
+      else { $('#topBtn').fadeOut(); }
+    }); 
+    $("#topBtn").click(function() { 
+       $('html, body').animate({ scrollTop : 0  }, 300); 
+      return false; });
+  });
+
+
 function next(){
     if(curPos < 3){
         $("button").removeAttr("disabled")
@@ -120,6 +133,8 @@ function login() {
 	location.href="http://localhost:8080/YoSangSo/member/login"
 	
 }
+
+
 
 
 
