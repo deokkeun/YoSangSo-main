@@ -30,11 +30,11 @@ public class RefundListServlet extends HttpServlet{
 		
 		try {
 			Member member = (Member)req.getSession().getAttribute("loginMember");
-			if(member == null) {
-				String filePath = "/WEB-INF/views/refund/refundDone.jsp";
-				RequestDispatcher dispatcher = req.getRequestDispatcher(filePath);
-				dispatcher.forward(req, resp);
-			}
+//			if(member == null) {
+//				String filePath = "/WEB-INF/views/refund/refundDone.jsp";
+//				RequestDispatcher dispatcher = req.getRequestDispatcher(filePath);
+//				dispatcher.forward(req, resp);
+//			}
 			
 			int memberNo = member.getMemberNo();
 			
