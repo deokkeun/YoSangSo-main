@@ -31,7 +31,7 @@
                     </div>
                     <section class="content-box-left-title">
                         <div class="person-img">
-                            <img src="${contextPath}/resources/image/index/인체이미지누끼.png" alt="인체이미지" width="80px">
+                            <img src="${contextPath}/resources/image/index/인체일러스트누끼.png" alt="인체이미지" width="80px">
                         </div>
                         <div>
                             <div class="title-sub">
