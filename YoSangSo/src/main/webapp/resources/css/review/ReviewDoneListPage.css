@@ -218,6 +218,20 @@ li{
     width: 60%;
 }
 
+#emptyReviewBoxParent{
+    height: 100%;
+    width: 100%;
+}
+
+#emptyReviewBox{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-weight: bold;
+}
 
 /*====================================수정버튼==========================================================*/
 

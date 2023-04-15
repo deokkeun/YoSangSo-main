@@ -60,7 +60,7 @@
                                         <div class="rightReivewContent">
                                             
                                             <c:forEach var="list" items="${list}" varStatus="status">
-                                                    <form action="reviewWriting">
+                                                <form action="reviewWriting">
                                                     <div class="rightProductImg"> 
                                                         <div>
                                                             <img src="${contextPath}/resources/image/all/${list.productName}.jpg" alt="#" id="reviewImages">
@@ -83,23 +83,18 @@
 
                                                     </div>
                                                 </form> 
-                                                </c:forEach>
+                                            </c:forEach>
                                         </div>
                                     </c:if>
 
-                                    <%-- total == 0 doneTotla != 0 --%>
-                                    <c:if test="${total eq 0 and doneTotal ne 0}">
+                                    <%-- total == 0 --%>
+                                    <c:if test="${total eq 0 }">
                                         <div class="rightReivewContent">
                                             <div id="notEmptyDone">작성 가능한 리뷰가 없어요!</div>
                                         </div>
                                     </c:if>
 
-                                    <%-- total == 0 doneTotla == 0 --%>
-                                    <c:if test="${total eq 0 and doneTotal eq 0}">
-                                        <div class="rightReivewContent">
-                                            <div id="emptyBoth">작성 가능한 리뷰와 작성된 리뷰가 없습니다!</div>
-                                        </div>
-                                    </c:if>
+                                    
 
                                     
                                     </div>
