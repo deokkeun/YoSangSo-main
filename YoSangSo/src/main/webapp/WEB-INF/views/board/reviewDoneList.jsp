@@ -45,7 +45,7 @@
                                 <div>
         
                                     <div class="myReview">
-                                       	작성한 리뷰
+                                       	${loginMember.memberName}님이 작성한 리뷰
                                     </div>
         
                                     <div class="rightReview">
@@ -60,7 +60,7 @@
                                             <div class="rightProductImg"> 
                                             
                                             <c:choose>
-                                                <c:when test="${!empty list.productName}">
+                                                <c:when test="${not empty list}">
                                                     <div>
                                                         <p>${list.productName}</p>
                                                     </div>
@@ -73,7 +73,7 @@
                                                 </c:when>
 
                                                 <c:otherwise>
-                                                    <div>작성된 리뷰가 존재하지 않습니다.</div>
+                                                    <div>등록된 리뷰가 없습니다.</div>
                                                 </c:otherwise>
                                             </c:choose>
                                                

@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="${contextPath}/resources/css/inquiry/inquiryList.css">
     <script src="https://kit.fontawesome.com/881d1deef7.js" crossorigin="anonymous"></script>
     
-    <title>inquiryList</title>
+    <title>1:1문의 게시물 목록 페이지</title>
 </head>
 <body>
     <!-- 헤더, 컨텐츠 -->

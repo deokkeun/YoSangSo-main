@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="${contextPath}/resources/css/main-sub-style.css">
     <link rel="stylesheet" href="${contextPath}/resources/css/review/ReviewPage.css">
     <script src="https://kit.fontawesome.com/881d1deef7.js" crossorigin="anonymous"></script>
-    <title>reviewWriting</title>
+    <title>리뷰 작성</title>
 </head>
 <body>
     <!-- 헤더, 컨텐츠 -->
