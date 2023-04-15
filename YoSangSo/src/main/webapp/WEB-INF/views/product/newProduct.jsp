@@ -17,7 +17,10 @@
     <link rel="stylesheet" href="${contextPath}/resources/css/product/newProduct.css">
     <script src="https://kit.fontawesome.com/881d1deef7.js" crossorigin="anonymous"></script>
     
-    <title>newProduct</title>
+    <title>신상품</title>
+    
+    <!-- 요생소 파비콘 (Chrome, Safari, IE 용) -->
+	<link rel="icon" href="${contextPath}/resources/image/logo/favicon.ico" type="image/x-icon">
     
     <!--탑 버튼-->
     <a id="topBtn" href="#">
@@ -25,7 +28,7 @@
        <!-- 2줄 -->
        <!--  <i class="fa-solid fa-angles-up fa-2x"></i> -->
     </a> 
-    
+        
 </head>
 <body>
 

@@ -110,7 +110,7 @@
 
 .quickMenu {
     margin : 70px 0px 30px 0px;
-    border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+    border-bottom: 2px solid #ccc;
 }
 
 
@@ -118,7 +118,8 @@ ul.list {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid #ccc;
+    margin-bottom: -1px;
 }
   
 ul.list::after {
@@ -144,17 +145,18 @@ ul.list::after {
 }
   
   
+  
 .select {
     border-top: 2px solid #c2e7ff;
-    border-right: 1px solid #ccc;
+   /* border-right: 1px solid #ccc;*/
    /* border-bottom: 1px solid white;*/
-    border-left: 1px solid #ccc; 
+   /* border-left: 1px solid #ccc; */ 
     /*border:2px solid black;*/
     color: black;
     margin-top: -2px;
     background-color:  #c2e7ff;
+    margin-bottom : 0.4px;
 }
-
 /*********************제품 부분 css  ****************/
 
 
