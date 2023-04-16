@@ -138,6 +138,11 @@ object-fit : contain;
     width: 1100px;
 }
 
+#sug{
+	justify-content: center;
+	text-align: center;
+}
+
 .product-detail > ul {
     margin-left: 100px;
 }
