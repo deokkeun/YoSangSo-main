@@ -196,13 +196,15 @@
 
                <!--추천 상품-->
                <div id="slideContainer">
-        
+        			<h2 id="sug">추천 상품</h2>
                 <div class="items">
+                
                     <button class="prev"><</button>
-                    <div class="item active"><a href="${contextPath}/product/productDetail?ProductNo=31"><img class="recom" src="${contextPath}/resources/image/product/Codeage, Fermented, 남성용 종합비타민, 캡슐 120정.jpg"></a></div>
-                    <div class="item"><a href="${contextPath}/product/productDetail?ProductNo=29"><img class="recom"  src="${contextPath}/resources/image/product/Codeage, 비타민, 메디테이트, 캡슐 60정정.jpg"></a></div>
-                    <div class="item"><a href="${contextPath}/product/productDetail?ProductNo=33"><img class="recom"  src="${contextPath}/resources/image/product/Codeage, 비타민, 모발, 비오틴, 콜라겐. 케라틴, 캡슐 120정.jpg"></a></div>
-                    <div class="item"><a href="${contextPath}/product/productDetail?ProductNo=32"><img class="recom"  src="${contextPath}/resources/image/product/Codeage, 비타민, 헤어 구미젤리, 무설탕, 비오틴, 비타민 C, 미네랄, 딸기 코코넛, 60개.jpg"></a></div>
+                    <div class="item active"><a href="${contextPath}/product/productDetail?ProductNo=21"><img src="${contextPath}/resources/image/all/NOW Foods, E-400, 268mg, 소프트젤 250정.jpg"></a></div>
+                       <div class="item"><a href="${contextPath}/product/productDetail?ProductNo=15"><img src="${contextPath}/resources/image/all/NOW Foods, 고효능 비타민D-3, 10,000IU, 소프트젤 120정.jpg"></a></div>
+                       <div class="item"><a href="${contextPath}/product/productDetail?ProductNo=24"><img src="${contextPath}/resources/image/all/Jarrow Formulas, Zinc Balance, 베지 캡슐 100정.jpg"></a></div>
+                       <div class="item"><a href="${contextPath}/product/productDetail?ProductNo=33"><img src="${contextPath}/resources/image/all/Codeage, 비타민, 모발, 비오틴, 콜라겐. 케라틴, 캡슐 120정.jpg"></a></div>
+                       <div class="item"><a href="${contextPath}/product/productDetail?ProductNo=42"><img src="${contextPath}/resources/image/all/California Gold Nutrition, 비타민D3(감귤류), 2,000IU, 30ml(1fl oz) - 시트러스맛.jpg"></a></div>
                     <button class="next">></button>
                 </div>
                     <div class="stepper">
