@@ -25,7 +25,7 @@
             </section>
             
 	            <section class="processing">
-	                <div>주문을 처리중입니다.</div>
+	                <div>결제가 완료 되었습니다.</div>
 	                <div>제품을 발송하게 되면 이메일을 보내드립니다.</div>
 	                <div>주문 번호: <span id="orderNo"></span></div>
 	                <div>주문 날짜: <span id="orderDate"></span></div>

@@ -30,7 +30,7 @@
             <section>
             
             
-                <form action="signUpBtn" method="POST" onsubmit="return signUpValidate()">
+                <form action="signUpBtn" id="signUp-form" method="POST" onsubmit="return signUpValidate()">
                     <div>
                         <div class="common">아이디 (이메일)</div>
                         <input type="text" class="input-box" id="memberEmail" name="memberEmail" autocomplete="off">
@@ -104,14 +104,14 @@
                 
                 
             </section>
-            <hr>
+            <%-- <hr>
             <section>
                 <div>
                     <button class="kakaoLogin">
                         <img src="${contextPath}/resources/image/login/kakao_login_large_wide.png" alt="카카오로그인" class="kakao">
                     </button>
                 </div>
-            </section>
+            </section> --%>
         </section>
 
 

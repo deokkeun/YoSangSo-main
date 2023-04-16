@@ -48,7 +48,7 @@
                         </c:if>
                         
                             <label>
-                                <input type="checkbox" name="saveId" ${chk}>로그인 상태 유지
+                                <input type="checkbox" name="saveId" ${chk}> 아이디 저장
                             </label>
                             
                             
@@ -66,14 +66,14 @@
                     <button class="signUp-btn">회원가입</button>
                 </form>
             </section>
-            <hr>
+            <%-- <hr>
             <section>
                 <div>
                     <button class="kakaoLogin">
                         <img src="${contextPath}/resources/image/login/kakao_login_large_wide.png" alt="카카오로그인" class="kakao">
                     </button>
                 </div>
-            </section>
+            </section> --%>
         </section>
 
 
