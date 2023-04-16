@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import edu.kh.yosangso.board.model.vo.ReviewListPaging;
 import edu.kh.yosangso.member.model.vo.Member;
 import edu.kh.yosangso.order.model.vo.Order;
 import edu.kh.yosangso.refund.service.RefundService;
@@ -20,7 +21,7 @@ import edu.kh.yosangso.refund.service.RefundService;
 public class RefundDoneServlet extends HttpServlet{
 	
 	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
 		String[] orderNoList = req.getParameterValues("orderNo");
 
@@ -46,9 +47,23 @@ public class RefundDoneServlet extends HttpServlet{
 				
 				if(refundResult>0) {
 					// 서비스 구현 시 일시적으로 memberNo을 부여
-					refundList = service.refundList(memberNo);
 					
-					System.out.println(refundList);
+					int pageNum = 1;
+					int amount  = 5;
+					
+					if(req.getParameter("pageNum") != null && req.getParameter("amount") != null) {
+						pageNum = Integer.parseInt(req.getParameter("pageNum"));
+						amount = Integer.parseInt(req.getParameter("amount"));
+					}
+					
+					int total = service.getTotal(memberNo);
+					
+					ReviewListPaging pageVo = new ReviewListPaging(pageNum, amount, total);
+					
+					refundList = service.refundList(memberNo, pageNum, amount);
+					
+					req.getSession().setAttribute("refundPageVo", pageVo);
+					
 					
 					req.getSession().setAttribute("refundList", refundList);
 

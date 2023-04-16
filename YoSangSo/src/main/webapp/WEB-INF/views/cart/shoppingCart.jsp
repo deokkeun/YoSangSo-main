@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="${contextPath}/resources/css/cart.css">
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script src="https://kit.fontawesome.com/881d1deef7.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <title>cart</title>
 </head>
 <body>
@@ -39,11 +40,11 @@
         <c:if test="${!empty cartList }">
             <div class="info-bar">
                 <div>
-                    <span>장바구니</span><span>> 주문/결제</span><span>> 완료</span>
+                    <span>장바구니</span><span>> 주문/결제</span><span>> 결제완료</span>
                 </div>
                 <div>
-                	<form action="deleteCart" method="post">
-                    	<button id="remove-button">전체 상품 삭제</button>
+                	<form action="deleteCart" method="post" id="deleteCartAll">
+                    	<button type="button" id="remove-button" onclick="deleteConfirm()">전체 상품 삭제</button>
                     	<input type="hidden" value="${cartList[0].memberNo }" name="memberNo" id="memberNo">
                     </form>
                 </div>

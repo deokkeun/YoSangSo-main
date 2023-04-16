@@ -110,7 +110,7 @@ public class RefundDAO {
 		return result;
 	}
 
-	public List<Order> refundList(Connection conn, int memberNo) throws Exception{
+	public List<Order> refundList(Connection conn, int memberNo, int pageNum, int amount) throws Exception{
 		List<Order> result = new ArrayList<>();
 		
 		try {
@@ -122,6 +122,8 @@ public class RefundDAO {
 			
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, memberNo);
+			pstmt.setInt(2, (pageNum-1)*amount);
+			pstmt.setInt(3, pageNum*amount);
 			
 			rs = pstmt.executeQuery();
 			
@@ -210,6 +212,31 @@ public class RefundDAO {
 		
 		
 		return list;
+	}
+
+	public int getTotal(Connection conn, int memberNo) throws Exception{
+		int result = 0;
+		
+		try {
+			
+			String sql = prop.getProperty("refundTotal");
+			
+			
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, memberNo);
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				result = rs.getInt("COUNT");
+			}
+			
+		}finally {
+			
+			close(rs);
+			close(pstmt);
+		}
+		return result;
 	}
 
 }
