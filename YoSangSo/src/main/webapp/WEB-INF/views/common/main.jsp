@@ -10,22 +10,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- 메인페이지 css  -->
-    <link rel="stylesheet" href="${contextPath}/resources/css/main.css">
+    <link rel="stylesheet" href="resources/css/main.css">
     <link rel="stylesheet" href="${contextPath}/resources/css/main-style.css">
     <script src="https://kit.fontawesome.com/881d1deef7.js" crossorigin="anonymous"></script>
     <!-- 슬라이더 파일다운받은거 -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     
-    <title>index</title>
+    <title>요생소 : 요즘 생활의 소중함</title>
     
-
+    
+    <!-- 요생소 파비콘 (Chrome, Safari, IE 용) -->
+	<link rel="icon" href="resources/image/logo/favicon.ico" type="image/x-icon">
+	
     <!--탑 버튼-->
     <a id="topBtn" href="#">
     <i class="fa-solid fa-angle-up fa-2x"></i> 
-       <!-- 2줄 -->
-       <!--  <i class="fa-solid fa-angles-up fa-2x"></i> -->
     </a> 
     
+  
 </head>
 <body>
 
