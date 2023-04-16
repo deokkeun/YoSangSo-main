@@ -49,15 +49,31 @@ function handleSubmit(event){
   // 평점 입력 안할 시 코드
   const reviewRateInput = document.getElementById("reviewAddRate");
   const reviewRate = reviewRateInput.value;
-  if(!reviewRate){
 
+  if(!reviewRate){ // 평점 미입력 코드 
     swal('입력 누락!', '평점을 입력해주세요! :-) ', 'warning')
     .then(function(){
       reviewRateInput.focus();
       reviewRateInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
     })
     return;
-  } // 평점 코드 끝
+  } // 평점 미입력 코드 끝
+  else if(reviewRate > 5){ // 평점 5점 초과 코드
+    swal('평점이 너무 높아요!!', '최대 5점까지만 입력 가능합니다! :-) ', 'info')
+    .then(function(){
+      reviewRateInput.focus();
+      reviewRateInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    })
+    return;
+  } // 평점 5점 초과 코드 끝
+  else if(reviewRate < 1){ // 평점 1점 미만 코드
+    swal('평점이 너무 낮아요!!', '최소 1점까지만 입력 가능합니다! :-) ', 'info')
+    .then(function(){
+      reviewRateInput.focus();
+      reviewRateInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    })
+    return;
+  } // 평점 1점 미만 코드 끝
 
   // textarea 영역 값 입력 안할 시, 코드
   const reivewTextarea = document.getElementById("reivewTextarea");

@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="${contextPath}/resources/css/main-sub-style.css">
     <link rel="stylesheet" href="${contextPath}/resources/css/ready/ready.css">
     <script src="https://kit.fontawesome.com/881d1deef7.js" crossorigin="anonymous"></script>
-    <title>myPageInfo</title>
+    <title>준비중...</title>
 </head>
 <body>
     <!-- 헤더, 컨텐츠 -->
