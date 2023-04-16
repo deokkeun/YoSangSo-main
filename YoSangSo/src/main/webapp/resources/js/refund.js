@@ -1,6 +1,6 @@
 function refund(){
 	
-	const options="width=300, height=300, top=50, left=700";
+	const options="width=600, height=400, top=50, left=700";
 
     window.open("/YoSangSo/popup.jsp", "popupWindow", options);
 	

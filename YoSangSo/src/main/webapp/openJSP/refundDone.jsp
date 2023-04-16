@@ -88,7 +88,26 @@
 				            <div class="end-line">                        
 				                <span>취소/환불 내역을 확인할 수 있습니다.</span>
 				            </div>
-				        </div>  
+				        </div>
+				        <div class="paging">
+				        	<ul>
+	               				<!-- 2. 이전버튼 활성화 여부 -->
+	               				<c:if test="${refundPageVo.prev }">
+                        			<li><a href="${contextPath}/refund/refundList?pageNum=${refundPageVo.startPage - 1 }&amount=${refundPageVo.amount}">이전</a></li>
+								</c:if>
+								                        		
+                        		<!-- 1. 페이지번호 처리 -->
+                        		<c:forEach var="num" begin="${refundPageVo.startPage }" end="${refundPageVo.endPage }">
+	                        		<li  class="${refundPageVo.pageNum eq num ? 'active' : '' }">
+	                        		<a href="${contextPath}/refund/refundList?pageNum=${num }&amount=${refundPageVo.amount}">${num }</a></li>
+                        		</c:forEach>
+                        		
+                        		<!-- 3. 다음버튼 활성화 여부 -->
+                        		<c:if test="${refundPageVo.next }">
+                        			<li><a href="${contextPath}/refund/refundList?pageNum=${refundPageVo.endPage + 1 }&amount=${refundPageVo.amount}">다음</a></li>
+                        		</c:if>
+                    		</ul>
+                    	</div>  
 			            </c:if>
                 </section>
 

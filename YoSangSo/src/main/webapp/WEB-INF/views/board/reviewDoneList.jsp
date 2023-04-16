@@ -54,7 +54,6 @@
                                             <div><a href="reviewList?pageNum=1&amount=3" class="inner-review-tab">작성 가능한 리뷰 (${total })</a></div>
                                             <div><a href="reviewDoneList?pageNum=1&amount=3" class="inner-review-tab">작성한 리뷰 (${doneTotal })</a></div>
                                         </div>
-
                                         <div class="rightReivewContent">
 											<c:forEach var="list" items="${list}">
                                             <div class="rightProductImg"> 

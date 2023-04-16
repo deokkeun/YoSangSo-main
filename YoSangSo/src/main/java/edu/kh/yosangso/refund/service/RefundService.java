@@ -62,14 +62,14 @@ public class RefundService {
 		return result;
 	}
 
-	public List<Order> refundList(int memberNo) throws Exception {
+	public List<Order> refundList(int memberNo, int pageNum, int amount) throws Exception {
 		
 		Connection conn = getConnection();
 		
 		
 		RefundDAO dao = new RefundDAO();
 		
-		List<Order> result = dao.refundList(conn, memberNo);
+		List<Order> result = dao.refundList(conn, memberNo, pageNum, amount);
 
 		
 		close(conn);
@@ -103,6 +103,19 @@ public class RefundService {
 		close(conn);
 		
 		return list;
+	}
+
+	public int getTotal(int memberNo) throws Exception{
+		
+		Connection conn = getConnection();
+				
+		RefundDAO dao = new RefundDAO();
+		
+		int result = dao.getTotal(conn, memberNo);
+		
+		close(conn);
+		
+		return result;
 	}
 
 
