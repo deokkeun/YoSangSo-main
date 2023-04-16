@@ -12,7 +12,6 @@
 <jsp:forward page= "main"/>
 
 
-<<<<<<< HEAD
 
 
 <sql:setDataSource var= "conn" 
