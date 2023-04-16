@@ -32,7 +32,7 @@
     <!-- 헤더, 컨텐츠 -->
     <main>
      <img src="${contextPath}/resources/image/error/errorlog.jpg" id="err">
-     <a href="${contextPath}">메인 페이지로 이동</a>
+     <a href="${contextPath}/member/login">로그인 페이지로 이동</a>
    </main>
 </body>
 </html>
