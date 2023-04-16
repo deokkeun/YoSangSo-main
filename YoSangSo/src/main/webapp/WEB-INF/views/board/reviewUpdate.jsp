@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="${contextPath}/resources/css/main-sub-style.css">
     <link rel="stylesheet" href="${contextPath}/resources/css/review/ReviewUpdate.css">
     <script src="https://kit.fontawesome.com/881d1deef7.js" crossorigin="anonymous"></script>
-    <title>reviewUpdate</title>
+    <title>리뷰 수정</title>
 </head>
 <body>
     <!-- 헤더, 컨텐츠 -->

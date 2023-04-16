@@ -46,7 +46,7 @@
                                 <div>
                                     
                                     <div class="myReview">
-                                       	나의 리뷰 
+                                       	${loginMember.memberName}님의 작성 가능한 리뷰
                                     </div>
         
                                     <div class="rightReview">
@@ -56,17 +56,15 @@
                                             <div><a href="reviewDoneList?pageNum=1&amount=3" class="inner-review-tab">작성한 리뷰 (${doneTotal })</a></div>
                                            
                                         </div>
-
+                                    <c:if test="${total != 0 }">
                                         <div class="rightReivewContent">
                                             
                                             <c:forEach var="list" items="${list}" varStatus="status">
-                                                    <form action="reviewWriting">
+                                                <form action="reviewWriting">
                                                     <div class="rightProductImg"> 
-
                                                         <div>
                                                             <img src="${contextPath}/resources/image/all/${list.productName}.jpg" alt="#" id="reviewImages">
                                                         </div>
-                
                                                         <div class="product-info">
                                                             <div>
                                                                 <p>${list.orderDate}일 주문</p>
@@ -85,9 +83,20 @@
 
                                                     </div>
                                                 </form> 
-                                                </c:forEach>
-
+                                            </c:forEach>
                                         </div>
+                                    </c:if>
+
+                                    <%-- total == 0 --%>
+                                    <c:if test="${total eq 0 }">
+                                        <div class="rightReivewContent">
+                                            <div id="notEmptyDone">작성 가능한 리뷰가 없어요!</div>
+                                        </div>
+                                    </c:if>
+
+                                    
+
+                                    
                                     </div>
                                     <div class="reviewListBox">
                                     <c:if test="${pageVo.prev}">

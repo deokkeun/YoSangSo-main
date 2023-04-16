@@ -68,16 +68,17 @@ function deleteBoard(e, boardNo){
 
 
 function updateBoard(e, boardNo) {
-
+    let questionPChild = e.parentElement.previousElementSibling.lastElementChild.firstElementChild; // 기존 질문을 담고있는 span태그
+    let questionPValue = questionPChild.innerText; // 기존 질문 값
 
     e.parentElement.previousElementSibling.lastElementChild.style.display = "none"; // 기존 질문 디스플레이 논으로 바꾸기
     
-
+    
 
     e.parentElement.previousElementSibling.append(textAreaP);
 
     textAreaP.setAttribute('placeholder', '수정하실 문의를 작성해주세요.');
-    
+    textAreaP.innerText = questionPValue;
     textAreaP.className ="answerBoxTextArea";
 
    
