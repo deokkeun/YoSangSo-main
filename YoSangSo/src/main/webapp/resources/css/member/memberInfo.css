@@ -104,6 +104,8 @@ select {
     margin: 50px 10px;
 }
 .withdrawal {
-    border: none;
-    color:rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    color: rgba(0, 0, 0, 0.5);
+    margin: 15px;
+    border-radius: 5px;
 }

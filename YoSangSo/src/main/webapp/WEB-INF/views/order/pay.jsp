@@ -167,6 +167,7 @@
             
         <!-- 추천 상품 -->
         <section class="recomend">
+            <div class="recomend-title">추천 상품</div>
             <section>
                     <div class="controls">
 

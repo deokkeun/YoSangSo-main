@@ -231,11 +231,16 @@ function signUpValidate(){
             return false; // form태그 기본 이벤트 제거
         }
     }
+    
+	swal('회원가입을 축하드립니다!', "요생소에 오신것을 환영합니다!", 'success');
 
-    return true; // form태그 기본 이벤트 수행
+	setTimeout(function() {
+		document.getElementById('signUp-form').submit();
+	}, 3000);
+	
+	return false; // form태그 기본 이벤트 제거
 
 }
-
 
 
 

@@ -103,7 +103,7 @@
                         
                     </section>
                     <section class="update-btn">
-                        <button>취소</button><button>수정</button>
+                        <button onclick="location.href='${contextPath}/member/myPageInfo'">취소</button><button>수정</button>
                     </section>
 
 
