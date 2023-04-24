@@ -1,6 +1,5 @@
 [<img width="100px" src="https://user-images.githubusercontent.com/84825191/234000186-313e49bf-bfae-472b-b186-97a2ed6af197.png"></img>](https://github.com/deokkeun/YoSangSo-main/tree/develop)
-# YoSangSo
-요즘 생활의 소중함(신체 부위별 비타민 추천)
+# YoSangSo / 요즘 생활의 소중함(신체 부위별 비타민 추천)
 
 
 1. 팀 소개
