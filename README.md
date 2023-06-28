@@ -1,10 +1,15 @@
 <p align="center"><img width="250px" src="https://user-images.githubusercontent.com/84825191/234000186-313e49bf-bfae-472b-b186-97a2ed6af197.png" href="https://github.com/deokkeun/YoSangSo-main/tree/develop"></img></p>
-<h1> YoSangSo / 요즘 생활의 소중함</h1>
+<h1> YoSangSo / 요즘 생활의 소중함 (프로젝트 소개)</h1>
+<h3>
+바쁜 현대사회의 직장인들이 뒤늦게 병원에 가고 나서야 찾게 되는 비타민,
+신체 부위에 맞는 비타민을 구매하기 위해 필요한 정보를 검색하는데 소모하는 시간을 줄이기 위한 사이트  
+</h3>
+<br><br>
 <div>KH 정보교육원 SEMI PROJECT</div>
 <div>주제 : 신체 부위별 비타민 추천 쇼핑몰</div>
 <div>개발 기간 : 2023년 02월 28일 ~ 2023년 04월 15일</div>
 
-<br><br>
+<br><br><br>
 
 <div align=left><h1>📚 STACKS</h1></div>
 <div align=left> 
@@ -46,11 +51,7 @@
 
 <br>
 <img width="823" alt="스크린샷 2023-04-24 오후 9 32 55" src="https://user-images.githubusercontent.com/84825191/233997224-90d751ca-430c-46a2-ae0e-54210b8fff1e.png">
-<h1>프로젝트 소개</h1>
-<h3>
-바쁜 현대사회의 직장인들이 뒤늦게 병원에 가고 나서야 찾게 되는 비타민,
-신체 부위에 맞는 비타민을 구매하기 위해 필요한 정보를 검색하는데 소모하는 시간을 줄이기 위한 사이트  
-</h3>
+
 
 
 
