@@ -7,7 +7,6 @@
 <br><br>
 
 <div align=left><h1>📚 STACKS</h1></div>
-<br>
 <div align=left> 
   <h3>🌱 Environment</h3>
   <img src="https://img.shields.io/badge/spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white"> 
@@ -75,8 +74,8 @@
 
 
 <h1>🔑 ERD 테이블 명세</h1>
-
-<a href="" Style="text-decoration: none; color: #1A73E8;">ERD 바로가기</a>
+<img src="https://github.com/deokkeun/YoSangSo-main/assets/84825191/09b4823e-2e13-4b9c-8db5-722594b5b79f"/>
+<a href="https://www.erdcloud.com/d/oQze9HxdMjbhNe2Zp" Style="text-decoration: none; color: #1A73E8;">ERD 바로가기</a>
 
 
 
