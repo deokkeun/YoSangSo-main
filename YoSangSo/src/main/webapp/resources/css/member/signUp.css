@@ -40,13 +40,17 @@
     background-color: transparent;
     cursor: pointer;
 }
-
+.kakaoLogin {
+    border: none;
+    background-color: transparent;
+    padding: 0px;
+}
 .kakao {
-    background-color: #FEE500;
+    width: 400px;
+    height: 55px;
+    cursor: pointer;
 }
-.google {
-    border: 1px solid rgba(0, 0, 0, 0.2);
-}
+
 #cert1 {
     position: relative;
 }

@@ -1,35 +1,4 @@
 
-const agree = document.getElementById("agree");
-const agreeAll = document.getElementsByName("agree");
-const agreeSub = document.querySelector(".agree-box2");
-
-
-
-function checkConfirm() {
-	alert("필수 선택사항입니다.");
-}
-
-
-
-document.querySelector(".agree-box1").addEventListener("click", function() {
-    if(agree.checked) {
-        for(let agree of agreeAll) {
-            agree.setAttribute("checked", "true");
-        }
-        agreeSub.style.transitionDuration = "1s";
-        agreeSub.style.height = "210px";
-        agreeSub.style.borderTop = "1px solid rgba(0, 0, 0, 0.2)";
-        agreeSub.style.borderBottom = "1px solid rgba(0, 0, 0, 0.2)";
-        this.style.backgroundColor = "rgba(0, 0, 0, 0.05)";
-        this.style.color = "black";
-    } else {
-        agreeSub.style.height = "0px";
-        agreeSub.style.borderTop = "none";
-        agreeSub.style.borderBottom = "none";
-        this.style.backgroundColor = "transparent";
-    }
-});
-
 
 const common = document.getElementsByClassName("input-box");
 
@@ -52,8 +21,60 @@ const checkObj = {
     "memberPwConfirm" : false,
     "cMessage" : false,
     "cNumber" : false,
-    "sendEmail" : false
+    "sendEmail" : false,
+    "agreeCheck" : false
 };
+
+
+
+// 전체 동의 박스 (총 5개)
+const agree = document.getElementById("agree");
+// 동의 갯수 5개
+const agreeAll = document.getElementsByName("agree");
+// 전체동의 제외 4개(박스)
+const agreeSub = document.querySelector(".agree-box2");
+
+
+// 모두 동의 1개 박스
+document.querySelector(".agree-box1").addEventListener("click", function() {
+    if(agree.checked) {
+        for(let agree of agreeAll) {
+            agree.setAttribute("checked", "true");
+        }
+        agreeSub.style.transitionDuration = "1s";
+        agreeSub.style.height = "165px";
+        agreeSub.style.borderTop = "1px solid rgba(0, 0, 0, 0.2)";
+        agreeSub.style.borderBottom = "1px solid rgba(0, 0, 0, 0.2)";
+        this.style.backgroundColor = "rgba(0, 0, 0, 0.05)";
+        this.style.color = "black";
+    } else {
+        agreeSub.style.height = "0px";
+        agreeSub.style.borderTop = "none";
+        agreeSub.style.borderBottom = "none";
+        this.style.backgroundColor = "transparent";
+    }
+    
+    checkObj.agreeCheck = true;
+});
+
+
+
+function checkConfirm() {
+	let count = 0;
+	
+	for(let i = 0; i < 5; i++) {
+		if(agreeAll[i].checked == true) {
+			++count;
+		}
+	}
+
+	if(count == 5) {
+		checkObj.agreeCheck = true;
+	} else {
+		checkObj.agreeCheck = false;
+		swal('가입 약관!', "필수 동의 항목 입니다.", 'warning');
+	}
+}
 
 
 
@@ -193,22 +214,33 @@ function signUpValidate(){
             case "memberPwConfirm": str="비밀번호 확인이"; break;
             case "cMessage":  		str="이메일 인증이"; break;
             case "cNumber":      	str="인증번호가"; break;
+            case "agreeCheck":		str="필수 동의항목 개수가"; break;
             }
 
             str += " 유효하지 않습니다.";
 
-            alert(str);
-
+            // alert(str);
+			swal('회원가입 실패!', str, 'warning');
+			
+			if(checkObj.agreeCheck == false) {
+				return false;
+			}
+			
             document.getElementById(key).focus();
             
             return false; // form태그 기본 이벤트 제거
         }
     }
+    
+	swal('회원가입을 축하드립니다!', "요생소에 오신것을 환영합니다!", 'success');
 
-    return true; // form태그 기본 이벤트 수행
+	setTimeout(function() {
+		document.getElementById('signUp-form').submit();
+	}, 3000);
+	
+	return false; // form태그 기본 이벤트 제거
 
 }
-
 
 
 
@@ -247,19 +279,24 @@ cMessage.addEventListener("input", function() {
 // 이메일 인증번호 받기
 sendBtn.addEventListener("click", function() {
 	// 유효한 이메일이 작성되어 있는 경우 이메일 인증번호 전송
+	
+	if(cMessage.value.length == 0) {
+		swal('전송 실패!', "이메일을 작성해주세요.", 'warning');
+	}
+	
 	if(checkObj.cMessage) {
 		$.ajax({
 			url : "sendEmail",
 			data : {"cMessage" : cMessage.value},
 			type : "GET",
 			success : function(result) {
-				
+				// swal('전송 성공!', "이메일로 인증번호를 발송하였습니다.", 'success');
 				console.log(result);
 				checkObj.sendEmail = true;
 				
 			},
 			error : function() {
-				alert("이메일 발송 실패");
+				swal('전송 실패!', "이메일을 확인해 주세요.", 'warning');
 			}
 		})
 		
@@ -293,7 +330,8 @@ sendBtn.addEventListener("click", function() {
 			}
 			
 		}, 1000);
-		alert("이메일로 인증번호를 발송하였습니다.");
+		
+		swal('전송 성공!', "이메일로 인증번호를 발송하였습니다.", 'success');
 	}
 });
 
@@ -319,32 +357,32 @@ cBtn.addEventListener("click", function() {
                     if(result == 1){
 
                         clearInterval(checkInterval); // 타이머 멈춤     
-
+						swal('인증 성공!', "인증 되었습니다.", 'success');
                         cNumber.previousElementSibling.innerHTML = "인증되었습니다.";
 				        cNumber.previousElementSibling.classList.add("confirm");
 				        cNumber.previousElementSibling.classList.remove("error"); 
 						checkObj.cNumber = true;
 
                     } else if(result == 2){
-                        alert("만료된 인증 번호 입니다.");
+						swal('인증 실패!', "만료된 인증 번호 입니다.", 'warning');
 
                     } else{ // 3
-                        alert("인증 번호가 일치하기 않습니다.");
+                    	swal('인증 실패!', "인증 번호가 일치하기 않습니다.", 'warning');
                     }
 
 					
 				},
 				error : function() {
-					console.log("이메일 인증 실패");
+					swal('인증 실패!', "인증을 실패하였습니다.", 'warning');
 				}
 			})
 			
 		} else {
-			alert("인증번호를 정확하게 입력해주세요.");
+			swal('인증 실패!', "인증번호를 정확하게 입력해주세요.", 'warning');
 			cNumber.focus();
 		}
 	} else {
-		alert("인증번호 받기 버튼을 먼저 클릭해주세요.");
+		swal('인증 실패!', "인증번호 받기 버튼을 먼저 클릭해주세요.", 'warning');
 	}
 });
 

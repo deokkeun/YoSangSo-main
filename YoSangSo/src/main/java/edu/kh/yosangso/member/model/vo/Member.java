@@ -20,6 +20,7 @@ public class Member {
 	private String memberCert;
 	private String memberTel;
 	private String memberAddress;
+	private int memberZipCode;
 //	private String profileImage;
 //	private date enrollDate;
 	private String secessionFlag;

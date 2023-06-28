@@ -10,13 +10,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="${contextPath}/resources/css/main-style.css">
     <link rel="stylesheet" href="${contextPath}/resources/css/main-sub-style.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/inquiry/inquiryWriting.css">
     <script src="https://kit.fontawesome.com/881d1deef7.js" crossorigin="anonymous"></script>
-    <title>inquiry</title>
+    <title>1:1문의 페이지</title>
 </head>
 <body>
     <!-- 헤더, 컨텐츠 -->
     <main>
-        
+       
         <!-- 헤더 -->
         <jsp:include page="/WEB-INF/views/common/header.jsp"/>
         
@@ -32,25 +33,58 @@
                 <!-- 컨텐츠 내용 오른쪽 -->
                 <section  class="content-box-right">
 
+                    <section class="right">
+
+                            
+                        <div id="left-space"></div>
+
+                    <div>
+                        <div id="middle-area">
+                            <div class="topQuestion">
+                                <div>
+                                    <span>Question</span>
+                                </div>
+                                <div>
+                                ${loginMember.memberName}님 무엇이 궁금하세요?<br>
+                                <br>
+                                구매하려는 상품에 대해 궁금한 점이 있으신 경우 문의해주세요.
+                                </div>
+                            </div>
+                            
+                            <div class="textAreaBox">
+                                <div>
+                                    <span>1:1 문의 작성하기</span>
+                                </div>
+
+                                <div>
+                                    <textarea name="" id="inquiryContent" placeholder="
+                                                                    상담시간
+
+                                                                    평일(월 ~ 금) 10:00 ~ 17:00
+
+                                                                    (Off-time 12:30 ~ 13:30, 토/일/공휴일 휴무)"
+                                    value="inquiryContent"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="questionBtnBox">
+                              
+
+                                <div class="confirmWritingBox">
+                                     <button type="button" id="confirmWritingQ">작성하기</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
 
 
 
 
+                        <div id="right-space"></div>
 
-
-
-
-
-                    
-                    <div>inquiry</div>
-
-
-
-
-
-
-
-
+                    </section>
+                
 
                 </section>
 
@@ -73,5 +107,11 @@
    
     <!-- main.js 연결 -->
     <script src="${contextPath}/resources/js/main.js"></script>
+
+    <!-- inquiryAdd.js 연결 -->
+    <script src="${contextPath}/resources/js/board/inquiryAdd.js"></script>
+
+    <!-- alert창 바꾸기 -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </body>
 </html>

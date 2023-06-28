@@ -32,14 +32,14 @@ public class SignUpBtnServlet extends HttpServlet{
 			
 			HttpSession session = req.getSession();
 			
-			if(result > 0) {
-				
-				session.setAttribute("message", "회원 가입 성공!!");
-				
-			} else {
-				session.setAttribute("message", "회원 가입 실패...");
-				
-			}
+//			if(result > 0) {
+//				
+//				session.setAttribute("message", "회원 가입 성공!!");
+//				
+//			} else {
+//				session.setAttribute("message", "회원 가입 실패...");
+//				
+//			}
 			
 			resp.sendRedirect(req.getContextPath());
 			

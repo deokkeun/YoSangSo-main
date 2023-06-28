@@ -26,28 +26,35 @@
                 <div>요생소</div>
             </section>
             <section>
-                <form action="signIn" method="POST">
+                <form action="${contextPath}/member/signIn" method="POST">
                     <div>
                         <input type="text" class="input-box" placeholder="아이디(이메일)" name="inputEmail" value="${cookie.saveId.value}" autocomplete="off">
                     </div>
                     <div>
                         <input type="password" class="input-box" placeholder="비밀번호" name="inputPw" autocomplete="off">
                     </div>
+	
+					<div id="loginResult">
+                        <c:if test="${!empty sessionScope.message}">
+                            <%= session.getAttribute("message") %>
+                        </c:if>
+					</div>
+
+
                     <div class="status">
                         <div>
-                        
                         <c:if test="${!empty cookie.saveId.value}">
                         	<c:set var="chk" value="checked"/>
                         </c:if>
                         
                             <label>
-                                <input type="checkbox" name="saveId" ${chk}>로그인 상태 유지
+                                <input type="checkbox" name="saveId" ${chk}> 아이디 저장
                             </label>
                             
                             
                         </div>
                         <div>
-                            <a href="">아이디 / 비밀번호 찾기 ></a>
+                            <a href="find">아이디 / 비밀번호 찾기 ></a>
                         </div>
                     </div>
                     <div class="login-btn">
@@ -55,21 +62,19 @@
                     </div>
 
                 </form>
+                <form action="signUp" method="GET">
+                    <button class="signUp-btn">회원가입</button>
+                </form>
             </section>
-            <hr>
+            <%-- <hr>
             <section>
                 <div>
-                    <button class="btn kakao">카카오 로그인</button>
+                    <button class="kakaoLogin">
+                        <img src="${contextPath}/resources/image/login/kakao_login_large_wide.png" alt="카카오로그인" class="kakao">
+                    </button>
                 </div>
-                <div>
-                    <button class="btn google">구글 로그인</button>
-                </div>
-            </section>
+            </section> --%>
         </section>
-
-
-
-
 
 
     <!-- 헤더, 컨텐츠 끝 -->
@@ -84,5 +89,8 @@
    
     <!-- main.js 연결 -->
     <script src="${contextPath}/resources/js/main.js"></script>
+    
+    <!-- login.js 연결 -->
+    <script src="${contextPath}/resources/js/member/login.js"></script>
 </body>
 </html>

@@ -3,12 +3,51 @@
 <properties>
 	<comment>product-sql.xml</comment>
 
-	<entry key="personList">
-SELECT PRODUCT_IMAGE, PRODUCT_NM
-FROM PRODUCT
-WHERE PART = ?
+	<entry key="selectProduct">
+	SELECT PRODUCT_NO, PRODUCT_NM, CATEGORY , PRICE , STOCK , PRODUCT_DATE , SELL_RATE , EXPLAIN , PART
+	FROM PRODUCT
+	WHERE PRODUCT_NO = ? 
 	</entry>
-	<entry key=""></entry>
+	
+	<entry key="DetailAddCart">
+	INSERT INTO CART (CART_NO , PRODUCT_NO, BUYING_RATE, MEMBER_NO)
+	VALUES (CART_SEQ.NEXTVAL, ?, ?, ?)
+	</entry>
+	
+	<entry key="DetailPurchase">
+	INSERT INTO CART (CART_NO , PRODUCT_NO, BUYING_RATE, MEMBER_NO)
+	VALUES (CART_SEQ.NEXTVAL, ?, ?, ?)
+	</entry>
+	
+	<entry key="personList">
+		SELECT PRODUCT_NO, PRODUCT_IMAGE, PRODUCT_NM
+		FROM PRODUCT
+		WHERE PART = ?
+	</entry>
+	
+	
+	<!-- 전제품 조회 sql -->
+	<entry key="allProduct">
+		SELECT PRODUCT_NM, PRICE, INGREDIENT, PRODUCT_NO
+		FROM PRODUCT
+	</entry>
+	
+	
+	<!-- 신상품 조회 sql  -->
+	<entry key="newProduct">
+		SELECT PRODUCT_NM, PRICE, INGREDIENT, PRODUCT_NO
+		FROM PRODUCT
+		ORDER BY PRODUCT_DATE DESC
+	</entry>
+	
+	
+	<!-- 베스트 조회 sql -->
+	<entry key="bestProduct">
+		SELECT PRODUCT_NM, PRICE, INGREDIENT, PRODUCT_NO
+		FROM PRODUCT
+		ORDER BY SELL_RATE DESC
+	</entry>
+
 	<entry key=""></entry>
 	<entry key=""></entry>
 	<entry key=""></entry>

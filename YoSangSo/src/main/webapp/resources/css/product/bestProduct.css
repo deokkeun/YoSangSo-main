@@ -1,0 +1,315 @@
+.content-container{
+    display: flex;
+    height: 100%;
+    width: 1280px;
+    justify-content: center;
+    margin : 0 auto;
+} 
+
+
+.content-container a{  
+    text-decoration: none;
+    color: black;
+}
+
+.content-container a:hover  {
+    text-decoration:underline;
+} 
+
+
+
+/* 왼쪽사이드 */
+.leftSide {
+    flex-basis : 15%;
+    /* background-color:aqua; */
+}
+
+/* 가운데메인영역 */
+.center {
+    flex-basis: 148%;
+    display: flex;
+    flex-direction: column;
+    /* background-color:pink; */
+}
+
+/* 오른쪽사이드 */
+.rightSide {
+    flex-basis : 15%;
+    padding: 5px;
+    /* background-color:green; */
+}
+
+
+
+
+
+/* -------------------- 오른쪽 사이드 영역 --------------------  */
+
+
+/* 인체사진 */
+#people {
+    width: 100px;
+    height:380px;
+    padding: 50px 0px 40px 0px;
+    /* position: absolute; */
+}
+
+
+
+/* 홈페이지 탑버튼 */
+#topBtn{
+	position: fixed;
+	right: 90px;
+    /* left : 25px; */
+	bottom: 25px;
+	display: none;
+	z-index: 9;
+}
+
+
+
+/* 인체사진 플로팅바 */
+.floating {
+    position: fixed; 
+    right: 50%; 
+    top: 180px; 
+    margin-right: -720px;
+    text-align:center;
+    width: 120px;
+}
+
+
+
+/* -------------------- 컨텐트 가운데 영역  ---------------- */
+
+
+
+/* quickMenu */
+.center > div:nth-child(1) {
+    display: flex;
+  /*   flex-basis: 10%; */
+}
+
+/* itemList */
+.center > div:nth-child(2) {
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: 80%; 
+   /*  flex-direction: row; */
+}
+
+/* blank */
+.center > div:nth-child(3) {
+   /*  flex-basis: 10%; */
+    display: flex; 
+}
+
+
+/******************* 퀵메뉴 부분 css ******************/
+
+.quickMenu {
+    margin : 70px 0px 30px 0px;
+    border-bottom: 2px solid #ccc;
+}
+
+
+ul.list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: -1px;
+}
+  
+ul.list::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+  
+  
+.mainFont {
+    display: block;
+    padding: 10px 20px 10px 20px;
+    float: left;
+    margin-right: -1px;
+    margin-bottom: -1px;
+    color: grey;
+    text-decoration: none;
+    cursor: pointer;
+    width: 200px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 16px;
+}
+  
+  
+.select {
+    border-top: 2px solid #c2e7ff;
+   /* border-right: 1px solid #ccc;*/
+   /* border-bottom: 1px solid white;*/
+   /* border-left: 1px solid #ccc; */ 
+    /*border:2px solid black;*/
+    color: black;
+    margin-top: -2px;
+    background-color:  #c2e7ff;
+    margin-bottom : 0.4px;
+}
+
+
+/*********************제품 부분 css  ****************/
+
+
+/* 순위글씨 */
+
+.rank {
+	font-weight: 700;
+	font-size: 16px;
+	color: #2678F3;
+}
+
+
+/* 제품 */
+.BNitem {
+    display:flex;
+    flex-basis:25%;
+    height: 370px;
+    width: 15%;
+    flex-direction: column;
+    position: relative;
+    padding: 10px;
+}
+
+
+/* 제품 사진 영역 */
+.BNitemPic {
+    flex-basis: 70%;
+    border: 1px solid rgb(181, 181, 181);
+    align-items: center;
+    justify-content: center;
+    width: 245px;
+    height: 200px;
+    position: relative;
+    z-index : -1;
+    /* background-color:blue; */
+    /* width: 100%;
+    height: 100%; */
+}
+
+
+/* 제품 사진 */
+.BNitemPic img{
+    width: 100%; 
+    height: 100%;
+    object-fit: contain;
+}
+
+
+/* 제품 이름 글씨 효과 */
+.BNitemName a:hover {
+    text-decoration: underline;
+}
+
+
+/* 제품 가격 글씨 */
+.BNitemPrice{
+    flex-basis: 10%;
+    font-size: 14px;
+    text-align: left;
+    color:brown;
+    padding: 5px;
+    position: relative;
+    z-index : -1;
+    /* background-color: red; */
+} 
+
+
+/* 제품명 글씨 */
+.BNitemName{
+    flex-basis: 16%;
+    padding: 4px;
+    font-size: 14px;
+    position: relative;
+}
+
+/******************** 하단공백 css ********************/
+
+.blank {
+    display: flex;
+    height: 140px;
+}
+
+
+/************************* 제품  호버값  ******************/
+.BNitem > a {
+    display: block;
+    width: auto;
+    text-decoration: none;
+    margin: 0px;
+}
+
+
+
+
+/* 사진 밖으로 나가면 안보임 */
+.BNitem > a  {
+    position: relative;
+    overflow: hidden;
+   
+    /* 요소의 영역 가리기 */
+}
+
+
+
+/* 검은화면 글씨 설정 */
+.BNitem > a > .BNitemPic > figcaption {
+    position: absolute;
+    bottom: 300px;
+    left: 50%;
+    /* top: 50px; */
+    margin : auto;
+    z-index: 1;
+    color : #fff;
+    font-size: 12px;
+    text-align : center;
+    transition: all .5s;
+    /* (,위에서 내려올 때 높이간격) */
+    transform: translate(-50%, 40%);
+    
+}
+
+/* 요소의 가로 넓이 */
+.BNitem > a > .BNitemPic img {
+    width: 100%;
+    position: absolute;
+    z-index : -1;
+}
+
+/* 검은화면 속 글씨 내려오는 위치설정 */
+.BNitem > a:hover figcaption{ 
+    bottom: 50%;
+}
+
+
+/* 검은화면 설정 */
+.BNitem > a .BNitemPic::after {
+    content:'';
+    display:block;
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background:rgba(0,0,0, .5);
+    z-index: -1;
+    opacity: 0;
+    transition: all.30s;
+    margin: 0px 0px 0px 0px;
+
+}
+
+.BNitem > a:hover .BNitemPic::after {
+    opacity: 1;
+}   
+
+

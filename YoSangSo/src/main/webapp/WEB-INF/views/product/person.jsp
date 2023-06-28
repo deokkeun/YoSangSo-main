@@ -27,12 +27,11 @@
 
                 <section class="content-box-left">
                     <div>
-                        <a href="history.back()" class="fa-solid fa-arrow-left" target="#"></a>
+                        <a href="${contextPath}" class="fa-solid fa-arrow-left" target="_self"></a>
                     </div>
                     <section class="content-box-left-title">
                         <div class="person-img">
-                            <img src="#" alt="인체이미지" width="80px">
-                            <img src="#" alt="두뇌" class="person-img-heart">
+                            <img src="${contextPath}/resources/image/index/인체일러스트누끼.png" alt="인체이미지" width="80px">
                         </div>
                         <div>
                             <div class="title-sub">
@@ -101,17 +100,16 @@
 	
 			
 			
-			
-                <section class="content-box-right-content  people-bg">
+                <section class="content-box-right-content people-bg">
                     <section>
                         <h2 id="right-title" class="title"></h2>
                         <div id="right-sub-title"></div>
                     </section>
                     <section>
                         <ul id="list-box">
-              				<div>요생소에 방문해주셔서 감사합니다!!</div>
               				
-              				<div>신체 부위별 권장 비타민</div>
+              				<div class="vitamin-title">비타민의 종류와 효능을 확인해주세요.</div>
+              				<img src="${contextPath}/resources/image/people/하루비타민권장량.png" alt="" width="540px" height="500px">
                             
                         </ul>
 

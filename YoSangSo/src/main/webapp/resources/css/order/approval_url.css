@@ -1,0 +1,129 @@
+.title {
+    color: #2678F3;
+    font-size: 21.33px;
+}
+.title-main {
+    color: black;
+    font-size: 21.33px;
+    margin-top: 100px;
+    padding: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+}
+#pay-result {
+    width: 1000px;
+    margin: 0px auto 200px auto;
+}
+
+.processing{
+    padding: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+}
+.processing div:nth-child(1){
+    font-size: 20px;
+    font-weight: bold;
+    margin: 20px 0px;
+}
+.processing div:nth-child(2){
+    font-size: 14px;
+    margin: 10px 0px;
+}
+.processing div:nth-child(3){
+    font-size: 12px;
+}
+.processing div:nth-child(4){
+    font-size: 12px;
+}
+.rocket {
+    font-size: 14px;
+    font-weight: bold;
+}
+.processing-result {
+    display: flex;
+    height: 800px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+}
+.processing-result > section:nth-child(1){
+    width: 250px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.processing-result > section:nth-child(2){
+    width: 750px;
+    height: 100%;
+}
+.product-box {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.product-box section:nth-child(1){
+    flex-basis: 5%;
+    width: 100%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+}
+.product-box section:nth-child(1) > div{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 10px;
+    margin-top: 40px;
+    font-size: 14px;
+}
+.product-box section:nth-child(2){
+    flex-basis: 95%;
+    width: 100%;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.delivery-box {
+    width: 98%;
+    height: 200px;
+    margin: 10px auto;
+    border: 2px solid rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    display: flex;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+}
+.delivery-box > div:nth-child(2){
+    margin: 10px 10px;
+}
+
+.product-image {
+    width: 220px;
+    height: 180px;
+    margin: 10px 10px;
+}
+.product-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.row {
+    height: 30px;
+    width: 150px;
+    display: flex;
+    justify-content: space-between;
+}
+.productName {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+.deliveryDate {
+    font-size: 14px;
+    font-weight: bold;
+}
+.buyingRate {
+    font-size: 16px;
+    color: #7E1212;
+}
+.price {
+    font-size: 16px;
+    color: #2678F3;
+    font-weight: bold;
+}

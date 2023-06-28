@@ -1,0 +1,47 @@
+
+
+.container{
+    margin: auto;
+    border:1px solid gainsboro;
+    width: 1000px;
+    border-radius: 3px;
+    margin-top:20px;
+    margin-bottom:20px;
+}
+
+.content-part{
+	height: 1000px;
+	overflow: auto;
+}
+
+.head-part{
+    border-bottom: 2px solid gainsboro;
+    height: 70px;
+}
+
+.head-part > ul {
+    display: flex;
+    justify-content: space-around;
+    height: inherit;
+    align-items: center;
+    list-style: none;
+    font-weight: 600;
+
+}
+
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.privacyPolicy > a{
+    font-size: 20px;
+    color: #2678F3;
+}
+
+main pre{
+    white-space: pre-wrap;
+    margin:30px;
+    line-height: 25px;
+}

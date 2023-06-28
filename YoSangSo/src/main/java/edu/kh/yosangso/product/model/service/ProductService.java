@@ -1,12 +1,12 @@
 package edu.kh.yosangso.product.model.service;
 
-import static edu.kh.yosangso.common.JDBCTemplate.close;
-import static edu.kh.yosangso.common.JDBCTemplate.getConnection;
+import static edu.kh.yosangso.common.JDBCTemplate.*;
 
 import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.List;
 
+import edu.kh.yosangso.cart.model.vo.ShoppingCart;
 import edu.kh.yosangso.product.model.dao.ProductDAO;
 import edu.kh.yosangso.product.model.vo.Product;
 
@@ -15,17 +15,17 @@ public class ProductService {
 
 	private ProductDAO dao = new ProductDAO();
 
-	/** 상품 정보 service
+	/** 상품 정보 선택 service
 	 * @return
 	 */
-	public List<Product> selectProduct(int productNo) throws Exception{
+	public List<Product> selectProduct(int pro) throws Exception{
 		Connection conn = getConnection();
 		
-		List<Product> list = dao.selectProduct(conn, productNo);
+		List<Product> productList = dao.selectProduct(conn, pro);
 		
 		close(conn);
 		
-		return list;
+		return productList;
 	}
 
 	
@@ -34,18 +34,108 @@ public class ProductService {
 	 * @return
 	 */
 	public List<Product> personList(String part) throws Exception{
-		
 		Connection conn = getConnection();
 		
 		List<Product> personList = dao.personList(conn, part);
 		
 		close(conn);
+		System.out.println(personList);
 		
 		return personList;
 	}
 
+	/** 상세페이지 장바구니 추가 service
+	 * @param cart
+	 * @return
+	 * @throws Exception
+	 */
+	public int detailCart(ShoppingCart cart) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		int result = dao.detailCart(conn, cart);
+		
+		if(result > 0)	commit(conn);  
+		else			rollback(conn);
+		
+		
+		close(conn);
+		
+		
+		return result;
+	}
+
+	/** 상세페이지 바로구매 service
+	 * @param cart
+	 * @return
+	 * @throws Exception
+	 */
+	public int detailPurchase(ShoppingCart cart) throws Exception{
+		
+		Connection conn = getConnection();
+		
+		int result = dao.detailPurchase(conn, cart);
+		
+		if(result > 0)	commit(conn);  
+		else			rollback(conn);
+		
+		
+		close(conn);
+		
+		
+		return result;	
+	}
+
+
 	
-	
+	/** 전제품 메뉴 불러오기 service
+	 * @return apdList
+	 * @throws Exception
+	 */
+	public List<Product> allProduct() throws Exception{
+		
+		Connection conn = getConnection();
+		
+		List<Product> apdList = dao.allProduct(conn);
+		
+		close(conn);
+		
+		return apdList;
+	}
+
+
+	/** 베스트 메뉴 불러오기 service
+	 * @return bpdList
+	 * @throws Exception
+	 */
+	public List<Product> bestProduct() throws Exception {
+		
+		Connection conn = getConnection();
+		
+		List<Product> bpdList = dao.bestProduct(conn);
+		
+		close(conn);
+		
+		return bpdList;
+	}
+
+
+	/** 신상품 메뉴 불러오기 service
+	 * @return npdList
+	 * @throws Exception
+	 */
+	public List<Product> newProduct() throws Exception {
+		
+		Connection conn = getConnection();
+		
+		List<Product> npdList = dao.newProduct(conn);
+		
+		close(conn);
+		
+		return npdList;
+	}
+
+
 	
 	
 	

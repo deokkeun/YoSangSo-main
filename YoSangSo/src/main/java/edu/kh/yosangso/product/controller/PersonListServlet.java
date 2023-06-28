@@ -18,7 +18,6 @@ import edu.kh.yosangso.product.model.vo.Product;
 public class PersonListServlet extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		System.out.println("test!!");
 		
 		try {
 			String part = req.getParameter("part");
@@ -28,9 +27,6 @@ public class PersonListServlet extends HttpServlet{
 			List<Product> personList = service.personList(part);
 			
 			new Gson().toJson(personList, resp.getWriter());
-			
-//			String path = "/WEB-INF/views/product/person.jsp";
-//			resp.sendRedirect(path);
 			
 		} catch(Exception e) {
 			e.printStackTrace();

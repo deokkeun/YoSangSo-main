@@ -1,0 +1,663 @@
+
+
+.content-container{
+    display: flex;
+    height: 100%;
+    width: 1280px;
+    justify-content: center;
+    margin : 0 auto;
+} 
+
+
+.content-container a{  
+    text-decoration: none;
+    color: black;
+}
+/* 
+.content-container a:hover  {
+    text-decoration:none;
+}
+
+ */
+
+/* 왼쪽사이드 */
+.leftSide {
+    flex-basis : 15%;
+    /* background-color:aqua; */
+}
+
+/* 가운데메인영역 */
+.center {
+    flex-basis : 70%;
+    display: flex;
+    flex-direction: column;
+    /* background-color:pink; */
+}
+
+/* 오른쪽사이드 */
+.rightSide {
+    flex-basis : 15%;
+    padding: 5px;
+    /* position: relative;
+    justify-content: center;
+    align-items: center;
+    justify-content: center; */
+    /* background-color:green; */
+ 
+}
+
+
+/* -------------------- 오른쪽 사이드 영역 --------------------  */
+
+/* 인체사진 */
+#people {
+    width: 100px;
+    height:380px;
+    padding: 50px 0px 40px 0px;
+    /* position: absolute; */
+}
+
+
+
+/* 홈페이지 탑버튼 */
+#topBtn{
+	position: fixed;
+	right: 90px;
+    /* left : 25px; */
+	bottom: 25px;
+	display: none;
+	z-index: 9;
+}
+
+
+
+/* 인체사진 플로팅바 */
+.floating {
+    position: fixed; 
+    right: 50%; 
+    top: 180px; 
+    margin-right: -720px;
+    text-align:center;
+    width: 120px;
+  }
+
+
+
+/* -------------------- 컨텐트 가운데 영역  ---------------- */
+
+
+/* 1. 메인페이지 슬라이드 영역 */
+.center > section:nth-child(1) {
+    flex-basis: 18%;
+    padding: 50px 0px 40px 0px;
+    /* height: 300px; */
+    /* background-color:aquamarine; */
+
+} 
+
+
+/* 
+#mainPhoto {
+    width: 100%;
+    height: 400px;
+    height: 50vh;
+    object-fit: cover;
+} */
+
+
+/* 2. 베스트 영역 */
+.center > section:nth-child(2) {
+    flex-basis: 18%;
+    display: flex;
+    flex-direction: column;
+    /* background-color:steelblue; */
+}
+
+
+
+
+/* 3. 신제품 영역 */
+.center > section:nth-child(3) {
+    flex-basis:18%;
+    /* background-color: rgb(146, 146, 185); */
+
+}
+
+
+
+/* 4. 제품 영역 */
+.center > section:nth-child(4) {
+    flex-basis: 46%;
+    /* background-color: salmon; */
+
+}
+
+
+
+
+/* ---------------- 가운데 공통 영역 --------------------- */
+
+
+/* (베스트.신제품. 제품) 메뉴이름 */
+.mainFont {
+    align-items: center;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 20px;
+    border-bottom: 1px solid grey;
+}
+
+
+
+/* (베스트.신제품) 더보기 영역 */
+.more {
+    align-items: center;
+    text-align: right;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 15px;
+    border-top: 1px solid grey;
+    margin: 0px 0px 40px 0px;
+    /* background-color:darkslateblue; */
+}  
+
+
+/* 베스트, 신제품 1,2,3,4 */
+.BNitem {
+    display:flex;
+    flex-basis:25%;
+    height: 285px;
+    padding: 15px;  
+    flex-direction: column;
+    position: relative;
+    /* position : relative; */
+    /* align-items: center; */
+    /* justify-content: center; */
+    /* margin : auto; */
+    /* display : inline-block; */
+    
+}
+
+
+
+/* 베스트, 신제품 사진 영역 */
+.BNitemPic {
+    flex-basis: 70%;
+    border: 1px solid rgb(181, 181, 181);
+    align-items: center;
+    justify-content: center;
+    /* object-fit: contain; */
+    width: 230px;
+    height: 175px;
+    position: relative;
+    z-index : -1;
+    /* background-color:blue; */
+    /* width: 100%;
+    height: 100%; */
+}
+
+
+/* 베스트, 신제품 사진 */
+.BNitemPic img{
+    width: 100%; 
+    height: 100%;
+    /* margin: auto; */
+    object-fit: contain;
+    
+    /* width: 200px;
+    height: 170px; */
+    /* height: 170px; */
+    /* align-items: center;
+    justify-content: center; */
+}
+
+
+
+
+/* 베스트, 신제품, 제품 이름 글씨 효과 */
+.itemName a:hover, .BNitemName a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+
+
+/* 베스트, 신제품 가격 글씨 */
+.BNitemPrice{
+    flex-basis: 10%;
+    font-size: 14px;
+    text-align: left;
+    color:brown;
+    padding: 5px;
+    position: relative;
+    
+    z-index : -1;
+    /* background-color: red; */
+} 
+
+
+/* 베스트, 신제품명 글씨 */
+.BNitemName{
+    flex-basis: 20%;
+    padding: 5px;
+    font-size: 12px;
+    position: relative;
+    /* z-index : -1; */
+
+    /* z-index 설정해제하면 글씨가 보이고 안하면 a태그 호버설정이 안되고
+    어케해야되나요ㅠㅠㅠ*/
+
+    /* text-decoration: underline; */
+    /* background-color: purple; */
+}
+
+
+
+
+
+/* (제품) 더보기 영역 */
+.itemMore {
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    /* border-top: 1px solid grey; */
+    margin: 60px 0px 80px 0px;
+    text-decoration: none;
+    /* background-color:darkslateblue; */
+}  
+
+/* 더보기 화살표 아이콘 */
+#allow {
+    padding: 0px 0px 0px 10px;
+}
+
+
+/* #cart {
+    height: 200px;
+} */
+
+
+
+
+
+
+/************************* 베스트/신제품 호버값  ******************/
+
+.BNitem > a {
+    display: block;
+    width: auto;
+    text-decoration: none;
+    margin: 0px;
+}
+
+
+
+/* 사진 밖으로 나가면 안보임 */
+.BNitem > a  {
+    position: relative;
+    overflow: hidden;
+   
+    /* 요소의 영역 가리기 */
+}
+
+
+
+/* 검은화면 글씨 설정 */
+.BNitem > a > .BNitemPic > figcaption {
+    position: absolute;
+    bottom: 250px;
+    left: 50%;
+    /* top: 50px; */
+    margin : auto;
+    z-index: 1;
+    color : #fff;
+    font-size: 10px;
+    text-align : center;
+    transition: all .5s;
+    /* (,위에서 내려올 때 높이간격) */
+    transform: translate(-50%, 40%);
+    
+}
+
+/* 요소의 가로 넓이 */
+.BNitem > a > .BNitemPic img {
+    width: 100%;
+    position: absolute;
+    z-index : -1;
+}
+
+/* 검은화면 속 글씨 내려오는 위치설정 */
+.BNitem > a:hover figcaption{ 
+    bottom: 50%;
+}
+
+
+
+/* 검은화면 설정 */
+.BNitem > a .BNitemPic::after {
+    content:'';
+    display:block;
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background:rgba(0,0,0, .5);
+    z-index: -1;
+    opacity: 0;
+    transition: all.30s;
+    margin: 0px 0px 0px 0px;
+
+}
+
+
+.BNitem > a:hover .BNitemPic::after {
+    opacity: 2;
+}   
+
+
+
+/* ================ 1. 메인페이지 슬라이드 영역 ==============*/
+
+
+      
+li {
+    list-style: none;
+}       
+ 
+  
+#visual {
+    position: relative;
+    height: 385px;
+    margin: 0 auto;
+    overflow: hidden;
+    object-fit: cover;
+    z-index : -1;
+    box-shadow : 4px 4px 3px 3px #aea9a9;
+}
+  
+  
+#visual > div {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transition: 0.3s ease;
+    opacity: 0;
+}
+
+#visual>div.on{
+    opacity: 1;
+}
+
+#control { 
+    position: absolute;
+    width: 100%;
+    bottom: 30px;
+    text-align: center;         
+}
+
+#control a {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: #f6f5f5;                       
+    line-height: 26px;
+    font-size: 0.8em;
+    border-radius: 14px;
+    margin: 0 2px;
+}
+  
+#control a.on{
+    background: #9ab3f5;
+}
+
+
+
+
+
+
+/* =============== 2.베스트 영역 ================= */
+
+    /* 2-1 베스트글씨 .bestFont */
+    .bestPart > div:nth-child(1) {
+        display:flex;  
+        flex-basis: 15%;
+        /* background-color: skyblue; */
+    }
+
+ 
+    /* 2-2 베스트제품 .bestItem */
+    .bestPart > div:nth-child(2) {
+        display:flex;   
+        flex-basis: 70%;
+        /* flex-direction: row; */
+        /* background-color:thistle; */
+    
+
+    }
+
+   /* 2-3 베스트제품더보기 .bestMore */
+   /*   .bestPart > div:nth-child(3) {
+        display: flex;  
+        flex-basis: 5%;  
+        flex-direction: row; 
+        background-color: mediumaquamarine;
+    } */
+
+
+
+
+/* ================== 3. 신제품 영역 ===================== */
+
+
+ /* 3-1 신제품 글씨 .newFont */
+.newPart > div:nth-child(1) {
+    display:flex;  
+    flex-basis: 15%;
+    /* background-color: skyblue; */
+}
+
+
+/* 3-2 신제품 . newItem */
+.newPart > div:nth-child(2) {
+    display:flex;   
+    flex-basis: 70%;
+    /* flex-direction: row; */
+    /* background-color:thistle; */
+
+}
+
+/* 3-3 신제품더보기 .newtMore */
+/* .newPart > div:nth-child(3) {
+    display: flex;  
+    flex-basis: 15%; 
+    flex-direction: row;
+     background-color: mediumaquamarine;
+} */
+
+
+
+
+
+
+/* =============== 4  제품영역 =================== */
+
+
+
+ /* 4-1 제품글씨 .itemFont */
+.itemPart > div:nth-child(1) {
+    display:flex;  
+    flex-basis: 15%;
+    /* background-color: skyblue; */
+}
+
+
+
+/* 4-2 제품모음 .itemList */
+.itemPart > div:nth-child(2) {
+    display:flex;
+    flex-wrap: wrap;
+    flex-basis: 85%;
+    margin-top: 15px;
+    /* flex-direction: row; */
+    /* background-color:thistle; */
+}
+
+
+
+/* 4-3 제품더보기 .itemMore */
+/* .itemPart > div:nth-child(3) {
+    display: flex;  
+    flex-basis: 15%; 
+    flex-direction: row;
+     background-color: mediumaquamarine;
+} */
+
+
+/* 제품*/
+.item {
+	display: flex;
+	flex-basis:31%; 
+	height: 330px;   
+	flex-direction: column; 
+	position: relative;
+	padding: 10px;
+}
+
+
+
+
+/* 제품사진 영역 */
+.itemPic {
+	flex-basis:72%;
+	border: 1.5px solid rgb(181, 181, 181);
+	align-items: center;
+	justify-content: center;
+	width: 325px;
+	height: 200px;
+	position: relative;
+	z-index: -1;
+	/* background-color:blue; */
+	/* width: 100%;
+	height: 100%; */
+}
+
+/* 제품 사진 */
+.itemPic img{
+	width: 100%; 
+	height: 100%;
+	object-fit: contain;
+}
+
+
+
+/* 제품설명글씨 */
+.itemName {
+	flex-basis:15%;
+	padding: 5px;
+	text-align : left;
+	font-size: 12px;
+	/* background-color: orange; */
+}
+
+
+/* 제품가격글씨 */
+.itemPrice {
+	flex-basis:13%;
+	font-size: 15px;
+	text-align : left;
+	color:brown;
+	padding: 5px;
+	/* background-color: yellow; */
+}
+
+
+
+
+/* -------------------제품 호버값------------------ */
+
+
+/* .item > a {
+    display: block;
+    width: auto;
+    text-decoration: none;
+    margin: 0px;
+} */
+
+
+.item > a {
+    display: block;
+    width: auto;
+    text-decoration: none;
+    margin: 0px;
+}
+
+
+/* 사진 밖으로 나가면 안보임 */
+.item > a  {
+    position: relative;
+    overflow: hidden;  
+    /* 요소의 영역 가리기 */
+}
+
+
+
+/* 검은화면 글씨 속성값 */
+.item > a > .itemPic > figcaption {
+     position: absolute;
+    bottom: 300px;
+    left: 50%;
+    /* top: 50px; */
+    margin : auto;
+    z-index: 1;
+    color : #fff;
+    font-size: 12px;
+    text-align : center;
+    transition: all .5s;
+    /* (,위에서 내려올 때 높이간격) */
+    transform: translate(-50%, 40%);
+}
+
+
+/* 요소의 가로 넓이 */
+.item > a > .itemPic img {
+    width: 100%;
+    position: absolute;
+    z-index : -1;
+}
+
+
+
+/* 검은화면 속 글씨 내려오는 위치설정 */
+.item > a:hover figcaption{ 
+    bottom: 50%;
+}
+
+
+
+/* 검은화면 설정 */
+.item > a .itemPic::after {
+    content:'';
+    display:block;
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background:rgba(0,0,0, .5);
+    z-index: -1;
+    opacity: 0;
+    transition: all.30s;
+    margin: 0px 0px 0px 0px;
+
+}
+
+.item > a:hover .itemPic::after {
+      opacity: 1;
+}
