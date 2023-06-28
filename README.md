@@ -60,12 +60,14 @@
 
 <h1>⭐️ 주요기능</h1>
 <div>1. 유저 기능</div>
-<code>* 이메일 인증, 비밀번호 변경, 회원 탈퇴
+
+```
+* 이메일 인증, 비밀번호 변경, 회원 탈퇴
 * 카카오 결제
 * 장바구니 ⭐️
 * 게시판
 작성중입니다
-</code>
+```
 
 
 
@@ -91,14 +93,15 @@
 <h2>1. 메인 화면 및 기본 UI</h2>
 화면 이미지 
 <h3>구현기능</h3>
-<code>
-<h4>✅ 메인 화면</h4>
+
+```
+✅ 메인 화면
 
 💡 화면 설명 :
 언제 어디서 무엇을 어떻게 왜
 💡 기능 설명 :
-  <a href="" Style="text-decoration: none; color: #1A73E8;">main 클래스 구현 바로가기</a>
-</code>
+```
+<a href="" Style="text-decoration: none; color: #1A73E8;">main 클래스 구현 바로가기</a>
 
 
 
@@ -110,15 +113,16 @@
 화면 이미지 
 <h3>구현기능</h3>
 
-<code>
-<h4>✅ 부위별 비타민 추천 기능</h4>
+```
+✅ 부위별 비타민 추천 기능
   
 💡 화면 설명 :
 언제 어디서 무엇을 어떻게 왜
 💡 기능 설명 :
-  ajax, jqueary, .. 방식으로 
-  <a href="" Style="text-decoration: none; color: #1A73E8;">recomend 클래스 구현 바로가기</a>
-</code>
+  ajax, jqueary, .. 방식으로
+```
+<a href="" Style="text-decoration: none; color: #1A73E8;">recomend 클래스 구현 바로가기</a>
+
 
 
 
@@ -129,14 +133,15 @@
 <h2>3. 장바구니 기능</h2>
 화면 이미지 
 <h3>구현기능 ⭐️</h3>
-<code>
-<h4>✅ 장바구니 기능 ⭐️</h4> 
+
+```
+✅ 장바구니 기능 ⭐️
 
 💡 화면 설명 :
 언제 어디서 무엇을 어떻게 왜
 💡 기능 설명 :
   ajax, jqueary, .. 어떤 방식으로 
-  <a href="" Style="text-decoration: none; color: #1A73E8;">cart클래스 구현 바로가기</a>
-</code>
+```
+<a href="" Style="text-decoration: none; color: #1A73E8;">cart클래스 구현 바로가기</a>
 
 <br><br>
