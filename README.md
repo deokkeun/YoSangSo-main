@@ -16,6 +16,7 @@
   <h3>🌱 Environment</h3>
   <img src="https://img.shields.io/badge/spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white"> 
   <img src="https://img.shields.io/badge/VisualStudioCode-007acc?style=for-the-badge&logo=VisualStudioCode&logoColor=white"> 
+  <img src="https://img.shields.io/badge/DBeaver-FF3621?style=for-the-badge&logo=Databricks&logoColor=white"> 
   <br><br>
 
   <h3>🛠️ Development</h3>
@@ -60,16 +61,16 @@
 
 
 <h1>⭐️ 주요기능</h1>
-<div>1. 유저 기능</div>
+<div>유저 기능</div>
 
 ```
-* 이메일 인증, 비밀번호 변경, 회원 탈퇴
+* 회원 가입(Gmail 인증), 로그인, 비밀번호 변경, 회원 탈퇴
+* 제품 상세 페이지, 이용약관, 신체 부위별 상품 추천 페이지
 * 카카오 결제
-* 장바구니 ⭐️
-* 게시판
-작성중입니다
+* 장바구니⭐️, 주문 내역 조회, 환불, 상품 검색
+* 게시판(등록, 수정, 삭제), 자주묻는 질문
+* 리뷰(등록, 수정, 삭제), 1:1 문의(등록, 수정, 삭제)
 ```
-
 
 
 <br><br>
@@ -93,14 +94,14 @@
 
 <h2>1. 메인 화면 및 기본 UI</h2>
 화면 이미지 
-<h3>구현기능</h3>
 
 ```
 ✅ 메인 화면
 
 💡 화면 설명 :
-언제 어디서 무엇을 어떻게 왜
+      화면 흐름 순서
 💡 기능 설명 :
+      사용한 기술
 ```
 <a href="" Style="text-decoration: none; color: #1A73E8;">main 클래스 구현 바로가기</a>
 
@@ -112,15 +113,14 @@
 
 <h2>2. 신체 부위별 비타민 추천</h2>
 화면 이미지 
-<h3>구현기능</h3>
 
 ```
 ✅ 부위별 비타민 추천 기능
   
 💡 화면 설명 :
-언제 어디서 무엇을 어떻게 왜
+      화면 흐름 순서
 💡 기능 설명 :
-  ajax, jqueary, .. 방식으로
+      사용한 기술
 ```
 <a href="" Style="text-decoration: none; color: #1A73E8;">recomend 클래스 구현 바로가기</a>
 
@@ -133,15 +133,14 @@
 
 <h2>3. 장바구니 기능</h2>
 화면 이미지 
-<h3>구현기능 ⭐️</h3>
 
 ```
 ✅ 장바구니 기능 ⭐️
 
 💡 화면 설명 :
-언제 어디서 무엇을 어떻게 왜
+      화면 흐름 순서
 💡 기능 설명 :
-  ajax, jqueary, .. 어떤 방식으로 
+      사용한 기술
 ```
 <a href="" Style="text-decoration: none; color: #1A73E8;">cart클래스 구현 바로가기</a>
 
